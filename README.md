@@ -14,6 +14,7 @@ objetivo?
 
 
 3. ¿Cómo ajustaremos nuestra oferta a ese público?
+
 -Ofrecemos una interfaz de uso simple con valoraciónes y puntaciónes para nuestros productos. Cada compra que se realice se efectúa de manera segura.
 
 
