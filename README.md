@@ -26,18 +26,18 @@ Acerca de nosotros!
 - Capital Federal, BsAs, Arg.
 - Tutor Desarrollo Web & Javascript
 
-
+-
 - Florencia Zapata
 - 32 años
 - Mendoza, Arg.
 - Estudiante de Medicina
-
+-
 
 - Martin Zazpe
 - 29 años 
 - Uruguay
 - estudiando desarrollo web full stack
-
+-
 
 - Federico Honrado
 - 31 años
