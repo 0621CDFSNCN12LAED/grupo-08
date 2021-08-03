@@ -1,7 +1,7 @@
 # grupo-08
 
 
-La temática de nuestro e-commerce será la indumentaria, especificamente de ropa deportiva.
+<em font-size: 20px;>La temática de nuestro e-commerce será la indumentaria, especificamente de ropa deportiva.</em>
 
 <br />
 
@@ -26,7 +26,7 @@ objetivo?
 <br />
 <br />
 
-<em>Acerca de nosotros!</em>
+<b>Acerca de nosotros!</b>
 
 <br />
 
