@@ -26,7 +26,7 @@ objetivo?
 <br />
 <br />
 
-Acerca de nosotros!
+<em>Acerca de nosotros!</em>
 
 <br />
 
