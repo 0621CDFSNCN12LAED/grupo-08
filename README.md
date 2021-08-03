@@ -7,7 +7,6 @@
 
 1. ¿Qué productos o servicios brindará nuestro sitio?  
  - Indumentaria deportiva. Ropa hombre, mujer y accesorios deportivos. 
- -  Nuestra idea es contar solamente con producto de calidad y junto con un buen sitio web generar una marca con peso. Estaría muy bueno ofrecer facilidad de pagos, ingresos de usuario con redes sociales y que el sitio web sea facil de navegar.
 
 <br />
 <br />
