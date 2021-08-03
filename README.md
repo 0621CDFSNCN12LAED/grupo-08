@@ -13,9 +13,8 @@ La temática de nuestro e-commerce será la indumentaria, especificamente de rop
 <br />
 2. ¿Quién será nuestra audiencia
 objetivo? 
-- Jovenes y adultos principalmente que disfruten de el deporte, la naturaleza y la ropa de buena calidad.
+ - Jovenes y adultos principalmente que disfruten de el deporte, la naturaleza y la ropa de buena calidad.
 
-<br />
 <br />
 <br />
 
