@@ -1,7 +1,7 @@
 # grupo-08
 
 
-##<h3><em>La temática de nuestro e-commerce será la indumentaria, especificamente de ropa deportiva.</em></h3>
+<h3><em>La temática de nuestro e-commerce será la indumentaria, especificamente de ropa deportiva.</em></h3>
 
 <br />
 
@@ -25,7 +25,7 @@ objetivo?
 <br />
 <br />
 
-##<b>Acerca de nosotros!</b>
+<b>Acerca de nosotros!</b>
 
 <br />
 
@@ -58,7 +58,7 @@ objetivo?
 <br />
 <br />
 
-##Estas nos gustaron por ser user friendly y por los tipos de producto que ofrecen:
+Estas nos gustaron por ser user friendly y por los tipos de producto que ofrecen:
 - https://www.solodeportes.com.ar/ 
 -https://www.sportchek.ca/
 
