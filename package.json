@@ -1,0 +1,24 @@
+{
+  "name": "ezequiel-marchegiani",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0621CDFSNCN12LAED/grupo-08.git"
+  },
+  "author": "ezequiel-marchegiani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0621CDFSNCN12LAED/grupo-08/issues"
+  },
+  "homepage": "https://github.com/0621CDFSNCN12LAED/grupo-08#readme"
+}
