@@ -1,0 +1,140 @@
+/* Styles go here */
+
+.font-title-register{
+ color:#7530ad;
+}
+
+
+.header-register-form{
+    border-bottom: 1px solid rgb(224, 219, 219);
+    display:flex;
+    flex-wrap:wrap; 
+    justify-content: center;
+}
+
+.text-register{
+    font-size: 150%;
+}
+
+
+.padding-top-4{
+    padding-top: 4%;
+    }
+
+
+.background-img{
+    background-image: url('/images/sports-bg.jpeg');
+    width:100%;
+    background-size: cover;
+}
+
+
+.google-logo, .fb-logo{
+        width: auto;
+        height: auto;
+}
+
+.google-logo:hover, .fb-logo:hover{
+    background-color: rgba(255, 255, 255,0.4);
+}
+
+
+.form-input{
+flex-direction: column;
+justify-content: space-evenly;
+}
+
+
+.form{
+   /* visibility:hidden; */
+    color:white;
+}
+
+footer{
+color:rgb(144, 160, 144);    /* position: relative & bottom:0 seems to fix positioning */
+position:relative;               /* but not responsivenes. At the moment making the parent (form)*/
+bottom:0;                      /* relative, fixes many mistakes with responsiveness of mobile */
+width:100%;
+}
+
+.a-links{
+    color:#06062e;
+}
+
+a:hover{
+    color:yellow;
+}
+
+
+input{
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.button-register{
+    padding:10px;
+    background: #ccc;
+    border: 0.5px solid rgb(89, 89, 109);
+    cursor:pointer;
+    border-radius: 5px;
+    color:white;
+    background-color: rgb(0, 0, 0);
+    font-weight:bolder;
+}
+
+
+.container-form{
+    position:relative;
+}
+
+/* this is trying to fix form responsiveness */
+
+fieldset{
+    min-width: 0;
+    display:table-row;
+    border: 1px solid white;
+}
+
+.logo{
+    width:40%;
+}
+
+.link-footer:hover{
+background-color:rgb(116, 80, 163);
+}
+
+
+
+@media(min-width:768px){
+    .header-register-form{
+        border-bottom: 1px solid rgb(224, 219, 219);
+        display:initial;
+        flex-wrap:none; 
+        justify-content: center;
+        position:relative;
+    }
+    .text-register{
+text-align: center;
+border-bottom: 1px solid white;
+    }
+    .logo{
+        width:30%;
+    }
+    .fb-logo{
+        display: block;
+        top:20%;
+        position:relative;
+        left:20%;
+        min-width:60%;
+        padding-bottom: 5px;
+    }
+    .google-logo{
+        display: block;
+        top:20%;
+        position:relative;
+        left:20%;
+        min-width:60%;
+        padding-bottom: 20px;
+    }
+}
+

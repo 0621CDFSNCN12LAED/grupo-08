@@ -1,0 +1,143 @@
+/* utilities go here */
+
+* {
+    box-sizing: border-box;
+  }
+
+  /* FLEX */
+
+  .flex{
+    display:flex;
+  }
+
+  .flex-column{
+    flex-direction: column;
+  }
+
+  .flex-wrap{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.solution{
+ align-items: stretch;
+}
+
+.justify-around{
+  justify-content: space-around;
+}
+
+.justify-center{
+  justify-content:center;
+}
+
+.break{
+  flex-basis:100%;
+  height:0;
+}
+
+
+/* sizes */
+
+.w-25{
+  width:25%;
+}
+
+.w-30{
+  width:30%;
+}
+
+.w-40{
+  width:40%;
+}
+
+  .w-50{
+    width:50%;
+  }
+
+  .w-100{
+    width:100%;
+  }
+
+.vw-25{
+  width:25vw;
+}
+
+
+  /* margins */
+
+  .no-margin{
+    margin:0px;
+  }
+
+  .margin-5{
+    margin: 5%;
+    }
+
+    .auto-margin{
+      margin:auto;
+    }
+
+
+    .padding-bot-2{
+      padding-bottom: 2px;
+    }
+
+    .padding-bot-8{
+      padding-bottom: 8%;
+  }
+
+  .padding-bot-12{
+    padding-bottom: 12%;
+}
+
+  .pad-10{
+    padding:10px;
+  }
+
+  .pad-5{
+    padding:5px;
+  }
+  
+  .pad-top-10{
+  padding-top:10px;
+  }
+
+  
+  /* text stylying */
+
+  .center-text{
+    text-align: center;
+  }
+
+  .bord-rad-10{
+    border-radius: 10px;
+  }
+
+  .bord-rad-20{
+    border-radius: 20px;
+  }
+
+  .bord-rad-55{
+    border-radius: 55px;
+    }
+
+
+    input{
+      width:30vw;
+    }
+
+
+    .max-height-100{
+      max-height: 100%;
+    }
+
+    .inline-blk{
+      display:inline-block;
+    }
+
+    .form-form{
+      display:block;
+    width:auto;
+    margin: 0 3px 0 3px;
+  }

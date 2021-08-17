@@ -1,0 +1,50 @@
+/* Fonts and texts */
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+     /* originally 12px, testing vw for text */
+}
+
+.title{
+    font-size:24px;   
+}
+
+.fontsize-150{
+    font-size:150%;
+}
+
+
+/* colors */
+
+
+.blue-dark-bg{
+    background-color:#281D31;
+}
+
+.white-bg{
+    background-color: white;
+}
+
+.blue-trans-bg{
+    background-color:rgba(82, 104, 177, 0.85);
+}
+
+
+.dark-trans-bg{
+    background-color:rgba(0,0,0,0.25);
+}
+
+.pr.mid-text{
+    color:#7530ad;
+}
+
+
+.white-text{
+    color:white;
+}
+
+
+.bl-dark-text{
+    color: #281D31;
+}
+

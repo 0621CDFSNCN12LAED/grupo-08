@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d3503ff7e5.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="stylesheet" href="/css/theme.css" />
+        <link rel="stylesheet" href="/css/utils.css" />
+    <title>Registro de usuario</title> 
+</head>
+
+<body class='no-margin flex-wrap background-img'>
+    <header class='blue-dark-bg flex-wrap w-100 justify-center'>    
+        <img class='bord-rad-55 pad-5 logo' src='/images/logo-example.jpeg' alt='logo' />
+    </header>
+    <main class='background-img'>
+        <div class= 'blue-trans-bg flex-wrap justify-center bord-rad-20 margin-5 container-form'> <!-- begins form -->
+        <div class='header-register-form'>    <!-- form header -->
+            <h1 class='text-register w50'> Regístrate ahora</h1>
+            <div class='break'></div>
+            <img class='google-logo w-40 pad-5 bord-rad-10 dark-trans-bg' src='/images/googlelogo.png' alt='google logo'/>
+            <img class='fb-logo w-40 pad-5 bord-rad-10 dark-trans-bg' src='/images/fblogo.png' alt='facebook logo'/>
+        </div>
+        <form class=' form center-text pad-top-10 flex-wrap flex-column solution center-text'>                  <!-- begins form inputs -->
+        <fieldset>
+            <div class=' padding-bot-8'>
+            <label for='name'> Indícanos tu nombre</label>
+            <br>
+            <input type='text' id='name' name='name' required>
+        </div>
+        <div class=' padding-bot-8'>
+            <label for='username'>Elige un nombre de usuario </label>
+            <br>
+            <input type='text' id='username' name='username'  required>
+        </div>
+        <div class=' padding-bot-8'>
+            <label for='password'> Elige una contraseña</label>
+            <br>
+            <input type='password' id='password' name='password' required>
+        </div>
+        <div class='padding-bot-8'>
+            <label for='birthdate'>Fecha de nacimiento</label>
+            <br>
+            <input class='white-bg' type='date' id='birthdate' name='birthdate' value='dd/mm/yyyy' required>
+        </div>
+        <div class='w-100 padding-bot-2'>
+            <label class for='terminos'>Acepto los <a class='a-links' href=''>términos y condiciones</a></label>
+        </div>
+            <div class='w-100 padding-bot-8'>
+                <br>
+            <input class ='style-checkbox' type='checkbox' id='terminos' name='terminos' required>
+        </div> 
+        <div class='padding-bot-12'>
+            <button class='button-register' type='button'>Registrarme</button>
+        </div>
+    </fieldset> 
+    <div class='padding-bot-8 center-text white-text padding-top-4'><label>¿Ya tienes un usuario con nosotros?<a class='a-links' href=''> Ingresa aquí</a></label></div>
+</form>
+</div>
+</main>
+
+
+<footer class='blue-dark-bg flex-wrap justify-around'>
+    <div class='white-text link-footer'><p>Atención <br>al cliente</p></div>
+    <div class='white-text link-footer'><p>Servicios</p></div>
+    <div class='white-text link-footer'><p>Shop</p></div>
+    <div class='white-text link-footer'><p>Redes <br>sociales</p></div>
+</footer>
+</body>
+</html>
