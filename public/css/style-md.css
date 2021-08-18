@@ -3,6 +3,9 @@
     .logoContainer{
         padding-bottom: 40px;
     }
+    .logoContainer img{
+        width: 30%;
+    }
     .navBar{
         display: flex;
         justify-content: space-around;
@@ -52,6 +55,9 @@
     }
 
     /* Footer */
+    .logoFooter{
+        width: 30%;
+    }
     /* .containerSection3{
         padding-top: 16px;
         flex-direction: row;

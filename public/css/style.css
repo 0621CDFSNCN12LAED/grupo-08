@@ -2,17 +2,43 @@
     Colores:
     Azul: rgb(27, 147, 245)
     Verde: rgb(27, 192, 27)
-
+    Azul oscuro: #281D31
+    Celeste claro: #0cbfe9
+    Verde claro: #32cd32
+    Naranja claro: #ffc518
     Tipografías:
     */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 /* Header */
+header{
+    background-color: #281D31;
+}
+.logoContainer{
+    display: flex;
+    justify-content: center;
+}
+.logoContainer img{
+    width: 50%;
+    transition: transform 650ms;
+}
+.logoContainer img:hover{
+    transform: scale(1.1);
+}
 .navBar{
     display: none;
+}
+ul li a{
+    color: #fff;
+    font-size: 18px;
+    transition: color 450ms;
+}
+ul li a:hover{
+    color: #e4e4e4;
 }
 .iconBurger{
     text-align: center;
@@ -25,6 +51,7 @@
 }
 /* Section Products */
 .title{
+    padding: 40px 0 20px;
     text-align: center;
 }
 .product{
@@ -39,6 +66,12 @@
     padding: 16px;
     margin: auto;
     display: block;
+    transition: transform 450ms;
+    cursor: pointer;
+}
+.imageProduct:hover{
+    transform: scale(1.2);
+    
 }
 .detailContainer{
     border-top: solid 1px rgb(26, 26, 26);
@@ -54,7 +87,7 @@
     font-weight: bold;
 }
 .priceProduct{
-    font-size: 18px;
+    font-size: 22px;
     color: rgb(27, 192, 27);
 }
 .btnContainer{
@@ -65,9 +98,14 @@
 .btnContainer button{
     padding: 8px;
     border: none;
-    background-color: rgb(27, 192, 27);
+    background-color: #1bc01b;
     font-size: 16px;
     border-radius: 3px;
+    transition: background-color 450ms;
+    cursor: pointer;
+}
+.btnContainer button:hover{
+    background-color: #32cd32;
 }
 /* Section Categories */
 .containCategoriesGlobal{
@@ -84,10 +122,28 @@
     margin: auto;
     display: block;
     padding-bottom: 20px;
+    transition: opacity 450ms;
+}
+.containCategories img:hover{
+    opacity: 0.7;
 }
 /* Footer */
 footer{
-    background-color: #969696;
+    background-color: #281D31;
+    color: #f1f1f1;
+}
+.logoContainerFooter{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+.logoFooter{
+    width: 50%;
+    cursor: pointer;
+    transition: transform 650ms;
+}
+.logoFooter:hover{
+    transform: scale(1.1);
 }
 .footerContainer{
     width: 90%;
@@ -108,6 +164,27 @@ footer{
     font-size: 40px;
     padding: 8px 0;
 }
+.facebookIcon{
+    transition: color 450ms;
+}
+.iconsSocialMediaFooter .facebookIcon:hover{
+    color: #3b5998;
+    cursor: pointer;
+}
+.gmailIcon{
+    transition: color 450ms;
+}
+.iconsSocialMediaFooter .gmailIcon:hover{
+    color: #D44638; 
+    cursor: pointer;
+}
+.linkedInIcon{
+    transition: color 450ms;    
+}
+.iconsSocialMediaFooter .linkedInIcon:hover{
+    color: #0077b5;
+    cursor: pointer;
+}
 .sectionFooter2{
     padding: 20px 0;
 }
@@ -121,6 +198,17 @@ footer{
     margin: auto;
     padding-bottom: 8px;
 }
+.quienesSomosTexto a{
+    color: #e51b3e; /* Color hex DigitalHouse */
+    text-decoration: none;
+    transition: color 450ms;
+}
+.quienesSomosTexto a:hover{
+    color: #bd122f;
+}
+/* .quienesSomosTexto a span{
+    color: #212121;  Color hex DigitalHouse 
+} */
 .nombreIntegrantesContainer{
     display: flex;
     justify-content: center;
@@ -130,9 +218,13 @@ footer{
 }
 .nombreIntegranteFooter a{
     text-decoration: none;
-    color: #000;
+    color: #f1f1f1;
     font-weight: bold;
     font-size: 17px;
+    transition: color 450ms;
+}
+.nombreIntegranteFooter a:hover{
+    color: #0cbfe9;
 }
 .sectionFooter3 h3{
     text-align: center;
@@ -145,9 +237,13 @@ footer{
 }
 .containerSection3 a{
     text-decoration: none;
-    color: #000;
+    color: #f1f1f1;
     font-weight: bold;
     line-height: 26px;
+    transition: color 450ms;
+}
+.containerSection3 a:hover{
+    color: rgb(152, 234, 255);
 }
 .sectionFooter4{
     padding: 40px 0 20px 0;
@@ -160,10 +256,15 @@ footer{
 }
 .sectionFooter4 button{
     border: none;
-    background-color: rgb(27, 147, 245);
+    background-color: #0cbfe9;
     padding: 8px;
     border-radius: 4px;
     margin-bottom: 20px;
+    transition: background-color 350ms;
+}
+.sectionFooter4 button:hover{
+    background-color: #0a87a3;
+    cursor: pointer;
 }
 .copyright{
     width: 90%;
@@ -174,5 +275,5 @@ footer{
     padding: 8px 0;
 }
 .copyright p{
-    padding: 8px 0;
+    padding: 8px 0 20px;
 }
