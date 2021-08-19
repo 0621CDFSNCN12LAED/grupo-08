@@ -1,4 +1,4 @@
-#All4Sports - grupo8
+#All4Sports
 
 
 <h3><em>La temática de nuestro e-commerce será la indumentaria, especificamente de ropa deportiva.</em></h3>
