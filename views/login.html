@@ -1,12 +1,83 @@
+<!-- Notes:  El resize de el login  debe mejorar a los 768px IMPORTANTE MEJORAR RESIZE  -->
+<!-- Notes:  Opción para poder ver la contraseña-->
+<!-- Notes:  Una vez registrado, debe llevarnos al home-->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/theme-lr.css" />
+    <link rel="stylesheet" href="/css/utils-lr.css" />
+    <link rel="stylesheet" href="/css/styles-lr.css" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel='stylesheet' href='/css/styles-sm-login.css' media='(min-width:480px)' />
+    <link rel='stylesheet' href='/css/styles-md-login.css' media='(min-width:768px)' />
+    <title>Ingreso de usuario</title>
 </head>
+
 <body>
-    
+    <header class='blue-background-bg  style-header'>
+        <a class='flex justify-center' href='/index'><img class='bord-rad-55 pad-5 logo' src='/images/logo-light.png' alt='logo' /></a>
+    </header>
+    <main class='background-img'>
+        <div class='blue-trans-bg flex-wrap container-form'>
+            <!-- begins form -->
+            <div class='header-register-login'>
+                <!-- form header -->
+                <h1 class='text-register-login font-size-5vw white-text'> Ingresa a tu cuenta</h1>
+            </div>
+            <form class='form'>
+                <!-- begins form inputs -->
+                <fieldset>
+                    <div class=' padding-bot-8 nombre-login'>
+                        <label for='name'> Nombre de usuario</label>
+                        <br>
+                        <input type='text' id='name' name='name' required>
+                    </div>
+                    <div class=' padding-bot-8 contraseña-login'>
+                        <label for='password'> Contraseña</label>
+                        <br>
+                        <input type='password' id='password' name='password' required>
+                    </div>
+                    <div class='padding-bot-8 recuerdame-login'>
+                        <label class=' padding-bot-4' for='checkbox'> Recuerdame</label>
+                        <input class='recuerdame-checkbox' type='checkbox' id='checkbox' name='checkbox'>
+                    </div>
+                    <div class='padding-bot-20 boton-ingresar'>
+                        <button class='button-register' type='button'>Ingresar</button>
+                    </div>
+                    <div class='olvide-contraseña-text margin-bot-10'><label>Olvide mi contraseña</label></div>
+                    <div class='padding-bot-8 center-text white-text padding-top-4 sin-usuario-login'><label>¿Aún no tienes un usuario?<a
+                                class='a-links' href='/register'> Crea uno! </a></label></div>
+                                <div class='flex justify-around google-fb-login'>
+                                    <img class='fb-logo dark-trans-bg' src='/images/fb-login.png' alt='facebook logo' />
+                                    <img class='google-logo dark-trans-bg' src='/images/google-login.png' alt='google logo' />
+                                </div>
+                </fieldset> 
+            </form>
+        </div>
+    </main>
+
+
+
+    <footer class='blue-background-bg  style-footer'>
+        <div class='white-text link-footer'>
+            <p>Atención <br>al cliente</p>
+        </div>
+        <div class='white-text link-footer'>
+            <p>Servicios</p>
+        </div>
+        <div class='white-text link-footer'>
+            <p>Shop</p>
+        </div>
+        <div class='white-text link-footer'>
+            <p>Redes <br>sociales</p>
+        </div>
+    </footer>
 </body>
+
 </html>

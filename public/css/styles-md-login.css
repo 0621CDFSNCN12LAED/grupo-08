@@ -1,0 +1,82 @@
+
+/* have to fix this */
+
+.form{
+    color:white;
+    padding-top:10px;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+
+
+.fb-logo{
+position:relative;
+margin:auto;
+}
+
+.google-logo{
+position:relative;
+margin:auto;
+}
+
+.font-size-5vw{
+    font-size:3vw;
+  }
+  
+
+.google-logo:hover, .fb-logo:hover{
+    transform:scale(1.1);
+    background-color: rgba(128, 104, 104, 0.842);
+}
+
+
+.nombre-login{
+    width:100%;
+}
+
+.contraseña-login{
+width:100%;
+
+}
+
+.recuerdame-login{
+    width:100%;
+}
+
+.boton-ingresar{
+    width:100%;
+}
+
+.olvide-contraseña-text{
+    width:100%;
+    text-align: center;
+    margin:none;
+}
+
+.google-fb-login{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.google-logo{
+    margin-right:40px;
+}
+
+.sin-usuario-login{
+ width:100%;
+ text-align: center;
+ margin:none;
+}
+
+
+  /*
+  .google-logo, .fb-logo{
+    display:block;
+    max-width:50vw;
+    padding:none;
+    border-radius: 7%;
+    border: 4px solid rgba(82, 104, 177, 0.85);
+    margin-bottom: 5px;
+}

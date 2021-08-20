@@ -1,72 +1,95 @@
+<!-- Notes:  Cliquear el logo debera llevar al homepage -->
+<!-- Notes:  cliquear cualquier enlace del footer debera llevar a su pagina correspondiente -->
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/d3503ff7e5.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/css/styles.css" />
-        <link rel="stylesheet" href="/css/theme.css" />
-        <link rel="stylesheet" href="/css/utils.css" />
-    <title>Registro de usuario</title> 
+    <link rel="stylesheet" href="/css/styles-lr.css" />
+    <link rel="stylesheet" href="/css/theme-lr.css" />
+    <link rel="stylesheet" href="/css/utils-lr.css" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel='stylesheet' href='/css/styles-sm-register.css' media='(min-width:480px)' />
+    <link rel='stylesheet' href='/css/styles-md-register.css' media='(min-width:768px)' />
+    <link rel='stylesheet' href='/css/styles-lg-register.css' media='(min-width:992px)' />
+    <title>Registro de usuario</title>
 </head>
 
 <body class='no-margin flex-wrap background-img'>
-    <header class='blue-dark-bg flex-wrap w-100 justify-center'>    
-        <img class='bord-rad-55 pad-5 logo' src='/images/logo-example.jpeg' alt='logo' />
+    <header class='blue-background-bg style-header'>
+<a class='flex justify-center' href='/index'><img class='bord-rad-55 pad-5 logo' src='/images/logo-light.png' alt='logo' /></a>
     </header>
     <main class='background-img'>
-        <div class= 'blue-trans-bg flex-wrap justify-center bord-rad-20 margin-5 container-form'> <!-- begins form -->
-        <div class='header-register-form'>    <!-- form header -->
-            <h1 class='text-register w50'> Regístrate ahora</h1>
-            <div class='break'></div>
-            <img class='google-logo w-40 pad-5 bord-rad-10 dark-trans-bg' src='/images/googlelogo.png' alt='google logo'/>
-            <img class='fb-logo w-40 pad-5 bord-rad-10 dark-trans-bg' src='/images/fblogo.png' alt='facebook logo'/>
+        <div class='blue-trans-bg flex-wrap justify-center container-form'>
+            <!-- begins form -->
+            <div class='header-register-form'>
+                <!-- form header -->
+                <h1 class='text-register-register font-size-5vw white-text'> Regístrate ahora</h1>
+                <div class='break'></div>
+                <img class='google-logo' src='/images/googlelogo.png' alt='google logo' />
+                <img class='fb-logo' src='/images/fblogo.png' alt='facebook logo' />
+            </div>
+            <form class=' form center-text pad-top-10 flex-wrap flex-column center-text'>
+                <!-- begins form inputs -->
+                <fieldset>
+                    <div class='padding-bot-8'>
+                        <label for='name'> Indícanos tu nombre</label>
+                        <br>
+                        <input type='text' id='name' name='name' required>
+                    </div>
+                    <div class=' padding-bot-8'>
+                        <label for='username'>Elige un nombre de usuario </label>
+                        <br>
+                        <input type='text' id='username' name='username' required>
+                    </div>
+                    <div class=' padding-bot-8'>
+                        <label for='password'> Elige una contraseña</label>
+                        <br>
+                        <input type='password' id='password' name='password' required>
+                    </div>
+                    <div class='padding-bot-8 margin-bot-10'>
+                        <label for='email'>E-mail</label>
+                        <br>
+                        <input class='white-bg' type='email' id='email' name='email' required>
+                    </div>
+                    <div class='w-100 padding-bot-2'>
+                        <label class for='terminos'>Acepto los <a class='a-links' href='/terminos'>términos y
+                                condiciones</a></label>
+                    </div>
+                    <div class='w-100 padding-bot-8'>
+                        <br>
+                        <input class='style-checkbox' type='checkbox' id='terminos' name='terminos' required>
+                    </div>
+                    <div class='padding-bot-12'>
+                        <button class='button-register' type='button'>Registrarme</button>
+                    </div>
+                </fieldset>
+                <div class='padding-bot-8 center-text white-text padding-top-4'><label class='login-link'>¿Ya tienes un usuario con
+                        nosotros?<a class='a-links' href='/login'> Ingresa aquí</a></label></div>
+            </form>
         </div>
-        <form class=' form center-text pad-top-10 flex-wrap flex-column solution center-text'>                  <!-- begins form inputs -->
-        <fieldset>
-            <div class=' padding-bot-8'>
-            <label for='name'> Indícanos tu nombre</label>
-            <br>
-            <input type='text' id='name' name='name' required>
-        </div>
-        <div class=' padding-bot-8'>
-            <label for='username'>Elige un nombre de usuario </label>
-            <br>
-            <input type='text' id='username' name='username'  required>
-        </div>
-        <div class=' padding-bot-8'>
-            <label for='password'> Elige una contraseña</label>
-            <br>
-            <input type='password' id='password' name='password' required>
-        </div>
-        <div class='padding-bot-8'>
-            <label for='birthdate'>Fecha de nacimiento</label>
-            <br>
-            <input class='white-bg' type='date' id='birthdate' name='birthdate' value='dd/mm/yyyy' required>
-        </div>
-        <div class='w-100 padding-bot-2'>
-            <label class for='terminos'>Acepto los <a class='a-links' href=''>términos y condiciones</a></label>
-        </div>
-            <div class='w-100 padding-bot-8'>
-                <br>
-            <input class ='style-checkbox' type='checkbox' id='terminos' name='terminos' required>
-        </div> 
-        <div class='padding-bot-12'>
-            <button class='button-register' type='button'>Registrarme</button>
-        </div>
-    </fieldset> 
-    <div class='padding-bot-8 center-text white-text padding-top-4'><label>¿Ya tienes un usuario con nosotros?<a class='a-links' href=''> Ingresa aquí</a></label></div>
-</form>
-</div>
-</main>
+    </main>
 
 
-<footer class='blue-dark-bg flex-wrap justify-around'>
-    <div class='white-text link-footer'><p>Atención <br>al cliente</p></div>
-    <div class='white-text link-footer'><p>Servicios</p></div>
-    <div class='white-text link-footer'><p>Shop</p></div>
-    <div class='white-text link-footer'><p>Redes <br>sociales</p></div>
-</footer>
+    <footer class='blue-background-bg  style-footer'>
+        <div class='white-text link-footer'>
+            <p>Atención <br>al cliente</p>
+        </div>
+        <div class='white-text link-footer'>
+            <p>Servicios</p>
+        </div>
+        <div class='white-text link-footer'>
+            <p>Shop</p>
+        </div>
+        <div class='white-text link-footer'>
+            <p>Redes <br>sociales</p>
+        </div>
+    </footer>
 </body>
+
 </html>

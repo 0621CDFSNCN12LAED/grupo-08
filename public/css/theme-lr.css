@@ -16,9 +16,20 @@ body{
 
 /* colors */
 
-
-.blue-dark-bg{
+ /*.blue-dark-bg{               Not using currently, old background, darker.
     background-color:#281D31;
+} */
+
+.blue-background-bg {
+    background-color: #06274b;
+}
+
+.lightblue-background-bg {
+    background-color: #0cbfe9;
+}
+
+.lightgreen-background-bg {
+    background-color: #0bda51;
 }
 
 .white-bg{

@@ -1,0 +1,15 @@
+
+/* 576px  ~~~~  for devices like big phones */
+
+    .logo{
+        width:45%;
+    }
+
+    .text-register-register{
+      font-size:25px;
+    }
+
+
+    .google-logo, .fb-logo{
+      max-width:35vw;
+    }
