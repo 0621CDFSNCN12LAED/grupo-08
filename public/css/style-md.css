@@ -3,8 +3,8 @@
     .logoContainer{
         padding-bottom: 40px;
     }
-    .logoContainer img{
-        width: 30%;
+    .logoContainer a img{
+        width: 70%;
     }
     .navBar{
         display: flex;

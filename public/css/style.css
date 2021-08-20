@@ -22,11 +22,15 @@ header{
     display: flex;
     justify-content: center;
 }
-.logoContainer img{
-    width: 50%;
+.logoContainer a{
+    
     transition: transform 650ms;
+    text-align: center;
 }
-.logoContainer img:hover{
+.logoContainer a img{
+    width: 50%;
+}
+.logoContainer a:hover{
     transform: scale(1.1);
 }
 .navBar{
@@ -55,7 +59,8 @@ ul li a:hover{
     text-align: center;
 }
 .product{
-    max-width: 90%;
+    max-width: 80%;
+    width: 80%;
     margin: auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-bottom: 40px;
@@ -136,6 +141,9 @@ footer{
     display: flex;
     justify-content: center;
     padding-bottom: 20px;
+}
+.logoContainerFooter a{
+    text-align: center;
 }
 .logoFooter{
     width: 50%;
