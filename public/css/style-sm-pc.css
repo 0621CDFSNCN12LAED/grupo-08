@@ -1,0 +1,5 @@
+@media screen and (min-width: 360px) {
+    .width-35-sm-pc {
+        width: 35%;
+    }
+}

@@ -1,0 +1,11 @@
+@media screen and (min-width: 1200px) {
+    /* Header */
+    .logoContainer-pc img {
+        width: 20%;
+    }
+
+    .navbar-display-pc {
+        max-width: 1300px;
+        margin: auto;
+    }
+}
