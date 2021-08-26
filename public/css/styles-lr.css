@@ -26,7 +26,7 @@ main{
 }
 
 .logo{
-    width:45%;
+    width:55%;
 }
 
 
@@ -37,6 +37,9 @@ main{
     justify-content:center;
 }
 
+a{
+    text-decoration: none;
+}
 
 .background-img{
     background-image: url('/images/sports-bg.jpeg');
