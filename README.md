@@ -73,7 +73,10 @@ Por un tema de estetica y porque nos inspiraron en algunas ideas ademas de ser u
 Por su facilidad para mostrar productos y por su diseño en general:
 - https://www.sporting.com.ar/?utm_source=google&utm_medium=search&utm_campaign=pago-ao-clics-kws&utm_term=responsivo&gclid=Cj0KCQjw6ZOIBhDdARIsAMf8YyFRIAUd_CSMHGnVQEcn0PmGmIFjJ5rH_537YfcjRx1xNlpddUWlDukaAo1xEALw_wcB
 
-
+<br />
+Link de trello:
+<br />
+https://trello.com/b/y911xiue/proyecto-integrador-dh
 
 
 
