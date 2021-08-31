@@ -1,6 +1,8 @@
 <!-- Notes:  El resize de el login  debe mejorar a los 768px IMPORTANTE MEJORAR RESIZE  -->
 <!-- Notes:  Opción para poder ver la contraseña-->
 <!-- Notes:  Una vez registrado, debe llevarnos al home-->
+<!-- Cambios no pusheados: hice que el logo en mis areas se expanda y achique mas sútilmente, como lo hizo Ezequiel-->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,42 +22,42 @@
 </head>
 
 <body>
-    <header class='blue-background-bg  style-header'>
-        <a class='flex justify-center' href='/'><img class='bord-rad-55 pad-5 logo' src='/images/logo-light.png' alt='logo' /></a>
+    <header class='blueBackgroundBg  styleHeader'>
+        <a class='flex justifyCenter' href='/'><img class='bordRad55 pad5 logo' src='/images/logo-light.png' alt='logo' /></a>
     </header>
-    <main class='background-img'>
-        <div class='blue-trans-bg flex-wrap container-form'>
+    <main class='backgroundImg'>
+        <div class='blueTransBg containerForm'>
             <!-- begins form -->
-            <div class='header-register-login'>
+            <div class='headerRegisterLogin'>
                 <!-- form header -->
-                <h1 class='text-register-login font-size-5vw white-text'> Ingresa a tu cuenta</h1>
+                <h1 class='textRegisterLogin fontSize5vw whiteText'> Ingresa a tu cuenta</h1>
             </div>
             <form class='form'>
                 <!-- begins form inputs -->
                 <fieldset>
-                    <div class=' padding-bot-8 nombre-login'>
+                    <div class=' paddingBot8 nombreLogin'>
                         <label for='name'> Nombre de usuario</label>
                         <br>
                         <input type='text' id='name' name='name' required>
                     </div>
-                    <div class=' padding-bot-8 contraseña-login'>
+                    <div class=' paddingBot8 contraseñaLogin'>
                         <label for='password'> Contraseña</label>
                         <br>
                         <input type='password' id='password' name='password' required>
                     </div>
-                    <div class='padding-bot-8 recuerdame-login'>
-                        <label class=' padding-bot-4' for='checkbox'> Recuerdame</label>
-                        <input class='recuerdame-checkbox' type='checkbox' id='checkbox' name='checkbox'>
+                    <div class='paddingBot8 recuerdameLogin'>
+                        <label class=' paddingBot4' for='checkbox'> Recuerdame</label>
+                        <input class='recuerdameCheckbox' type='checkbox' id='checkbox' name='checkbox'>
                     </div>
-                    <div class='padding-bot-20 boton-ingresar'>
-                        <button class='button-register' type='button'>Ingresar</button>
+                    <div class='paddingBot20 botonIngresar'>
+                        <button class='buttonRegister' type='button'>Ingresar</button>
                     </div>
-                    <div class='olvide-contraseña-text margin-bot-10'><label>Olvide mi contraseña</label></div>
-                    <div class='padding-bot-8 center-text white-text padding-top-4 sin-usuario-login'><label>¿Aún no tienes un usuario?<a
-                                class='a-links' href='/register'> Crea uno! </a></label></div>
-                                <div class='flex justify-around google-fb-login'>
-                                    <img class='fb-logo dark-trans-bg' src='/images/fb-login.png' alt='facebook logo' />
-                                    <img class='google-logo dark-trans-bg' src='/images/google-login.png' alt='google logo' />
+                    <div class='olvideContraseñaText marginBot10'><label>Olvide mi contraseña</label></div>
+                    <div class='paddingBot8 centerText whiteText paddingTop4 sinUsuarioLogin'><label>¿Aún no tienes un usuario?<a
+                                class='aLinks' href='/register'> Crea uno! </a></label></div>
+                                <div class='flex justifyAround googleFbLogin'>
+                                    <img class='fbLogo darkTransBg' src='/images/fb-login.png' alt='facebook logo' />
+                                    <img class='googleLogo darkTransBg' src='/images/google-login.png' alt='google logo' />
                                 </div>
                 </fieldset> 
             </form>
@@ -64,17 +66,17 @@
 
 
 
-    <footer class='blue-background-bg  style-footer'>
-        <div class='white-text link-footer'>
+    <footer class='blueBackgroundBg  styleFooter'>
+        <div class='whiteText linkFooter'>
           <a> <p>Atención <br>al cliente</p>
         </div></a>
-        <div class='white-text link-footer'>
+        <div class='whiteText linkFooter'>
           <a> <p>Servicios</p> </a> 
         </div>
-        <div class='white-text link-footer'>
+        <div class='whiteText linkFooter'>
           <a> <p>Shop</p> </a> 
         </div>
-        <div class='white-text link-footer'>
+        <div class='whiteText linkFooter'>
            <a> <p>Redes <br>sociales</p> </a> 
         </div>
     </footer>

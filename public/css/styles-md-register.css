@@ -2,18 +2,18 @@
 /* have to fix this */
     
 
-.container-form{
+.containerForm{
     display:flex;
     flex-wrap: nowrap;
 }
 
 
-.font-size-5vw{
+.fontSize5vw{
     font-size:3vw;
   }
 
 
-.header-register-form{
+.headerRegisterForm{
     border-bottom: 1px solid rgb(224, 219, 219);
     display:initial;
     justify-content: center;
@@ -21,7 +21,7 @@
 }
 
 
-.google-logo{
+.googleLogo{
     position:relative;
     margin:auto;
     margin-top:12px;
@@ -29,7 +29,7 @@
     }
     
 
-    .fb-logo{
+    .fbLogo{
         position:relative;
         margin:auto;
         margin-top:12px;
@@ -38,7 +38,7 @@
 
         
 
-.google-logo:hover, .fb-logo:hover{
+.googleLogo:hover, .fbLogo:hover{
     cursor: pointer;
     transform:scale(1.05);
 }

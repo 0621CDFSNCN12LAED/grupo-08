@@ -15,11 +15,11 @@ main{
 /*  ~~~~~~~~  This solves skeleton responsiveness  ~~~~~~*/
 
 
-.font-title-register{
+.fontSizeRegister{
  color:#7530ad;
 }
 
-.style-header{
+.styleHeader{
         width:100%;
         display:flex;
         justify-content: center;
@@ -30,7 +30,7 @@ main{
 }
 
 
-.container-form{
+.containerForm{
     position:relative;
     margin:5%;
     border-radius: 20px;
@@ -41,21 +41,21 @@ a{
     text-decoration: none;
 }
 
-.background-img{
+.backgroundImg{
     background-image: url('/images/sports-bg.jpeg');
     width:100%;
     background-size: cover;
 
 }
 
-.header-register-form{
+.headerRegisterForm{
     display:flex;
     flex-wrap:wrap; 
     justify-content: space-around;
 }
 
 
-.header-register-login{
+.headerRegisterLogin{
     display:flex;
     flex-wrap:wrap; 
     justify-content: space-around;
@@ -64,14 +64,14 @@ a{
 
 
 
-.text-register-register{
+.textRegisterRegister{
     font-size:30px;
     flex-basis:100%;
     text-align: center;
     border-bottom: 1px solid white;
 }
 
-.text-register-login{
+.textRegisterLogin{
     font-size: 150%;
     flex-basis:100%;
     text-align: center; 
@@ -79,7 +79,7 @@ a{
 
 
 
-.google-logo, .fb-logo{
+.googleLogo, .fbLogo{
     display:block;
     max-width:50vw;
     padding:none;
@@ -89,7 +89,7 @@ a{
 }
 
 
-.google-logo:hover, .fb-logo:hover{
+.googleLogo:hover, .fbLogo:hover{
     background-color: #0bda51;
 }
 
@@ -99,6 +99,7 @@ fieldset{
     display:table-row;
     border: 1px solid white;
     margin:auto;
+    border-radius: 5px;
 }
 
 
@@ -108,7 +109,7 @@ fieldset{
 }
 
 
-.form-input{
+.formInput{
 flex-direction: column;
 justify-content: space-evenly;
 }
@@ -124,7 +125,7 @@ justify-content: space-evenly;
 }
 
 
-.under-construction-style{
+.underConstructionStyle{
     padding:10px;
     margin:auto;
     align-self: center;
@@ -143,11 +144,11 @@ justify-content: space-evenly;
     font-style: italic;
 }
 
-.text-terminos{
+.textTerminos{
     margin:auto;
 }
 
-.lorem-form{
+.loremForm{
     border: 1px solid rgb(46, 101, 221);
     padding:5px;
     margin:auto;
@@ -155,7 +156,7 @@ justify-content: space-evenly;
 }
 
 
-.a-links{
+.aLinks{
     color:#06062e;
 }
 
@@ -174,7 +175,7 @@ border-bottom: 2px solid #000000;
 
 
 
-.button-register{
+.buttonRegister{
     padding:5px 20px;
     background: #ccc;
     border: 0.5px solid rgb(15, 15, 105);
@@ -186,7 +187,7 @@ border-bottom: 2px solid #000000;
 }
 
 
-.style-footer{
+.styleFooter{
     display:flex;
     flex-wrap: nowrap;
     justify-content: space-around;
@@ -206,21 +207,25 @@ cursor:pointer;
 transform:scale(1.05)
 }
 
-.google-logo:hover, .fb-logo:hover{
+.googleLogo:hover, .fbLogo:hover{
     color:rgb(255, 255, 255);
     cursor:pointer;
     transform:scale(1.03);
 }
 
-.recuerdame-checkbox{
+.recuerdameCheckbox{
     display: inline;
     margin:auto;
 }
 
 .logo:hover{
 cursor:pointer;
+transition:transform 650ms;
 transform:scale(1.05);
 }
+
+
+
 
 button:hover{
     cursor: pointer;
@@ -232,12 +237,12 @@ input:hover{
     transform: scale(1.02);
 }
 
-.login-link:hover{
+.loginLink:hover{
     cursor:pointer;
     transform: scale(1.02);
 }
 
-.olvide-contraseña-text:hover{
+.olvideContraseña:hover{
     color:yellow;
     cursor:pointer;
     transform: scale(1.02);
