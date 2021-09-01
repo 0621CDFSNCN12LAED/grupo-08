@@ -75,7 +75,7 @@ ul li a:hover{
     cursor: pointer;
 }
 .imageProduct:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
     
 }
 .detailContainer{

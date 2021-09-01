@@ -1,10 +1,8 @@
 const express = require('express')
 const router = express.Router();
+const controlladorProductos = require('../controllers/product-controller')
 
-
-router.get("/", (req, res) => {
-    res.render("index");
-});
+router.get("/", controlladorProductos.index);
 
 router.get("/register", (req, res) => {
     res.render("register");
