@@ -187,11 +187,6 @@ border-bottom: 2px solid #000000;
 }
 
 
-.styleFooter{
-    display:flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    }
 
 
 
@@ -199,12 +194,6 @@ border-bottom: 2px solid #000000;
 
 a:hover{
     color:yellow;
-}
-
-footer div:hover{
-background-color:rgba(82, 104, 177, 0.85);
-cursor:pointer;
-transform:scale(1.05)
 }
 
 .googleLogo:hover, .fbLogo:hover{
