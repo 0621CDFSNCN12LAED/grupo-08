@@ -9,7 +9,7 @@ body{
     font-size:24px;   
 }
 
-.fontsize-150{
+.fontsize150{
     font-size:150%;
 }
 
@@ -20,42 +20,43 @@ body{
     background-color:#281D31;
 } */
 
-.blue-background-bg {
+.blueBackgroundBg {
     background-color: #06274b;
 }
 
-.lightblue-background-bg {
+.lightblueBackgroundBg {
     background-color: #0cbfe9;
 }
 
-.lightgreen-background-bg {
+.lightgreenBackgroundBg {
     background-color: #0bda51;
 }
 
-.white-bg{
+.whiteBg{
     background-color: white;
 }
 
-.blue-trans-bg{
+.blueTransBg{
     background-color:rgba(82, 104, 177, 0.85);
 }
 
 
-.dark-trans-bg{
+.darkTransBg{
     background-color:rgba(0,0,0,0.25);
 }
 
+/*    ???
 .pr.mid-text{
     color:#7530ad;
-}
+} */
 
 
-.white-text{
+.whiteText{
     color:white;
 }
 
 
-.bl-dark-text{
+.blDarkText{
     color: #281D31;
 }
 

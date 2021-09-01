@@ -13,6 +13,7 @@
         />
         <link rel="stylesheet" href="/css/normalize.css" />
         <link rel="stylesheet" href="/css/productCart.css" />
+        <link rel="stylesheet" href="../css/style.css" />
         
         <script
             src="https://kit.fontawesome.com/5b55db70fb.js"
@@ -20,102 +21,82 @@
         ></script>
         <link rel="stylesheet" href="../css/style-sm-pc.css" />
     <link rel="stylesheet" href="../css/style-md-pc.css" />
-    <link rel="stylesheet" href="../css/style-lg-pc.css" />
+    <link rel="stylesheet" href="../css/style-lg-pc.css" />    
+    <link rel="stylesheet" href="../css/style-sm.css" />
+    <link rel="stylesheet" href="../css/style-md.css" />
+    <link rel="stylesheet" href="../css/style-lg.css" />
     </head>
     <body>
-        <header class="blue-background-pc padding-15-pc">
-            <div class="logoContainer-pc">
-            <div class="flex-pc justify-center-pc align-center-pc">
-                <img
-                    id="logo"
-                    src="../img/icons/logo_light.png"
-                    alt="Logo AllSports"
-                    class="width-40-pc width-35-sm-pc width-25-sm-pc"                  
-                />                    
-                <form class="padding-8 width-50 width-33-sm search-display-pc">
-                    <div class="flex-pc no-wrap-pc searcher-pc width-100-pc">
-                        <input
-                            type="text"
-                            placeholder="Buscar"
-                            class="flex-grow-pc width-100-pc"
-                        />
-                        <button><i class="fas fa-search"></i></button>
-                    </div>
-                </form>
-            </div>   
-            <div class="navbar-display-pc ">
-                <nav id="main-nav-pc" class="flex-pc justify-space-between-pc">
-                    <ul class="flex-pc">
-                        <li class="padding-8-pc margin-15-pc"><a href="#">Mujeres</a></li>
-                        <li class="padding-8-pc margin-15-pc"><a href="#">Hombres</a></li>
-                        <li class="padding-8-pc margin-15-pc"><a href="#">Actividad</a></li>
-                        <li class="padding-8-pc margin-15-pc"><a href="#">Marca</a></li>
+        <header>
+            <div class="logoContainer">
+                <a href="/index"
+                    ><img src="../img/icons/logo_light.png" alt="Logo"
+                /></a>
+            </div>
+            <div>
+                <nav class="navBar">
+                    <ul class="linksCategories">
+                        <li><a href="#">Categoría 1</a></li>
+                        <li><a href="#">Categoría 2</a></li>
+                        <li><a href="#">Categoría 3</a></li>
+                        <li><a href="#">Categoría 4</a></li>
                     </ul>
-                    <ul class="flex-pc margin-sides-pc">
-                        <li class="padding-8-pc margin-15-pc"><a href="#">Iniciar sesión<i class="fas fa-sign-in-alt"></i
-                            ></a></li>
-                        <li class="padding-8-pc margin-15-pc"><a href="#">Registrarse<i class="far fa-id-card"></i
-                            ></a></li>
-                        <li class="padding-8-pc margin-15-pc">
-                            <a href="/productCart">Carrito<i class="fas fa-shopping-cart"></i
-                            ></a>
+                    <ul class="linksUser">
+                        <li><a href="/login">Iniciar sesión</a></li>
+                        <li><a href="/register">Registrarse</a></li>
+                        <li>
+                            <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
                         </li>
                     </ul>
                 </nav>
-            </div>
-            <div class="flex-pc margin-neg-20-pc justify-space-between-pc">    
-            <div class="iconBurger-pc lightblue-background-pc">
-                    <i class="fas fa-bars white-text-pc"></i>
+                <div class="iconBurger">
+                    <i class="fas fa-bars"></i>
                 </div>
-                <div class="searchbar-pc lightblue-background-pc">
-                    <i class="fas fa-search white-text-pc"></i>
-                </div>  
-            </div>  
-            </div>                  
+            </div>
         </header>
-        <main id="main-content-pc">
-            <h1 class="text-title-pc gray-text-pc text-center-pc">
+        <main id="mainContentPC">
+            <h1 class="textTitlePC grayTextPC textCenterPC">
                 Carrito de compras
             </h1>
-            <div class="flex-pc justify-space-between-pc">
-            <section class="width-100-pc width-60-sm-pc">
+            <div class="flexPC justifySpaceBetweenPC">
+            <section class="width100PC width60MdPC">
                 <h2
                     class="
-                        text-second-title-pc
-                        lightgreen-background-pc
-                        white-text-pc
-                        padding-3-15-pc
+                        textSecondTitlePC
+                        lightgreenBackgroundPC
+                        whiteTextPC
+                        padding3-15PC
                     "
                 >
                     Producto(s)
                 </h2>
-                <div class="flex-pc margin-top-15-pc">
-                <article class="container-product-pc flex-pc">
-                    <div class="container-wrapper-pc">
+                <div class="flexPC marginTop15PC">
+                <article class="containerProductPC flexPC">
+                    <div class="containerWrapperPC">
                         <form action="" method="">
-                            <button class="fas fa-times cancel-icon-pc" type="reset"></button>
+                            <button class="fas fa-times cancelIconPC" type="reset"></button>
                         </form>                        
-                    <div class="image-border-pc width-25-sm-pc ">
+                    <div class="imageBorderPC width25MdPC">
                         <img
-                        class="container-image-pc width-100-pc"
+                        class="containerImagePC width100PC"
                         src="../img/products/barcelona-nike.jpg"
                         alt="imagenProducto"
                     
                     />
                 </div>
-                    <div class="container-content-pc">
-                        <p class="text-product-pc">
+                    <div class="containerContentPC">
+                        <p class="textProductPC">
                                      Camiseta Barcelona Nike 3Recambio
                         </p>
-                        <p class="text-characteristics-pc padding-8-pc">
+                        <p class="textCharacteristicsPC padding8PC">
                             Talle M
                         </p>
-                        <p class="text-characteristics-pc padding-8-pc">
+                        <p class="textCharacteristicsPC padding8PC">
                             Color : Verde
                         </p>
-                        <div class="padding-8-pc">
+                        <div class="padding8PC">
                         <form action="" method="">
-                            <label class="text-characteristics-pc ">Cantidad  : </label>
+                            <label class="textCharacteristicsPC">Cantidad  : </label>
                             <select name="Cantidad">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -127,9 +108,9 @@
                     </div>
                         <p
                             class="
-                                text-price-pc
-                                lightgreen-text-pc
-                                padding-8-pc                                                                                            
+                                textPricePC
+                                lightgreenTextPC
+                                padding8PC                                                                                            
                             "
                         >
                             $8.199
@@ -137,32 +118,32 @@
                     </div>
                     </div>
                 </article>
-                <article class="container-product-pc flex-pc ">
-                    <div class="container-wrapper-pc">
+                <article class="containerProductPC flexPC">
+                    <div class="containerWrapperPC">
                         <form action="" method="">
-                            <button class="fas fa-times cancel-icon-pc" type="reset"></button>
+                            <button class="fas fa-times cancelIconPC" type="reset"></button>
                         </form>
-                    <div class="image-border-pc width-25-sm-pc ">
+                    <div class="imageBorderPC width25MdPC">
                         <img
-                        class="container-image-pc width-100-pc"
+                        class="containerImagePC width100PC"
                         src="../img/products/buzo-negro.jpg"
                         alt="imagenProducto"
                     
                     />
                 </div>
-                    <div class="container-content-pc">
-                        <p class="text-product-pc">
+                    <div class="containerContentPC">
+                        <p class="textProductPC">
                             Buzo Con Capucha 361° Urban Negro
                         </p>
-                        <p class="text-characteristics-pc padding-8-pc">
+                        <p class="textCharacteristicsPC padding8PC">
                             Talle M
                         </p>
-                        <p class="text-characteristics-pc padding-8-pc">
+                        <p class="textCharacteristicsPC padding8PC">
                             Color : Negro
                         </p>
-                        <div class="padding-8-pc">
+                        <div class="padding8PC">
                             <form action="" method="">
-                                <label class="text-characteristics-pc ">Cantidad  : </label>
+                                <label class="textCharacteristicsPC">Cantidad  : </label>
                                 <select name="Cantidad">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -174,9 +155,9 @@
                         </div>
                         <p
                             class="
-                                text-price-pc
-                                lightgreen-text-pc
-                                padding-8-pc                                                               
+                            textPricePC
+                            lightgreenTextPC
+                            padding8PC                                                               
                             "
                         >
                         $7.589
@@ -187,52 +168,120 @@
             </section>
 
             <!-- Resumen -->
-            <section class="width-100-pc width-35-md-pc">
+            <section class="width100PC width35MdPC">
                 <h2
                     class="
-                        text-second-title-pc
-                        lightgreen-background-pc
-                        white-text-pc
-                        padding-3-15-pc
+                        textSecondTitlePC
+                        lightgreenBackgroundPC
+                        whiteTextPC
+                        padding3-15PC
                     "
                 >
                     Resumen
                 </h2>
-                <div class="padding-3-15-pc container-single-product-pc margin-top-5-pc">
-                    <div class="margin-20-pc">
-                    <p class="text-subtotal-pc padding-8-pc">Subtotal:</p>
-                    <p class="text-shipping-pc padding-8-pc">Costo de envío:</p>
+                <div class="padding3-15PC containerSingleProductPC marginTop5PC">
+                    <div class="margin20PC">
+                    <p class="textSubtotalPC padding8PC">Subtotal:</p>
+                    <p class="textShippingPC padding8PC">Costo de envío:</p>
                     <form action="" method="">
-                                                <input id="code-pc" type="text" name="code-pc" placeholder="Código promocional">
+                                                <input id="codePC" type="text" name="codePC" placeholder="Código promocional">
                                                 
                     </form> 
                     </div>               
-                    <h3 class="text-total-pc padding-8-pc ">Total:</h3>                
+                    <h3 class="textTotalPC padding8PC">Total:</h3>                
                 </div>
                 <form action="" method="">
-                    <button type="submit" a href="#" class="buy-button-pc">COMPRAR</button>                    
+                    <button type="submit" a href="#" class="buyButtonPC">COMPRAR</button>                    
                 </form>                
             </section>
         </div>
         </main>
-        <footer class="blue-background-pc">
-            <section class="footerContainer-pc">
-                <article class="sectionFooter3-pc">
-                    <h3 class="white-text-pc text-footer-pc margin-top-25-pc">Información:</h3>
-                    <div class="containerSection3-pc">
-                      <p><a href="#" class="white-text-pc padding-8-pc">Medios de Pago</a></p>
-                      <p><a href="#" class="white-text-pc padding-8-pc">Preguntas Frecuentes</a></p>
-                      <p><a href="#" class="white-text-pc padding-8-pc">Cómo comprar</a></p>
-                      <p><a href="#" class="white-text-pc padding-8-pc">Políticas de privacidad</a></p>
+        <footer>
+            <section class="footerContainer">
+                <div class="sectionFooter1">
+                    <div class="logoContainerFooter">
+                        <a href="/index"
+                            ><img
+                                class="logoFooter"
+                                src="../img/icons/logo_light.png"
+                                alt="Logo"
+                        /></a>
                     </div>
-                    </article>
-                <article class="sectionFooter4-pc">
-                    <h3 class="white-text-pc text-footer-pc">Ayuda:</h3>
-                    <button class="lightblue-background-pc">Cambios y Devoluciones</button>
-                    <button class="lightblue-background-pc">Me arrepentí</button>
-                  </article>            
-              </section>                         
-              <h4  class="copyright-pc">©Copyright 2021. All4Sports S.A</h4>            
-          </footer>
+                    <p>Puedes comunicarte mediante:</p>
+                    <div class="iconsSocialMediaFooter">
+                        <i class="fab fa-facebook-square facebookIcon"></i>
+                        <i class="far fa-envelope gmailIcon"></i>
+                        <i class="fab fa-linkedin linkedInIcon"></i>
+                    </div>
+                </div>
+                <div class="sectionFooter2">
+                    <h3>Sobre Nosotros:</h3>
+                    <p class="quienesSomosTexto">
+                        Somos un equipo de alumnos de
+                        <a
+                            href="https://www.digitalhouse.com/ar"
+                            target="_blank"
+                            >Digital<span>House</span></a
+                        >
+                        que nos unimos y complementamos para llevar a cabo y
+                        darle vida a esta página web que armamos y realizamos
+                        con tanto esfuerzo. Dicho equipo está compuesto por:
+                    </p>
+                    <div class="nombreIntegrantesContainer">
+                        <p class="nombreIntegranteFooter">
+                            <a
+                                href="https://github.com/fedehonrado"
+                                target="_blank"
+                                >Fede</a
+                            >
+                        </p>
+                        <p class="nombreIntegranteFooter">
+                            <a
+                                href="https://github.com/Florencia-Zapata"
+                                target="_blank"
+                                >Flor</a
+                            >
+                        </p>
+                        <p class="nombreIntegranteFooter">
+                            <a
+                                href="https://github.com/Franco-Ezequiel-Marchegiani"
+                                target="_blank"
+                                >Franco</a
+                            >
+                        </p>
+                        <p class="nombreIntegranteFooter">
+                            <a
+                                href="https://github.com/MartinZazpe"
+                                target="_blank"
+                                >Martín</a
+                            >
+                        </p>
+                    </div>
+                </div>
+                <div class="sectionFooter3">
+                    <h3>Información:</h3>
+                    <div class="containerSection3">
+                        <p><a href="#">Medios de Pago</a></p>
+                        <p><a href="#">Preguntas Frecuentes</a></p>
+                        <p><a href="#">Cómo comprar</a></p>
+                        <p><a href="#">Políticas de privacidad</a></p>
+                    </div>
+                </div>
+                <div class="sectionFooter4">
+                    <h3>Ayuda:</h3>
+                    <button>Cambios/Devoluciones</button>
+                    <button>Me arrepentí</button>
+                </div>
+            </section>
+            <div class="copyright">
+                <hr />
+                <h4>Copyright</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Pariatur perferendis repellendus soluta doloribus laborum
+                    harum quidem, reprehenderit dolorum consectetur expedita?
+                </p>
+            </div>
+        </footer>
     </body>
 </html>

@@ -1,75 +1,19 @@
 @media screen and (min-width: 768px) {
-    /* Header */
-    .logoContainer-pc {
-        padding-bottom: 20px;
-    }
-    .logoContainer-pc a img {
-        width: 70%;
-    }
-    .navbar-display-pc {
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    .searchbar-pc {
-        display: none;
-    }
-    .iconBurger-pc {
-        display: none;
-    }
-    .search-display-pc {
-        display: flex;
-    }
-    .no-wrap-pc {
-        display: flex;
-    }
-    .width-50-sm-pc {
-        width: 50%;
-    }
-    .width-100-sm-pc {
-        width: 100%;
-    }
-    .width-60-sm-pc {
+    .width60MdPC {
         width: 60%;
     }
-    .width-35-md-pc {
+    .width35MdPC {
         width: 35%;
     }
-    .width-25-sm-pc {
+    .width25MdPC {
         width: 25%;
     }
-    .align-start-md-pc {
-        position: relative;
-        left: 10px;
-        top: 10px;
-    }
-    .container-wrapper-pc {
+    .containerWrapperPC {
         display: inline-flex;
         height: 100%;
     }
-    .image-border-pc {
+    .imageBorderPC {
         border-bottom: none;
         border-right: 1px solid #c4c4c4;
-    }
-    .containCategories {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .containCategories img {
-        width: 35%;
-        margin-bottom: 40px;
-    }
-
-    .footerContainer-pc {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-    .containerSection3-pc {
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-    .margin-top-25-pc {
-        margin-top: -35px;
     }
 }

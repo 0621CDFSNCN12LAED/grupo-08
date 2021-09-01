@@ -10,73 +10,63 @@
 
 
 
-.fb-logo{
+.fbLogo{
 position:relative;
 margin:auto;
 }
 
-.google-logo{
+.googleLogo{
 position:relative;
 margin:auto;
 }
 
-.font-size-5vw{
+.fontSize5vw{
     font-size:3vw;
   }
   
 
-.google-logo:hover, .fb-logo:hover{
+.googleLogo:hover, .fbLogo:hover{
     transform:scale(1.1);
     background-color: rgba(128, 104, 104, 0.842);
 }
 
 
-.nombre-login{
+.nombreLogin{
     width:100%;
 }
 
-.contraseña-login{
+.contraseñaLogin{
 width:100%;
 
 }
 
-.recuerdame-login{
+.recuerdameLogin{
     width:100%;
 }
 
-.boton-ingresar{
+.botonIngresar{
     width:100%;
 }
 
-.olvide-contraseña-text{
+.olvideContraseñaText{
     width:100%;
     text-align: center;
     margin:none;
 }
 
-.google-fb-login{
+.googleFbLogin{
     display:flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.google-logo{
+.googleLogo{
     margin-right:40px;
 }
 
-.sin-usuario-login{
+.sinUsuarioLogin{
  width:100%;
  text-align: center;
  margin:none;
 }
 
-
-  /*
-  .google-logo, .fb-logo{
-    display:block;
-    max-width:50vw;
-    padding:none;
-    border-radius: 7%;
-    border: 4px solid rgba(82, 104, 177, 0.85);
-    margin-bottom: 5px;
-}
