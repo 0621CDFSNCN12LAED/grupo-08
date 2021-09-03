@@ -6,119 +6,81 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/d3503ff7e5.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/styles-lr.css" />
-    <link rel="stylesheet" href="/css/theme-lr.css" />
-    <link rel="stylesheet" href="/css/utils-lr.css" />
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel='stylesheet' href='/css/styles-sm-register.css' media='(min-width:480px)' />
-    <link rel='stylesheet' href='/css/styles-md-register.css' media='(min-width:768px)' />
-    <link rel='stylesheet' href='/css/styles-lg-register.css' media='(min-width:992px)' />
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/style-sm.css">
-    <link rel="stylesheet" href="../css/style-md.css">
-    <link rel="stylesheet" href="../css/style-lg.css">
-    <title>Registro de usuario</title>
+    <%- include('./partials/head') %>
+        <script src="https://kit.fontawesome.com/d3503ff7e5.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/styles-lr.css" />
+        <link rel="stylesheet" href="/css/theme-lr.css" />
+        <link rel="stylesheet" href="/css/utils-lr.css" />
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel='stylesheet' href='/css/styles-sm-register.css' media='(min-width:480px)' />
+        <link rel='stylesheet' href='/css/styles-md-register.css' media='(min-width:768px)' />
+        <link rel='stylesheet' href='/css/styles-lg-register.css' media='(min-width:992px)' />
+        <link rel="stylesheet" href="../css/styleHome.css">
+        <link rel="stylesheet" href="../css/styleHome-sm.css">
+        <link rel="stylesheet" href="../css/styleHome-md.css">
+        <link rel="stylesheet" href="../css/styleHome-lg.css">
+
 </head>
 
-<<<<<<< HEAD:views/register.ejs
+
 <body class='no-margin flex-wrap background-img'>
-    <header class='blue-background-bg style-header'>
-<a class='flex justify-center' href='/'><img class='bord-rad-55 pad-5 logo' src='/img/icons/logo-light.png' alt='logo' /></a>
-=======
-<body class='noMargin flexWrap backgroundImg'>
-    <header class='blueBackgroundBg styleHeader'>
-<a class='flex justifyCenter' href='/'><img class='bordRad55 pad5 logo' src='/images/logo-light.png' alt='logo' /></a>
->>>>>>> origin/main:views/register.html
-    </header>
-    <main class='backgroundImg'>
-        <div class='blueTransBg flexWrap justifyCenter containerForm'>
-            <!-- begins form -->
-            <div class='headerRegisterForm'>
-                <!-- form header -->
-                <h1 class='textRegisterRegister fontSize5vw whiteText'> Regístrate ahora</h1>
-                <div class='break'></div>
-                <img class='googleLogo' src='/images/googlelogo.png' alt='google logo' />
-                <img class='fbLogo' src='/images/fblogo.png' alt='facebook logo' />
+
+    <%- include('./partials/header') %>
+
+        <main class='backgroundImg'>
+            <div class='blueTransBg flexWrap justifyCenter containerForm'>
+                <!-- begins form -->
+                <div class='headerRegisterForm'>
+                    <!-- form header -->
+                    <h1 class='textRegisterRegister fontSize5vw whiteText'> Regístrate ahora</h1>
+                    <div class='break'></div>
+                    <img class='googleLogo' src='/img/icons/googlelogo.png' alt='google logo' />
+                    <img class='fbLogo' src='/img/icons/fblogo.png' alt='facebook logo' />
+                </div>
+                <form class=' form centerText padTop10 flexWrap flexColumn centerText'>
+                    <!-- begins form inputs -->
+                    <fieldset>
+                        <div class='paddingBot8'>
+                            <label for='name'> Indícanos tu nombre</label>
+                            <br>
+                            <input type='text' id='name' name='name' required>
+                        </div>
+                        <div class=' paddingBot8'>
+                            <label for='username'>Elige un nombre de usuario </label>
+                            <br>
+                            <input type='text' id='username' name='username' required>
+                        </div>
+                        <div class=' paddingBot8'>
+                            <label for='password'> Elige una contraseña</label>
+                            <br>
+                            <input type='password' id='password' name='password' required>
+                        </div>
+                        <div class='paddingBot8 marginBot10'>
+                            <label for='email'>E-mail</label>
+                            <br>
+                            <input class='whiteBg' type='email' id='email' name='email' required>
+                        </div>
+                        <div class='w100 paddingBot2'>
+                            <label class for='terminos'>Acepto los <a class='a-links' href='/terminos'>términos y
+                                    condiciones</a></label>
+                        </div>
+                        <div class='w100 paddingBot8'>
+                            <br>
+                            <input class='styleCheckbox' type='checkbox' id='terminos' name='terminos' required>
+                        </div>
+                        <div class='paddingBot12'>
+                            <button class='buttonRegister' type='button'>Registrarme</button>
+                        </div>
+                    </fieldset>
+                    <div class='paddingBot8 centerText whiteText paddingTop4'><label class='loginLink'>¿Ya tienes un
+                            usuario con
+                            nosotros?<a class='aLinks' href='/login'> Ingresa aquí</a></label></div>
+                </form>
             </div>
-            <form class=' form centerText padTop10 flexWrap flexColumn centerText'>
-                <!-- begins form inputs -->
-                <fieldset>
-                    <div class='paddingBot8'>
-                        <label for='name'> Indícanos tu nombre</label>
-                        <br>
-                        <input type='text' id='name' name='name' required>
-                    </div>
-                    <div class=' paddingBot8'>
-                        <label for='username'>Elige un nombre de usuario </label>
-                        <br>
-                        <input type='text' id='username' name='username' required>
-                    </div>
-                    <div class=' paddingBot8'>
-                        <label for='password'> Elige una contraseña</label>
-                        <br>
-                        <input type='password' id='password' name='password' required>
-                    </div>
-                    <div class='paddingBot8 marginBot10'>
-                        <label for='email'>E-mail</label>
-                        <br>
-                        <input class='whiteBg' type='email' id='email' name='email' required>
-                    </div>
-                    <div class='w100 paddingBot2'>
-                        <label class for='terminos'>Acepto los <a class='a-links' href='/terminos'>términos y
-                                condiciones</a></label>
-                    </div>
-                    <div class='w100 paddingBot8'>
-                        <br>
-                        <input class='styleCheckbox' type='checkbox' id='terminos' name='terminos' required>
-                    </div>
-                    <div class='paddingBot12'>
-                        <button class='buttonRegister' type='button'>Registrarme</button>
-                    </div>
-                </fieldset>
-                <div class='paddingBot8 centerText whiteText paddingTop4'><label class='loginLink'>¿Ya tienes un usuario con
-                        nosotros?<a class='aLinks' href='/login'> Ingresa aquí</a></label></div>
-            </form>
-        </div>
-    </main>
+        </main>
 
 
-    <footer>
-        <section class="footerContainer">
-            <div class="sectionFooter1">
-                <div class="iconsSocialMediaFooter">
-                    <i class="fab fa-facebook-square facebookIcon"></i>
-                    <i class="far fa-envelope gmailIcon"></i>
-                    <i class="fab fa-linkedin linkedInIcon"></i>
-                </div>
-            </div>
-        
-                
-            </div>
-            <div class="sectionFooter3">
-                <h3>Información:</h3>
-                <div class="containerSection3">
-                    <p><a href="#">Medios de Pago</a></p>
-                    <p><a href="#">Preguntas Frecuentes</a></p>
-                    <p><a href="#">Cómo comprar</a></p>
-                    <p><a href="#">Políticas de privacidad</a></p>
-                </div>
-            </div>
-            <div class="sectionFooter4">
-                <h3>Ayuda:</h3>
-                <button>Cambios/Devoluciones</button>
-                <button>Me arrepentí</button>
-            </div>
-        </section>
-        <div class="copyright">
-            <hr>
-            <h4>Copyright</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur perferendis repellendus soluta doloribus laborum harum quidem, reprehenderit dolorum consectetur expedita?</p>
-        </div>
-    </footer>
+        <%- include('./partials/footer') %>
 </body>
 
 </html>

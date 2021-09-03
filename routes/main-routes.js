@@ -24,5 +24,9 @@ router.get("/productDetail", (req, res) => {
     res.render("indexProdDetail");
 });
 
+router.get("/administarProductos", (req,res) =>{
+    res.render("administrarProductos");
+})
+
 
 module.exports = router

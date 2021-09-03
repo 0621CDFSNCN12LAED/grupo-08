@@ -19,11 +19,11 @@ main{
  color:#7530ad;
 }
 
-.styleHeader{
-        width:100%;
-        display:flex;
-        justify-content: center;
+
+.linksCategories{
+    display:none !important;
 }
+
 
 .logo{
     width:55%;
@@ -42,11 +42,19 @@ a{
 }
 
 .backgroundImg{
-    background-image: url('/images/sports-bg.jpeg');
+    background-image: url('/img/portadas/sports-bg.jpeg');
     width:100%;
     background-size: cover;
 
 }
+
+.backgroundImg2{
+    background-image: url('/img/portadas/lineasAzules.png');
+    width:100%;
+    background-color:rgba(255,255,255,0.85);
+    background-blend-mode: lighten;
+}
+
 
 .headerRegisterForm{
     display:flex;
@@ -77,6 +85,9 @@ a{
     text-align: center; 
 }
 
+.textRegisterLogin2{
+    display:none;
+}
 
 
 .googleLogo, .fbLogo{
@@ -97,8 +108,6 @@ a{
 fieldset{
     min-width: 0;
     display:table-row;
-    border: 1px solid white;
-    margin:auto;
     border-radius: 5px;
 }
 
@@ -184,10 +193,79 @@ border-bottom: 2px solid #000000;
     color:white;
     background-color: rgb(13, 22, 104);
     font-weight:bolder;
+    width:50%;
 }
 
 
+/*   Administrar productos    */
 
+.mainContainer{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.formContainer{
+padding:15px;
+width:100%;
+}
+
+.productForm{
+    border: 2px solid rgba(68, 64, 64, 0.2);
+    border-radius: 5px;
+}
+
+.inputsContainer{
+    display:flex;
+    flex-flow: no-wrap;
+    justify-content: center;
+}
+
+
+.inputProductForm{
+    padding-bottom:15px;
+}
+
+
+.UploadImageContainer{
+    max-width: 100%;
+    display:flex;
+    border:none;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    border: 1px solid grey;
+    background-color:rgba(24, 26, 173, 0.5);
+    overflow: hidden;
+}
+
+
+input{
+    border: 1px solid  rgb(99, 92, 105);
+}
+
+.allExceptImg{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.allExceptImg input, textarea, select{
+    border: 3px  solid rgba(13, 13, 31, 0.4);
+    border-radius: 4px;
+}
+
+
+.inputProductForm input[type=text]{
+    padding:3px;
+    width:100%;
+    flex-basis: 100%;
+}
+
+.allExceptImg input[type=number]{
+    width:100px;
+}
 
 
 /* Transitions */
@@ -212,8 +290,6 @@ cursor:pointer;
 transition:transform 650ms;
 transform:scale(1.05);
 }
-
-
 
 
 button:hover{
