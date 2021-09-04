@@ -12,7 +12,6 @@ Logramos retomar y unirnos nuevamente como equipo, logrando la correcta implemen
 <br>
 <br>
 <p>En complemento, logramos realizar llamadas con mucha mayor frecuencia, aspirando a hacer una llamada día por medio. Los temas planteados en la misma <ins>fueron los siguientes:</ins><p>
-<br>
 <ol>
 <li>-La primera reunión del sprint es para acentuar las tareas y repartirnos las mismas.</li>
 <li>-Y luego, el resto de llamadas funcionan y sirven como un "checkpoint" para ver cómo viene cada uno con su respectiva parte del trabajo, y re-disrtibuir las tareas para que nadie se sienta sofocado con las mismas.</li>
