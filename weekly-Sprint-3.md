@@ -2,7 +2,7 @@
 <br>
 <br>
 En estas reuniones que tuvimos durante la semana se plantearon obstáculos y resoluciones.
-Algunos de estos obstáculos era la falta de comunicación, dejar el Trello de lado y el no tener muy bien definido quién realizaría <em>X<em> tarea. También algunos problemas técnicos a la hora de implementar lo visto en código.
+Algunos de estos obstáculos era la falta de comunicación, dejar el Trello de lado y el no tener muy bien definido quién realizaría <em>X</em> tarea. También algunos problemas técnicos a la hora de implementar lo visto en código.
 <br>
 <br>
 <h4>Igualmente...</h4>
