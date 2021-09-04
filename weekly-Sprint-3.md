@@ -11,11 +11,10 @@ Logramos retomar y unirnos nuevamente como equipo, logrando la correcta implemen
 <br>
 <br>
 <br>
-<style>
+
   .box{
   border: 5px solid black;
   }
-  </style>
 
 <div class='box'>En complemento, logramos realizar llamadas con mucha mayor frecuencia, aspirando a hacer una llamada día por medio. Los temas planteados en la misma <ins>fueron los siguientes:</ins>
   <br>
