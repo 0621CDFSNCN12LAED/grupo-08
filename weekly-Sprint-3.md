@@ -9,7 +9,9 @@ Algunos de estos obstáculos era la falta de comunicación, dejar el Trello de l
 Logramos retomar y unirnos nuevamente como equipo, logrando la correcta implementación de EJS, la correcta y pareja implementación de tareas, y cada quién logró cumplir su cometido.
 <br>
 <br>
-En complemento, logramos realizar llamadas con mucha mayor frecuencia, aspirando a hacer una llamada día por medio. Los temas planteados en la misma <u>fueron los siguientes:</u>
+<br>
+<br>
+<p>En complemento, logramos realizar llamadas con mucha mayor frecuencia, aspirando a hacer una llamada día por medio. Los temas planteados en la misma <ins>fueron los siguientes:</ins><p>
 <br>
 <ol>
 <li>-La primera reunión del sprint es para acentuar las tareas y repartirnos las mismas.</li>
