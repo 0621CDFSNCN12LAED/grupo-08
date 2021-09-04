@@ -17,7 +17,7 @@ En complemento, logramos realizar llamadas con mucha mayor frecuencia, aspirando
 </ol>
 <br>
 <br>
-Como <em>resumen final<em>, los puntos que <u>logramos mejorar fueron:</u>
+Como <b>resumen final</b>, los puntos que <u>logramos mejorar fueron:</u>
 <ol>
 <li>-Mejor comunicación en equipo</li>
 <li>-Correcta distribución de tareas</li>
