@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width" />
-        <title>Carrito de compras</title>
+    
+        <%- include('./partials/head') %>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -12,48 +10,20 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel="stylesheet" href="../css/styleHome.css">
         <link rel="stylesheet" href="/css/productCart.css" />
-        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
         
-        <script
-            src="https://kit.fontawesome.com/5b55db70fb.js"
-            crossorigin="anonymous"
-        ></script>
         <link rel="stylesheet" href="../css/style-sm-pc.css" />
     <link rel="stylesheet" href="../css/style-md-pc.css" />
-    <link rel="stylesheet" href="../css/style-lg-pc.css" />    
-    <link rel="stylesheet" href="../css/style-sm.css" />
-    <link rel="stylesheet" href="../css/style-md.css" />
-    <link rel="stylesheet" href="../css/style-lg.css" />
+    <link rel="stylesheet" href="../css/style-lg-pc.css" />
+        <link rel="stylesheet" href="../css/styleHome-sm.css">
+        <link rel="stylesheet" href="../css/styleHome-md.css">
+        <link rel="stylesheet" href="../css/styleHome-lg.css">       
+       
     </head>
     <body>
-        <header>
-            <div class="logoContainer">
-                <a href="/index"
-                    ><img src="../img/icons/logo_light.png" alt="Logo"
-                /></a>
-            </div>
-            <div>
-                <nav class="navBar">
-                    <ul class="linksCategories">
-                        <li><a href="#">Categoría 1</a></li>
-                        <li><a href="#">Categoría 2</a></li>
-                        <li><a href="#">Categoría 3</a></li>
-                        <li><a href="#">Categoría 4</a></li>
-                    </ul>
-                    <ul class="linksUser">
-                        <li><a href="/login">Iniciar sesión</a></li>
-                        <li><a href="/register">Registrarse</a></li>
-                        <li>
-                            <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="iconBurger">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
-        </header>
+        <%- include('./partials/header') %>
         <main id="mainContentPC">
             <h1 class="textTitlePC grayTextPC textCenterPC">
                 Carrito de compras
@@ -196,92 +166,6 @@
             </section>
         </div>
         </main>
-        <footer>
-            <section class="footerContainer">
-                <div class="sectionFooter1">
-                    <div class="logoContainerFooter">
-                        <a href="/index"
-                            ><img
-                                class="logoFooter"
-                                src="../img/icons/logo_light.png"
-                                alt="Logo"
-                        /></a>
-                    </div>
-                    <p>Puedes comunicarte mediante:</p>
-                    <div class="iconsSocialMediaFooter">
-                        <i class="fab fa-facebook-square facebookIcon"></i>
-                        <i class="far fa-envelope gmailIcon"></i>
-                        <i class="fab fa-linkedin linkedInIcon"></i>
-                    </div>
-                </div>
-                <div class="sectionFooter2">
-                    <h3>Sobre Nosotros:</h3>
-                    <p class="quienesSomosTexto">
-                        Somos un equipo de alumnos de
-                        <a
-                            href="https://www.digitalhouse.com/ar"
-                            target="_blank"
-                            >Digital<span>House</span></a
-                        >
-                        que nos unimos y complementamos para llevar a cabo y
-                        darle vida a esta página web que armamos y realizamos
-                        con tanto esfuerzo. Dicho equipo está compuesto por:
-                    </p>
-                    <div class="nombreIntegrantesContainer">
-                        <p class="nombreIntegranteFooter">
-                            <a
-                                href="https://github.com/fedehonrado"
-                                target="_blank"
-                                >Fede</a
-                            >
-                        </p>
-                        <p class="nombreIntegranteFooter">
-                            <a
-                                href="https://github.com/Florencia-Zapata"
-                                target="_blank"
-                                >Flor</a
-                            >
-                        </p>
-                        <p class="nombreIntegranteFooter">
-                            <a
-                                href="https://github.com/Franco-Ezequiel-Marchegiani"
-                                target="_blank"
-                                >Franco</a
-                            >
-                        </p>
-                        <p class="nombreIntegranteFooter">
-                            <a
-                                href="https://github.com/MartinZazpe"
-                                target="_blank"
-                                >Martín</a
-                            >
-                        </p>
-                    </div>
-                </div>
-                <div class="sectionFooter3">
-                    <h3>Información:</h3>
-                    <div class="containerSection3">
-                        <p><a href="#">Medios de Pago</a></p>
-                        <p><a href="#">Preguntas Frecuentes</a></p>
-                        <p><a href="#">Cómo comprar</a></p>
-                        <p><a href="#">Políticas de privacidad</a></p>
-                    </div>
-                </div>
-                <div class="sectionFooter4">
-                    <h3>Ayuda:</h3>
-                    <button>Cambios/Devoluciones</button>
-                    <button>Me arrepentí</button>
-                </div>
-            </section>
-            <div class="copyright">
-                <hr />
-                <h4>Copyright</h4>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Pariatur perferendis repellendus soluta doloribus laborum
-                    harum quidem, reprehenderit dolorum consectetur expedita?
-                </p>
-            </div>
-        </footer>
+        <%- include('./partials/footer') %>
     </body>
 </html>
