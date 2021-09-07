@@ -317,12 +317,13 @@ body{
     color: #06274b;
 }
 
+
 .footer{
     display: flex;
   
 }
 
-.footer ul{
+/*.footer ul{
     display: flex;
     flex-direction: row ;
     width: 100%;
@@ -357,5 +358,157 @@ body{
     color: darkcyan;
 }
 
+/* Footer */
+footer{
+    background-color: #06274b;
+    color: #f1f1f1;
+}
+.logoContainerFooter{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+.logoContainerFooter a{
+    text-align: center;
+}
+.logoFooter{
+    width: 50%;
+    cursor: pointer;
+    transition: transform 650ms;
+}
+.logoFooter:hover{
+    transform: scale(1.1);
+}
+.footerContainer{
+    width: 90%;
+    margin: auto;
+}
 
+.sectionFooter1{
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+}
+.sectionFooter1 p{
+    text-align: center;
+}
+.iconsSocialMediaFooter{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 40px;
+    padding: 8px 0;
+}
+.facebookIcon{
+    transition: color 450ms;
+}
+.iconsSocialMediaFooter .facebookIcon:hover{
+    color: #3b5998;
+    cursor: pointer;
+}
+.gmailIcon{
+    transition: color 450ms;
+}
+.iconsSocialMediaFooter .gmailIcon:hover{
+    color: #D44638; 
+    cursor: pointer;
+}
+.linkedInIcon{
+    transition: color 450ms;    
+}
+.iconsSocialMediaFooter .linkedInIcon:hover{
+    color: #0077b5;
+    cursor: pointer;
+}
+.sectionFooter2{
+    padding: 20px 0;
+}
+.sectionFooter2 h3{
+    text-align: center;
+    padding-bottom: 16px;
+}
+.quienesSomosTexto{
+    font-size: 17px;
+    max-width: 80%;
+    margin: auto;
+    padding-bottom: 8px;
+}
+.quienesSomosTexto a{
+    color: #e51b3e; /* Color hex DigitalHouse */
+    text-decoration: none;
+    transition: color 450ms;
+}
+.quienesSomosTexto a:hover{
+    color: #bd122f;
+}
+/* .quienesSomosTexto a span{
+    color: #212121;  Color hex DigitalHouse 
+} */
+.nombreIntegrantesContainer{
+    display: flex;
+    justify-content: center;
+}
+.nombreIntegranteFooter{
+    margin: auto;
+}
+.nombreIntegranteFooter a{
+    text-decoration: none;
+    color: #f1f1f1;
+    font-weight: bold;
+    font-size: 17px;
+    transition: color 450ms;
+}
+.nombreIntegranteFooter a:hover{
+    color: #0cbfe9;
+}
+.sectionFooter3 h3{
+    text-align: center;
+    padding-bottom: 8px;
+}
+.containerSection3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.containerSection3 a{
+    text-decoration: none;
+    color: #f1f1f1;
+    font-weight: bold;
+    line-height: 26px;
+    transition: color 450ms;
+}
+.containerSection3 a:hover{
+    color: rgb(152, 234, 255);
+}
+.sectionFooter4{
+    padding: 40px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sectionFooter4 h3{
+    padding-bottom: 8px;
+}
+.sectionFooter4 button{
+    border: none;
+    background-color: #0cbfe9;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    transition: background-color 350ms;
+}
+.sectionFooter4 button:hover{
+    background-color: #0a87a3;
+    cursor: pointer;
+}
+.copyright{
+    width: 90%;
+    margin: auto;
+}
+.copyright h4{
+    font-size: 16px;
+    padding: 8px 0;
+}
+.copyright p{
+    padding: 8px 0 20px;
+}
 
