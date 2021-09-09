@@ -33,9 +33,47 @@ header{
 .logoContainer a:hover{
     transform: scale(1.1);
 }
+/* Implementación NavBar Fede */
+.nav{
+    height: 40px;
+    background-color: lightgray;
+    text-align: center;
+    
+    
+}
+
+.nav ul li{
+    display: inline;
+    margin: 0 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+   
+}
+
+.nav ul li a{
+    text-decoration: none;
+    line-height: 40px;
+    color: black;
+    font-size: 13px;
+    font-weight: 700 ;
+   
+}
+
+
+.nav ul li:hover{
+    background-color: darkcyan;
+    color: white;
+}
+
+.nav ul li:hover a{
+    color: #fff;
+}
+/* Fin implementación Navbar Fede */
 .navBar{
     display: none;
 }
+
 ul li a{
     color: #fff;
     font-size: 18px;
