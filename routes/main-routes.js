@@ -1,32 +1,7 @@
-const express = require('express')
+const express = require("express");
 const router = express.Router();
-const controlladorProductos = require('../controllers/product-controller')
+const controladorMain = require("../controllers/main-controller");
 
-router.get("/", controlladorProductos.index);
+router.get("/", controladorMain.index);
 
-router.get("/register", (req, res) => {
-    res.render("register");
-});
-
-router.get("/login", (req, res) => {
-    res.render("login");
-});
-
-router.get("/terminos", (req, res) => {
-    res.render("terminos");
-});
-
-router.get("/productCart", (req, res) => {
-    res.render("productCart");
-});
-
-router.get("/productDetail", (req, res) => {
-    res.render("indexProdDetail");
-});
-
-router.get("/administarProductos", (req,res) =>{
-    res.render("administrarProductos");
-})
-
-
-module.exports = router
+module.exports = router;
