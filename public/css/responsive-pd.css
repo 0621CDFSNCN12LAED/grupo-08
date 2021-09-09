@@ -9,7 +9,7 @@
   
     }
 
-    .footer{
+    /*.footer{
         height: 90px ;
         background-color: lightgray;
         
@@ -19,7 +19,7 @@
         display: block;
         text-align: center;
         padding: 0px;
-    }
+    }*/
 
 }
 
@@ -66,4 +66,33 @@ body{
     .burger-menu{
         display: none;
     }
+}
+
+@media screen and (min-width: 1200px){
+    
+    .footerContainer{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .logoFooter{
+        width: 50%;
+    }
+    .sectionFooter2{
+        max-width: 38%;
+    }
+    .sectionFooter4 button{
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 768px){
+.logoFooter{
+        width: 30%;
+    }
+    /* .containerSection3{
+        padding-top: 16px;
+        flex-direction: row;
+        justify-content: space-evenly;
+    } */
 }

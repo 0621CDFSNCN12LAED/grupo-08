@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <%- include('./partials/head') %>
     <link rel= 'stylesheet' href= '/css/style-pd.css'>
     <link rel='stylesheet' href='/css/responsive-pd.css'>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <title>Product Detail</title>
+    
 </head>
 <body>
 <div class ='container'>
     <div class = 'header'>
-        <h4><img src= 'img/rsz_logo_white_nb.png' alt ='logo'></h4>
+        <h4><img src= 'img/productDetail/rsz_logo_white_nb.png' alt ='logo'></h4>
         <div class ='search-box'>
             <input type='text' placeholder ='Buscar producto'>
             <button type='submit' class= 'buttonS'>Buscar <i class="fas fa-search"></i></button>
@@ -44,17 +42,17 @@
 <div class='product'>
     <div class = 'images'>
         <div class= 'slider'>
-            <img src = 'img/rsz_1front_right.jpg' alt =''>
+            <img src = 'img/productDetail/rsz_1front_right.jpg' alt =''>
         </div>
 <div class ='sportProd'>
     <div class= 'itemSport active'>
-        <img src= 'img/rsz_1front_right.jpg' alt =''>
+        <img src= 'img/productDetail/rsz_1front_right.jpg' alt =''>
     </div>
     <div class='itemSport'>
-        <img src='img/rsz_back_right.jpg' alt=''>
+        <img src='img/productDetail/rsz_back_right.jpg' alt=''>
 </div>
 <div class='itemSport'>
-    <img src='img/rsz_top_pair.jpg' alt=''>
+    <img src='img/productDetail/rsz_top_pair.jpg' alt=''>
     </div>
 
 </div>
@@ -97,12 +95,7 @@
 
 </div>
 <div class="footer">
-    <ul>
-        <li><a href='#'></a>Atención al cliente</li>
-        <li><a href='#'></a>Servicios</li>
-        <li><a href='#'></a>Shop</li>
-        <li><a href='#'></a>Redes sociales</li>
-    </ul>
+<%- include('./partials/footer') %>
 </div>
 </body>
 </html>
