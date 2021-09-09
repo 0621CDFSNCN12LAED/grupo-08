@@ -28,7 +28,8 @@
             <section class="productContainer">
                 <% for (const producto of productosOfertas) { %>
                     <article class="product">
-                        <img class="imageProduct" src="<%= producto.img %>" alt="imagenProducto">
+                        <a href="productDetail/<%= producto.id %>"><img class="imageProduct" src="<%= producto.img %>"
+                                alt="imagenProducto"></a>
                         <div class="detailContainer">
                             <p class="titleProduct">
                                 <%= producto.title %>
@@ -41,7 +42,8 @@
                             <p class="priceProduct">$<%= producto.price %>
                             </p>
                             <div class="btnContainer">
-                                <button class="btn-buy">Ver Producto</button>
+                                <a href="productDetail/<%= producto.id %>"><button class="btn-buy">Ver
+                                        Producto</button></a>
                                 <button class="btn-cart">Añadir a Carrito</button>
                             </div>
                         </div>
