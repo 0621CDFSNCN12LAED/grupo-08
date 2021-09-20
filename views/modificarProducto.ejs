@@ -38,7 +38,7 @@
                                 <label for='nameChange'>Cambiar el nombre</label>
                                 <br>
                                 <input class='w100' type='text' id='nameChange' name='nameChange'
-                                    value="<%= productoAEditar.%>" required>
+                                    value="<%= productoAEditar.title%>" required>
                             </div>
                             <div class='inputProductForm centerText pad10'>
                                 <label for='elegirCategoria'> Categoria </label>
@@ -74,13 +74,12 @@
                                 <label for='precioChange'>Modificar precio</label>
                                 <br>
                                 <input class='maxWidth100 centerText' type='number' id='precioChange'
-                                    name='precioChange' min='0' max='10000' placeholder='(en $)'
-                                    value="<%= productoAEditar.price%>" required> <i>$</i>
+                                    name='precioChange' value="<%= productoAEditar.price%>" min='0' max='10000'
+                                    placeholder='(en $)' required> <i>$</i>
                             </div>
                             <div class='centerText maxWidth100'>
                                 <textarea class='centerText' id='descriptionChange' name='descriptionChange' rows='5'
-                                    cols='28' placeholder="Descripción del producto"
-                                    value="<%= productoAEditar.description%>"></textarea>
+                                    cols='28' placeholder="Descripción del producto"></textarea>
                             </div>
                             <div class='centerText'>
                                 <button class='buttonRegister marginBot10' type='submit'>Guardar</button>

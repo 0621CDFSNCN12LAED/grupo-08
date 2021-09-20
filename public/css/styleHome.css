@@ -8,95 +8,99 @@
     Naranja claro: #ffc518
     Tipografías:
     */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+/* Configuración formulario */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
 /* Header */
-header{
+header {
     background-color: #06274b;
 }
-.logoContainer{
+.logoContainer {
     display: flex;
     justify-content: center;
 }
-.logoContainer a{
-    
+.logoContainer a {
     transition: transform 650ms;
     text-align: center;
 }
-.logoContainer a img{
+.logoContainer a img {
     width: 50%;
 }
-.logoContainer a:hover{
+.logoContainer a:hover {
     transform: scale(1.1);
 }
 /* Implementación NavBar Fede */
-.nav{
+.nav {
     height: 40px;
     background-color: lightgray;
     text-align: center;
-    
-    
 }
 
-.nav ul li{
+.nav ul li {
     display: inline;
     margin: 0 10px;
     padding: 10px;
     cursor: pointer;
     transition: 0.5s;
-   
 }
 
-.nav ul li a{
+.nav ul li a {
     text-decoration: none;
     line-height: 40px;
     color: black;
     font-size: 13px;
-    font-weight: 700 ;
-   
+    font-weight: 700;
 }
 
-
-.nav ul li:hover{
+.nav ul li:hover {
     background-color: darkcyan;
     color: white;
 }
 
-.nav ul li:hover a{
+.nav ul li:hover a {
     color: #fff;
 }
 /* Fin implementación Navbar Fede */
-.navBar{
+.navBar {
     display: none;
 }
 
-ul li a{
+ul li a {
     color: #fff;
     font-size: 18px;
     transition: color 450ms;
 }
-ul li a:hover{
+ul li a:hover {
     color: #e4e4e4;
 }
-.iconBurger{
+.iconBurger {
     text-align: center;
     margin: 20px 0 60px 0;
 }
-.iconBurger i{
+.iconBurger i {
     background-color: rgb(27, 147, 245);
     padding: 16px;
     border-radius: 8px;
 }
 /* Section Products */
-.title{
+.title {
     padding: 40px 0 20px;
     text-align: center;
 }
-.product{
+.product {
     max-width: 80%;
     width: 80%;
     margin: auto;
@@ -104,7 +108,7 @@ ul li a:hover{
     margin-bottom: 40px;
     margin-top: 20px;
 }
-.imageProduct{
+.imageProduct {
     width: 90%;
     padding: 16px;
     margin: auto;
@@ -112,33 +116,32 @@ ul li a:hover{
     transition: transform 450ms;
     cursor: pointer;
 }
-.imageProduct:hover{
+.imageProduct:hover {
     transform: scale(1.1);
-    
 }
-.detailContainer{
+.detailContainer {
     border-top: solid 1px rgb(26, 26, 26);
     padding: 20px 16px;
 }
-.titleProduct{
+.titleProduct {
     font-size: 22px;
     font-weight: bold;
     padding-bottom: 8px;
 }
-.sku_product{
+.sku_product {
     padding: 16px 0 8px 0;
     font-weight: bold;
 }
-.priceProduct{
+.priceProduct {
     font-size: 22px;
     color: rgb(27, 192, 27);
 }
-.btnContainer{
+.btnContainer {
     display: flex;
     justify-content: space-around;
     padding: 24px 0 16px 0;
 }
-.btnContainer button{
+.btnContainer button {
     padding: 8px;
     border: none;
     background-color: #1bc01b;
@@ -147,160 +150,160 @@ ul li a:hover{
     transition: background-color 450ms;
     cursor: pointer;
 }
-.btnContainer button:hover{
+.btnContainer button:hover {
     background-color: #32cd32;
 }
 /* Section Categories */
-.containCategoriesGlobal{
+.containCategoriesGlobal {
     width: 100%;
 }
-.subTitle{
+.subTitle {
     max-width: 80%;
     text-align: center;
     padding-bottom: 40px;
     margin: auto;
 }
-.containCategories img{
+.containCategories img {
     width: 80%;
     margin: auto;
     display: block;
     padding-bottom: 20px;
     transition: opacity 450ms;
 }
-.containCategories img:hover{
+.containCategories img:hover {
     opacity: 0.7;
 }
 /* Footer */
-footer{
+footer {
     background-color: #06274b;
     color: #f1f1f1;
 }
-.logoContainerFooter{
+.logoContainerFooter {
     display: flex;
     justify-content: center;
     padding-bottom: 20px;
 }
-.logoContainerFooter a{
+.logoContainerFooter a {
     text-align: center;
 }
-.logoFooter{
+.logoFooter {
     width: 50%;
     cursor: pointer;
     transition: transform 650ms;
 }
-.logoFooter:hover{
+.logoFooter:hover {
     transform: scale(1.1);
 }
-.footerContainer{
+.footerContainer {
     width: 90%;
     margin: auto;
 }
 
-.sectionFooter1{
+.sectionFooter1 {
     font-size: 18px;
     display: flex;
     flex-direction: column;
 }
-.sectionFooter1 p{
+.sectionFooter1 p {
     text-align: center;
 }
-.iconsSocialMediaFooter{
+.iconsSocialMediaFooter {
     display: flex;
     justify-content: space-evenly;
     font-size: 40px;
     padding: 8px 0;
 }
-.facebookIcon{
+.facebookIcon {
     transition: color 450ms;
 }
-.iconsSocialMediaFooter .facebookIcon:hover{
+.iconsSocialMediaFooter .facebookIcon:hover {
     color: #3b5998;
     cursor: pointer;
 }
-.gmailIcon{
+.gmailIcon {
     transition: color 450ms;
 }
-.iconsSocialMediaFooter .gmailIcon:hover{
-    color: #D44638; 
+.iconsSocialMediaFooter .gmailIcon:hover {
+    color: #d44638;
     cursor: pointer;
 }
-.linkedInIcon{
-    transition: color 450ms;    
+.linkedInIcon {
+    transition: color 450ms;
 }
-.iconsSocialMediaFooter .linkedInIcon:hover{
+.iconsSocialMediaFooter .linkedInIcon:hover {
     color: #0077b5;
     cursor: pointer;
 }
-.sectionFooter2{
+.sectionFooter2 {
     padding: 20px 0;
 }
-.sectionFooter2 h3{
+.sectionFooter2 h3 {
     text-align: center;
     padding-bottom: 16px;
 }
-.quienesSomosTexto{
+.quienesSomosTexto {
     font-size: 17px;
     max-width: 80%;
     margin: auto;
     padding-bottom: 8px;
 }
-.quienesSomosTexto a{
+.quienesSomosTexto a {
     color: #e51b3e; /* Color hex DigitalHouse */
     text-decoration: none;
     transition: color 450ms;
 }
-.quienesSomosTexto a:hover{
+.quienesSomosTexto a:hover {
     color: #bd122f;
 }
 /* .quienesSomosTexto a span{
     color: #212121;  Color hex DigitalHouse 
 } */
-.nombreIntegrantesContainer{
+.nombreIntegrantesContainer {
     display: flex;
     justify-content: center;
 }
-.nombreIntegranteFooter{
+.nombreIntegranteFooter {
     margin: auto;
 }
-.nombreIntegranteFooter a{
+.nombreIntegranteFooter a {
     text-decoration: none;
     color: #f1f1f1;
     font-weight: bold;
     font-size: 17px;
     transition: color 450ms;
 }
-.nombreIntegranteFooter a:hover{
+.nombreIntegranteFooter a:hover {
     color: #0cbfe9;
 }
-.sectionFooter3 h3{
+.sectionFooter3 h3 {
     text-align: center;
     padding-bottom: 8px;
 }
-.containerSection3{
+.containerSection3 {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.containerSection3 a{
+.containerSection3 a {
     text-decoration: none;
     color: #f1f1f1;
     font-weight: bold;
     line-height: 26px;
     transition: color 450ms;
 }
-.containerSection3 a:hover{
+.containerSection3 a:hover {
     color: rgb(152, 234, 255);
 }
-.sectionFooter4{
+.sectionFooter4 {
     padding: 40px 0 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.sectionFooter4 h3{
+.sectionFooter4 h3 {
     padding-bottom: 8px;
 }
-.sectionFooter4 button{
+.sectionFooter4 button {
     border: none;
     background-color: #0cbfe9;
     padding: 8px;
@@ -308,18 +311,18 @@ footer{
     margin-bottom: 20px;
     transition: background-color 350ms;
 }
-.sectionFooter4 button:hover{
+.sectionFooter4 button:hover {
     background-color: #0a87a3;
     cursor: pointer;
 }
-.copyright{
+.copyright {
     width: 90%;
     margin: auto;
 }
-.copyright h4{
+.copyright h4 {
     font-size: 16px;
     padding: 8px 0;
 }
-.copyright p{
+.copyright p {
     padding: 8px 0 20px;
 }
