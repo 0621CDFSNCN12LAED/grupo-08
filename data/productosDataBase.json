@@ -1,31 +1,5 @@
 [
     {
-        "id": 1,
-        "img": "/img/products/barcelona-nike.jpg",
-        "title": "Camiseta Barcelona Nike Tercer Recambio Stadium Verde",
-        "description": "La camiseta de fútbol para hombre 3° Recambio Stadium del FC Barcelona 2019/20 está confeccionada con tela transpirable Dri-Fit que absorbe el sudor y te mantiene fresco, seco y cómodo tanto dentro como fuera de la cancha. El ajuste estándar hace que la prenda se adapte al cuerpo y ofrezca más espacio para mayor movilidad",
-        "sku": "55938919277",
-        "category": "Hombre",
-        "categorySport": "Futbol",
-        "categoryProduct": "visited",
-        "color": "Cyan",
-        "price": 8.199,
-        "size": "L"
-    },
-    {
-        "id": 2,
-        "img": "/img/products/buzo-negro.jpg",
-        "title": "Buzo Con Capucha 361° Urban Negro",
-        "description": "Disfrutá del día a día con el buzo 361°, confeccionado con un corte suelto que te brindará la comodidad que merecés. Capucha con cordón de ajuste visible. Bolsillo canguro. Cintura y puños elásticos.",
-        "sku": "47856617527820",
-        "category": "Hombre",
-        "categorySport": "Running",
-        "categoryProduct": "in-sale",
-        "color": "Negro",
-        "size": "S",
-        "price": 7.589
-    },
-    {
         "id": 3,
         "img": "/img/products/camisa-argentina-messi.jpg",
         "title": "Camiseta de Argentina Adidas Alternativa Messi 10 niño Petroleo",
@@ -258,5 +232,52 @@
         "size": "S",
         "color": "Azul",
         "price": 5.299
+    },
+    {
+        "id": 21
+    },
+    {
+        "id": 22
+    },
+    {
+        "id": 23
+    },
+    {
+        "id": 24
+    },
+    {
+        "id": 25,
+        "img": "",
+        "title": "asd",
+        "SKU": "1112",
+        "category": "",
+        "size": "",
+        "color": "",
+        "price": "8",
+        "description": "q"
+    },
+    {
+        "id": 26
+    },
+    {
+        "id": 27
+    },
+    {
+        "id": 28
+    },
+    {
+        "id": 29
+    },
+    {
+        "id": 30
+    },
+    {
+        "id": 31
+    },
+    {
+        "id": 32
+    },
+    {
+        "id": 33
     }
 ]

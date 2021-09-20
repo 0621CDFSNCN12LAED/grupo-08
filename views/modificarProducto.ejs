@@ -1,92 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <%- include('./partials/head') %>
-            <script src="https://kit.fontawesome.com/d3503ff7e5.js" crossorigin="anonymous"></script>
-            <link rel="stylesheet" href="/css/theme-lr.css" />
-            <link rel="stylesheet" href="/css/utils-lr.css" />
-            <link rel="stylesheet" href="/css/styles-lr.css" />
-            <link rel='stylesheet' href='/css/styles-login-md.css' media='(min-width:768px)' />
-            <link rel='stylesheet' href='/css/styles-login-lg.css' media='(min-width:992px)' />
-            <link rel="stylesheet" href="../css/styleHome.css">
-            <link rel="stylesheet" href="../css/styleHome-sm.css">
-            <link rel="stylesheet" href="../css/styleHome-md.css">
-            <link rel="stylesheet" href="../css/styleHome-lg.css">
-    </head>
+<head>
+    <%- include('./partials/head') %>
+        <script src="https://kit.fontawesome.com/d3503ff7e5.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/theme-lr.css" />
+        <link rel="stylesheet" href="/css/utils-lr.css" />
+        <link rel="stylesheet" href="/css/styles-lr.css" />
+        <link rel='stylesheet' href='/css/styles-login-md.css' media='(min-width:768px)' />
+        <link rel='stylesheet' href='/css/styles-login-lg.css' media='(min-width:992px)' />
+        <link rel="stylesheet" href="../css/styleHome.css">
+        <link rel="stylesheet" href="../css/styleHome-sm.css">
+        <link rel="stylesheet" href="../css/styleHome-md.css">
+        <link rel="stylesheet" href="../css/styleHome-lg.css">
+</head>
 
 <body class='backgroundImg2'>
     <%- include('./partials/header') %>
-    <main class='mainContainer'>
+        <main class='mainContainer'>
 
-        <div class='formContainer'>
-            <h2 class='centerText'> Modificar un producto</h2>
-            <form class='productForm'>
-                <fieldset class='inputsContainer'>
-                    <div class='inputProductForm centerText pad10'>
-                        <label class= for='modificarProducto'> Producto a modificar </label>
-                        <br>
-                        <select class='maxWidth100 id='modificarProducto' name='modificarProducto' required>
-                            <option value=''></option>
-                            <option value=''></option>
-                            <option value=''></option>
-                            <option value=''></option>
+            <div class='formContainer'>
+                <h2 class='centerText'> Modificar un producto</h2>
+                <form class='productForm' action="/<%= productoAEditar.id%>/?_method=PUT" method="POST">
+                    <fieldset class='inputsContainer'>
+                        <div class='inputProductForm centerText pad10'>
+                            <label class=for='modificarProducto'> Producto a modificar </label>
+                            <br>
+                            <select class='maxWidth100 id=' modificarProducto' name='modificarProducto' required>
+                                <option value='0'>1</option>
+                                <option value='1'>2</option>
+                                <option value='2'>3</option>
+                                <option value='3'>4</option>
                             </select>
-                    </div>
-                    <div class='allExceptImg'>
-                    <div class='inputProductForm centerText pad10'>
-                        <label for='nameChange'>Cambiar el nombre</label>
-                        <br>
-                        <input class='w100' type='text' id='nameChange' name='nameChange' required>
-                    </div>
-                    <div class='inputProductForm centerText pad10'>
-                        <label for='elegirCategoria'> Categoria </label>
-                        <br>
-                        <select class='maxWidth100 id='elegirCategoria' name='elegirCategoria' required>
-                            <option value=''></option>
-                            <option value=''></option>
-                            <option value=''></option>
-                            <option value=''></option>
-                            </select>
-                    </div>
-                    <div class='inputProductForm centerText blk pad10'>
-                        <label for='talle'> Talle </label>
-                        <br>
-                        <select class='maxWidth100' id='talle' name='talle' required>
-                            <option value=''></option>
-                            <option value=''></option>
-                            <option value=''></option>
-                            <option value=''></option>
-                            </select>
-                    </div>
-                    <div class='inputProductForm centerText blk pad10'>
-                        <label for='color'> Color </label>
-                        <br>
-                        <select class='maxWidth100' id='color' name='color' required>
-                            <option value=''></option>
-                            <option value=''></option>
-                            <option value=''></option>
-                            <option value=''></option>
-                            </select>
-                    </div>
-                    <div class='inputProductForm centerText pad10'>
-                        <label for='precioChange'>Modificar precio</label>
-                        <br>
-                        <input class='maxWidth100 centerText' type='number' id='precioChange' name='precioChange' min='0' max='10.000' placeholder='(en $)' required>  <i>$</i>
-                    </div>
-                    <div class='centerText maxWidth100'>
-                     <textarea  class='centerText' id='descriptionChange' name='descriptionChange' rows='5' cols='28' placeholder="Descripción del producto"></textarea>
-                    </div>
-                    <div class='centerText'>
-                        <button class='buttonRegister marginBot10' type='button'>Guardar</button>
-                        <button class='buttonRegister' type='button'>Eliminar Producto</button>
-                    </div>
-                </div>
-                </fieldset>
-            </form>
-        </div>
-    </main>
-    <%- include('./partials/footer') %>
+                        </div>
+                        <div class='allExceptImg'>
+                            <div class='inputProductForm centerText pad10'>
+                                <label for='nameChange'>Cambiar el nombre</label>
+                                <br>
+                                <input class='w100' type='text' id='nameChange' name='nameChange'
+                                    value="<%= productoAEditar.%>" required>
+                            </div>
+                            <div class='inputProductForm centerText pad10'>
+                                <label for='elegirCategoria'> Categoria </label>
+                                <br>
+                                <select class='maxWidth100 id=' elegirCategoria' name='elegirCategoria' required>
+                                    <option value=''>4</option>
+                                    <option value=''>5</option>
+                                    <option value=''>6</option>
+                                    <option value=''>7</option>
+                                </select>
+                            </div>
+                            <div class='inputProductForm centerText blk pad10'>
+                                <label for='talle'> Talle </label>
+                                <br>
+                                <select class='maxWidth100' id='talle' name='talle' required>
+                                    <option value=''>8</option>
+                                    <option value=''>9</option>
+                                    <option value=''>10</option>
+                                    <option value=''>11</option>
+                                </select>
+                            </div>
+                            <div class='inputProductForm centerText blk pad10'>
+                                <label for='color'> Color </label>
+                                <br>
+                                <select class='maxWidth100' id='color' name='color' required>
+                                    <option value=''>12</option>
+                                    <option value=''>13</option>
+                                    <option value=''>14</option>
+                                    <option value=''>15</option>
+                                </select>
+                            </div>
+                            <div class='inputProductForm centerText pad10'>
+                                <label for='precioChange'>Modificar precio</label>
+                                <br>
+                                <input class='maxWidth100 centerText' type='number' id='precioChange'
+                                    name='precioChange' min='0' max='10000' placeholder='(en $)'
+                                    value="<%= productoAEditar.price%>" required> <i>$</i>
+                            </div>
+                            <div class='centerText maxWidth100'>
+                                <textarea class='centerText' id='descriptionChange' name='descriptionChange' rows='5'
+                                    cols='28' placeholder="Descripción del producto"
+                                    value="<%= productoAEditar.description%>"></textarea>
+                            </div>
+                            <div class='centerText'>
+                                <button class='buttonRegister marginBot10' type='submit'>Guardar</button>
+                                <button class='buttonRegister' type='button'>Eliminar Producto</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </main>
+        <%- include('./partials/footer') %>
 </body>
-</html>
 
+</html>
