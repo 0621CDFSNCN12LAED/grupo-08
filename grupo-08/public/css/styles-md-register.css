@@ -1,0 +1,44 @@
+
+/* have to fix this */
+    
+
+.containerForm{
+    display:flex;
+    flex-wrap: nowrap;
+}
+
+
+.fontSize5vw{
+    font-size:3vw;
+  }
+
+
+.headerRegisterForm{
+    border-bottom: 1px solid rgb(224, 219, 219);
+    display:initial;
+    justify-content: center;
+    position:relative;
+}
+
+
+.googleLogo{
+    position:relative;
+    margin:auto;
+    margin-top:12px;
+    max-width:30vw;
+    }
+    
+
+    .fbLogo{
+        position:relative;
+        margin:auto;
+        margin-top:12px;
+        max-width:30vw;
+        }
+
+        
+
+.googleLogo:hover, .fbLogo:hover{
+    cursor: pointer;
+    transform:scale(1.05);
+}

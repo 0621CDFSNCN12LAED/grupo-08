@@ -1,0 +1,314 @@
+/* Styles go here */
+
+/*  ~~~~~~~~  This solves skeleton responsiveness  ~~~~~~*/
+
+body{
+    min-height: 100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+main{
+    flex-grow:1;
+}
+
+/*  ~~~~~~~~  This solves skeleton responsiveness  ~~~~~~*/
+
+
+.fontSizeRegister{
+ color:#7530ad;
+}
+
+
+.linksCategories{
+    display:none !important;
+}
+
+
+.logo{
+    width:55%;
+}
+
+
+.containerForm{
+    position:relative;
+    margin:5%;
+    border-radius: 20px;
+    justify-content:center;
+}
+
+a{
+    text-decoration: none;
+}
+
+.backgroundImg{
+    background-image: url('/img/portadas/sports-bg.jpeg');
+    width:100%;
+    background-size: cover;
+
+}
+
+.backgroundImg2{
+    background-image: url('/img/portadas/lineasAzules.png');
+    width:100%;
+    background-color:rgba(255,255,255,0.85);
+    background-blend-mode: lighten;
+}
+
+
+.headerRegisterForm{
+    display:flex;
+    flex-wrap:wrap; 
+    justify-content: space-around;
+}
+
+
+.headerRegisterLogin{
+    display:flex;
+    flex-wrap:wrap; 
+    justify-content: space-around;
+    border:none;
+}
+
+
+
+.textRegisterRegister{
+    font-size:30px;
+    flex-basis:100%;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+.textRegisterLogin{
+    font-size: 150%;
+    flex-basis:100%;
+    text-align: center; 
+}
+
+.textRegisterLogin2{
+    display:none;
+}
+
+
+.googleLogo, .fbLogo{
+    display:block;
+    max-width:50vw;
+    padding:none;
+    border-radius: 7%;
+    border: 4px solid rgba(82, 104, 177, 0.85);
+    margin-bottom: 5px;
+}
+
+
+.googleLogo:hover, .fbLogo:hover{
+    background-color: #0bda51;
+}
+
+
+fieldset{
+    min-width: 0;
+    display:table-row;
+    border-radius: 5px;
+}
+
+
+.form input{
+    padding:5px;
+
+}
+
+
+.formInput{
+flex-direction: column;
+justify-content: space-evenly;
+}
+
+
+.form{
+    color:white;
+    text-align:center;
+    padding-top:10px;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+
+.underConstructionStyle{
+    padding:10px;
+    margin:auto;
+    align-self: center;
+    background-color: white;
+    font-size: 5vw;
+}
+
+.scroll{
+    position: relative;
+    border:0px solid red;
+    padding:3px;
+    width:100%;
+    height:500px;
+    overflow-y: scroll;
+    background:white;
+    font-style: italic;
+}
+
+.textTerminos{
+    margin:auto;
+}
+
+.loremForm{
+    border: 1px solid rgb(46, 101, 221);
+    padding:5px;
+    margin:auto;
+    text-align: center;
+}
+
+
+.aLinks{
+    color:#06062e;
+}
+
+
+input{
+    border: 2px solid #ccc;
+    border-radius: 5px; 
+}
+
+input[type=text], input[type=password],
+input[type=email]{
+background:transparent;
+border:none;
+border-bottom: 2px solid #000000;
+}
+
+
+
+.buttonRegister{
+    padding:5px 20px;
+    background: #ccc;
+    border: 0.5px solid rgb(15, 15, 105);
+    cursor:pointer;
+    border-radius: 5px;
+    color:white;
+    background-color: rgb(13, 22, 104);
+    font-weight:bolder;
+    width:50%;
+}
+
+
+/*   Administrar productos    */
+
+.mainContainer{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.formContainer{
+padding:15px;
+width:100%;
+}
+
+.productForm{
+    border: 2px solid rgba(68, 64, 64, 0.2);
+    border-radius: 5px;
+}
+
+.inputsContainer{
+    display:flex;
+    flex-flow: no-wrap;
+    justify-content: center;
+}
+
+
+.inputProductForm{
+    padding-bottom:15px;
+}
+
+
+.UploadImageContainer{
+    max-width: 100%;
+    display:flex;
+    border:none;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    border: 1px solid grey;
+    background-color:rgba(24, 26, 173, 0.5);
+    overflow: hidden;
+}
+
+
+input{
+    border: 1px solid  rgb(99, 92, 105);
+}
+
+.allExceptImg{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.allExceptImg input, textarea, select{
+    border: 3px  solid rgba(13, 13, 31, 0.4);
+    border-radius: 4px;
+}
+
+
+.inputProductForm input[type=text]{
+    padding:3px;
+    width:100%;
+    flex-basis: 100%;
+}
+
+.allExceptImg input[type=number]{
+    width:100px;
+}
+
+
+/* Transitions */
+
+a:hover{
+    color:yellow;
+}
+
+.googleLogo:hover, .fbLogo:hover{
+    color:rgb(255, 255, 255);
+    cursor:pointer;
+    transform:scale(1.03);
+}
+
+.recuerdameCheckbox{
+    display: inline;
+    margin:auto;
+}
+
+.logo:hover{
+cursor:pointer;
+transition:transform 650ms;
+transform:scale(1.05);
+}
+
+
+button:hover{
+    cursor: pointer;
+    transform:scale(1.02)
+}
+
+input:hover{
+    cursor:pointer;
+    transform: scale(1.02);
+}
+
+.loginLink:hover{
+    cursor:pointer;
+    transform: scale(1.02);
+}
+
+.olvideContraseña:hover{
+    color:yellow;
+    cursor:pointer;
+    transform: scale(1.02);
+}

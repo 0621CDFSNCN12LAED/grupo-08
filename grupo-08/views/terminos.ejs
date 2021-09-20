@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <script src="https://kit.fontawesome.com/d3503ff7e5.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/theme-lr.css" />
+        <link rel="stylesheet" href="/css/utils-lr.css" />
+        <link rel="stylesheet" href="/css/styles-lr.css" />
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel="stylesheet" href="../css/styleHome.css">
+        <link rel="stylesheet" href="../css/styleHome-sm.css">
+        <link rel="stylesheet" href="../css/styleHome-md.css">
+        <link rel="stylesheet" href="../css/styleHome-lg.css">
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+        <main class='lightblueBackgroundBg flex alignCenter'>
+            <h1 class='textTerminos'>Terminos y condiciónes</h1>
+            <div class='scroll'>
+                <%- include('./partials/textFill.ejs')  %> 
+               </div>
+                <form class='loremForm' action='/register' method="GET">
+                    <button type='submit'>Lorem!</button>
+                </form>
+            </div>
+
+
+            <!-- <h1 class='under-construction-style center-text '>Esta sección esta bajo mantenimiento, gracias por su
+            paciencia.</h1> -->
+        </main>
+
+        <%- include('./partials/footer') %>
+</body>
+
+</html>

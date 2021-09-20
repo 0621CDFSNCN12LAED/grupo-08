@@ -258,38 +258,5 @@
         "size": "S",
         "color": "Azul",
         "price": 5.299
-    },
-    {
-        "id": 21,
-        "img": "",
-        "title": "martin",
-        "SKU": "",
-        "category": "",
-        "size": "",
-        "color": "",
-        "price": "",
-        "description": "knjdaskjndas"
-    },
-    {
-        "id": 22,
-        "img": "",
-        "title": "martin",
-        "SKU": "",
-        "category": "",
-        "size": "",
-        "color": "",
-        "price": "9",
-        "description": "knjdaskjndasa"
-    },
-    {
-        "id": 23,
-        "img": "",
-        "title": "dasdasd",
-        "SKU": "",
-        "category": "",
-        "size": "",
-        "color": "",
-        "price": "9",
-        "description": "dasdasd"
     }
 ]

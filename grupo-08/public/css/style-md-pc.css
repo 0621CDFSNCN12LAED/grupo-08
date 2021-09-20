@@ -1,0 +1,19 @@
+@media screen and (min-width: 768px) {
+    .width60MdPC {
+        width: 60%;
+    }
+    .width35MdPC {
+        width: 35%;
+    }
+    .width25MdPC {
+        width: 25%;
+    }
+    .containerWrapperPC {
+        display: inline-flex;
+        height: 100%;
+    }
+    .imageBorderPC {
+        border-bottom: none;
+        border-right: 1px solid #c4c4c4;
+    }
+}
