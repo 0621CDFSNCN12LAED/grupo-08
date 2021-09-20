@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <%- include('./partials/head') %>
+            <script src="https://kit.fontawesome.com/d3503ff7e5.js" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="/css/theme-lr.css" />
+            <link rel="stylesheet" href="/css/utils-lr.css" />
+            <link rel="stylesheet" href="/css/styles-lr.css" />
+            <link rel='stylesheet' href='/css/styles-login-md.css' media='(min-width:768px)' />
+            <link rel='stylesheet' href='/css/styles-login-lg.css' media='(min-width:992px)' />
+            <link rel="stylesheet" href="../css/styleHome.css">
+            <link rel="stylesheet" href="../css/styleHome-sm.css">
+            <link rel="stylesheet" href="../css/styleHome-md.css">
+            <link rel="stylesheet" href="../css/styleHome-lg.css">
+    </head>
+
+<body class='backgroundImg2'>
+    <%- include('./partials/header') %>
+    <main class='mainContainer'>
+        <div class='formContainer'>
+            <h2 class='centerText'> Añadir nuevo producto</h2>
+            <form class='productForm' action="/views/productos" method="post">
+                <fieldset class='inputsContainer'>
+                    <div class='UploadImageContainer'>
+                    <div class='inputProductForm uploadPicture centerText'>
+                        <label class='whiteText' for='img'>Subir foto del producto</label>
+                        <br><i class="fas fa-camera blue" style='font-size: 1.5em;'></i>
+                        <input class='maxWidth100' type='file' id='img' name='img' style='display:none' accept='image/png, image/jpg, image/jpeg'>
+                    </div>
+                </div>
+                    <div class='allExceptImg'>
+                    <div class='inputProductForm centerText pad10'>
+                        <label for='title'> Nombre del producto</label>
+                        <br>
+                        <input type='text' id='title' name='title' >
+                    </div>
+                    <div class='inputProductForm centerText pad10'>
+                        <label for='SKU'> SKU</label>
+                        <br>
+                        <input type='text' id='SKU' name='SKU' >
+                    </div>
+                    <div class='inputProductForm centerText pad10'>
+                        <label for='category'> Categoria </label>
+                        <br>
+                        <select  id='category' name='category' >
+                            <option value=''></option>
+                            <option value=''></option>
+                            <option value=''></option>
+                            <option value=''></option>
+                            </select>
+                    </div>
+                    <div class='inputProductForm centerText blk pad10'>
+                        <label for='size'> Talle </label>
+                        <br>
+                        <select id='sizze' name='size' >
+                            <option value=''></option>
+                            <option value=''></option>
+                            <option value=''></option>
+                            <option value=''></option>
+                            </select>
+                    </div>
+                    <div class='inputProductForm centerText blk pad10'>
+                        <label for='color'> Color </label>
+                        <br>
+                        <select class='maxWidth100' id='color' name='color' >
+                            <option value=''></option>
+                            <option value=''></option>
+                            <option value=''></option>
+                            <option value=''></option>
+                            </select>
+                    </div>
+                    <div class='inputProductForm centerText pad10'>
+                        <label for='price'>Precio</label>
+                        <br>
+                        <input class='maxWidth100 centerText' type='number' id='price' name='price' min='0' max='10.000' placeholder='(en $)' >  <i>$</i>
+                    </div>
+                    <div class='centerText maxWidth100'>
+                        <textarea  class='centerText' id='description' name='description' rows='5' cols='28' placeholder="Descripción del producto"></textarea>
+                    </div>
+                    <div class='centerText'>
+                        <button class='buttonRegister marginBot10 ' type='submit'>Guardar</button>
+                        <button class='buttonRegister' type='reset'>Comenzar de nuevo</button>
+                    </div>
+                </div>
+                </fieldset>
+        </div>
+            </form>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>
+

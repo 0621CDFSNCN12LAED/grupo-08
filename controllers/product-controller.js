@@ -18,9 +18,28 @@ const controllerProducts = {
         });
         res.render("indexProdDetail", { productDetail });
     },
-    administrarProductos: (req, res) => {
-        res.render("administrarProductos");
+
+    modificarProducto: (req, res) => {
+        res.render("modificarProducto");
     },
+    
+nuevoProducto: (req, res) => {
+    res.render("crearProducto");
+},
+
+
+// Crea nuevos produtos. Aún no solucione que cargue imagenes.
+    crearNuevoProducto: (req, res) => {
+        const productId = productos.length;
+        const producto = {
+        id : productId + 1,
+        ...req.body,
+        };
+        productos.push(producto);
+		fs.writeFileSync(productsFilePath, JSON.stringify(productos));
+		res.redirect("/productos");
+        console.log(req.body);
+    }
 };
 
 module.exports = controllerProducts;

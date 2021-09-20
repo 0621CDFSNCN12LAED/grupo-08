@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1 ,
+        "name": "Martin",
+        "userName": "Martinz",
+        "password":"123",
+        "profileImg": "",
+        "e-mail": "tinchozazpe@hotmail.com",
+        "customerOrAdmin": "customer"
+    }
+]

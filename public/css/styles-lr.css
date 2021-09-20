@@ -9,7 +9,7 @@ body{
 }
 
 main{
-    flex-grow:1;
+    flex-grow:1
 }
 
 /*  ~~~~~~~~  This solves skeleton responsiveness  ~~~~~~*/
@@ -17,11 +17,6 @@ main{
 
 .fontSizeRegister{
  color:#7530ad;
-}
-
-
-.linksCategories{
-    display:none !important;
 }
 
 
@@ -79,11 +74,13 @@ a{
     border-bottom: 1px solid white;
 }
 
+
 .textRegisterLogin{
     font-size: 150%;
     flex-basis:100%;
     text-align: center; 
 }
+
 
 .textRegisterLogin2{
     display:none;
