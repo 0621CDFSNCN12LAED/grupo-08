@@ -17,7 +17,7 @@ router.post("/views/productos", controlladorProductos.crearNuevoProducto);
 
 // modificar un producto
 router.get("/modificarProducto/:id", controlladorProductos.modificarProducto);
-router.put("/:id", controlladorProductos.modificarProducto);
+router.put("/:id", controlladorProductos.updateNewProduct);
 
 //borrar un producto
 router.delete("/:id", controlladorProductos.delete);

@@ -10,7 +10,8 @@
         "categoryProduct": "in-sale",
         "color": "Azul",
         "size": "L",
-        "price": 7.999
+        "price": 7999,
+        "stock": 49
     },
     {
         "id": 4,
@@ -23,7 +24,8 @@
         "categoryProduct": "visited",
         "color": "Azul",
         "size": "L",
-        "price": 3.299
+        "price": 3299,
+        "stock": 23
     },
     {
         "id": 5,
@@ -36,7 +38,8 @@
         "categoryProduct": "visited",
         "size": "46",
         "color": "Azul",
-        "price": 5.799
+        "price": 5799,
+        "stock": 11
     },
     {
         "id": 6,
@@ -49,7 +52,8 @@
         "categoryProduct": "in-sale",
         "color": "Blanco",
         "size": "M",
-        "price": 4.499
+        "price": 4499,
+        "stock": 5
     },
     {
         "id": 7,
@@ -62,20 +66,22 @@
         "categoryProduct": "visited",
         "color": "Gris",
         "size": "L",
-        "price": 1.5
+        "price": 1500,
+        "stock": 19
     },
     {
         "id": 8,
         "img": "/img/products/mediasCFC.png",
-        "title": "Calcetines de Chelsea FC",
-        "description": "Pensados para la mejor traspirabilidad y llevar siempre contigo unos calcetines de tu cuadro favorito.",
-        "sku": "8728156100",
-        "category": "Hombre",
         "categorySport": "Running",
         "categoryProduct": "in-sale",
-        "size": "46",
-        "color": "Amarillo",
-        "price": 1.999
+        "color": "Crimson",
+        "price": 988,
+        "stock": 1223,
+        "size": "XL",
+        "title": "Mejores medias amarillas",
+        "category": "niños",
+        "description": "Mejores Medias, cómodas y calentitas",
+        "sku": "123123312"
     },
     {
         "id": 9,
@@ -88,7 +94,8 @@
         "categoryProduct": "in-sale",
         "color": "Azul",
         "size": "44",
-        "price": 5.499
+        "price": 5499,
+        "stock": 57
     },
     {
         "id": 10,
@@ -101,7 +108,8 @@
         "categoryProduct": "visited",
         "color": "Negro",
         "size": "xl",
-        "price": 8.999
+        "price": 8999,
+        "stock": 142
     },
     {
         "id": 11,
@@ -114,7 +122,8 @@
         "categoryProduct": "visited",
         "size": "M",
         "color": "Negro",
-        "price": 6.789
+        "price": 6789,
+        "stock": 500
     },
     {
         "id": 12,
@@ -127,7 +136,8 @@
         "categoryProduct": "in-sale",
         "size": "L",
         "color": "Negro",
-        "price": 4.999
+        "price": 4999,
+        "stock": 149
     },
     {
         "id": 13,
@@ -140,7 +150,8 @@
         "categoryProduct": "visited",
         "size": "S",
         "color": "Rosado",
-        "price": 13.999
+        "price": 13999,
+        "stock": 4
     },
     {
         "id": 14,
@@ -153,7 +164,8 @@
         "categoryProduct": "in-sale",
         "size": "M",
         "color": "Negro",
-        "price": 4.679
+        "price": 4679,
+        "stock": 45
     },
     {
         "id": 15,
@@ -166,7 +178,8 @@
         "categoryProduct": "in-sale",
         "size": "38",
         "color": "Gris",
-        "price": 8.899
+        "price": 8899,
+        "stock": 27
     },
     {
         "id": 16,
@@ -179,7 +192,8 @@
         "categoryProduct": "visited",
         "size": "S",
         "color": "Azul",
-        "price": 5.299
+        "price": 5299,
+        "stock": 14
     },
     {
         "id": 17,
@@ -192,7 +206,8 @@
         "categoryProduct": "visited",
         "size": "M",
         "color": "Rojo",
-        "price": 2.799
+        "price": 2799,
+        "stock": 200
     },
     {
         "id": 18,
@@ -205,7 +220,8 @@
         "categoryProduct": "visited",
         "size": "26",
         "color": "Salmón",
-        "price": 6.749
+        "price": 6749,
+        "stock": 100
     },
     {
         "id": 19,
@@ -218,7 +234,8 @@
         "categoryProduct": "in-sale",
         "size": "24",
         "color": "Verde",
-        "price": 2.999
+        "price": 2999,
+        "stock": 5
     },
     {
         "id": 20,
@@ -231,7 +248,8 @@
         "categoryProduct": "visited",
         "size": "S",
         "color": "Azul",
-        "price": 5.299
+        "price": 5299,
+        "stock": 38
     },
     {
         "id": 21

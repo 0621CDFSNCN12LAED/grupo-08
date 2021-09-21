@@ -24,66 +24,93 @@
                 <form class='productForm' action="/<%= productoAEditar.id%>/?_method=PUT" method="POST">
                     <fieldset class='inputsContainer'>
                         <div class='inputProductForm centerText pad10'>
-                            <label class=for='modificarProducto'> Producto a modificar </label>
+                            <label class=for='modificarProducto'> Stock de Producto a modificar </label>
                             <br>
-                            <select class='maxWidth100 id=' modificarProducto' name='modificarProducto' required>
-                                <option value='0'>1</option>
-                                <option value='1'>2</option>
-                                <option value='2'>3</option>
-                                <option value='3'>4</option>
-                            </select>
+                            <input type="number" class='maxWidth100' id='stock' name='stock'
+                                value="<%= productoAEditar.stock%>" required>
+
+                        </div>
+                        <div class='inputProductForm centerText pad10'>
+                            <label class=for='modificarProducto'> SKU </label>
+                            <br>
+                            <input type="text" class='maxWidth100' id='sku' name='sku' value="<%= productoAEditar.sku%>"
+                                required>
+
                         </div>
                         <div class='allExceptImg'>
                             <div class='inputProductForm centerText pad10'>
                                 <label for='nameChange'>Cambiar el nombre</label>
                                 <br>
-                                <input class='w100' type='text' id='nameChange' name='nameChange'
+                                <input class='w100' type='text' id='title' name='title'
                                     value="<%= productoAEditar.title%>" required>
                             </div>
                             <div class='inputProductForm centerText pad10'>
                                 <label for='elegirCategoria'> Categoria </label>
                                 <br>
-                                <select class='maxWidth100 id=' elegirCategoria' name='elegirCategoria' required>
-                                    <option value=''>4</option>
-                                    <option value=''>5</option>
-                                    <option value=''>6</option>
-                                    <option value=''>7</option>
+                                <select class='maxWidth100' id=category' name='category' required>
+                                    <option value='niños' <%=productoAEditar.category=="niños" ? "selected" : "" %>
+                                        >Niños</option>
+                                    <option value='mujeres' <%=productoAEditar.category=="mujeres" ? "selected" : "" %>
+                                        >Mujeres</option>
+                                    <option value='hombres' <%=productoAEditar.category=="hombres" ? "selected" : "" %>
+                                        >Hombres</option>
+                                </select>
+                            </div>
+                            <div class='inputProductForm centerText pad10'>
+                                <label for='elegirCategoria'> Categoria Deportiva</label>
+                                <br>
+                                <select class='maxWidth100' id=categorySport' name='categorySport' required>
+                                    <option value='Running' <%=productoAEditar.categorySport=="Running" ? "selected"
+                                        : "" %>
+                                        >Running</option>
+                                    <option value='Tennis' <%=productoAEditar.categorySport=="Tennis" ? "selected" : ""
+                                        %>
+                                        >Tennis</option>
+                                    <option value='Futbol' <%=productoAEditar.categorySport=="Futbol" ? "selected" : ""
+                                        %>
+                                        >Futbol</option>
+                                    <option value='Basket' <%=productoAEditar.categorySport=="Basket" ? "selected" : ""
+                                        %>
+                                        >Basket</option>
+                                    <option value='Boxeo' <%=productoAEditar.categorySport=="Boxeo" ? "selected" : "" %>
+                                        >Boxeo</option>
                                 </select>
                             </div>
                             <div class='inputProductForm centerText blk pad10'>
                                 <label for='talle'> Talle </label>
                                 <br>
-                                <select class='maxWidth100' id='talle' name='talle' required>
-                                    <option value=''>8</option>
-                                    <option value=''>9</option>
-                                    <option value=''>10</option>
-                                    <option value=''>11</option>
+                                <select class='maxWidth100' id='size' name='size' required>
+                                    <option value='S' <%=productoAEditar.size=="S" ? "selected" : "" %> > S
+                                    </option>
+                                    <option value='M' <%=productoAEditar.size=="M" ? "selected" : "" %> >M
+                                    </option>
+                                    <option value='L' <%=productoAEditar.size=="L" ? "selected" : "" %> >L
+                                    </option>
+                                    <option value='XL' <%=productoAEditar.size=="XL" ? "selected" : "" %> >XL
+                                    </option>
                                 </select>
                             </div>
                             <div class='inputProductForm centerText blk pad10'>
                                 <label for='color'> Color </label>
                                 <br>
-                                <select class='maxWidth100' id='color' name='color' required>
-                                    <option value=''>12</option>
-                                    <option value=''>13</option>
-                                    <option value=''>14</option>
-                                    <option value=''>15</option>
-                                </select>
+                                <input type="text" class='maxWidth100' id='color' name='color'
+                                    value="<%= productoAEditar.color%>" required>
                             </div>
                             <div class='inputProductForm centerText pad10'>
                                 <label for='precioChange'>Modificar precio</label>
                                 <br>
-                                <input class='maxWidth100 centerText' type='number' id='precioChange'
-                                    name='precioChange' value="<%= productoAEditar.price%>" min='0' max='10000'
-                                    placeholder='(en $)' required> <i>$</i>
+                                <input class='maxWidth100 centerText' type='number' id='price' name='price'
+                                    value="<%= productoAEditar.price%>" min='0' max='10000' placeholder='(en $)'
+                                    required> <i>$</i>
                             </div>
                             <div class='centerText maxWidth100'>
-                                <textarea class='centerText' id='descriptionChange' name='descriptionChange' rows='5'
-                                    cols='28' placeholder="Descripción del producto"></textarea>
+                                <textarea class='centerText' id='description' name='description'
+                                    value="<%= productoAEditar.description%>" rows='5'
+                                    cols='28'><%= productoAEditar.description%></textarea>
                             </div>
                             <div class='centerText'>
                                 <button class='buttonRegister marginBot10' type='submit'>Guardar</button>
-                                <button class='buttonRegister' type='button'>Eliminar Producto</button>
+                                <button class='buttonRegister' type='button'><a href="/">Volver</a></button>
                             </div>
                         </div>
                     </fieldset>

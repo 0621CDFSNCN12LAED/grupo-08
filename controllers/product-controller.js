@@ -18,12 +18,30 @@ const controllerProducts = {
         });
         res.render("indexProdDetail", { productDetail });
     },
-    //Editar producto
+    //Encuentra producto a editar producto
     modificarProducto: (req, res) => {
         let productoAEditar = productos.find((producto) => {
             return producto.id == req.params.id;
         });
         res.render("modificarProducto", { productoAEditar: productoAEditar });
+    },
+    updateNewProduct: (req, res) => {
+        let productoAEditar = productos.find((producto) => {
+            return producto.id == req.params.id;
+        });
+        productoAEditar.title = req.body.title;
+        productoAEditar.description = req.body.description;
+        productoAEditar.sku = req.body.sku;
+        productoAEditar.category = req.body.category;
+        productoAEditar.size = req.body.size;
+        productoAEditar.color = req.body.color;
+        productoAEditar.price = Number(req.body.price);
+        productoAEditar.stock = Number(req.body.stock);
+        //Save in JSON
+        const jsonString = JSON.stringify(productos, null, 4);
+        fs.writeFileSync(productsFilePath, jsonString);
+        //Redirecciona
+        res.redirect("/productos");
     },
 
     nuevoProducto: (req, res) => {
