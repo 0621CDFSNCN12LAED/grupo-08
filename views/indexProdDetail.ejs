@@ -97,9 +97,9 @@
             <input type='number' value='<%= productDetail.stock%>' class='qty'>
             <a href='#' class='cart'>Añadir al carrito <i class="fas fa-shopping-cart"></i></a>
             <div>
-                <a href="/modificarProducto/<%= productDetail.id%>" class="editProduct">Editar Producto</a>
+                <a href="/modificarProducto/<%= productDetail.id%>" class="editProduct">Editar Producto <i class="far fa-edit"></i></a>
                 <form action="/<%= productDetail.id%>/?_method=DELETE" method="POST" style="display: inline-flex">
-                    <button type="submit" class="deleteProduct">Eliminar</button>
+                    <button type="submit" class="deleteProduct">Eliminar <i class="fas fa-times"></i></button>
                 </form>
             </div>
 
