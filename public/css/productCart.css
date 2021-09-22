@@ -10,7 +10,6 @@ body {
     display: flex;
     flex-direction: column;
     font-family: "Georama", sans-serif;
-    font-size: 12px;
 }
 
 main {
@@ -65,7 +64,7 @@ main {
     color: #fff;
 }
 
-.llightgreenTextPC {
+.lightgreenTextPC {
     color: #0bda51;
 }
 
