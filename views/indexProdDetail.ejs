@@ -92,9 +92,16 @@
                 <span class='size'>43</span>
             </div>
             <h4 class="title">Cantidad</h4>
-            <input type='text' value='1' class='qty'>
-            <a href='' class='cart'>Añadir al carrito <i class="fas fa-shopping-cart"></i></a>
-
+            <input type='number' value='1' class='qty'>
+            <h4 class="title">Disponibles en Stock</h4>
+            <input type='number' value='<%= productDetail.stock%>' class='qty'>
+            <a href='#' class='cart'>Añadir al carrito <i class="fas fa-shopping-cart"></i></a>
+            <div>
+                <a href="/modificarProducto/<%= productDetail.id%>" class="editProduct">Editar Producto <i class="far fa-edit"></i></a>
+                <form action="/<%= productDetail.id%>/?_method=DELETE" method="POST" style="display: inline-flex">
+                    <button type="submit" class="deleteProduct">Eliminar <i class="fas fa-times"></i></button>
+                </form>
+            </div>
 
         </div>
 
