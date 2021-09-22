@@ -23,6 +23,7 @@ const controllerProducts = {
         res.render("modificarProducto");
     },
     
+    
 nuevoProducto: (req, res) => {
     res.render("crearProducto");
 },
