@@ -1,4 +1,4 @@
-😎 👻<h2>Una breve retrospectiva sobre nuestra experiencia con el sprint 3!!!<h2> ✍🏽
+😎 👻<h2>Una breve retrospectiva sobre nuestra experiencia con el sprint 3!!!</h2> ✍🏽
 <br>
 <br>
 
