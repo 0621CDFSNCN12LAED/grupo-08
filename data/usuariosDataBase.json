@@ -1,11 +1,11 @@
 [
     {
         "id": 1 ,
-        "name": "Martin",
-        "userName": "Martinz",
-        "password":"123",
-        "profileImg": "",
+        "nombre": "Martin",
+        "apellido": "Zazpe",
         "e-mail": "tinchozazpe@hotmail.com",
-        "customerOrAdmin": "customer"
+        "contraseña":"123",
+        "categoria": "admin",
+        "imagen": ""
     }
 ]
