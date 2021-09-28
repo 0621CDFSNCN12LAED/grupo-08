@@ -6,6 +6,7 @@ const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controllerProducts = {
+    
     productos: (req, res) => {
         res.render("productos", { productos });
     },
@@ -18,6 +19,30 @@ const controllerProducts = {
         });
         res.render("indexProdDetail", { productDetail });
     },
+
+
+  //Vista para crear nuevo producto
+  nuevoProducto: (req, res) => {
+    res.render("crearProducto");
+},
+
+// Crear nuevo producto
+crearNuevoProducto: (req, res) => {
+const biggestProduct = productos[productos.length -1];
+const lastProductId =  productos.length > 0 ? biggestProduct.id : 1;
+const producto = {
+    id: lastProductId + 1,
+    ...req.body,
+img: "/img/products/" + req.file.filename, 
+price: Number (req.body.price),
+};
+productos.push(producto);
+fs.writeFileSync(productsFilePath, JSON.stringify(productos,null,4));
+res.redirect("/productos");
+console.log(req.body);
+},
+
+
     //Encuentra producto a editar producto
     modificarProducto: (req, res) => {
         let productoAEditar = productos.find((producto) => {
@@ -25,6 +50,8 @@ const controllerProducts = {
         });
         res.render("modificarProducto", { productoAEditar: productoAEditar });
     },
+
+    //Edita el producto encontrado
     updateNewProduct: (req, res) => {
         let productoAEditar = productos.find((producto) => {
             return producto.id == req.params.id;
@@ -43,29 +70,6 @@ const controllerProducts = {
         //Redirecciona
         res.redirect("/productos");
     },
-
-    //vista de creación de producto
-    nuevoProducto: (req, res) => {
-        res.render("crearProducto");
-    },
-
-
- // Crea nuevos produtos. debo agregar stock y mejorar el sistema de ID.
- crearNuevoProducto: (req, res) => {
-    const productId = productos.length;
-    // const file = req.file;
-    const producto = {
-        id: productId +1,
-        ...req.body,
-    img: "/img/products/" + req.file.filename, 
-    price: Number (req.body.price),
-    };
-    // productos.push(file);
-    productos.push(producto);
-    fs.writeFileSync(productsFilePath, JSON.stringify(productos,null,4));
-    res.redirect("/productos");
-    console.log(req.body);
-},
 
 
     //Eliminar productos
@@ -86,3 +90,4 @@ const controllerProducts = {
 };
 
 module.exports = controllerProducts;
+

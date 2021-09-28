@@ -1,9 +1,8 @@
 const express = require("express");
-const { diskStorage } = require("multer");
+// const { diskStorage } = require("multer");
 const router = express.Router();
 const multer = require('multer');
 const path = require("path");
-// const path = require("path/posix");   //lo comente porque no se que es, me da error y creo que se instalo solo.
 const controlladorProductos = require("../controllers/product-controller");
 
 
