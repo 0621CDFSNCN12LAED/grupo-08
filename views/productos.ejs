@@ -26,7 +26,7 @@
         <main>
             <h1 class="title">Productos disponibles:</h1>
             <section class="productContainer">
-                <% for (const producto of productos) { %>
+                <% for (const producto of allProducts) { %>
                     <article class="product">
                         <a href="productDetail/<%= producto.id %>"><img class="imageProduct" src="<%= producto.img %>"
                                 alt="imagenProducto"></a>

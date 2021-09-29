@@ -1,46 +1,31 @@
 const fs = require("fs");
 const path = require("path");
 
-const productsFilePath = path.join(__dirname, "../data/productosDataBase.json");
-const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+const productos = require("../servicesControllers/productsServices");
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controllerProducts = {
     productos: (req, res) => {
-        res.render("productos", { productos });
+        const allProducts = productos.findAllProducts();
+        res.render("productos", { allProducts });
     },
     productCart: (req, res) => {
         res.render("productCart");
     },
     productDetail: (req, res) => {
-        const productDetail = productos.find((producto) => {
-            return producto.id == req.params.id;
-        });
-        res.render("indexProdDetail", { productDetail });
+        const productoFiltrado = productos.findOnlyOneById(req.params.id);
+        res.render("indexProdDetail", { productoFiltrado });
     },
     //Encuentra producto a editar producto
+    //Modificar producto producto Get
     modificarProducto: (req, res) => {
-        let productoAEditar = productos.find((producto) => {
-            return producto.id == req.params.id;
-        });
-        res.render("modificarProducto", { productoAEditar: productoAEditar });
+        const productoFiltradoEdit = productos.findOnlyOneById(req.params.id);
+        res.render("modificarProducto", { productoFiltradoEdit });
     },
+    //Modificar producto producto Post
     updateNewProduct: (req, res) => {
-        let productoAEditar = productos.find((producto) => {
-            return producto.id == req.params.id;
-        });
-        productoAEditar.title = req.body.title;
-        productoAEditar.description = req.body.description;
-        productoAEditar.sku = req.body.sku;
-        productoAEditar.category = req.body.category;
-        productoAEditar.size = req.body.size;
-        productoAEditar.color = req.body.color;
-        productoAEditar.price = Number(req.body.price);
-        productoAEditar.stock = Number(req.body.stock);
-        //Save in JSON
-        const jsonString = JSON.stringify(productos, null, 4);
-        fs.writeFileSync(productsFilePath, jsonString);
-        //Redirecciona
+        productos.editOneProduct(req.params.id, req.body); //req.file
+
         res.redirect("/productos");
     },
 
@@ -61,19 +46,9 @@ const controllerProducts = {
         console.log(req.body);
     },
 
-    //Eliminar productos
     delete: (req, res) => {
-        //Filtrar productos
-        const filterProductsForDeleteOne = productos.findIndex((producto) => {
-            return producto.id == req.params.id;
-        });
-        productos.splice(filterProductsForDeleteOne, 1);
+        productos.deleteOneProduct(req.params.id);
 
-        //Guardar filtro en el archivo JSON
-        const jsonString = JSON.stringify(productos, null, 4);
-        fs.writeFileSync(productsFilePath, jsonString);
-
-        //Redirect
         res.redirect("/");
     },
 };

@@ -43,7 +43,7 @@
     <div class='product'>
         <div class='images'>
             <div class='slider'>
-                <img src='<%= productDetail.img %>' alt=''>
+                <img src='<%= productoFiltrado.img %>' alt=''>
             </div>
             <!-- Comentado momentaneamente hasta que solucionemos cómo poner varias imágenes - Eze
                  <div class='sportProd'>
@@ -60,22 +60,22 @@
             </div> -->
             <h2 class='det'>DETALLES</h2>
             <section class='decription'>
-                <%= productDetail.description %>
+                <%= productoFiltrado.description %>
             </section>
         </div>
 
         <div class='info'>
             <h3>
-                <%= productDetail.categorySport %>
+                <%= productoFiltrado.categorySport %>
             </h3>
             <h1>
-                <%= productDetail.title %>
+                <%= productoFiltrado.title %>
             </h1>
             <div class="starShare">
                 <a href='' class='fav'><i class="fas fa-star"></i></a>
                 <a href=''><i class="fas fa-share-alt"></i></a>
             </div>
-            <h1 class='price'>$<%= productDetail.price %>
+            <h1 class='price'>$<%= productoFiltrado.price %>
             </h1>
             <h4 class="title">Color</h4>
             <div class="colors">
@@ -94,11 +94,11 @@
             <h4 class="title">Cantidad</h4>
             <input type='number' value='1' class='qty'>
             <h4 class="title">Disponibles en Stock</h4>
-            <input type='number' value='<%= productDetail.stock%>' class='qty'>
+            <input type='number' value='<%= productoFiltrado.stock%>' class='qty'>
             <a href='#' class='cart'>Añadir al carrito <i class="fas fa-shopping-cart"></i></a>
             <div>
-                <a href="/modificarProducto/<%= productDetail.id%>" class="editProduct">Editar Producto</a>
-                <form action="/<%= productDetail.id%>/?_method=DELETE" method="POST" style="display: inline-flex">
+                <a href="/modificarProducto/<%= productoFiltrado.id%>" class="editProduct">Editar Producto</a>
+                <form action="/<%= productoFiltrado.id%>/?_method=DELETE" method="POST" style="display: inline-flex">
                     <button type="submit" class="deleteProduct">Eliminar</button>
                 </form>
             </div>

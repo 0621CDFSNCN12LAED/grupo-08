@@ -1,5 +1,31 @@
 [
     {
+        "id": 1,
+        "img": "/img/products/barcelona-nike.jpg",
+        "title": "Camiseta Barcelona Nike Tercer Recambio Stadium Verde",
+        "description": "La camiseta de fútbol para hombre 3° Recambio Stadium del FC Barcelona 2019/20 está confeccionada con tela transpirable Dri-Fit que absorbe el sudor y te mantiene fresco, seco y cómodo tanto dentro como fuera de la cancha. El ajuste estándar hace que la prenda se adapte al cuerpo y ofrezca más espacio para mayor movilidad",
+        "sku": "55938919277",
+        "category": "Hombre",
+        "categorySport": "Futbol",
+        "categoryProduct": "visited",
+        "color": "Cyan",
+        "price": 8.199,
+        "size": "L"
+    },
+    {
+        "id": 2,
+        "img": "/img/products/buzo-negro.jpg",
+        "title": "Buzo color negro de alta calidad para esos dias frios",
+        "description": "Diseñado por especialistas para los que aman el deporte todo el año y quieren tener siempre un buzo traspirable, de alta calidad y con estilo.",
+        "sku": "928371047382",
+        "category": "Hombre",
+        "categorySport": "Running",
+        "categoryProduct": "in-sale",
+        "color": "Negro",
+        "size": "M",
+        "price": 6.788
+    },
+    {
         "id": 3,
         "img": "/img/products/camisa-argentina-messi.jpg",
         "title": "Camiseta de Argentina Adidas Alternativa Messi 10 niño Petroleo",
@@ -10,8 +36,7 @@
         "categoryProduct": "in-sale",
         "color": "Azul",
         "size": "L",
-        "price": 7999,
-        "stock": 49
+        "price": 7.999
     },
     {
         "id": 4,
@@ -19,13 +44,13 @@
         "title": "Remera Puma Entrenamiento RTG Azul",
         "description": "Ya sea que salgas a la calle o vayas al gimnasio, esta remera clásica te mantendrá seco y cómodo con nuestra tecnología dryCELL que absorbe la humedad y mangas raglán cortas. El estampado del logo de PUMA Cat le da un toque característico a esta prenda ajustada.",
         "sku": "449217699478",
-        "category": "Hombre",
+        "category": "niños",
         "categorySport": "Running",
         "categoryProduct": "visited",
         "color": "Azul",
         "size": "L",
         "price": 3299,
-        "stock": 23
+        "stock": 19
     },
     {
         "id": 5,
@@ -38,8 +63,7 @@
         "categoryProduct": "visited",
         "size": "46",
         "color": "Azul",
-        "price": 5799,
-        "stock": 11
+        "price": 5.799
     },
     {
         "id": 6,
@@ -52,8 +76,7 @@
         "categoryProduct": "in-sale",
         "color": "Blanco",
         "size": "M",
-        "price": 4499,
-        "stock": 5
+        "price": 4.499
     },
     {
         "id": 7,
@@ -66,22 +89,20 @@
         "categoryProduct": "visited",
         "color": "Gris",
         "size": "L",
-        "price": 1500,
-        "stock": 19
+        "price": 1.5
     },
     {
         "id": 8,
         "img": "/img/products/mediasCFC.png",
+        "title": "Calcetines de Chelsea FC",
+        "description": "Pensados para la mejor traspirabilidad y llevar siempre contigo unos calcetines de tu cuadro favorito.",
+        "sku": "8728156100",
+        "category": "Hombre",
         "categorySport": "Running",
         "categoryProduct": "in-sale",
-        "color": "Crimson",
-        "price": 988,
-        "stock": 1223,
-        "size": "XL",
-        "title": "Mejores medias amarillas",
-        "category": "niños",
-        "description": "Mejores Medias, cómodas y calentitas",
-        "sku": "123123312"
+        "size": "46",
+        "color": "Amarillo",
+        "price": 1.999
     },
     {
         "id": 9,
@@ -94,8 +115,7 @@
         "categoryProduct": "in-sale",
         "color": "Azul",
         "size": "44",
-        "price": 5499,
-        "stock": 57
+        "price": 5.499
     },
     {
         "id": 10,
@@ -108,8 +128,7 @@
         "categoryProduct": "visited",
         "color": "Negro",
         "size": "xl",
-        "price": 8999,
-        "stock": 142
+        "price": 8.999
     },
     {
         "id": 11,
@@ -122,8 +141,7 @@
         "categoryProduct": "visited",
         "size": "M",
         "color": "Negro",
-        "price": 6789,
-        "stock": 500
+        "price": 6.789
     },
     {
         "id": 12,
@@ -136,8 +154,7 @@
         "categoryProduct": "in-sale",
         "size": "L",
         "color": "Negro",
-        "price": 4999,
-        "stock": 149
+        "price": 4.999
     },
     {
         "id": 13,
@@ -150,8 +167,7 @@
         "categoryProduct": "visited",
         "size": "S",
         "color": "Rosado",
-        "price": 13999,
-        "stock": 4
+        "price": 13.999
     },
     {
         "id": 14,
@@ -164,8 +180,7 @@
         "categoryProduct": "in-sale",
         "size": "M",
         "color": "Negro",
-        "price": 4679,
-        "stock": 45
+        "price": 4.679
     },
     {
         "id": 15,
@@ -178,8 +193,7 @@
         "categoryProduct": "in-sale",
         "size": "38",
         "color": "Gris",
-        "price": 8899,
-        "stock": 27
+        "price": 8.899
     },
     {
         "id": 16,
@@ -192,8 +206,7 @@
         "categoryProduct": "visited",
         "size": "S",
         "color": "Azul",
-        "price": 5299,
-        "stock": 14
+        "price": 5.299
     },
     {
         "id": 17,
@@ -206,8 +219,7 @@
         "categoryProduct": "visited",
         "size": "M",
         "color": "Rojo",
-        "price": 2799,
-        "stock": 200
+        "price": 2.799
     },
     {
         "id": 18,
@@ -220,8 +232,7 @@
         "categoryProduct": "visited",
         "size": "26",
         "color": "Salmón",
-        "price": 6749,
-        "stock": 100
+        "price": 6.749
     },
     {
         "id": 19,
@@ -234,8 +245,7 @@
         "categoryProduct": "in-sale",
         "size": "24",
         "color": "Verde",
-        "price": 2999,
-        "stock": 5
+        "price": 2.999
     },
     {
         "id": 20,
@@ -248,54 +258,6 @@
         "categoryProduct": "visited",
         "size": "S",
         "color": "Azul",
-        "price": 5299,
-        "stock": 38
-    },
-    {
-        "id": 21
-    },
-    {
-        "id": 22
-    },
-    {
-        "id": 23
-    },
-    {
-        "id": 24
-    },
-    {
-        "id": 25,
-        "img": "",
-        "title": "asd",
-        "SKU": "1112",
-        "category": "",
-        "size": "",
-        "color": "",
-        "price": "8",
-        "description": "q"
-    },
-    {
-        "id": 26
-    },
-    {
-        "id": 27
-    },
-    {
-        "id": 28
-    },
-    {
-        "id": 29
-    },
-    {
-        "id": 30
-    },
-    {
-        "id": 31
-    },
-    {
-        "id": 32
-    },
-    {
-        "id": 33
+        "price": 5.299
     }
 ]

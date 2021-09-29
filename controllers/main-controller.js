@@ -1,19 +1,17 @@
 const fs = require("fs");
 const path = require("path");
 
-const productsFilePath = path.join(__dirname, "../data/productosDataBase.json");
-const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+const productos = require("../servicesControllers/productsServices");
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controladorMain = {
     index: (req, res) => {
-        const productosVisitados = productos.filter((producto) => {
-            return producto.categoryProduct == "visited";
-        });
-        const productosOfertas = productos.filter((producto) => {
-            return producto.categoryProduct == "in-sale";
-        });
+        //filterByCategory
+        const productosVisitados = productos.filtrarPorCategoria("visited");
+        //filterByCategory
+        const productosOfertas = productos.filtrarPorCategoria("in-sale");
+
         res.render("index", {
             productosVisitados,
             productosOfertas,

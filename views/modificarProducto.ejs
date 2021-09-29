@@ -21,20 +21,20 @@
 
             <div class='formContainer'>
                 <h2 class='centerText'> Modificar un producto</h2>
-                <form class='productForm' action="/<%= productoAEditar.id%>/?_method=PUT" method="POST">
+                <form class='productForm' action="/<%= productoFiltradoEdit.id%>/?_method=PUT" method="POST">
                     <fieldset class='inputsContainer'>
                         <div class='inputProductForm centerText pad10'>
                             <label class=for='modificarProducto'> Stock de Producto a modificar </label>
                             <br>
                             <input type="number" class='maxWidth100' id='stock' name='stock'
-                                value="<%= productoAEditar.stock%>" required>
+                                value="<%= productoFiltradoEdit.stock%>" required>
 
                         </div>
                         <div class='inputProductForm centerText pad10'>
                             <label class=for='modificarProducto'> SKU </label>
                             <br>
-                            <input type="text" class='maxWidth100' id='sku' name='sku' value="<%= productoAEditar.sku%>"
-                                required>
+                            <input type="text" class='maxWidth100' id='sku' name='sku'
+                                value="<%= productoFiltradoEdit.sku%>" required>
 
                         </div>
                         <div class='allExceptImg'>
@@ -42,17 +42,19 @@
                                 <label for='nameChange'>Cambiar el nombre</label>
                                 <br>
                                 <input class='w100' type='text' id='title' name='title'
-                                    value="<%= productoAEditar.title%>" required>
+                                    value="<%= productoFiltradoEdit.title%>" required>
                             </div>
                             <div class='inputProductForm centerText pad10'>
                                 <label for='elegirCategoria'> Categoria </label>
                                 <br>
                                 <select class='maxWidth100' id=category' name='category' required>
-                                    <option value='niños' <%=productoAEditar.category=="niños" ? "selected" : "" %>
+                                    <option value='niños' <%=productoFiltradoEdit.category=="niños" ? "selected" : "" %>
                                         >Niños</option>
-                                    <option value='mujeres' <%=productoAEditar.category=="mujeres" ? "selected" : "" %>
+                                    <option value='mujeres' <%=productoFiltradoEdit.category=="mujeres" ? "selected"
+                                        : "" %>
                                         >Mujeres</option>
-                                    <option value='hombres' <%=productoAEditar.category=="hombres" ? "selected" : "" %>
+                                    <option value='hombres' <%=productoFiltradoEdit.category=="hombres" ? "selected"
+                                        : "" %>
                                         >Hombres</option>
                                 </select>
                             </div>
@@ -60,19 +62,20 @@
                                 <label for='elegirCategoria'> Categoria Deportiva</label>
                                 <br>
                                 <select class='maxWidth100' id=categorySport' name='categorySport' required>
-                                    <option value='Running' <%=productoAEditar.categorySport=="Running" ? "selected"
-                                        : "" %>
+                                    <option value='Running' <%=productoFiltradoEdit.categorySport=="Running"
+                                        ? "selected" : "" %>
                                         >Running</option>
-                                    <option value='Tennis' <%=productoAEditar.categorySport=="Tennis" ? "selected" : ""
-                                        %>
+                                    <option value='Tennis' <%=productoFiltradoEdit.categorySport=="Tennis" ? "selected"
+                                        : "" %>
                                         >Tennis</option>
-                                    <option value='Futbol' <%=productoAEditar.categorySport=="Futbol" ? "selected" : ""
-                                        %>
+                                    <option value='Futbol' <%=productoFiltradoEdit.categorySport=="Futbol" ? "selected"
+                                        : "" %>
                                         >Futbol</option>
-                                    <option value='Basket' <%=productoAEditar.categorySport=="Basket" ? "selected" : ""
-                                        %>
+                                    <option value='Basket' <%=productoFiltradoEdit.categorySport=="Basket" ? "selected"
+                                        : "" %>
                                         >Basket</option>
-                                    <option value='Boxeo' <%=productoAEditar.categorySport=="Boxeo" ? "selected" : "" %>
+                                    <option value='Boxeo' <%=productoFiltradoEdit.categorySport=="Boxeo" ? "selected"
+                                        : "" %>
                                         >Boxeo</option>
                                 </select>
                             </div>
@@ -80,13 +83,13 @@
                                 <label for='talle'> Talle </label>
                                 <br>
                                 <select class='maxWidth100' id='size' name='size' required>
-                                    <option value='S' <%=productoAEditar.size=="S" ? "selected" : "" %> > S
+                                    <option value='S' <%=productoFiltradoEdit.size=="S" ? "selected" : "" %> > S
                                     </option>
-                                    <option value='M' <%=productoAEditar.size=="M" ? "selected" : "" %> >M
+                                    <option value='M' <%=productoFiltradoEdit.size=="M" ? "selected" : "" %> >M
                                     </option>
-                                    <option value='L' <%=productoAEditar.size=="L" ? "selected" : "" %> >L
+                                    <option value='L' <%=productoFiltradoEdit.size=="L" ? "selected" : "" %> >L
                                     </option>
-                                    <option value='XL' <%=productoAEditar.size=="XL" ? "selected" : "" %> >XL
+                                    <option value='XL' <%=productoFiltradoEdit.size=="XL" ? "selected" : "" %> >XL
                                     </option>
                                 </select>
                             </div>
@@ -94,19 +97,19 @@
                                 <label for='color'> Color </label>
                                 <br>
                                 <input type="text" class='maxWidth100' id='color' name='color'
-                                    value="<%= productoAEditar.color%>" required>
+                                    value="<%= productoFiltradoEdit.color%>" required>
                             </div>
                             <div class='inputProductForm centerText pad10'>
                                 <label for='precioChange'>Modificar precio</label>
                                 <br>
                                 <input class='maxWidth100 centerText' type='number' id='price' name='price'
-                                    value="<%= productoAEditar.price%>" min='0' max='10000' placeholder='(en $)'
+                                    value="<%= productoFiltradoEdit.price%>" min='0' max='10000' placeholder='(en $)'
                                     required> <i>$</i>
                             </div>
                             <div class='centerText maxWidth100'>
                                 <textarea class='centerText' id='description' name='description'
-                                    value="<%= productoAEditar.description%>" rows='5'
-                                    cols='28'><%= productoAEditar.description%></textarea>
+                                    value="<%= productoFiltradoEdit.description%>" rows='5'
+                                    cols='28'><%= productoFiltradoEdit.description%></textarea>
                             </div>
                             <div class='centerText'>
                                 <button class='buttonRegister marginBot10' type='submit'>Guardar</button>
