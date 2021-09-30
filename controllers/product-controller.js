@@ -16,34 +16,38 @@ const controllerProducts = {
         const productoFiltrado = productos.findOnlyOneById(req.params.id);
         res.render("indexProdDetail", { productoFiltrado });
     },
+
+    //Vista para crear nuevo producto
+    nuevoProducto: (req, res) => {
+        res.render("crearProducto");
+    },
+
+    // Crear nuevo producto
+    crearNuevoProducto: (req, res) => {
+        const biggestProduct = productos[productos.length - 1];
+        const lastProductId = productos.length > 0 ? biggestProduct.id : 1;
+        const producto = {
+            id: lastProductId + 1,
+            ...req.body,
+            img: "/img/products/" + req.file.filename,
+            price: Number(req.body.price),
+        };
+        productos.push(producto);
+        fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, 4));
+        res.redirect("/productos");
+        console.log(req.body);
+    },
+
     //Encuentra producto a editar producto
     //Modificar producto producto Get
     modificarProducto: (req, res) => {
         const productoFiltradoEdit = productos.findOnlyOneById(req.params.id);
         res.render("modificarProducto", { productoFiltradoEdit });
     },
-    //Modificar producto producto Post
     updateNewProduct: (req, res) => {
         productos.editOneProduct(req.params.id, req.body); //req.file
 
         res.redirect("/productos");
-    },
-
-    nuevoProducto: (req, res) => {
-        res.render("crearProducto");
-    },
-
-    // Crea nuevos produtos. Aún no solucione que cargue imagenes.
-    crearNuevoProducto: (req, res) => {
-        const productId = productos.length;
-        const producto = {
-            id: productId + 1,
-            ...req.body,
-        };
-        productos.push(producto);
-        fs.writeFileSync(productsFilePath, JSON.stringify(productos));
-        res.redirect("/productos");
-        console.log(req.body);
     },
 
     delete: (req, res) => {

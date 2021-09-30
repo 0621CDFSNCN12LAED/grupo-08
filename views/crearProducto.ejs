@@ -20,7 +20,7 @@
     <main class='mainContainer'>
         <div class='formContainer'>
             <h2 class='centerText'> Añadir nuevo producto</h2>
-            <form class='productForm' action="/views/productos" method="post">
+            <form class='productForm' action="/views/productos" method="post" enctype="multipart/form-data">
                 <fieldset class='inputsContainer'>
                     <div class='UploadImageContainer'>
                     <div class='inputProductForm uploadPicture centerText'>
@@ -36,9 +36,9 @@
                         <input type='text' id='title' name='title' >
                     </div>
                     <div class='inputProductForm centerText pad10'>
-                        <label for='SKU'> SKU</label>
+                        <label for='sku'> SKU</label>
                         <br>
-                        <input type='text' id='SKU' name='SKU' >
+                        <input type='text' id='sku' name='sku' >
                     </div>
                     <div class='inputProductForm centerText pad10'>
                         <label for='category'> Categoria </label>

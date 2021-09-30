@@ -1,11 +1,20 @@
 [
     {
-        "id": 1 ,
-        "name": "Martin",
-        "userName": "Martinz",
-        "password":"123",
-        "profileImg": "",
+        "id": 1,
+        "nombre": "Martin",
+        "apellido": "Zazpe",
         "e-mail": "tinchozazpe@hotmail.com",
-        "customerOrAdmin": "customer"
+        "password": "123",
+        "categoria": "admin",
+        "imagen": ""
+    },
+    {
+        "id": 2,
+        "nombre": "Pepe",
+        "apellido": "Sanchez",
+        "e-mail": "Pepesanchez@hotmail.com",
+        "password": "Hola123",
+        "categoria": "cliente",
+        "imagen": ""
     }
 ]

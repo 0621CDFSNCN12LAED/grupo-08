@@ -1,5 +1,5 @@
-<!-- Notes:  Cliquear el logo debera llevar al homepage -->
-<!-- Notes:  cliquear cualquier enlace del footer debera llevar a su pagina correspondiente -->
+<!-- Notes:  -->
+<!-- Notes:  Esteticamente, hay que arreglar muchas cosas-->
 
 
 <!DOCTYPE html>
@@ -35,28 +35,33 @@
                 <img class='googleLogo' src='/img/icons/googlelogo.png' alt='google logo' />
                 <img class='fbLogo' src='/img/icons/fblogo.png' alt='facebook logo' />
             </div>
-            <form class=' form centerText padTop10 flexWrap flexColumn centerText'>
+            <form class=' form centerText padTop10 flexWrap flexColumn centerText' action="/register"  method="post"  enctype="multipart/form-data">
                 <!-- begins form inputs -->
                 <fieldset>
                     <div class='paddingBot8'>
                         <label for='name'> Indícanos tu nombre</label>
                         <br>
-                        <input type='text' id='name' name='name' required>
+                        <input  style= 'color:white' type='text' id='name' name='name' required>
                     </div>
                     <div class=' paddingBot8'>
-                        <label for='username'>Elige un nombre de usuario </label>
+                        <label for='apellido'>Indícanos tu Apellido </label>
                         <br>
-                        <input type='text' id='username' name='username' required>
-                    </div>
-                    <div class=' paddingBot8'>
-                        <label for='password'> Elige una contraseña</label>
-                        <br>
-                        <input type='password' id='password' name='password' required>
+                        <input style= 'color:white' type='text' id='apellido' name='apellido' required>
                     </div>
                     <div class='paddingBot8 marginBot10'>
                         <label for='email'>E-mail</label>
                         <br>
-                        <input class='whiteBg' type='email' id='email' name='email' required>
+                        <input  style= 'color:white' class='whiteBg' type='email' id='email' name='email' required>
+                    </div>
+                    <div class=' paddingBot8'>
+                        <label for='password'> Elige una contraseña</label>
+                        <br>
+                        <input style= 'color:white' type='password' id='password' name='password' required>
+                    </div>
+                    <div class=' paddingBot8'>
+                        <label for='imagen'> Elige una imagen de perfil</label>
+                        <br>
+                        <input type='file' id='imagen' name='imagen' required>
                     </div>
                     <div class='w100 paddingBot2'>
                         <label class for='terminos'>Acepto los <a class='a-links' href='/terminos'>términos y
@@ -67,7 +72,7 @@
                         <input class='styleCheckbox' type='checkbox' id='terminos' name='terminos' required>
                     </div>
                     <div class='paddingBot12'>
-                        <button class='buttonRegister' type='button'>Registrarme</button>
+                        <button class='buttonRegister' type='submit'>Registrarme</button>
                     </div>
                 </fieldset>
                 <div class='paddingBot8 centerText whiteText paddingTop4'><label class='loginLink'>¿Ya tienes un

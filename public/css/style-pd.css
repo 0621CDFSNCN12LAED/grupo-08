@@ -496,3 +496,28 @@ footer {
 .copyright p {
     padding: 8px 0 20px;
 }
+
+.editProduct{
+    text-decoration: none;
+    color: darkcyan;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: block;
+   
+}
+
+.editProduct:hover {
+
+    cursor: pointer;
+    text-decoration: underline;
+   
+
+}
+
+.deleteProduct {
+  padding: 05px;
+  cursor: pointer;
+ 
+
+}
+    
