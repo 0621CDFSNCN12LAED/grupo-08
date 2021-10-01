@@ -1,20 +1,47 @@
 [
-    {
-        "id": 1,
-        "nombre": "Martin",
-        "apellido": "Zazpe",
-        "e-mail": "tinchozazpe@hotmail.com",
-        "password": "123",
-        "categoria": "admin",
-        "imagen": ""
-    },
-    {
-        "id": 2,
-        "nombre": "Pepe",
-        "apellido": "Sanchez",
-        "e-mail": "Pepesanchez@hotmail.com",
-        "password": "Hola123",
-        "categoria": "cliente",
-        "imagen": ""
-    }
+ {
+  "id": 1,
+  "nombre": "Martin",
+  "apellido": "Zazpe",
+  "email": "tinchozazpe@hotmail.com",
+  "password": "123",
+  "categoria": "admin",
+  "imagen": ""
+ },
+ {
+  "id": 2,
+  "nombre": "Pepe",
+  "apellido": "Sanchez",
+  "email": "Pepesanchez@hotmail.com",
+  "password": "Hola123",
+  "categoria": "cliente",
+  "imagen": ""
+ },
+ {
+  "id": 3,
+  "nombre": "Roberto",
+  "apellido": "Sanchez",
+  "email": "robertito@hotmail.com",
+  "password": "Hola123",
+  "categoria": "cliente",
+  "imagen": ""
+ },
+ {
+  "id": 4,
+  "nombre": "Mario",
+  "apellido": "Neta",
+  "email": "mario@hotmail.com",
+  "password": "123",
+  "categoria": "cliente",
+  "imagen": ""
+ },
+ {
+  "id": 5,
+  "name": "Franco",
+  "apellido": "Marchegiani",
+  "email": "francoE@hotmail.com",
+  "password": "$2a$10$.Eq2MdthmTySPjLe7O5JlOvw0wkZeSHev8gCaeeFTh0rGbPfA45h.",
+  "terminos": "on",
+  "img": "/img/avatars/NuevoAvatar-1633053262185.png"
+ }
 ]

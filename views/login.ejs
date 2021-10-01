@@ -37,13 +37,13 @@
                     <img class='googleLogo' src='/img/icons/google-login.png' alt='google logo' />
                     <img class='fbLogo' src='/img/icons/fb-login.png' alt='facebook logo' />
                 </div>
-                <form class=' form centerText padTop10 flexWrap flexColumn centerText'>
+                <form action="./login" method="POST" class=' form centerText padTop10 flexWrap flexColumn centerText'>
                     <!-- begins form inputs -->
                     <fieldset>
                         <div class=' paddingBot8 nombreLogin'>
-                            <label for='name'> E-mail</label>
+                            <label for='email'> E-mail</label>
                             <br>
-                            <input type='text' id='name' name='name' required>
+                            <input type='email' id='email' name='email' required>
                         </div>
                         <div class=' paddingBot8 contraseñaLogin'>
                             <label for='password'> Contraseña</label>
@@ -51,11 +51,11 @@
                             <input type='password' id='password' name='password' required>
                         </div>
                         <div class='paddingBot8 recuerdameLogin'>
-                            <label class=' paddingBot4' for='checkbox'> Recuerdame</label>
-                            <input class='recuerdameCheckbox' type='checkbox' id='checkbox' name='checkbox'>
+                            <label class=' paddingBot4' for='rememberMe'> Recuerdame</label>
+                            <input class='recuerdameCheckbox' type='checkbox' id='rememberMe' name='rememberMe'>
                         </div>
                         <div class='paddingBot20 botonIngresar'>
-                            <button class='buttonRegister' type='button'>Ingresar</button>
+                            <button class='buttonRegister' type='submit'>Ingresar</button>
                         </div>
                         <div class='olvideContraseñaText marginBot10'><label>Olvide mi contraseña</label></div>
                         <div class='paddingBot8 centerText whiteText paddingTop4 sinUsuarioLogin'><label>¿Aún no tienes

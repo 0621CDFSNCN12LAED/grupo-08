@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <script src="https://kit.fontawesome.com/d3503ff7e5.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/theme-lr.css" />
+        <link rel="stylesheet" href="/css/utils-lr.css" />
+        <link rel="stylesheet" href="/css/styles-lr.css" />
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel='stylesheet' href='/css/styles-login-md.css' media='(min-width:768px)' />
+        <link rel='stylesheet' href='/css/styles-login-lg.css' media='(min-width:992px)' />
+        <link rel="stylesheet" href="../css/styleHome.css">
+        <link rel="stylesheet" href="../css/styleHome-sm.css">
+        <link rel="stylesheet" href="../css/styleHome-md.css">
+        <link rel="stylesheet" href="../css/styleHome-lg.css">
+</head>
+
+
+<body class='no-margin flex-wrap background-img'>
+
+    <%- include('./partials/header') %>
+
+        <main>
+            <img src="../img/avatars/<%= user.img %>  " alt="">
+            <h1>Bienvenido <%= user.name %>
+            </h1>
+            <p>Email: <%= user.email %>
+            </p>
+        </main>
+
+
+        <%- include('./partials/footer') %>
+</body>
+
+</html>
