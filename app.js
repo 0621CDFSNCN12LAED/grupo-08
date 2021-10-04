@@ -1,6 +1,7 @@
 const express = require("express");
 const expressSession = require("express-session");
 const cookie = require("cookie-parser");
+const { body } = require("express-validator");
 const path = require("path");
 const app = express();
 const mainRouter = require("./routes/main-routes");

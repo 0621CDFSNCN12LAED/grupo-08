@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="/css/theme-lr.css" />
         <link rel="stylesheet" href="/css/utils-lr.css" />
         <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel="stylesheet" href="../css/styles-register.css">
         <link rel='stylesheet' href='/css/styles-sm-register.css' media='(min-width:480px)' />
         <link rel='stylesheet' href='/css/styles-md-register.css' media='(min-width:768px)' />
         <link rel='stylesheet' href='/css/styles-lg-register.css' media='(min-width:992px)' />
@@ -35,33 +36,72 @@
                 <img class='googleLogo' src='/img/icons/googlelogo.png' alt='google logo' />
                 <img class='fbLogo' src='/img/icons/fblogo.png' alt='facebook logo' />
             </div>
-            <form class=' form centerText padTop10 flexWrap flexColumn centerText' action="/register"  method="post"  enctype="multipart/form-data">
+            <form class=' form centerText padTop10 flexWrap flexColumn centerText' action="/register" method="post"
+                enctype="multipart/form-data">
                 <!-- begins form inputs -->
                 <fieldset>
                     <div class='paddingBot8'>
                         <label for='name'> Indícanos tu nombre</label>
                         <br>
-                        <input  style= 'color:white' type='text' id='name' name='name' required>
+                        <input style='color:white' type='text' id='name' name='name'
+                            value="<%= locals.oldData ? oldData.name : null  %>">
+                        <% if (locals.errors && errors.name) { %>
+                            <div class="errorMessage">
+                                <p>
+                                    <%= errors.name.msg %>
+                                </p>
+                            </div>
+                            <% } %>
                     </div>
                     <div class=' paddingBot8'>
                         <label for='apellido'>Indícanos tu Apellido </label>
                         <br>
-                        <input style= 'color:white' type='text' id='apellido' name='apellido' required>
+                        <input style='color:white' type='text' id='apellido' name='apellido'
+                            value="<%= locals.oldData ? oldData.apellido : null  %>">
+                        <% if (locals.errors && errors.apellido) { %>
+                            <div class="errorMessage">
+                                <p>
+                                    <%= errors.apellido.msg %>
+                                </p>
+                            </div>
+                            <% } %>
                     </div>
                     <div class='paddingBot8 marginBot10'>
                         <label for='email'>E-mail</label>
                         <br>
-                        <input  style= 'color:white' class='whiteBg' type='email' id='email' name='email' required>
+                        <input style='color:white' class='whiteBg' type='email' id='email' name='email'
+                            value="<%= locals.oldData ? oldData.email : null  %>">
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="errorMessage">
+                                <p>
+                                    <%= errors.email.msg %>
+                                </p>
+                            </div>
+                            <% } %>
                     </div>
                     <div class=' paddingBot8'>
                         <label for='password'> Elige una contraseña</label>
                         <br>
-                        <input style= 'color:white' type='password' id='password' name='password' required>
+                        <input style='color:white' type='password' id='password' name='password'>
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="errorMessage">
+                                <p>
+                                    <%= errors.password.msg %>
+                                </p>
+                            </div>
+                            <% } %>
                     </div>
                     <div class=' paddingBot8'>
                         <label for='imagen'> Elige una imagen de perfil</label>
                         <br>
-                        <input type='file' id='imagen' name='imagen' required>
+                        <input type='file' id='imagen' name='imagen'>
+                        <% if (locals.errors && errors.imagen) { %>
+                            <div class="errorMessage">
+                                <p>
+                                    <%= errors.imagen.msg %>
+                                </p>
+                            </div>
+                            <% } %>
                     </div>
                     <div class='w100 paddingBot2'>
                         <label class for='terminos'>Acepto los <a class='a-links' href='/terminos'>términos y
@@ -69,13 +109,21 @@
                     </div>
                     <div class='w100 paddingBot8'>
                         <br>
-                        <input class='styleCheckbox' type='checkbox' id='terminos' name='terminos' required>
+                        <input class='styleCheckbox' type='checkbox' id='terminos' name='terminos'>
+                        <% if (locals.errors && errors.terminos) { %>
+                            <div class="errorMessage">
+                                <p>
+                                    <%= errors.terminos.msg %>
+                                </p>
+                            </div>
+                            <% } %>
                     </div>
                     <div class='paddingBot12'>
                         <button class='buttonRegister' type='submit'>Registrarme</button>
                     </div>
                 </fieldset>
-                <div class='paddingBot8 centerText whiteText paddingTop4'><label class='loginLink'>¿Ya tienes un
+                <div class='paddingBot8 centerText whiteText paddingTop4'><label class='loginLink'>¿Ya
+                        tienes un
                         usuario con
                         nosotros?<a class='aLinks' href='/login'> Ingresa aquí</a></label></div>
             </form>

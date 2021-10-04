@@ -1,72 +1,63 @@
-
 /* have to fix this */
-    
 
-.containerForm{
-    display:flex;
+.containerForm {
+    display: flex;
     flex-wrap: nowrap;
 }
 
-
-.fontSize5vw{
-    font-size:3vw;
-  }
-
-
-.headerRegisterForm{
-    border-bottom: 1px solid rgb(224, 219, 219);
-    display:initial;
-    justify-content: center;
-    position:relative;
+.fontSize5vw {
+    font-size: 3vw;
 }
 
-.itemsitems{
-    display:flex;
+.headerRegisterForm {
+    border-bottom: 1px solid rgb(224, 219, 219);
+    display: initial;
+    justify-content: center;
+    position: relative;
+}
+
+.itemsitems {
+    display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
 }
 
-.item1{
-    display:inline-block;
+.item1 {
+    display: inline-block;
     flex-basis: 140%;
-    margin-left:10px;
-   
+    margin-left: 10px;
 }
 
-.textRegisterLogin{
+.textRegisterLogin {
     font-size: 150%;
-    flex-basis:100%;
+    flex-basis: 100%;
     text-align: center;
-    display:none;
-    
+    display: none;
 }
 
-.textRegisterLogin2{
+.textRegisterLogin2 {
     font-size: 150%;
-    flex-basis:100%;
+    flex-basis: 100%;
     text-align: center;
-    display:initial;
+    display: initial;
 }
 
+.googleLogo {
+    position: relative;
+    margin: auto;
+    margin-top: 12px;
+    max-width: 25vw;
+}
 
-.googleLogo{
-    position:relative;
-    margin:auto;
-    margin-top:12px;
-    max-width:25vw;
-    }
-    
+.fbLogo {
+    position: relative;
+    margin: auto;
+    margin-top: 12px;
+    max-width: 25vw;
+}
 
-    .fbLogo{
-        position:relative;
-        margin:auto;
-        margin-top:12px;
-        max-width:25vw;
-        }
-
-        
-
-.googleLogo:hover, .fbLogo:hover{
+.googleLogo:hover,
+.fbLogo:hover {
     cursor: pointer;
-    transform:scale(1.05);
+    transform: scale(1.05);
 }

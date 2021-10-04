@@ -4,6 +4,7 @@ let bcryptjs = require("bcryptjs");
 
 const usuariosFilePath = path.join(__dirname, "../data/usuariosDataBase.json");
 const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
+const { validationResult } = require("express-validator");
 
 const user = require("../models/oneUser");
 
@@ -16,12 +17,27 @@ const controladorUsers = {
 
     //Registrar nuevo usuario
     register: (req, res) => {
-        let userInDB = user.findByField("email", req.body.email);
+        //Mensaje de error registro
+        const resultadoValidacion = validationResult(req);
+
+        if (resultadoValidacion.errors.length > 0) {
+            return res.render("register", {
+                errors: resultadoValidacion.mapped(),
+                oldData: req.body,
+            });
+        }
 
         //Mensaje de error de mail repetido
         if (userInDB) {
             //Acá va el render con las validaciones hechas en el registe, pero para el login
-            res.send("El mail introducido ya está utilizado");
+            return res.render("register", {
+                errors: {
+                    email: {
+                        msg: "Este mail ya se encuentra registrado",
+                    },
+                },
+                oldData: req.body,
+            });
         }
 
         const biggestUser = usuarios[usuarios.length - 1];
@@ -66,7 +82,13 @@ const controladorUsers = {
                 return res.redirect("/profile");
             }
         }
-        return res.send("Mensaje de error contraseña");
+        return res.render("login", {
+            errors: {
+                email: {
+                    msg: "Los datos ingresados no coinciden, intentelo nuevamente",
+                },
+            },
+        });
     },
 
     terminos: (req, res) => {
