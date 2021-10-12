@@ -1,36 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <%- include('./partials/head') %>
-        <script src="https://kit.fontawesome.com/d3503ff7e5.js" crossorigin="anonymous"></script>
+    <head>
+        <%- include('./partials/head') %>
+        <script
+            src="https://kit.fontawesome.com/d3503ff7e5.js"
+            crossorigin="anonymous"
+        ></script>
         <link rel="stylesheet" href="/css/theme-lr.css" />
         <link rel="stylesheet" href="/css/utils-lr.css" />
         <link rel="stylesheet" href="/css/styles-lr.css" />
         <link rel="stylesheet" href="/css/normalize.css" />
-        <link rel='stylesheet' href='/css/styles-login-md.css' media='(min-width:768px)' />
-        <link rel='stylesheet' href='/css/styles-login-lg.css' media='(min-width:992px)' />
-        <link rel="stylesheet" href="../css/styleHome.css">
-        <link rel="stylesheet" href="../css/styleHome-sm.css">
-        <link rel="stylesheet" href="../css/styleHome-md.css">
-        <link rel="stylesheet" href="../css/styleHome-lg.css">
-</head>
+        <link rel="stylesheet" href="/css/profile.css" />
+        <link
+            rel="stylesheet"
+            href="/css/styles-login-md.css"
+            media="(min-width:768px)"
+        />
+        <link
+            rel="stylesheet"
+            href="/css/styles-login-lg.css"
+            media="(min-width:992px)"
+        />
+        <link rel="stylesheet" href="../css/styleHome.css" />
+        <link rel="stylesheet" href="../css/styleHome-sm.css" />
+        <link rel="stylesheet" href="../css/styleHome-md.css" />
+        <link rel="stylesheet" href="../css/styleHome-lg.css" />
+    </head>
 
-
-<body class='no-margin flex-wrap background-img'>
-
-    <%- include('./partials/header') %>
+    <body style="">
+        <%- include('./partials/header') %>
 
         <main>
-            <img src="../img/avatars/<%= user.img %>  " alt="">
-            <h1>Bienvenido <%= user.name %>
-            </h1>
-            <p>Email: <%= user.email %>
-            </p>
+            <div class="titleItem">
+                <h1>Bienvenido <%= user.name %></h1>
+            </div>
+            <div class="container">
+                <div class="containerImgInfo">
+                    <img
+                        src="<%= user.img %>"
+                        style="
+                            max-width: 25vw;
+                            vertical-align: middle;
+                            margin: 0 auto;
+                        "
+                        alt="avatar"
+                    />
+                    <div class="infoItem">
+                        <h3>Mis datos:</h3>
+                        <p>Email: <%= user.email %></p>
+                    </div>
+                </div>
+            </div>
+            <div class="HistorialCompras">
+                <h2>Historial de mis compras</h2>
+                <p>place holder</p>
+                <p>place holder</p>
+                <p>place holder</p>
+            </div>
         </main>
 
-
         <%- include('./partials/footer') %>
-</body>
-
+    </body>
 </html>
