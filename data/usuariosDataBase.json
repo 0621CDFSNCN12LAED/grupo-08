@@ -61,5 +61,14 @@
   "password": "$2a$10$JO3RAD8dpliNh4Br0z93nOQCKNlZQU6OTRoMpUJ8zHhXSvR9GslB2",
   "terminos": "on",
   "img": "/img/avatars/NuevoAvatar-1633289218484.png"
+ },
+ {
+  "id": 8,
+  "name": "maximo",
+  "apellido": "cozzetti",
+  "email": "cozzetti@hotmail.com",
+  "password": "$2a$10$OFmSuc8HF7JcpGyUQ40BEODh2dGA5DbbHi.MY0tvSplEenFp9Cm96",
+  "terminos": "on",
+  "img": "/img/avatars/NuevoAvatar-1634062067548.png"
  }
 ]
