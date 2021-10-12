@@ -1,74 +1,65 @@
 [
- {
-  "id": 1,
-  "nombre": "Martin",
-  "apellido": "Zazpe",
-  "email": "tinchozazpe@hotmail.com",
-  "password": "123",
-  "categoria": "admin",
-  "imagen": ""
- },
- {
-  "id": 2,
-  "nombre": "Pepe",
-  "apellido": "Sanchez",
-  "email": "Pepesanchez@hotmail.com",
-  "password": "Hola123",
-  "categoria": "cliente",
-  "imagen": ""
- },
- {
-  "id": 3,
-  "nombre": "Roberto",
-  "apellido": "Sanchez",
-  "email": "robertito@hotmail.com",
-  "password": "Hola123",
-  "categoria": "cliente",
-  "imagen": ""
- },
- {
-  "id": 4,
-  "nombre": "Mario",
-  "apellido": "Neta",
-  "email": "mario@hotmail.com",
-  "password": "123",
-  "categoria": "cliente",
-  "imagen": ""
- },
- {
-  "id": 5,
-  "name": "Franco",
-  "apellido": "Marchegiani",
-  "email": "francoE@hotmail.com",
-  "password": "$2a$10$.Eq2MdthmTySPjLe7O5JlOvw0wkZeSHev8gCaeeFTh0rGbPfA45h.",
-  "terminos": "on",
-  "img": "/img/avatars/NuevoAvatar-1633053262185.png"
- },
- {
-  "id": 6,
-  "name": "Peje",
-  "apellido": "Marchegiani",
-  "email": "eze.cavs@hotmail.com",
-  "password": "$2a$10$O/lkdDGVMfAB69FwIpkuR.RYJm2.u/e2/HKL0iha.wB5wD4qC81R.",
-  "terminos": "on",
-  "img": "/img/avatars/NuevoAvatar-1633124470568.png"
- },
- {
-  "id": 7,
-  "name": "Peje",
-  "apellido": "Marchegiani",
-  "email": "eze.caavs@hotmail.com",
-  "password": "$2a$10$JO3RAD8dpliNh4Br0z93nOQCKNlZQU6OTRoMpUJ8zHhXSvR9GslB2",
-  "terminos": "on",
-  "img": "/img/avatars/NuevoAvatar-1633289218484.png"
- },
- {
-  "id": 8,
-  "name": "maximo",
-  "apellido": "cozzetti",
-  "email": "cozzetti@hotmail.com",
-  "password": "$2a$10$OFmSuc8HF7JcpGyUQ40BEODh2dGA5DbbHi.MY0tvSplEenFp9Cm96",
-  "terminos": "on",
-  "img": "/img/avatars/NuevoAvatar-1634062067548.png"
- }
+    {
+        "id": 1,
+        "nombre": "Martin",
+        "apellido": "Zazpe",
+        "email": "tinchozazpe@hotmail.com",
+        "password": "123",
+        "categoria": "admin",
+        "imagen": ""
+    },
+    {
+        "id": 2,
+        "nombre": "Pepe",
+        "apellido": "Sanchez",
+        "email": "Pepesanchez@hotmail.com",
+        "password": "Hola123",
+        "categoria": "cliente",
+        "imagen": ""
+    },
+    {
+        "id": 3,
+        "nombre": "Roberto",
+        "apellido": "Sanchez",
+        "email": "robertito@hotmail.com",
+        "password": "Hola123",
+        "categoria": "cliente",
+        "imagen": ""
+    },
+    {
+        "id": 4,
+        "nombre": "Mario",
+        "apellido": "Neta",
+        "email": "mario@hotmail.com",
+        "password": "123",
+        "categoria": "cliente",
+        "imagen": ""
+    },
+    {
+        "id": 5,
+        "name": "Franco",
+        "apellido": "Marchegiani",
+        "email": "francoE@hotmail.com",
+        "password": "$2a$10$.Eq2MdthmTySPjLe7O5JlOvw0wkZeSHev8gCaeeFTh0rGbPfA45h.",
+        "terminos": "on",
+        "img": "/img/avatars/NuevoAvatar-1633053262185.png"
+    },
+    {
+        "id": 6,
+        "name": "Peje",
+        "apellido": "Marchegiani",
+        "email": "eze.cavs@hotmail.com",
+        "password": "$2a$10$O/lkdDGVMfAB69FwIpkuR.RYJm2.u/e2/HKL0iha.wB5wD4qC81R.",
+        "terminos": "on",
+        "img": "/img/avatars/NuevoAvatar-1633124470568.png"
+    },
+    {
+        "id": 7,
+        "name": "Peje",
+        "apellido": "Marchegiani",
+        "email": "eze.caavs@hotmail.com",
+        "password": "$2a$10$JO3RAD8dpliNh4Br0z93nOQCKNlZQU6OTRoMpUJ8zHhXSvR9GslB2",
+        "terminos": "on",
+        "img": "/img/avatars/NuevoAvatar-1633289218484.png"
+    }
 ]

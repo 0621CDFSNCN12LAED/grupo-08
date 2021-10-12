@@ -22,21 +22,26 @@ const controllerProducts = {
         res.render("crearProducto");
     },
 
-    // Crear nuevo producto
     crearNuevoProducto: (req, res) => {
-        const biggestProduct = productos[productos.length - 1];
-        const lastProductId = productos.length > 0 ? biggestProduct.id : 1;
-        const producto = {
-            id: lastProductId + 1,
-            ...req.body,
-            img: "/img/products/" + req.file.filename,
-            price: Number(req.body.price),
-        };
-        productos.push(producto);
-        fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, 4));
+        productos.createOne(req.body, req.file);
         res.redirect("/productos");
-        console.log(req.body);
     },
+
+    //Ya esta funcionando em servicios pero comentado hasta poder probarlo un poquito mas.
+    // crearNuevoProducto: (req, res) => {
+    //     const biggestProduct = productos[productos.length - 1];
+    //     const lastProductId = productos.length > 0 ? biggestProduct.id : 1;
+    //     const producto = {
+    //         id: lastProductId + 1,
+    //         ...req.body,
+    //         img: "/img/products/" + req.file.filename,
+    //         price: Number(req.body.price),
+    //     };
+    //     productos.push(producto);
+    //     fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, 4));
+    //     res.redirect("/productos");
+    //     console.log(req.body);
+    // },
 
     //Encuentra producto a editar producto
     //Modificar producto producto Get
