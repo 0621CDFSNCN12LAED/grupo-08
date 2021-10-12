@@ -23,6 +23,20 @@ const servicesControllers = {
         const jsonString = JSON.stringify(productos, null, 4);
         fs.writeFileSync(productsFilePath, jsonString);
     },
+
+    createOne: (payload, image) => {
+        const biggestProduct = productos[productos.length - 1];
+        const lastProductId = productos.length > 0 ? biggestProduct.id : 1;
+        const producto = {
+            id: lastProductId + 1,
+            ...payload,
+            img: "/img/products/" + image.filename,
+            price: Number(payload.price),
+        };
+        productos.push(producto);
+        fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, 4));
+    },
+
     editOneProduct(id, payload, image) {
         const productoEditar = this.findOnlyOneById(id);
         productoEditar.title = payload.title;
