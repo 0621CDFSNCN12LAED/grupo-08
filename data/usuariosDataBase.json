@@ -34,5 +34,14 @@
   "password": "$2a$10$uMfNBdeuKv48EseURi7vZ.FVNKe/OnnNEXWRMiaCPFvFMXxzv64K.",
   "terminos": "on",
   "img": "/img/avatars/NuevoAvatar-1634062860153.png"
+ },
+ {
+  "id": 5,
+  "name": "juan",
+  "apellido": "perez",
+  "email": "juan.perez@gmai.com",
+  "password": "$2a$10$IjI42zqOHnT.8xmFhqbAteXM1ls1Wj/xcBM8cQjed/Igq0G3Gv2f2",
+  "terminos": "on",
+  "img": "/img/avatars/NuevoAvatar-1634092744146.jpg"
  }
 ]
