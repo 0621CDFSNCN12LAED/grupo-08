@@ -1,8 +1,8 @@
-@media screen and (min-width: 360px){
-    .product{
+@media screen and (min-width: 360px) {
+    .product {
         max-width: 60%;
     }
-    .containCategories img{
+    .containCategories img {
         width: 65%;
     }
 }
