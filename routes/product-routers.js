@@ -25,7 +25,11 @@ router.post(
 
 // modificar un producto
 router.get("/modificarProducto/:id", controlladorProductos.modificarProducto);
-router.put("/:id", controlladorProductos.updateNewProduct);
+router.put(
+    "/:id",
+    upload.single("img"),
+    controlladorProductos.updateNewProduct
+);
 
 //borrar un producto
 router.delete("/:id", controlladorProductos.delete);

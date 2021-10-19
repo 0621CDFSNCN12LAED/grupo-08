@@ -51,6 +51,10 @@ const servicesControllers = {
         this.save();
     },
     deleteOneProduct(id) {
+        /*const deleteImg = productos.find(function (producto) {
+            return producto.id == id;
+        });
+        fs.unlinkSync(path.join(__dirname, "../public" + deleteImg.image));*/
         const productoFiltradoDelete = productos.findIndex((producto) => {
             return producto.id == id;
         });
