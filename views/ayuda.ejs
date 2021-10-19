@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <%- include('./partials/head') %>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+            integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/styleHome.css">
+        <link rel="stylesheet" href="../css/styleHome-sm.css">
+        <link rel="stylesheet" href="../css/styleHome-md.css">
+        <link rel="stylesheet" href="../css/styleHome-lg.css">
+        <link rel="stylesheet" href="../css/ayuda-sm.css">
+        <link rel="stylesheet" href="../css/ayuda-md.css">
+        <link rel="stylesheet" href="../css/ayuda-lg.css">
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+
+        <!-- Pasos para comprar -->
+        <h1 id="pasosComprar" class="title_pasosComprar">Pasos para comprar</h1>
+        <section class="sectionMetodoPago paso1">
+            <p>Seleccione los productos que desee comprar en el <a href="productCart">carro de compras</a></p>
+            <img src="../img/ayuda/paso1-seleccion_producto.jpg" alt="Imagen pasos cómo comprar">
+        </section>
+        <section class="sectionMetodoPago paso2">
+            <p>Luego, seleccione el método de pago que utilizará</p>
+            <img src="../img/ayuda/paso2-metodo_pago.jpg" alt="Imagen pasos cómo comprar">
+        </section>
+        <section class="sectionMetodoPago paso3">
+            <p>Realice el pago según el método a pagar seleccionado</p>
+            <img src="../img/ayuda/paso3-elegir_metodo_pago.jpg" alt="Imagen pasos cómo comprar">
+        </section>
+        <section class="sectionMetodoPago paso4">
+            <p>El pago se realizó con éxito, solo queda ponerse en contacto con el vendedor para pactar la entrega</p>
+            <i class="fas fa-check aprobation"></i>
+        </section>
+
+        <!-- Métodos de pago -->
+        <h2 id="metodoPago" class="title_metodoPago">Métodos de Pago</h2>
+        <main class="metodoPago">
+            <div class="metodoPago-container">
+                <div class="metodoPago-item">
+                    <i class="fas fa-money-bill-alt efectivo"></i>
+                    <p>Efectivo</p>
+                </div>
+                <div class="metodoPago-item">
+                    <i class="fas fa-credit-card tarjeta"></i>
+                    <p>débito/crédito</p>
+                </div>
+                <div class="metodoPago-item">
+                    <i class="fas fa-university transferencia"></i>
+                    <p>Transferencia</p>
+                </div>
+                <div class="metodoPago-item">
+                    <i class="fab fa-bitcoin bitcoin"></i>
+                    <p>Bitcoin</p>
+                </div>
+
+            </div>
+        </main>
+        <!-- FAQ (Preguntas frecuentes) -->
+        <h3 id="faq" class="title_faq"> FAQ (Preguntas Frecuentes) </h3>
+        <section class="section_faq">
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left colorPregunta" type="button"
+                                data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                El producto que compré, cuenta con garantía?
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            Por supuesto! Los productos cuentan con hasta 30 días de prueba. En caso de un cambio de
+                            opinión se devolverá la totalidad de lo abonado.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed colorPregunta" type="button"
+                                data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                aria-controls="collapseTwo">
+                                Aceptan moneda extranjera?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            Aceptamos todo tipo de moneda
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed colorPregunta" type="button"
+                                data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                aria-controls="collapseThree">
+                                Hotel?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            Trivago
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Política de privacidad -->
+        <section id="politicaPrivacidad" class="secction_politicaPrivacidad">
+            <h4 class="title_politicaPrivacidad">Política de privacidad</h4>
+            <p>Nuestra política de privacidad ofrece total seguridad a la hora de realizar compras por nuestra página
+                web, la misma se responsabiliza al 100% en caso de estafas o inconvenientes ocasionados en la misma.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque sapiente ullam sed? Iure, a tempore,
+                cum provident eos doloremque quam qui quae eveniet numquam dolorum maxime. Animi atque quam fugit
+                aliquid iusto molestias voluptatem ea velit praesentium cumque dolorum dolore natus ullam, in hic
+                voluptatibus! Ex dolor expedita hic consequuntur!</p>
+        </section>
+        <%- include('./partials/footer') %>
+
+</body>
+
+</html>

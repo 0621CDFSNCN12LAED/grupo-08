@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.title_pasosComprar {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 32px;
+}
+.sectionMetodoPago {
+    width: 100%;
+    padding: 48px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sectionMetodoPago img {
+    width: 60%;
+}
+.sectionMetodoPago p {
+    text-align: center;
+    max-width: 90%;
+    font-size: 20px;
+}
+.aprobation {
+    font-size: 160px;
+    color: rgb(27, 147, 245);
+}
+
+/* Metodo de pago */
+.title_metodoPago {
+    padding-top: 20px;
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 32px;
+}
+.metodoPago {
+    background-color: rgb(233, 233, 233);
+}
+.metodoPago-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+.metodoPago-item {
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.metodoPago-item i {
+    font-size: 32px;
+}
+.efectivo:hover {
+    color: green;
+}
+.tarjeta:hover {
+    color: #0cbfe9;
+}
+.transferencia:hover {
+    color: rgb(195, 195, 195);
+}
+.bitcoin:hover {
+    color: #f7931a;
+}
+.metodoPago-item p {
+    font-size: 16px;
+}
+
+/* FAQ Preguntas frecuentes */
+.title_faq {
+    padding-top: 64px;
+    text-align: center;
+    padding-bottom: 24px;
+    font-size: 32px;
+}
+.colorPregunta {
+    color: #0cbfe9;
+}
+
+/* Política privacidad */
+.title_politicaPrivacidad {
+    padding-top: 72px;
+    text-align: center;
+    padding-bottom: 24px;
+    font-size: 32px;
+}
+.secction_politicaPrivacidad p {
+    margin: auto;
+    max-width: 80%;
+    padding-bottom: 40px;
+}

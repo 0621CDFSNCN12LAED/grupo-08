@@ -1,0 +1,102 @@
+@media screen and (min-width: 768px) {
+    .sectionMetodoPago img {
+        width: 40%;
+    }
+    .sectionMetodoPago p {
+        font-size: 22px;
+    }
+    .aprobation {
+        font-size: 240px;
+    }
+    /* Nueva posición */
+    /* Paso 1 */
+    .paso1 {
+        max-width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-areas: "texto imagen";
+        grid-template-rows: 1fr;
+        grid-template-columns: 50% 120%;
+    }
+    .paso1 p {
+        grid-area: texto;
+    }
+    .paso1 img {
+        grid-area: imagen;
+    }
+    /* Paso 2 */
+    .paso2 {
+        max-width: 80%;
+        margin: auto;
+        display: grid;
+        grid-template-areas: "imagen texto";
+        grid-template-rows: 1fr;
+        grid-template-columns: 60% 40%;
+    }
+    .paso2 img {
+        grid-area: imagen;
+        width: 80%;
+    }
+    .paso2 p {
+        grid-area: texto;
+    }
+    /* Paso 3 */
+    .paso3 {
+        max-width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-areas: "texto imagen";
+        grid-template-rows: 1fr;
+        grid-template-columns: 50% 100%;
+    }
+    .paso3 p {
+        grid-area: texto;
+    }
+    .paso3 img {
+        grid-area: imagen;
+    }
+    /* Paso 4 */
+    .paso4 {
+        max-width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-areas: "imagen texto";
+        grid-template-rows: 1fr;
+        grid-template-columns: 50% 50%;
+        padding-left: 40px;
+    }
+    .paso4 img {
+        grid-area: imagen;
+    }
+    .paso4 p {
+        grid-area: texto;
+    }
+
+    /* Metodo de pago */
+    .title_metodoPago {
+        padding-top: 40px;
+        font-size: 36px;
+    }
+    .metodoPago-item i {
+        font-size: 40px;
+    }
+    .metodoPago-item p {
+        font-size: 20px;
+    }
+    /* FAQ Preguntas frecuentes */
+    .title_faq {
+        padding-top: 80px;
+        font-size: 36px;
+    }
+    .section_faq {
+        margin: auto;
+        max-width: 85%;
+    }
+    /* Política privacidad */
+    .title_politicaPrivacidad {
+        font-size: 36px;
+    }
+    .secction_politicaPrivacidad p {
+        font-size: 18px;
+    }
+}

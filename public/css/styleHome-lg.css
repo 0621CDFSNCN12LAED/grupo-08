@@ -1,51 +1,55 @@
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1200px) {
+    .carouselBanner {
+        max-width: 70%;
+        margin: auto;
+    }
     /* Header */
-    .logoContainer img{
+    .logoContainer img {
         width: 20%;
     }
-    .navBar{
+    .navBar {
         max-width: 1300px;
         margin: auto;
     }
     /* Productos */
-    .productContainer{
+    .productContainer {
         max-width: 85%;
         margin: auto;
         justify-content: space-evenly;
     }
-    .product{
+    .product {
         width: 25%;
         margin: 20px 40px;
     }
-    .detailContainer{
+    .detailContainer {
         flex-direction: column;
         display: flex;
     }
     /* Categorias */
-    .containCategoriesGlobal{
+    .containCategoriesGlobal {
         max-width: 70%;
         margin: auto;
     }
-    .containCategories{
+    .containCategories {
         justify-content: center;
     }
-    .containCategories img{
+    .containCategories img {
         width: 25vw;
         padding-right: 8px;
     }
     /* Footer */
-    .footerContainer{
+    .footerContainer {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
     }
-    .logoFooter{
+    .logoFooter {
         width: 50%;
     }
-    .sectionFooter2{
+    .sectionFooter2 {
         max-width: 38%;
     }
-    .sectionFooter4 button{
+    .sectionFooter4 button {
         font-size: 12px;
     }
 }

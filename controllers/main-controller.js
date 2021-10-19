@@ -18,6 +18,9 @@ const controladorMain = {
             toThousand,
         });
     },
+    ayuda: (req, res) => {
+        res.render("ayuda");
+    },
 };
 
 module.exports = controladorMain;
