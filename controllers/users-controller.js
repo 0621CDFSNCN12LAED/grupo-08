@@ -26,8 +26,9 @@ const controladorUsers = {
                 oldData: req.body,
             });
         }
-        let userInDB = user.findByField("email", req.body.email);
+
         //Mensaje de error de mail repetido
+        let userInDB = user.findByField("email", req.body.email);
         if (userInDB) {
             //Acá va el render con las validaciones hechas en el registe, pero para el login
             return res.render("register", {

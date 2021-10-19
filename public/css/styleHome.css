@@ -47,6 +47,7 @@ header {
     height: 40px;
     background-color: lightgray;
     text-align: center;
+    display: none;
 }
 
 .nav ul li {
@@ -325,4 +326,10 @@ footer {
 }
 .copyright p {
     padding: 8px 0 20px;
+}
+
+@media (min-width: 561px) {
+    .nav {
+        display: inherit;
+    }
 }

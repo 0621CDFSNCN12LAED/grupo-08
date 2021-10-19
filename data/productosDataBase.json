@@ -259,5 +259,16 @@
         "size": "S",
         "color": "Azul",
         "price": 5.299
+    },
+    {
+        "id": 21,
+        "title": "ElSuperProducto",
+        "sku": "",
+        "category": "",
+        "size": "",
+        "color": "",
+        "price": 1,
+        "description": "El mejor producto de todos",
+        "img": "/img/products/NuevoProducto-1634671240517.jpeg"
     }
 ]

@@ -1,0 +1,28 @@
+.titleItem {
+    text-align: center;
+    vertical-align: 15vw;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.containerImgInfo {
+}
+
+.titleItem {
+    flex-grow: 0.5;
+}
+
+.imageItem {
+}
+
+.infoItem {
+    align-self: flex-end;
+}
+
+.HistorialCompras {
+    margin-top: 50px;
+}
