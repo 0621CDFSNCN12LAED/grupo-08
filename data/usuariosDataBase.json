@@ -43,5 +43,14 @@
   "password": "$2a$10$IjI42zqOHnT.8xmFhqbAteXM1ls1Wj/xcBM8cQjed/Igq0G3Gv2f2",
   "terminos": "on",
   "img": "/img/avatars/NuevoAvatar-1634092744146.jpg"
+ },
+ {
+  "id": 6,
+  "name": "Gonzalo",
+  "apellido": "Topayo",
+  "email": "GonzaTopa@gmail.com",
+  "password": "$2a$10$kMRg.Ytd4IpVThx2VsKt8eB1uKEcMa3ap/Hy93vaBlonm4TRPm0se",
+  "terminos": "on",
+  "img": "/img/avatars/NuevoAvatar-1634671752688.png"
  }
 ]

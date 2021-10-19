@@ -9,18 +9,7 @@ const controladorUsers = require("../controllers/users-controller");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authUserMiddleware = require("../middlewares/authUserMiddleware");
 const validacionMsg = require("../middlewares/messageValidationError");
-
-var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, path.join(__dirname, "../public/img/avatars"));
-    },
-    filename: function (req, file, cb) {
-        const newFilename =
-            "NuevoAvatar-" + Date.now() + path.extname(file.originalname);
-        cb(null, newFilename);
-    },
-});
-const upload = multer({ storage: storage });
+const upload = require("../middlewares/userMulter");
 
 //registrarse
 router.get("/register", guestMiddleware, controladorUsers.formularioRegistro);
