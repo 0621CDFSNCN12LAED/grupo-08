@@ -1,14 +1,26 @@
-
 /* 576px  ~~~~  for devices like big phones */
 
-    .logo{
-        width:55%;
-    }
+.logo {
+    width: 55%;
+}
 
-    .textRegisterRegister{
-      font-size:25px;
-    }
+.textRegisterRegister {
+    font-size: 25px;
+}
 
-    .googleLogo, .fbLogo{
-      max-width:35vw;
-    }
+.googleLogo,
+.fbLogo {
+    max-width: 35vw;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.productCreate {
+    text-align: center;
+    align-items: center;
+    align-self: center;
+}

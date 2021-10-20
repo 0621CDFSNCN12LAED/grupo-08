@@ -3,20 +3,16 @@
     vertical-align: 15vw;
 }
 
-.container {
+main {
     display: flex;
     flex-direction: row;
-    overflow: hidden;
-}
-
-.containerImgInfo {
 }
 
 .titleItem {
-    flex-grow: 0.5;
-}
-
-.imageItem {
+    margin-top: 0px;
+    text-align: center;
+    animation: hideText 0s ease-in 3s;
+    animation-fill-mode: forwards;
 }
 
 .infoItem {
@@ -25,4 +21,18 @@
 
 .HistorialCompras {
     margin-top: 50px;
+}
+
+.containerProfileContainer {
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes hideText {
+    to {
+        visibility: hidden;
+        max-height: 0px;
+        width: 0%;
+        height: 0%;
+    }
 }
