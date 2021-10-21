@@ -89,7 +89,7 @@ ul li a:hover {
 }
 .iconBurger {
     text-align: center;
-    margin: 20px 0 60px 0;
+    margin-top: 20px;
 }
 .iconBurger i {
     background-color: rgb(27, 147, 245);

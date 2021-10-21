@@ -1,0 +1,27 @@
+@media screen and (min-width: 768px) {
+    .navBar-orderBy-filter {
+        display: none;
+    }
+    .barraFiltro {
+        display: inline;
+        width: 33%;
+        margin-left: 20px;
+        padding: 20px 0px 0px 20px;
+    }
+    .barraFiltro-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .barraFiltro-container ul {
+        list-style: none;
+    }
+    .itemBarraFiltro {
+    }
+    .itemBarraFiltro p {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .listItem li a {
+        color: #666;
+    }
+}

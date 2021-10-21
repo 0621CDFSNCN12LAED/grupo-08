@@ -1,0 +1,26 @@
+/* Añadir submenu con links para filtrar hasta 768
+Después ir añadiendo de a poco las columnas */
+@media screen and (min-width: 360px) {
+    .navBar-orderBy-filter {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .dropdown-filter-search {
+        margin-top: 20px;
+    }
+    .navBar-orderBy {
+        text-decoration: none;
+        padding: 20px 20px 0 0;
+    }
+
+    .navBar-filter a {
+        text-decoration: none;
+        padding: 20px 0;
+    }
+    .navBar-filter a i {
+        padding-right: 6px;
+    }
+    .barraFiltro {
+        display: none;
+    }
+}
