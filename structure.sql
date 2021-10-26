@@ -26,12 +26,12 @@ CREATE TABLE product_image(
 /* Inicio tabla user */
 CREATE TABLE user (
   id INT NOT NULL AUTO_INCREMENT,
-  FirstName VARCHAR(100) NOT NULL,
-  LastName VARCHAR(100) NOT NULL,
-  Email VARCHAR(100) NOT NULL,
-  Password VARCHAR(50) NOT NULL,
-  Terms TINYINT(1) NOT NULL,
-  Image VARCHAR NOT NULL,
+  first_name VARCHAR(100) NOT NULL,
+  last_name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  user_password VARCHAR(50) NOT NULL,
+  terms TINYINT(1) NOT NULL,
+  user_image VARCHAR NOT NULL,
 );
 /* Fin tabla user */
 
