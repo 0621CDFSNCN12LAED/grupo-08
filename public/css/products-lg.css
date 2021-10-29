@@ -1,0 +1,9 @@
+@media screen and (min-width: 1200px) {
+    .barraFiltro {
+        display: inline;
+        width: 20%;
+        margin-left: 0px;
+        padding: 20px 0px 0px 20px;
+        border: 1px solid rgba(0, 0, 0, 0.07);
+    }
+}

@@ -1,0 +1,32 @@
+@media screen and (min-width: 768px) {
+    .navBar-orderBy-filter {
+        display: none;
+    }
+    .barraFiltro {
+        display: inline;
+        width: 33%;
+        margin-left: 90px;
+        padding: 20px 0px 0px 20px;
+        border: 1px solid rgba(0, 0, 0, 0.07);
+    }
+    .barraFiltro-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .barraFiltro-container ul {
+        list-style: none;
+    }
+    .itemBarraFiltro {
+    }
+    .itemBarraFiltro p {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .listItem li a {
+        color: #666;
+        text-decoration: none;
+    }
+    .listItem li a:hover {
+        color: #b6b6b6;
+    }
+}
