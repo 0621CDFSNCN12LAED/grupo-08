@@ -24,6 +24,26 @@ CREATE TABLE product_image(
 )
 /* Fin tabla Product Image */
 
+/* Inicio tabla user */
+CREATE TABLE user (
+  id INT NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(100) NOT NULL,
+  last_name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  user_password VARCHAR(50) NOT NULL,
+  terms TINYINT(1) NOT NULL,
+  user_image VARCHAR NOT NULL,
+);
+/* Fin tabla user */
+
+/* Inicio tabla product_categoryProduct */
+CREATE TABLE product_categoryProduct (
+  id INT UNSIGNED AUTO_INCREMENT,
+  product_id PRIMARY KEY,
+  categoryProduct_id PRIMARY KEY,
+);
+/* Fin tabla product_categoryProduct  */
+
 
 
 
