@@ -1,6 +1,21 @@
 /* Recuerden colocar comentarios al inicio */
 /* Y al fin de cada tabla */
 
+/* Inicio tabla product */
+CREATE TABLE product (
+     id INT(10) UNSIGNED AUTO_INCREMENT NOT NULL,
+    title VARCHAR(100) NOT NULL,
+    productDescription TEXT NULL,
+    sku INT(10) UNSIGNED NOT NULL,
+    color VARCHAR(100) NOT NULL,
+    price DECIMAL NOT NULL,
+    size VARCHAR(100) NOT NULL,
+    stock INT(10) NOT NULL,
+    discount INT(10) NULL,
+    PRIMARY KEY(id)
+);
+/* Fin tabla product */
+
 /* Inicio tabla category_product */
 CREATE TABLE category_product(
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -15,6 +30,17 @@ CREATE TABLE category_product(
     category_type VARCHAR(100) NOT NULL,
 )
 /* Fin tabla category_product */
+
+/* Inicio tabla product_user */
+CREATE TABLE product_user(
+    id INT(10) UNSIGNED AUTO_INCREMENT NOT NULL,
+    users_id INT(10) UNSIGNED NOT NULL,
+    products_id INT(10) UNSIGNED NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (users_id) REFERENCES user (id),
+    FOREIGN KEY (products_id) REFERENCES product (id)
+);
+/* Fin tabla product_user */
 
 /* Inicio tabla Product Image */
 CREATE TABLE product_image(
