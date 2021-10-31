@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+} 
+ 
+ main h2 {
+    text-align: center;
+}
+
+
+.container{
+    border: solid blue 2px;
+}
+
+form, input, select, textarea{
+    width:100%;
+    text-align:center;
+}
+
+.container .img{
+    background-color:rgb(116, 116, 206);
+    flex-flow: wrap column;
+    text-align: center;
+    color:white;
+}
+
+.img{
+width:100%;
+text-align: center;
+}
+
+.container .inputStyle{ 
+    padding-bottom: 30px;  
+}
+
+.inputButtons{
+background-color:rgb(116, 116, 206);
+}
+

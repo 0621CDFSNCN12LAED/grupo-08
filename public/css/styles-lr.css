@@ -109,11 +109,6 @@ fieldset{
 }
 
 
-.form input{
-    padding:5px;
-
-}
-
 
 .formInput{
 flex-direction: column;
@@ -167,19 +162,6 @@ justify-content: space-evenly;
 }
 
 
-input{
-    border: 2px solid #ccc;
-    border-radius: 5px; 
-}
-
-input[type=text], input[type=password],
-input[type=email]{
-background:transparent;
-border:none;
-border-bottom: 2px solid #000000;
-}
-
-
 
 .buttonRegister{
     padding:5px 20px;
@@ -215,7 +197,7 @@ width:100%;
 
 .inputsContainer{
     display:flex;
-    flex-flow: no-wrap;
+    flex-flow: nowrap;
     justify-content: center;
 }
 
@@ -238,9 +220,7 @@ width:100%;
 }
 
 
-input{
-    border: 1px solid  rgb(99, 92, 105);
-}
+
 
 .allExceptImg{
     display:flex;
@@ -248,17 +228,9 @@ input{
     justify-content:center;
 }
 
-.allExceptImg input, textarea, select{
-    border: 3px  solid rgba(13, 13, 31, 0.4);
-    border-radius: 4px;
-}
 
 
-.inputProductForm input[type=text]{
-    padding:3px;
-    width:100%;
-    flex-basis: 100%;
-}
+
 
 .allExceptImg input[type=number]{
     width:100px;

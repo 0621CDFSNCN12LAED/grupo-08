@@ -1,4 +1,5 @@
 /* Recuerden colocar comentarios al inicio */
+/* Y al fin de cada tabla */
 
 /* Inicio tabla category_product */
 CREATE TABLE category_product(
@@ -16,10 +17,10 @@ CREATE TABLE category_product(
 /* Fin tabla category_product */
 
 /* Inicio tabla Product Image */
-CREATE TABLE product_image(
+CREATE TABLE productImage(
     id INT UNSIGNED AUTO_INCREMENT,
-    product_id PRIMARY KEY,
-    img_name VARCHAR NOT NULL,
+    productId PRIMARY KEY,
+    imgName VARCHAR NOT NULL,
 )
 /* Fin tabla Product Image */
 
@@ -36,12 +37,18 @@ CREATE TABLE user (
 /* Fin tabla user */
 
 /* Inicio tabla product_categoryProduct */
-CREATE TABLE product_categoryProduct (
+CREATE TABLE categoryProduct (
   id INT UNSIGNED AUTO_INCREMENT,
-  product_id PRIMARY KEY,
-  categoryProduct_id PRIMARY KEY,
+  productId PRIMARY KEY,
+  categoryProductId PRIMARY KEY,
 );
 /* Fin tabla product_categoryProduct  */
 
 
-/* Y al fin de cada tabla */
+
+
+
+
+
+
+

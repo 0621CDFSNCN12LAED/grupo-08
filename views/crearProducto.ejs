@@ -1,12 +1,13 @@
+<!--Se deben requerir los campos obligatorios. De momento no se requiren porque estamos en testing-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <%- include('./partials/head') %>
         <script src="https://kit.fontawesome.com/d3503ff7e5.js" crossorigin="anonymous"></script>
-        <!-- <link rel="stylesheet" href="/css/theme-lr.css" />
-        <link rel="stylesheet" href="/css/utils-lr.css" />
-        <link rel="stylesheet" href="/css/styles-lr.css" /> -->
+
         <link rel="stylesheet" href="/css/styles-login-md.css" media="(min-width:768px)" />
         <link rel="stylesheet" href="/css/styles-login-lg.css" media="(min-width:992px)" />
         <link rel="stylesheet" href="../css/styleHome.css" />
@@ -19,80 +20,162 @@
     <%- include('./partials/header') %>
         <!-- <main class='mainContainer'> -->
         <!-- <div class='formContainer'>
-            <h2 class='centerText'> Añadir nuevo producto</h2>
-            <form class='productForm' action="/views/productos" method="post" enctype="multipart/form-data">
-                <fieldset class='inputsContainer'>
-                    <div class='UploadImageContainer'>
-                    <div class='inputProductForm uploadPicture centerText'>
-                        <label class='whiteText' for='img'>Subir foto del producto</label>
-                        <br><i class="fas fa-camera blue" style='font-size: 1.5em;'></i>
-                        <input class='maxWidth100' type='file' id='img' name='img' style='display:none' accept='image/png, image/jpg, image/jpeg'>
-                    </div>
-                </div>
-                    <div class='allExceptImg'>
-                    <div class='inputProductForm centerText pad10'>
-                        <label for='title'> Nombre del producto</label>
-                        <br>
-                        <input type='text' id='title' name='title' >
-                    </div>
-                    <div class='inputProductForm centerText pad10'>
-                        <label for='sku'> SKU</label>
-                        <br>
-                        <input type='text' id='sku' name='sku' >
-                    </div>
-                    <div class='inputProductForm centerText pad10'>
-                        <label for='category'> Categoria </label>
-                        <br>
-                        <select  id='category' name='category' >
-                            <option value=''></option>
-                            <option value=''></option>
-                            <option value=''></option>
-                            <option value=''></option>
-                            </select>
-                    </div>
-                    <div class='inputProductForm centerText blk pad10'>
-                        <label for='size'> Talle </label>
-                        <br>
-                        <select id='sizze' name='size' >
-                            <option value=''></option>
-                            <option value=''></option>
-                            <option value=''></option>
-                            <option value=''></option>
-                            </select>
-                    </div>
-                    <div class='inputProductForm centerText blk pad10'>
-                        <label for='color'> Color </label>
-                        <br>
-                        <select class='maxWidth100' id='color' name='color' >
-                            <option value=''></option>
-                            <option value=''></option>
-                            <option value=''></option>
-                            <option value=''></option>
-                            </select>
-                    </div>
-                    <div class='inputProductForm centerText pad10'>
-                        <label for='price'>Precio</label>
-                        <br>
-                        <input class='maxWidth100 centerText' type='number' id='price' name='price' min='0' max='10.000' placeholder='(en $)' >  <i>$</i>
-                    </div>
-                    <div class='centerText maxWidth100'>
-                        <textarea  class='centerText' id='description' name='description' rows='5' cols='28' placeholder="Descripción del producto"></textarea>
-                    </div>
-                    <div class='centerText'>
-                        <button class='buttonRegister marginBot10 ' type='submit'>Guardar</button>
-                        <button class='buttonRegister' type='reset'>Comenzar de nuevo</button>
-                    </div>
-                </div>
-                
-                </fieldset>
-        </div>
-            </form>
- -->
-        <!-- </main> -->
+        <link rel="stylesheet" href="../css/productCreate.css" />
+    </head>
 
-        <main>
-            <div class="productCreate">
-                <form class="row g-3">
+    <body>
+        <main> 
+            <h2 class='centerText'> Añadir nuevo producto</h2>
+            <div class='container'> 
+            <form action="/views/productos" method="post" enctype="multipart/form-data">
+                <div class='img'> 
+                        <label class='image' for='img'>Sube una imagen de tu producto</label>
+                       <i class="fas fa-camera blue" style='font-size: 1.5em;'></i>
+                        <input  type='file' id='img' name='img' style='display:none' accept='image/png, image/jpg, image/jpeg'>
+                    </div> 
+                    <div class='inputStyle'>
+                        <label for='title'> Nombre del producto</label>
+                        <input type='text' name='title' >
+                    </div>
+                    <div class='inputStyle'>
+                        <label for='sku' style='color:rgb(161, 148, 148)'> SKU</label>
+                        <input type='text' id='sku' name='sku'  disabled='true' placeholder='este campo esta desabilitado'>
+                    </div>
+                    <div class='inputStyle'>
+                        <label for='category'> ¿Que tipo de producto es? </label>
+                        <select  id='category' name='category' >
+                            <option selected='true' disabled='disabled'>Elige una opción</option>
+                            <option value='championes'>Championes</option>
+                            <option value='camisetas'>Camisetas</option>
+                            <option value='buzos'>Buzos</option>
+                            <option value='leggins'>Leggins</option>
+                            <option value='pantalones'>Pantalones</option>
+                            <option value='shorts'>Pantalon corto</option>
+                            <option value='gorras'>Gorras</option>
+                            <option value='medias'>Medias</option>
+                            <option value='ropaInterior'>Ropa interior</option>
+                            <option value='deportesAcuaticos'>Deportes acuaticos</option>
+                            <option value='otros'>Otros</option>
+                            </select>
+                    </div>
+                    <div class='inputStyle'>
+                        <label for='size'> Talle </label>
+                        <select id='size' name='size' >
+                            <option selected='true' disabled='disabled'>Elige una opción</option>
+                            <option value='36'>36</option>
+                            <option value='36.5'>36.5</option>
+                            <option value='37'>37</option>
+                            <option value='37.5'>37.5</option>
+                            <option value='38'>38</option>
+                            <option value='38.5'>38.5</option>
+                            <option value='39'>39</option>
+                            <option value='39.5'>39.5</option>
+                            <option value='40'>40</option>
+                            <option value='40.5'>40.5</option>
+                            <option value='41'>41</option>
+                            <option value='41.5'>41.5</option>
+                            <option value='42'>42</option>
+                            <option value='42.5'>42.5</option>
+                            <option value='43'>43</option>
+                            <option value='43.5'>43.5</option>
+                            <option value='44'>44</option>
+                            <option value='44.5'>44.5</option>
+                            <option value='45'>45</option>
+                            <option value='45.5'>45.5</option>
+                            <option value='46'>46</option>
+                            <option value='XS'>XS</option>
+                            <option value='S'>S</option>
+                            <option value='M'>M</option>
+                            <option value='L'>L</option>
+                            <option value='XL'>XL</option>
+                            <option value='XXL'>XXL</option>
+                            <option value='otros'>Otros</option>
+                            </select>
+                    </div>
+                    <div class='inputStyle'>
+                        <label for='color'> Color </label>
+                        <select  id='color' name='color' >
+                             <option selected='true' disabled='disabled'>Elige una opción</option>
+                            <option value='blanco'>blanco</option>
+                            <option value='negro'>negro</option>
+                            <option value='rojo'>rojo</option>
+                              <option value='azul'>azul</option>
+                                <option value='amarillo'>amarillo</option>
+                                <option value='verde'>verde</option>
+                                  <option value='naranja'>naranja</option>
+                                      <option value='violeta'>violeta</option>
+                                        <option value='rosado'>rosado</option>
+                                          <option value='marrón'>marrón</option>
+                                            <option value='gris'>gris</option>
+                                              <option value='otros'>Otro</option>
+                            </select>
+                            </div>
+                      <div class='inputStyle'>
+                        <label for='categoryGender'> ¿Para quién esta pensado tu producto? </label>
+                        <select  id='categoryGender' name='categoryGender' >
+                            <option selected='true' disabled='disabled'>Elige una opción</option>
+                            <option value='niño'>Niños</option>
+                            <option value='hombre'>Hombres</option>
+                            <option value='mujer'>Muejeres</option>
+                            <option value='unisex'>Unisex/otros</option>
+                            </select>
+                    </div>
+                      <div class='inputStyle'>
+                        <label for='categorySport'> categoriza tu producto </label>
+                        <select  id='categorySport' name='categorySport' >
+                            <option selected='true' disabled='disabled'>Elige una opción</option>
+                            <option value='running'>Running</option>
+                            <option value='ciclismo'>Ciclismo</option>
+                            <option value='trekking'>Trekking</option>
+                            <option value='waterSports'>Deportes aquáticos</option>
+                            <option value='casual'>Casual</option>
+                            <option value='otros'>Otro</option>
+                            </select>
+                            </div>
+
+                            <div class='inputStyle'>
+                        <label for='marca'>Indicanos la marca de tu producto</label>
+                        <input  type='text' id='marca' name='marca'placeholder='(opcional)' > 
+                    </div>
+
+                
+                    <div class='inputStyle'>
+                        <label for='price'>Precio</label>
+                        <input  type='number' id='price' name='price' min='0' max='1,000,000' placeholder='(en pesos $)' > 
+                    </div>
+
+
+                     <div class='inputStyle'>
+                        <label for='stock'>Stock</label>
+                        <input type='number' id='stock' name='stock' min='0' max='10,000' > 
+                    </div>
+                        
+                    <div class='inputStyle'>
+                        <label for='description'>Descripción </label>
+                        <textarea  class='centerText' id='description' name='description' rows='5' cols='28' placeholder="Cuentanos un poco acerca de tu producto. Si no encontraste las opciónes adecuadas para tu producto, puedes indicarlas aquí!"></textarea>
+                    </div>
+                    <div class='inputButtons'>
+                        <button  type='submit'>Guardar</button>
+                        <button  type='reset'>Comenzar de nuevo</button>
+                    </div>     
+            </form>
+             </div>    
+         </main> 
+
+
+
+
+
+         <!--
+       <main>
+            <h2>Vender un producto</h2>
+            <div class="container">
+                <form
+                    class="row g-3"
+                    action="/views/productos"
+                    method="post"
+                    enctype="multipart/form-data"
+                >
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">Email</label>
                         <input type="email" class="form-control" id="inputEmail4" />
@@ -134,15 +217,113 @@
                         </div>
                     </div>
                     <div class="col-12">
+                        <label for="title" class="form-label"
+                            >Nombre del producto</label
+                        >
+                        <input type="text" class="form-control" id="title" />
+                    </div>
+                    <div class="col-md-4">
+                        <div class="col-md-6">
+                            <label for="inputPassword4" class="form-label"
+                                >¿De que color es tu articulo?</label
+                            >
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="color"
+                            />
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress" class="form-label"
+                                >Address</label
+                            >
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="inputAddress"
+                                placeholder="1234 Main St"
+                            />
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress2" class="form-label"
+                                >Address 2</label
+                            >
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="inputAddress2"
+                                placeholder="Apartment, studio, or floor"
+                            />
+                        </div>
+
+                        <label for="category" class="form-label"
+                            >¿Para que usuario?</label
+                        >
+                        <select class="form-select" name="cateogry">
+                            <option disabled="true">
+                                elige la mejor opción
+                            </option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="category" class="form-label"
+                            >Tipo de prenda</label
+                        >
+                        <select class="form-select" name="cateogry">
+                            <option disabled="true">
+                                elige la mejor opción
+                            </option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="category" class="form-label"
+                            >Categoria deportiva</label
+                        >
+                        <select class="form-select" name="cateogry">
+                            <option disabled="true">
+                                elige la mejor opción
+                            </option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+
+                    <div style="text-align: center" class="col-md-6 bg-primary">
+                        <label class="whiteText" for="img"
+                            >Subir foto del producto</label
+                        >
+                        <br /><i
+                            class="fas fa-camera blue"
+                            style="font-size: 1.5em"
+                        ></i>
+                        <input
+                            class="maxWidth100"
+                            type="file"
+                            id="img"
+                            name="img"
+                            style="display: none"
+                            accept="image/png, image/jpg, image/jpeg"
+                        />
+                    </div>
+                    <div class="col-md-6">
                         <button type="submit" class="btn btn-primary">
                             Sign in
                         </button>
                     </div>
                 </form>
             </div>
-        </main>
-
+        </main> -->
         <%- include('./partials/footer') %>
 </body>
+<script scr='javascriptjs.js'></script>
 
 </html>

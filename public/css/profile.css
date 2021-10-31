@@ -3,10 +3,10 @@
     vertical-align: 15vw;
 }
 
-main {
-    display: flex;
-    flex-direction: row;
-}
+/* main {
+     display: flex;
+    justify-content: flex-start; 
+} */
 
 .titleItem {
     margin-top: 0px;
@@ -15,17 +15,34 @@ main {
     animation-fill-mode: forwards;
 }
 
-.infoItem {
-    align-self: flex-end;
-}
-
-.HistorialCompras {
-    margin-top: 50px;
-}
-
-.containerProfileContainer {
+.container {
+    margin: 0 !important;
+    padding-left: 0 !important;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+}
+
+.containerProfile {
+    display: flex;
+    justify-content: flex-start;
+    display: inline-block;
+    border: grey 1px solid;
+}
+
+.containerEnalce {
+    display: flex;
+}
+
+.enlace {
+    display: inline-block;
+}
+
+.userDetials {
+    text-align: start;
+}
+
+#detail {
+    padding: 5px;
 }
 
 @keyframes hideText {
