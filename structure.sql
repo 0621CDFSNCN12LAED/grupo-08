@@ -16,20 +16,20 @@ CREATE TABLE product (
 );
 /* Fin tabla product */
 
-/* Inicio tabla category_product */
-CREATE TABLE category_product(
+/* Inicio tabla category */
+CREATE TABLE category(
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     categorySport VARCHAR(100) NOT NULL,
     categoryGender VARCHAR(100) NOT NULL,
     /* Podemos añadir una lógica que
     En los formularios, solo se pueda seleccionar in-sale o visited */
-    status VARCHAR(7) NOT NULL,
-    status_in_sale VARCHAR(3) NOT NULL, /* "on" "off" */
-    status_visited VARCHAR(3) NOT NULL, /* "on" "off" */
+    statusProduct VARCHAR(7) NOT NULL,
+    statusInSale VARCHAR(3) NOT NULL, /* "on" "off" */
+    statusVisited VARCHAR(3) NOT NULL, /* "on" "off" */
     brand VARCHAR(100) NOT NULL, /* Marca */
-    category_type VARCHAR(100) NOT NULL,
+    categoryType VARCHAR(100) NOT NULL,
 )
-/* Fin tabla category_product */
+/* Fin tabla category */
 
 /* Inicio tabla product_user */
 CREATE TABLE product_user(
@@ -254,6 +254,76 @@ VALUES
 50,
 10);
 /* Fin valores de tabla product */
+
+
+/* Inicio valores de tabla productImage */
+INSERT INTO productImage (id, productId, imgName)
+VALUES 
+(default, 1, 1),
+(default, 1, 7),
+(default, 1, 2),
+(default, 2, 12),
+(default, 2, 8),
+(default, 3, 11),
+(default, 3, 15),
+(default, 3, 3),
+(default, 4, 9),
+(default, 4, 13),
+(default, 4, 18),
+(default, 4, 16),
+(default, 5, 10),
+(default, 5, 14),
+(default, 5, 6),
+(default, 1, 4),
+(default, 4, 19),
+/* Fin valores de tabla productImage */
+
+
+
+/* Inicio valores de tabla category */
+INSERT INTO category(
+id, 
+categorySport, 
+categoryGender, 
+statusProduct, 
+statusInSale, 
+statusVisited, 
+brand, 
+categoryType)
+VALUES
+(default, "futbol", "hombre", "estadoProducto?", "yes", "no", "Nike", "Remera"),
+(default, "Tenis", "hombre", "estadoProducto?", "yes", "yes", "Adidas", "Pantalón"),
+(default, "futbol", "niño", "estadoProducto?", "yes", "no", "Adidas", "Zapatillas")
+(default, "Voley", "mujer", "estadoProducto?", "no", "yes", "Puma", "Remera")
+(default, "Basket", "hombre", "estadoProducto?", "no", "no", "Nike", "Medias")
+
+/* Fin valores de tabla category */
+
+
+/* Inicio valores de tabla product_categoryProduct */
+INSERT INTO productImage (id, productId, categoryProductId)
+VALUES 
+(default, 1, 1),
+(default, 3, 7),
+(default, 1, 5),
+(default, 2, 10),
+(default, 4, 2),
+(default, 3, 12),
+(default, 3, 5),
+(default, 2, 13),
+(default, 4, 9),
+(default, 1, 13),
+(default, 1, 18),
+(default, 4, 16),
+(default, 6, 10),
+(default, 5, 14),
+(default, 8, 6),
+(default, 1, 4),
+(default, 4, 19),
+
+/* Fin valores de tabla product_categoryProduct */
+
+
 
 /* Inicio valores de tabla product_user */
 INSERT INTO product_user (id, users_id, products_id)
