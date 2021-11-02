@@ -1,22 +1,22 @@
-module.exports = (sequelize, dataTypes) => {
+// module.exports = (sequelize, dataTypes) => {
     
-    let alias = 'Product';
-    let cols = {
-        id: dataTypes.INTEGER,
-        title: dataTypes.VARCHAR,
-        description: dataTypes.TEXT,
-        sku: dataTypes.INTEGER,
-        color: dataTypes.VARCHAR,
-        price: ,
-        size: ,
-        stock: ,
-    };
-    let config = {
-        tableName: 'product',
-        timestamps: false
-    }
+//     let alias = 'Product';
+//     let cols = {
+//         id: dataTypes.INTEGER,
+//         title: dataTypes.VARCHAR,
+//         description: dataTypes.TEXT,
+//         sku: dataTypes.INTEGER,
+//         color: dataTypes.VARCHAR,
+//         price: ,
+//         size: ,
+//         stock: ,
+//     };
+//     let config = {
+//         tableName: 'product',
+//         timestamps: false
+//     }
     
-    const Product = sequelize.define(alias, cols, config);
+//     const Product = sequelize.define(alias, cols, config);
     
-    return Product;
-}
+//     return Product;
+// }

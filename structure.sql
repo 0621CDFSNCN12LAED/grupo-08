@@ -70,6 +70,27 @@ CREATE TABLE categoryProduct (
 );
 /* Fin tabla product_categoryProduct  */
 
+/* Comienzo tabla order */
+CREATE TABLE order (
+id  PRIMARY KEY INT NOT NULL AUTO_INCREMENT,
+dateOrder DATETIME INT NOT NULL,
+direction VARCHAR(100) NOT NULL,
+totalPrice DECIMAL NOT NULL,
+FOREIGN KEY (userId)  REFERENCES user (id),
+);
+/* Fin tabla order */
+
+/* Comienzo tabla productOrder */
+CREATE TABLE productOrder(
+id  PRIMARY KEY INT NOT NULL AUTO_INCREMENT,
+price DECIMAL NOT NULL,
+FOREIGN KEY (idProduct)  REFERENCES product (id),
+FOREIGN KEY (idOrder)  REFERENCES order (id),
+);
+
+
+/* Fin tabla productOrder */
+
 /* Inicio valores de tabla product */
 INSERT INTO product (id, title, productDescription, sku, color, price, size, stock, discount)
 VALUES 
