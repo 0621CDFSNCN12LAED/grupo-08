@@ -2,7 +2,10 @@
 /* Y al fin de cada tabla */
 
 /* Inicio tabla product */
-CREATE TABLE product (
+DROP DATABASE IF EXISTS all4sports;
+CREATE DATABASE all4sports;
+USE all4sports;
+CREATE TABLE products(
     id INT(10) UNSIGNED AUTO_INCREMENT NOT NULL,
     title VARCHAR(100) NOT NULL,
     productDescription TEXT NULL,
@@ -17,101 +20,88 @@ CREATE TABLE product (
 /* Fin tabla product */
 
 /* Inicio tabla category */
-CREATE TABLE category(
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE categories(
+    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
     categorySport VARCHAR(100) NOT NULL,
     categoryGender VARCHAR(100) NOT NULL,
-    /* Podemos añadir una lógica que
-    En los formularios, solo se pueda seleccionar in-sale o visited */
-    statusProduct VARCHAR(7) NOT NULL,
-    statusInSale VARCHAR(3) NOT NULL, /* "on" "off" */
-    statusVisited VARCHAR(3) NOT NULL, /* "on" "off" */
-    brand VARCHAR(100) NOT NULL, /* Marca */
-    categoryType VARCHAR(100) NOT NULL,
+    ofertProduct INT(10) NOT NULL,
+    brand VARCHAR(100) NOT NULL,
+    categoryType VARCHAR(100) NOT NULL
 );
 /* Fin tabla category */
 
-/* Inicio tabla product_user */
-CREATE TABLE product_user(
-    id INT(10) UNSIGNED AUTO_INCREMENT NOT NULL,
-    users_id INT(10) UNSIGNED NOT NULL,
-    products_id INT(10) UNSIGNED NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (users_id) REFERENCES user (id),
-    FOREIGN KEY (products_id) REFERENCES product (id)
-);
-/* Fin tabla product_user */
+
 
 /* Inicio tabla Product Image */
-CREATE TABLE productImage(
-    id INT UNSIGNED AUTO_INCREMENT,
-    productId PRIMARY KEY,
-    imgName VARCHAR NOT NULL,
-)
+CREATE TABLE productImages(
+    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    productId INT(10) UNSIGNED NULL, 
+    imgName VARCHAR(100) NOT NULL,
+    FOREIGN KEY (productId)  REFERENCES products (id)
+);
 /* Fin tabla Product Image */
 
 /* Inicio tabla user */
-CREATE TABLE user (
-  id INT NOT NULL AUTO_INCREMENT,
-  first_name VARCHAR(100) NOT NULL,
-  last_name VARCHAR(100) NOT NULL,
+CREATE TABLE users (
+  id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  firstName VARCHAR(100) NOT NULL,
+  lastName VARCHAR(100) NOT NULL,
   email VARCHAR(100) NOT NULL,
-  user_password VARCHAR(50) NOT NULL,
-  terms TINYINT(1) NOT NULL,
-  user_image VARCHAR NOT NULL,
+  userPassword VARCHAR(50) NOT NULL,
+  userImage VARCHAR(100) NOT NULL
 );
 /* Fin tabla user */
 
 /* Inicio tabla product_categoryProduct */
-CREATE TABLE categoryProduct (
-  id INT UNSIGNED AUTO_INCREMENT,
-  productId PRIMARY KEY,
-  categoryProductId PRIMARY KEY,
+CREATE TABLE categoryProduct(
+  id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  productId INT(10) UNSIGNED NOT NULL,
+  categoryProductId INT(10) UNSIGNED NOT NULL,
+  FOREIGN KEY (productId)  REFERENCES products (id),
+  FOREIGN KEY (categoryProductId)  REFERENCES categories (id)
 );
 /* Fin tabla product_categoryProduct  */
 
 /* Comienzo tabla order */
-CREATE TABLE order (
-id  PRIMARY KEY INT NOT NULL AUTO_INCREMENT,
-dateOrder DATETIME INT NOT NULL,
+
+CREATE TABLE orders(
+id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
+dateOrder DATETIME NOT NULL,
 direction VARCHAR(100) NOT NULL,
 totalPrice DECIMAL NOT NULL,
-FOREIGN KEY (userId)  REFERENCES user (id),
+userId INT(10) UNSIGNED NOT NULL,
+FOREIGN KEY (userId)  REFERENCES users (id)
 );
 /* Fin tabla order */
 
 /* Comienzo tabla productOrder */
 CREATE TABLE productOrder(
-id  PRIMARY KEY INT NOT NULL AUTO_INCREMENT,
+id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
 price DECIMAL NOT NULL,
-FOREIGN KEY (idProduct)  REFERENCES product (id),
-FOREIGN KEY (idOrder)  REFERENCES order (id),
+idProduct INT(10) UNSIGNED NOT NULL,
+idOrder INT(10) UNSIGNED NOT NULL,
+FOREIGN KEY (idProduct)  REFERENCES products (id),
+FOREIGN KEY (idOrder)  REFERENCES orders (id)
 );
-
-
 /* Fin tabla productOrder */
 
+/* Inicio tabla product_user */
+CREATE TABLE productUser(
+    id INT(10) UNSIGNED AUTO_INCREMENT NOT NULL,
+    userId INT(10) UNSIGNED NOT NULL,
+    productId INT(10) UNSIGNED NOT NULL,
+    visited TINYINT(0) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (userId) REFERENCES users (id),
+    FOREIGN KEY (productId) REFERENCES products (id)
+);
+/* Fin tabla product_user */
+
 /* Inicio valores de tabla product */
-INSERT INTO product (id, title, productDescription, sku, color, price, size, stock, discount)
+INSERT INTO products(id, title, productDescription, sku, color, price, size, stock, discount)
 VALUES 
-(default,
-"Camiseta Barcelona Nike Tercer Recambio Stadium Verde",
-"La camiseta de fútbol para hombre 3° Recambio Stadium del FC Barcelona 2019/20 está confeccionada con tela transpirable Dri-Fit que absorbe el sudor y te mantiene fresco, seco y cómodo tanto dentro como fuera de la cancha. El ajuste estándar hace que la prenda se adapte al cuerpo y ofrezca más espacio para mayor movilidad.",
-55938919277,
-"Cyan",
-8199,
-"L",
-100,
-20),
-(default,
-"Buzo color negro de alta calidad para esos días fríos",
-"Diseñado por especialistas para los que aman el deporte todo el año y quieren tener siempre un buzo traspirable, de alta calidad y con estilo.",
-92837107382,
-"Negro",
-6788,
-"M",
-100,
-10),
+(default,"Camiseta Barcelona Nike Tercer Recambio Stadium Verde","La camiseta de fútbol para hombre 3° Recambio Stadium del FC Barcelona 2019/20 está confeccionada con tela transpirable Dri-Fit que absorbe el sudor y te mantiene fresco, seco y cómodo tanto dentro como fuera de la cancha. El ajuste estándar hace que la prenda se adapte al cuerpo y ofrezca más espacio para mayor movilidad.", 55938919277, "Cyan", 8199, "L", 100, 20),
+(default, "Buzo color negro de alta calidad para esos días fríos","Diseñado por especialistas para los que aman el deporte todo el año y quieren tener siempre un buzo traspirable, de alta calidad y con estilo.", 92837107382, "Negro", 6788, "M", 100, 10),
 (default,
 "Camiseta de Argentina Adidas Alternativa Messi 10 niño Petroleo",
 "Su diseño es un emblema pintado en tonos azules que reflejan el esplendor de los glaciares del país. Está confeccionada con tecnologia Aeroready que mantiene tu cuerpo fresco y seco. El escudo aplicado de la Selección le demuestra a todos lo que sentís por el equipo.",
@@ -278,7 +268,7 @@ VALUES
 
 
 /* Inicio valores de tabla productImage */
-INSERT INTO productImage (id, productId, imgName)
+INSERT INTO productImages(id, productId, imgName)
 VALUES 
 (default, 1, 1),
 (default, 1, 7),
@@ -296,82 +286,112 @@ VALUES
 (default, 5, 14),
 (default, 5, 6),
 (default, 1, 4),
-(default, 4, 19),
+(default, 4, 19);
 /* Fin valores de tabla productImage */
 
 
 
 /* Inicio valores de tabla category */
-INSERT INTO category(
-id, 
-categorySport, 
-categoryGender, 
-statusProduct, 
-statusInSale, 
-statusVisited, 
-brand, 
-categoryType)
+INSERT INTO categories(id, categorySport, categoryGender, ofertProduct, brand, categoryType)
 VALUES
-(default, "futbol", "hombre", "estadoProducto?", "yes", "no", "Nike", "Remera"),
-(default, "Tenis", "hombre", "estadoProducto?", "yes", "yes", "Adidas", "Pantalón"),
-(default, "futbol", "niño", "estadoProducto?", "yes", "no", "Adidas", "Zapatillas")
-(default, "Voley", "mujer", "estadoProducto?", "no", "yes", "Puma", "Remera")
-(default, "Basket", "hombre", "estadoProducto?", "no", "no", "Nike", "Medias")
+(default, "futbol", "hombre", "15", "Nike", "Remera"),
+(default, "Tenis", "hombre", "25", "Adidas", "Pantalón"),
+(default, "futbol", "niño", "20", "Adidas", "Zapatillas"),
+(default, "Voley", "mujer", "40", "Puma", "Remera"),
+(default, "Basket", "hombre", "30", "Nike", "Medias");
 
 /* Fin valores de tabla category */
 
 
-/* Inicio valores de tabla product_categoryProduct */
-INSERT INTO productImage (id, productId, categoryProductId)
+/* Inicio valores de tabla categoryProduct */
+INSERT INTO categoryProduct(id, productId, categoryProductId)
 VALUES 
 (default, 1, 1),
-(default, 3, 7),
+(default, 3, 2),
 (default, 1, 5),
-(default, 2, 10),
+(default, 2, 2),
 (default, 4, 2),
-(default, 3, 12),
+(default, 3, 1),
 (default, 3, 5),
-(default, 2, 13),
-(default, 4, 9),
-(default, 1, 13),
-(default, 1, 18),
-(default, 4, 16),
-(default, 6, 10),
-(default, 5, 14),
-(default, 8, 6),
+(default, 2, 3),
+(default, 4, 2),
+(default, 1, 1),
+(default, 1, 2),
+(default, 4, 1),
+(default, 6, 4),
+(default, 5, 1),
+(default, 8, 2),
 (default, 1, 4),
-(default, 4, 19),
+(default, 4, 1);
 
 /* Fin valores de tabla product_categoryProduct */
 
 
 
+
 /* Inicio valores de tabla product_user */
-INSERT INTO product_user (id, users_id, products_id)
+/* 
+No hay usuarios poblados, va a arrojar error 
+*/
+INSERT INTO productUser(id, userId, productId, visited)
 VALUES 
-(default, 1, 1),
-(default, 1, 7),
-(default, 1, 2),
-(default, 2, 12),
-(default, 2, 8),
-(default, 3, 11),
-(default, 3, 15),
-(default, 3, 3),
-(default, 4, 9),
-(default, 4, 13),
-(default, 4, 18),
-(default, 4, 16),
-(default, 5, 10),
-(default, 5, 14),
-(default, 5, 6),
-(default, 1, 4),
-(default, 4, 19),
-(default, 1, 5),
-(default, 2, 17),
-(default, 3, 20);
+(default, 1, 1, 1),
+(default, 1, 7, 1),
+(default, 1, 2, 0),
+(default, 2, 12, 0),
+(default, 2, 8, 1),
+(default, 3, 11, 1),
+(default, 3, 15, 0),
+(default, 3, 3, 1),
+(default, 4, 9, 0),
+(default, 4, 13, 0),
+(default, 4, 18, 0),
+(default, 4, 16, 0),
+(default, 5, 10, 1),
+(default, 5, 14, 1),
+(default, 5, 6, 1),
+(default, 1, 4, 1),
+(default, 4, 19, 0),
+(default, 1, 5, 1),
+(default, 2, 17, 1),
+(default, 3, 20, 0);
 /* Fin valores de tabla product_user */
 
+/* Inicio valores de tabla user */
+INSERT INTO users (id, firstName, lastName, email, userPassword, userImage)
+VALUES
+(default, 'Emiliano', 'Martinez', 'emimartinez@gmail.com', 'aulasDH34', 'img'),
+(default, 'Leandro', 'Paredes', 'leandroparedes@gmail.com', 'aulasDH35', 'img'),
+(default, 'Enzo', 'Perez', 'enzoperez@gmail.com', 'aulasDH36', 'img'),
+(default, 'Bruno', 'Zuculini', 'brunozucu@gmail.com', 'aulasDH37', 'img'),
+(default, 'Nicolas', 'Cruz', 'nicocruz@gmail.com', 'aulasDH38', 'img');
 
+/* Fin valores de tabla user */
+
+/* Inicio valores de tabla categoryProduct */
+INSERT INTO categoryProduct (id, productId, categoryProductId)
+VALUES
+(default, 1, 2),
+(default, 2, 2),
+(default, 3, 2),
+(default, 4, 2),
+(default, 5, 2),
+(default, 6, 2),
+(default, 7, 2),
+(default, 8, 2),
+(default, 9, 2),
+(default, 10, 2),
+(default, 11, 2),
+(default, 12, 2),
+(default, 13, 2),
+(default, 14, 2),
+(default, 15, 2),
+(default, 16, 2),
+(default, 17, 2),
+(default, 18, 2),
+(default, 19, 2),
+(default, 20, 2);
+/* Fin valores de tabla categoryProduct */
 
 
 

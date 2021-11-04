@@ -1,3 +1,6 @@
+//pueden utilizar esto como ejemplo para guiarse
+
+
 // module.exports = (sequelize, dataTypes) => {
     
 //     let alias = 'Product';
