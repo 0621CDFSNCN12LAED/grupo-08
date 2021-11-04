@@ -3,7 +3,7 @@
 
 /* Inicio tabla product */
 CREATE TABLE product (
-     id INT(10) UNSIGNED AUTO_INCREMENT NOT NULL,
+    id INT(10) UNSIGNED AUTO_INCREMENT NOT NULL,
     title VARCHAR(100) NOT NULL,
     productDescription TEXT NULL,
     sku INT(10) UNSIGNED NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE category(
     statusVisited VARCHAR(3) NOT NULL, /* "on" "off" */
     brand VARCHAR(100) NOT NULL, /* Marca */
     categoryType VARCHAR(100) NOT NULL,
-)
+);
 /* Fin tabla category */
 
 /* Inicio tabla product_user */
