@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const productos = require("../servicesControllers/productsServices");
+const db = require("../database/models")
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controllerProducts = {
@@ -56,6 +57,9 @@ const controllerProducts = {
     },
 
     delete: (req, res) => {
+
+        //db.
+
         productos.deleteOneProduct(req.params.id);
 
         res.redirect("/");
