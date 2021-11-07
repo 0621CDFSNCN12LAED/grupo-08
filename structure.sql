@@ -182,7 +182,16 @@ VALUES
 
 /* Fin valores de tabla product_categoryProduct */
 
+/* Inicio valores de tabla user */
+INSERT INTO users (id, firstName, lastName, email, userPassword, userImage)
+VALUES
+(default, 'Emiliano', 'Martinez', 'emimartinez@gmail.com', 'aulasDH34', 'img'),
+(default, 'Leandro', 'Paredes', 'leandroparedes@gmail.com', 'aulasDH35', 'img'),
+(default, 'Enzo', 'Perez', 'enzoperez@gmail.com', 'aulasDH36', 'img'),
+(default, 'Bruno', 'Zuculini', 'brunozucu@gmail.com', 'aulasDH37', 'img'),
+(default, 'Nicolas', 'Cruz', 'nicocruz@gmail.com', 'aulasDH38', 'img');
 
+/* Fin valores de tabla user */
 
 
 /* Inicio valores de tabla product_user */
@@ -213,16 +222,7 @@ VALUES
 (default, 3, 20, 0);
 /* Fin valores de tabla product_user */
 
-/* Inicio valores de tabla user */
-INSERT INTO users (id, firstName, lastName, email, userPassword, userImage)
-VALUES
-(default, 'Emiliano', 'Martinez', 'emimartinez@gmail.com', 'aulasDH34', 'img'),
-(default, 'Leandro', 'Paredes', 'leandroparedes@gmail.com', 'aulasDH35', 'img'),
-(default, 'Enzo', 'Perez', 'enzoperez@gmail.com', 'aulasDH36', 'img'),
-(default, 'Bruno', 'Zuculini', 'brunozucu@gmail.com', 'aulasDH37', 'img'),
-(default, 'Nicolas', 'Cruz', 'nicocruz@gmail.com', 'aulasDH38', 'img');
 
-/* Fin valores de tabla user */
 
 /* Inicio valores de tabla categoryProduct */
 INSERT INTO categoryProduct (id, productId, categoryProductId)
