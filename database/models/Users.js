@@ -1,12 +1,16 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = "User";
     let cols = {
-        id: dataTypes.INTEGER,
+        id: {
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
         firstName: dataTypes.TEXT,
         lastName: dataTypes.TEXT,
         email: dataTypes.TEXT,
         password: dataTypes.TEXT,
-        image: dataTypes.VARBINARY,
+        // image: dataTypes.VARBINARY, Arroja error por el tipo de dato
     };
     let config = {
         tableName: "users",

@@ -2,13 +2,31 @@ const fs = require("fs");
 const path = require("path");
 
 const productos = require("../servicesControllers/productsServices");
-const db = require("../database/models")
-
+const db = require("../database/models");
+const {Op} = require("sequelize");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controllerProducts = {
     productos: (req, res) => {
         const allProducts = productos.findAllProducts();
         res.render("productos", { allProducts });
+    },
+    search: async(req, res) =>{
+        const titulo = req.query.titulo//.replace(new RegExp(`/[áéíóú]/g`), "_");
+        const productos = await db.Product.findAll({
+            where: {
+                title: {
+                    [Op.like]: `%${req.query.titulo}%`,
+                }
+            }
+        });
+        if(productos.length > 0){
+            res.render("productos", {allProducts: productos})
+        }else{
+            res.render("productNotFound")
+            console.log("No se encontró el producto");
+            res.send("Error")
+        }
+        console.log(productos.length);
     },
     productCart: (req, res) => {
         res.render("productCart");
@@ -58,12 +76,14 @@ const controllerProducts = {
 
     delete: (req, res) => {
 
-        //db.
-
-        productos.deleteOneProduct(req.params.id);
-
-        res.redirect("/");
+        db.Product.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect('/');
     },
+    //productos.deleteOneProduct(req.params.id);
 };
 
 module.exports = controllerProducts;

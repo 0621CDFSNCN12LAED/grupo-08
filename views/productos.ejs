@@ -44,9 +44,17 @@
             </div>
         </nav>
         <!-- Productos -->
-
         <main>
             <h1 class="title">Productos disponibles:</h1>
+            <div class="searchBar_container">
+                <h2>Escriba el producto que desea encontrar</h2>
+                <div class="inputSearch_container">
+                    <form action="/productos/search" method="GET">
+                        <input type="text" name="titulo" id="barraBusquedaProducto"><i class="fas fa-search"></i>
+                        <button class="btn btn-primary" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
             <section class="productContainer">
                 <section class="barraFiltro">
                     <div class="barraFiltro-container">
