@@ -29,7 +29,7 @@ module.exports = function(sequelize, dataTypes){
         },
         discount: {
             type: dataTypes.INTEGER,
-        },
+        }
     };
     let config = {
         tableName: "products",
