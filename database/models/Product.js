@@ -1,13 +1,13 @@
-module.exports = function(sequelize, dataTypes){
+module.exports = function (sequelize, dataTypes) {
     let alias = "Product";
     let cols = {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
         },
         title: {
-            type: dataTypes.TEXT,
+            type: dataTypes.STRING,
         },
         productDescription: {
             type: dataTypes.TEXT,
@@ -16,20 +16,20 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.INTEGER,
         },
         color: {
-            type: dataTypes.TEXT,
+            type: dataTypes.STRING,
         },
         price: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.DECIMAL,
         },
         size: {
-            type: dataTypes.DECIMAL,
+            type: dataTypes.STRING,
         },
         stock: {
             type: dataTypes.INTEGER,
         },
         discount: {
             type: dataTypes.INTEGER,
-        }
+        },
     };
     let config = {
         tableName: "products",
@@ -40,3 +40,13 @@ module.exports = function(sequelize, dataTypes){
 
     return Product;
 };
+/* Asociaciones
+  model.associate = (models) => {
+        model.belongsToMany(models.Users, {
+      as: "users",
+      through: "",
+      foreignKey: "",
+      otherKey: "",
+      timestamps: false,
+    });
+  };*/
