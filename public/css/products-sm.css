@@ -1,6 +1,23 @@
 /* Añadir submenu con links para filtrar hasta 768
 Después ir añadiendo de a poco las columnas */
 
+.searchBar_container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.inputSearch_container i{
+    position: relative;
+    right: 24px;
+    top: 1px;
+}
+.inputSearch_container i:hover{
+    color: rgb(121, 121, 121);
+    cursor: pointer;
+    transition: 250ms;
+}
+
 .navBar-orderBy-filter {
     display: flex;
     justify-content: space-evenly;

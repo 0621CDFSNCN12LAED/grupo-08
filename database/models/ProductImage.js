@@ -1,7 +1,11 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = "ProductImage";
     let cols = {
-        id: dataTypes.INTEGER,
+        id: {
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
         productId: dataTypes.INTEGER,
         imgName: dataTypes.TEXT,
     };

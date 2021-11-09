@@ -1,19 +1,42 @@
 module.exports = (sequelize, dataTypes) => {
     
-const Order = sequelize.define(alias, cols, config);
-
     let alias = 'Order';
     let cols = {
-        id: dataTypes.INTEGER,
-        dateOrder: dataTypes.DATETIME,
-        direction: dataTypes.VARCHAR,
-        totalPrice: dataTypes.DECIMAL,
-        userId: dataTypes.INTEGER,
+        id: {
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        // dateOder: {
+        //     type:  dataTypes.DATE, con DATETIME daba error, chequear con DATE
+        // },
+        direction: {
+            type: dataTypes.TEXT
+             },
+        userId: { 
+            type: dataTypes.INTEGER  
+        },
+        totalPrice: { 
+            type: dataTypes.DECIMAL 
+        },
+        userId: {
+            type: dataTypes.INTEGER 
+            },
     };
     let config = {
         tableName: 'orders',
         timestamps: false
     }
-    
+
+    const Order = sequelize.define(alias, cols, config);
+
+
+    //  Order.associate = function(models){
+    //     Order.belongsTo(models.User,{
+    //         as:"user",
+    //         foreignKey: "userId"
+    //     });
+    // }
+
     return Order;
 }

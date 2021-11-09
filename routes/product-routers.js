@@ -9,6 +9,9 @@ const upload = require("../middlewares/productMulter");
 // Ver todos los productos
 router.get("/productos", controlladorProductos.productos);
 
+// Busqueda productos
+router.get("/productos/search", controlladorProductos.search)
+
 // carrito del producto
 router.get("/productCart", controlladorProductos.productCart);
 
@@ -17,19 +20,11 @@ router.get("/productDetail/:id", controlladorProductos.productDetail);
 
 // crear un producto
 router.get("/crearProducto", controlladorProductos.nuevoProducto);
-router.post(
-    "/views/productos",
-    upload.single("img"),
-    controlladorProductos.crearNuevoProducto
-);
+router.post("/views/productos",upload.single("img"),controlladorProductos.crearNuevoProducto);
 
 // modificar un producto
 router.get("/modificarProducto/:id", controlladorProductos.modificarProducto);
-router.put(
-    "/:id",
-    upload.single("img"),
-    controlladorProductos.updateNewProduct
-);
+router.put("/:id",upload.single("img"),controlladorProductos.updateNewProduct);
 
 //borrar un producto
 router.delete("/:id", controlladorProductos.delete);
