@@ -2,8 +2,12 @@ module.exports = (sequelize, dataTypes) => {
     
     let alias = 'Order';
     let cols = {
-        id: dataTypes.INTEGER,
-        dateOrder: dataTypes.DATETIME,
+        id: {
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        //dateOrder: dataTypes.DATETIME, Arroja error por el tipo de dato
         direction: dataTypes.TEXT,
         userId: dataTypes.INTEGER,
         totalPrice: dataTypes.DECIMAL,

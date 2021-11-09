@@ -1,19 +1,35 @@
-module.exports = (sequelize, DataTypes) => {
+module.exports = function (sequelize, dataTypes) {
     let alias = "Product";
     let cols = {
         id: {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-        title: DataTypes.STRING,
-        description: DataTypes.TEXT,
-        sku: DataTypes.INTEGER,
-        color: DataTypes.STRING,
-        price: DataTypes.DECIMAL,
-        size: DataTypes.STRING,
-        stock: DataTypes.INTEGER,
-        discount: DataTypes.INTEGER,
+        title: {
+            type: dataTypes.STRING,
+        },
+        productDescription: {
+            type: dataTypes.TEXT,
+        },
+        sku: {
+            type: dataTypes.INTEGER,
+        },
+        color: {
+            type: dataTypes.STRING,
+        },
+        price: {
+            type: dataTypes.DECIMAL,
+        },
+        size: {
+            type: dataTypes.STRING,
+        },
+        stock: {
+            type: dataTypes.INTEGER,
+        },
+        discount: {
+            type: dataTypes.INTEGER,
+        },
     };
     let config = {
         tableName: "products",
@@ -24,7 +40,6 @@ module.exports = (sequelize, DataTypes) => {
 
     return Product;
 };
-
 /* Asociaciones
   model.associate = (models) => {
         model.belongsToMany(models.Users, {
