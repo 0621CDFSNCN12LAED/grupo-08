@@ -40,13 +40,13 @@ module.exports = function (sequelize, dataTypes) {
 
     return Product;
 };
-/* Asociaciones
-  model.associate = (models) => {
-        model.belongsToMany(models.Users, {
-      as: "users",
-      through: "",
-      foreignKey: "",
-      otherKey: "",
-      timestamps: false,
+/* Asociaciones*/
+Product.associate = function (models) {
+    Product.belongsToMany(models.User, {
+        as: "users",
+        through: "productUser",
+        foreignKey: "productId",
+        otherKey: "userId",
+        timestamps: false,
     });
-  };*/
+};
