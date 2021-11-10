@@ -2,11 +2,13 @@ const fs = require("fs");
 const path = require("path");
 let bcryptjs = require("bcryptjs");
 
-const usuariosFilePath = path.join(__dirname, "../data/usuariosDataBase.json");
-const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
+//const usuariosFilePath = path.join(__dirname, "../data/usuariosDataBase.json");
+//const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
+const db = require("../database/models");
+const { Op } = require("sequelize");
 const { validationResult } = require("express-validator");
 
-const user = require("../models/oneUser");
+//const user = require("../models/oneUser"); - reemplazada por db.user
 
 const controladorUsers = {
     //ver formulario de registro
@@ -16,7 +18,7 @@ const controladorUsers = {
     },
 
     //Registrar nuevo usuario
-    register: (req, res) => {
+    register: async (req, res) => {
         //Mensaje de error registro
         const resultadoValidacion = validationResult(req);
 
@@ -28,8 +30,11 @@ const controladorUsers = {
         }
 
         //Mensaje de error de mail repetido
-        let userInDB = user.findByField("email", req.body.email);
-        if (userInDB) {
+        let userInDB = await db.User.findAll({
+            where:{email: req.body.email}
+        });
+         console.log(userInDB, '============================================')
+        if (userInDB.length > 0 ) {
             //Acá va el render con las validaciones hechas en el registe, pero para el login
             return res.render("register", {
                 errors: {
@@ -41,32 +46,38 @@ const controladorUsers = {
             });
         }
 
-        const biggestUser = usuarios[usuarios.length - 1];
-        const lastUserId = usuarios.length > 0 ? biggestUser.id : 1;
+        
+        
         let bcryptPass = bcryptjs.hashSync(req.body.password, 10);
         const usuario = {
-            id: lastUserId + 1,
             ...req.body,
-            password: bcryptPass,
-            img: "/img/avatars/" + req.file.filename,
+            firstName: req.body.name,
+            lastName: req.body.apellido,
+            userPassword: bcryptPass,
+            userImage: "/img/avatars/" + req.file.filename,
         };
+        
         //usuarios.push(usuario); lo comenté ya que pusheo el usuario al loguearlo
-        fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios, null, 4));
+        //fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios, null, 4));
         /* Método Login */
-        user.createUser(usuario);
+        const createdUser = await db.User.create(usuario);
+        
         /* Fin método login */
         return res.redirect("/login");
 
-        console.log(req.body);
+        //console.log(req.body);
     },
 
     login: (req, res) => {
         res.render("login");
     },
 
-    loginProcess: (req, res) => {
-        let userToLogin = user.findByField("email", req.body.email);
-        if (userToLogin) {
+    loginProcess: async (req, res) => {
+        let userToLogin = await db.User.findAll({
+            where: { email: req.body.email }
+        });
+        console.log(userToLogin, '============================================')
+        if (userToLogin.length > 0) {
             let passwordIsOkey = bcryptjs.compareSync(
                 req.body.password,
                 userToLogin.password
@@ -103,6 +114,12 @@ const controladorUsers = {
         req.session.destroy();
         return res.redirect("/");
     },
+
+   
+
 };
+
+
+
 
 module.exports = controladorUsers;
