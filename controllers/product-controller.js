@@ -3,32 +3,32 @@ const path = require("path");
 
 const productos = require("../servicesControllers/productsServices");
 const db = require("../database/models");
-const {Op} = require("sequelize");
+
+const { Op } = require("sequelize");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controllerProducts = {
     //listado de productos,  aún no se ve la imagen.
-    productos: (req,res) =>{
-        db.Product.findAll()
-        .then(function(allProducts){
-            res.render("productos", {allProducts});
-        })
+    productos: (req, res) => {
+        db.Product.findAll().then(function (allProducts) {
+            res.render("productos", { allProducts });
+        });
     },
 
-    search: async(req, res) =>{
-        const titulo = req.query.titulo//.replace(new RegExp(`/[áéíóú]/g`), "_");
+    search: async (req, res) => {
+        const titulo = req.query.titulo; //.replace(new RegExp(`/[áéíóú]/g`), "_");
         const productos = await db.Product.findAll({
             where: {
                 title: {
                     [Op.like]: `%${req.query.titulo}%`,
-                }
-            }
+                },
+            },
         });
-        if(productos.length > 0){
-            res.render("productos", {allProducts:productos})
-        }else{
-            res.render("productNotFound")
+        if (productos.length > 0) {
+            res.render("productos", { allProducts: productos });
+        } else {
+            res.render("productNotFound");
             console.log("No se encontró el producto");
-            res.send("Error")
+            res.send("Error");
         }
         console.log(productos.length);
     },
@@ -36,13 +36,11 @@ const controllerProducts = {
         res.render("productCart");
     },
 
-
-//detalle de el producto, aún no se ve la imagen.
-    productDetail: (req,res) =>{
-        db.Product.findByPk(req.params.id)
-        .then(function(producto){
-            res.render("indexProdDetail", {productoFiltrado:productos})
-        })
+    //detalle de el producto, aún no se ve la imagen.
+    productDetail: (req, res) => {
+        db.Product.findByPk(req.params.id).then(function (producto) {
+            res.render("indexProdDetail", { productoFiltrado: productos });
+        });
     },
 
     //Vista para crear nuevo producto
@@ -50,8 +48,17 @@ const controllerProducts = {
         res.render("crearProducto");
     },
 
-    crearNuevoProducto: (req, res) => {
-        productos.createOne(req.body, req.file);
+    crearNuevoProducto: async (req, res) => {
+        await db.Product.create({
+            title: req.body.title,
+            productDescription: req.body.productDescription,
+            sku: req.body.sku,
+            color: req.body.color,
+            price: req.body.price,
+            size: req.body.size,
+            stock: req.body.stock,
+            discount: req.body.discount,
+        });
         res.redirect("/productos");
     },
 
@@ -73,24 +80,51 @@ const controllerProducts = {
 
     //Encuentra producto a editar producto
     //Modificar producto producto Get
-    modificarProducto: (req, res) => {
+
+    /*modificarProducto: (req, res) => {
         const productoFiltradoEdit = productos.findOnlyOneById(req.params.id);
         res.render("modificarProducto", { productoFiltradoEdit });
+    },*/
+    modificarProducto: async (req, res) => {
+        const productoFiltradoEdit = await db.Product.findByPk(req.params.id);
+        res.render("modificarProducto", { productoFiltradoEdit });
     },
-    updateNewProduct: (req, res) => {
+
+    /*updateNewProduct: (req, res) => {
         productos.editOneProduct(req.params.id, req.body); //req.file
 
         res.redirect("/productos");
+    },*/
+
+    updateNewProduct: async (req, res) => {
+        await db.Product.update(
+            {
+                title: req.body.title,
+                productDescription: req.body.productDescription,
+                sku: req.body.sku,
+                color: req.body.color,
+                price: req.body.price,
+                size: req.body.size,
+                stock: req.body.stock,
+                discount: req.body.discount,
+            },
+            {
+                where: {
+                    id: req.params.id,
+                },
+            }
+        );
+        /*res.redirect(`/productos/${req.params.id}`);*/
+        res.redirect("/productos" + req.params.id);
     },
 
     delete: (req, res) => {
-
         db.Product.destroy({
             where: {
-                id: req.params.id
-            }
-        })
-        res.redirect('/');
+                id: req.params.id,
+            },
+        });
+        res.redirect("/");
     },
     //productos.deleteOneProduct(req.params.id);
 };
