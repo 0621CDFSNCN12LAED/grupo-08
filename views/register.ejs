@@ -43,7 +43,7 @@
                     <div class='paddingBot8'>
                         <label for='name'> Indícanos tu nombre</label>
                         <br>
-                        <input style='color:white' type='text' id='name' name='name'
+                        <input style='color:black' type='text' id='name' name='name'
                             value="<%= locals.oldData ? oldData.name : null  %>">
                         <% if (locals.errors && errors.name) { %>
                             <div class="errorMessage">
@@ -56,7 +56,7 @@
                     <div class=' paddingBot8'>
                         <label for='apellido'>Indícanos tu Apellido </label>
                         <br>
-                        <input style='color:white' type='text' id='apellido' name='apellido'
+                        <input style='color:black' type='text' id='apellido' name='apellido'
                             value="<%= locals.oldData ? oldData.apellido : null  %>">
                         <% if (locals.errors && errors.apellido) { %>
                             <div class="errorMessage">
@@ -69,7 +69,7 @@
                     <div class='paddingBot8 marginBot10'>
                         <label for='email'>E-mail</label>
                         <br>
-                        <input style='color:white' class='whiteBg' type='email' id='email' name='email'
+                        <input style='color:black' class='whiteBg' type='email' id='email' name='email'
                             value="<%= locals.oldData ? oldData.email : null  %>">
                         <% if (locals.errors && errors.email) { %>
                             <div class="errorMessage">
@@ -82,7 +82,7 @@
                     <div class=' paddingBot8'>
                         <label for='password'> Elige una contraseña</label>
                         <br>
-                        <input style='color:white' type='password' id='password' name='password'>
+                        <input style='color:black' type='password' id='password' name='password'>
                         <% if (locals.errors && errors.password) { %>
                             <div class="errorMessage">
                                 <p>
