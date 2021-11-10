@@ -79,7 +79,7 @@ const controllerProducts = {
     },
     updateNewProduct: (req, res) => {
         productos.editOneProduct(req.params.id, req.body); //req.file
-
+        
         res.redirect("/productos");
     },
 
