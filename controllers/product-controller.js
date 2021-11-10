@@ -6,10 +6,14 @@ const db = require("../database/models");
 const {Op} = require("sequelize");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controllerProducts = {
-    productos: (req, res) => {
-        const allProducts = productos.findAllProducts();
-        res.render("productos", { allProducts });
+    //listado de productos,  aún no se ve la imagen.
+    productos: (req,res) =>{
+        db.Product.findAll()
+        .then(function(allProducts){
+            res.render("productos", {allProducts});
+        })
     },
+
     search: async(req, res) =>{
         const titulo = req.query.titulo//.replace(new RegExp(`/[áéíóú]/g`), "_");
         const productos = await db.Product.findAll({
@@ -20,7 +24,7 @@ const controllerProducts = {
             }
         });
         if(productos.length > 0){
-            res.render("productos", {allProducts: productos})
+            res.render("productos", {allProducts:productos})
         }else{
             res.render("productNotFound")
             console.log("No se encontró el producto");
@@ -31,9 +35,14 @@ const controllerProducts = {
     productCart: (req, res) => {
         res.render("productCart");
     },
-    productDetail: (req, res) => {
-        const productoFiltrado = productos.findOnlyOneById(req.params.id);
-        res.render("indexProdDetail", { productoFiltrado });
+
+
+//detalle de el producto, aún no se ve la imagen.
+    productDetail: (req,res) =>{
+        db.Product.findByPk(req.params.id)
+        .then(function(producto){
+            res.render("indexProdDetail", {productoFiltrado:productos})
+        })
     },
 
     //Vista para crear nuevo producto

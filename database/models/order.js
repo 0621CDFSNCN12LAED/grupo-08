@@ -7,18 +7,36 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        //dateOrder: dataTypes.DATETIME, Arroja error por el tipo de dato
-        direction: dataTypes.TEXT,
-        userId: dataTypes.INTEGER,
-        totalPrice: dataTypes.DECIMAL,
- 
+        // dateOder: {
+        //     type:  dataTypes.DATE, con DATETIME daba error, chequear con DATE
+        // },
+        direction: {
+            type: dataTypes.TEXT
+             },
+        userId: { 
+            type: dataTypes.INTEGER  
+        },
+        totalPrice: { 
+            type: dataTypes.DECIMAL 
+        },
+        userId: {
+            type: dataTypes.INTEGER 
+            },
     };
     let config = {
         tableName: 'orders',
         timestamps: false
     }
-    
+
     const Order = sequelize.define(alias, cols, config);
-    
+
+
+    //  Order.associate = function(models){
+    //     Order.belongsTo(models.User,{
+    //         as:"user",
+    //         foreignKey: "userId"
+    //     });
+    // }
+
     return Order;
 }

@@ -62,7 +62,7 @@ CREATE TABLE categoryProduct(
 );
 /* Fin tabla product_categoryProduct  */
 
-/* Comienzo tabla order */
+/* Comienzo tabla orders */
 
 CREATE TABLE orders(
 id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -224,29 +224,29 @@ VALUES
 
 
 
-/* Inicio valores de tabla categoryProduct */
-INSERT INTO categoryProduct (id, productId, categoryProductId)
-VALUES
-(default, 1, 2),
-(default, 2, 2),
-(default, 3, 2),
-(default, 4, 2),
-(default, 5, 2),
-(default, 6, 2),
-(default, 7, 2),
-(default, 8, 2),
-(default, 9, 2),
-(default, 10, 2),
-(default, 11, 2),
-(default, 12, 2),
-(default, 13, 2),
-(default, 14, 2),
-(default, 15, 2),
-(default, 16, 2),
-(default, 17, 2),
-(default, 18, 2),
-(default, 19, 2),
-(default, 20, 2);
+/* Inicio valores de tabla categoryProduct, ESTA REPETIDA */
+-- INSERT INTO categoryProduct (id, productId, categoryProductId)
+-- VALUES
+-- (default, 1, 2),
+-- (default, 2, 2),
+-- (default, 3, 2),
+-- (default, 4, 2),
+-- (default, 5, 2),
+-- (default, 6, 2),
+-- (default, 7, 2),
+-- (default, 8, 2),
+-- (default, 9, 2),
+-- (default, 10, 2),
+-- (default, 11, 2),
+-- (default, 12, 2),
+-- (default, 13, 2),
+-- (default, 14, 2),
+-- (default, 15, 2),
+-- (default, 16, 2),
+-- (default, 17, 2),
+-- (default, 18, 2),
+-- (default, 19, 2),
+-- (default, 20, 2);
 /* Fin valores de tabla categoryProduct */
 
 
