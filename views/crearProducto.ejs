@@ -14,15 +14,15 @@
         <link rel="stylesheet" href="../css/styleHome-sm.css" />
         <link rel="stylesheet" href="../css/styleHome-md.css" />
         <link rel="stylesheet" href="../css/styleHome-lg.css" />
+        <link rel="stylesheet" href="../css/productCreate.css" />
 </head>
 
 <body>
     <%- include('./partials/header') %>
         <main class='mainContainer'>
-        <link rel="stylesheet" href="../css/productCreate.css" />
-    </head> -->
+    </head> 
 
-    <body>
+    <body class='backgroundImg2'>
         <main> 
             <h2 class='centerText'> Añadir nuevo producto</h2>
             <div class='container'> 
@@ -88,7 +88,7 @@
                             <option value='L'>L</option>
                             <option value='XL'>XL</option>
                             <option value='XXL'>XXL</option>
-                            <option value='otros'>Otros</option>
+                            <option value='talleUnico'>Talle único</option>
                             </select>
                     </div>
                     <div class='inputStyle'>
@@ -106,7 +106,7 @@
                                         <option value='rosado'>rosado</option>
                                           <option value='marrón'>marrón</option>
                                             <option value='gris'>gris</option>
-                                              <option value='otros'>Otro</option>
+                                              <option value='otros'>Otro - especificar</option>
                             </select>
                             </div>
                       <div class='inputStyle'>
@@ -127,7 +127,11 @@
                             <option value='ciclismo'>Ciclismo</option>
                             <option value='trekking'>Trekking</option>
                             <option value='waterSports'>Deportes aquáticos</option>
+                            <option value='tennis'>Tennis</option>
+                            <option value='basketball'>Basketball</option>
+                            <option value='boxing'>Boxeo</option>
                             <option value='casual'>Casual</option>
+                            <option value='futbol'>Fútbol</option>
                             <option value='otros'>Otro</option>
                             </select>
                             </div>
@@ -153,7 +157,7 @@
                         <label for='description'>Descripción </label>
                         <textarea  class='centerText' id='description' name='description' rows='5' cols='28' placeholder="Cuentanos un poco acerca de tu producto. Si no encontraste las opciónes adecuadas para tu producto, puedes indicarlas aquí!"></textarea>
                     </div>
-                    <div class='inputButtons'>
+                    <div class=''>
                         <button  type='submit'>Guardar</button>
                         <button  type='reset'>Comenzar de nuevo</button>
                     </div>     
