@@ -15,11 +15,21 @@ module.exports = (sequelize, dataTypes) => {
         categoryType: dataTypes.TEXT,
     };
     let config = {
-        tableName: "category",
+        tableName: "categories",
         timestamps: false,
     };
 
     const Category = sequelize.define(alias, cols, config);
+
+    /* Category.associate = function (models) {
+        Category.belongsToMany(models.Products, {
+            as: "categoryProducts",
+            through: "categoryProduct",
+            foreignKey: "categoryId",
+            otherKey: "productId",
+            timestamps: false,
+        });
+    }; */
 
     return Category;
 };
