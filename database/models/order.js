@@ -31,12 +31,20 @@ module.exports = (sequelize, dataTypes) => {
     const Order = sequelize.define(alias, cols, config);
 
 
-    //  Order.associate = function(models){
-    //     Order.belongsTo(models.User,{
-    //         as:"user",
-    //         foreignKey: "userId"
-    //     });
-    // }
+     Order.associate = function(models){
+        Order.belongsTo(models.Users,{
+            as:"user",
+            foreignKey: "userId"
+        });
+
+        Order.belongsToMany(models.Product,{
+            as: 'products',
+            through: 'productOrder',
+            foreignKey: 'idOrder',
+            otherKey: 'idProduct',
+            timestamps:false,
+        })
+    }
 
     return Order;
 }
