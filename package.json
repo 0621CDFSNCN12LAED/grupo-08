@@ -18,10 +18,11 @@
     "node-fetch": "^2.6.5",
     "nodemon": "^2.0.12",
     "path": "^0.12.7",
-    "sequelize": "^6.9.0",
     "sequelize-cli": "^6.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "sequelize": "^6.9.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"

@@ -50,7 +50,7 @@
                             <div class='inputProductForm centerText pad10'>
                                 <label for='elegirCategoria'> Categoria </label>
                                 <br>
-                                <select class='maxWidth100' id=category' name='category' required>
+                                <select class='maxWidth100' id='category' name='category' required>
                                     <option value='niños' <%=productoFiltradoEdit.category=="niños" ? "selected" : "" %>
                                         >Niños</option>
                                     <option value='mujeres' <%=productoFiltradoEdit.category=="mujeres" ? "selected"
@@ -194,10 +194,17 @@
                                     value="<%= productoFiltradoEdit.price%>" min='0' max='10000' placeholder='(en $)'
                                     required> <i>$</i>
                             </div>
+                            <div class='inputProductForm centerText pad10'>
+                                <label for='precioChange'>Modificar Descuento</label>
+                                <br>
+                                <input class='maxWidth100 centerText' type='number' id='discount' name='discount'
+                                    value="<%= productoFiltradoEdit.discount%>" min='0' max='10000' placeholder='(% OFF)'
+                                    required> <i>$</i>
+                            </div>
                             <div class='centerText maxWidth100'>
-                                <textarea class='centerText' id='description' name='description'
-                                    value="<%= productoFiltradoEdit.description%>" rows='5'
-                                    cols='28'><%= productoFiltradoEdit.description%></textarea>
+                                <textarea class='centerText' id='productDescription' name='productDescription'
+                                    value="<%= productoFiltradoEdit.productDescription%>" rows='5'
+                                    cols='28'><%= productoFiltradoEdit.productDescription%></textarea>
                             </div>
                             <div class='centerText'>
                                 <button class='buttonRegister marginBot10' type='submit'>Guardar</button>
