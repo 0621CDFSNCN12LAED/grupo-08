@@ -47,7 +47,21 @@ module.exports = function (sequelize, dataTypes) {
             otherKey: "userId",
             timestamps: false,
         });
-    };
+        Product.belongsToMany(models.Order,{
+            as: 'orders',
+            through: 'productOrder',
+            foreignKey: 'idProduct',
+            otherKey: 'idOrder',
+            timestamps:false,
+        })
+        Product.belongsToMany(models.Category, {
+            as: "categories",
+            through: "categoryProduct",
+            foreignKey: "productId",
+            otherKey: "categoryProductId",
+            timestamps: false,
+        })
+    }
 
     return Product;
 };

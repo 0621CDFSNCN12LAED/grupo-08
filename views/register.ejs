@@ -32,10 +32,6 @@
             <div class='headerRegisterForm'>
                 <!-- form header -->
                 <h1 class='textRegisterRegister fontSize5vw whiteText'> Regístrate ahora</h1>
-                <div class='break'></div>
-                <img class='googleLogo' src='/img/icons/googlelogo.png' alt='google logo' />
-                <img class='fbLogo' src='/img/icons/fblogo.png' alt='facebook logo' />
-            </div>
             <form class=' form centerText padTop10 flexWrap flexColumn centerText' action="/register" method="post"
                 enctype="multipart/form-data">
                 <!-- begins form inputs -->
@@ -91,7 +87,7 @@
                             </div>
                             <% } %>
                     </div>
-                    <div class=' paddingBot8'>
+                    <div class='elegirImagen'>
                         <label for='imagen'> Elige una imagen de perfil</label>
                         <br>
                         <input type='file' id='imagen' name='imagen'>
@@ -103,11 +99,10 @@
                             </div>
                             <% } %>
                     </div>
-                    <div class='w100 paddingBot2'>
-                        <label class for='terminos'>Acepto los <a class='a-links' href='/terminos'>términos y
-                                condiciones</a></label>
-                    </div>
-                    <div class='w100 paddingBot8'>
+                    <div class='termsConditions'>
+                        <label class for='terminos'>Acepto los <a class='a-links' href='/terminos'> <span style="color:#E1E368">términos y
+                                condiciones</span></a></label>
+                    <div class='paddingBot8'>
                         <br>
                         <input class='styleCheckbox' type='checkbox' id='terminos' name='terminos'>
                         <% if (locals.errors && errors.terminos) { %>
@@ -117,6 +112,7 @@
                                 </p>
                             </div>
                             <% } %>
+                    </div>
                     </div>
                     <div class='paddingBot12'>
                         <button class='buttonRegister' type='submit'>Registrarme</button>

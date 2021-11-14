@@ -160,7 +160,17 @@ justify-content: space-evenly;
     color:#06062e;
 }
 
+.elegirImagen{
+    padding:20px;
+    border: 1px solid yellow;
+}
 
+.termsConditions{
+    padding:30px; 
+    display:flex; 
+    align-items:center; 
+    justify-content: space-evenly;
+}
 
 .buttonRegister{
     padding:5px 20px;

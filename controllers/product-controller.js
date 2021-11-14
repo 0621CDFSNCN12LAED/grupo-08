@@ -38,9 +38,10 @@ const controllerProducts = {
 
     //detalle de el producto, aún no se ve la imagen.
     productDetail: (req, res) => {
-        db.Product.findByPk(req.params.id).then(function (producto) {
+        db.Product.findByPk(req.params.id).then(function (productos) {
             res.render("indexProdDetail", { productoFiltrado: productos });
         });
+        //con async await, requerir todas las imagenes de un producto
     },
 
     //Vista para crear nuevo producto

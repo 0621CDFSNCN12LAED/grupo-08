@@ -97,8 +97,8 @@
                                         >Otros</option>
                                 </select>
                             
-                            <div style= "display: flex; padding:10px; justify-content:space-around">
-                                <div>
+                            <div class='colorSize'>
+                                <div class='colorSizeChild1'>
                                 <label for='talle'> Talle </label>
                                 <select  id='size' name='size' required>
                                      <option value='XS' <%=productoFiltradoEdit.size=="XS" ? "selected" : "" %> > XS
@@ -157,7 +157,7 @@
                                     </option>
                                 </select>
                                 </div>
-                            <div>
+                            <div class='colorSizeChild2'>
                                 <label for='color'> Color </label>
                                 <select  id='color' name='color' required>
                                     <option value='blanco' <%=productoFiltradoEdit.color=="blanco" ? "selected" : "" %> > blanco

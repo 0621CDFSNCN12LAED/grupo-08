@@ -32,11 +32,10 @@ module.exports = (sequelize, dataTypes) => {
 
 
      Order.associate = function(models){
-        Order.belongsTo(models.Users,{
-            as:"user",
+        Order.belongsTo(models.User,{
+            as:"users",
             foreignKey: "userId"
         });
-
         Order.belongsToMany(models.Product,{
             as: 'products',
             through: 'productOrder',
