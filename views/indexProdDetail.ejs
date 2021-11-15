@@ -56,7 +56,7 @@
         <div class="product">
             <div class="images">
                 <div class="slider">
-                    <img src="<%= productoFiltrado.img %>" alt="" />
+                    <img src="/img/products/<%=productoFiltrado.images%>" alt="" />
                 </div>
                 <!-- Comentado momentaneamente hasta que solucionemos cómo poner varias imágenes - Eze
                  <div class='sportProd'>
@@ -69,11 +69,10 @@
                 <div class='itemSport'>
                     <img src='img/productDetail/rsz_top_pair.jpg' alt=''>
                 </div>
-
             </div> -->
                 <h2 class="det">DETALLES</h2>
                 <section class="decription">
-                    <%= productoFiltrado.description %>
+                    <%= productoFiltrado.productDescription %>
                 </section>
             </div>
 

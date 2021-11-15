@@ -1,3 +1,5 @@
+const Product = require("./Product")
+
 module.exports = (sequelize, dataTypes) => {
     let alias = "ProductImage";
     let cols = {
@@ -10,19 +12,15 @@ module.exports = (sequelize, dataTypes) => {
         imgName: dataTypes.TEXT,
     };
     let config = {
-        tableName: "productImage",
+        tableName: "productImages",
         timestamps: false,
     };
 
     const ProductImage = sequelize.define(alias, cols, config);
 
-//    ProductImage.associate = function (models) {
-//         ProductImage.hasMany(models.Product, {
-//             as: "productosImagenes",
-//             foreignKey: "imageId",
-//             timestamps: false,
-//         });
-//     };  
+    ProductImage.associate = function(models) { 
+           ProductImage.belongsTo(models.Product)
+    };
 
     return ProductImage;
 };

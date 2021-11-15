@@ -99,14 +99,14 @@
                 </section>
                 <% for (const producto of allProducts) { %>
                     <article class="product">
-                        <a href="productDetail/<%= producto.id %>"><img class="imageProduct" src="<%= producto.img %>"
+                        <a href="productDetail/<%= producto.id %>"><img class="imageProduct" src="/img/products/<%=producto.images%>"
                                 alt="imagenProducto"></a>
                         <div class="detailContainer">
                             <p class="titleProduct">
                                 <%= producto.title %>
                             </p>
                             <p class="descriptionProduct">
-                                <%= producto.description %>
+                                <%= producto.productDescription %>
                             </p>
                             <p class="sku_product">SKU <%= producto.sku %>
                             </p>

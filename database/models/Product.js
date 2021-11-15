@@ -30,6 +30,9 @@ module.exports = function (sequelize, dataTypes) {
         discount: {
             type: dataTypes.INTEGER,
         },
+        images: {
+            type:dataTypes.STRING,
+        }
     };
     let config = {
         tableName: "products",
@@ -61,6 +64,12 @@ module.exports = function (sequelize, dataTypes) {
             otherKey: "categoryProductId",
             timestamps: false,
         })
+
+        Product.hasMany(models.ProductImage, {
+            as: "productImage",
+            foreignKey: "imageId",
+            timestamps: false,
+        });
     }
 
     return Product;

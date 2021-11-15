@@ -7,10 +7,12 @@ const db = require("../database/models");
 const { Op } = require("sequelize");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controllerProducts = {
+
+
     //listado de productos,  aún no se ve la imagen.
     productos: (req, res) => {
         db.Product.findAll().then(function (allProducts) {
-            res.render("productos", { allProducts });
+            res.render("productos", {allProducts});
         });
     },
 
@@ -63,7 +65,7 @@ const controllerProducts = {
         res.redirect("/productos");
     },
 
-    //Ya esta funcionando em servicios pero comentado hasta poder probarlo un poquito mas.
+    // Ya esta funcionando em servicios pero comentado hasta poder probarlo un poquito mas.
     // crearNuevoProducto: (req, res) => {
     //     const biggestProduct = productos[productos.length - 1];
     //     const lastProductId = productos.length > 0 ? biggestProduct.id : 1;
