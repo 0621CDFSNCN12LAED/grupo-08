@@ -5,15 +5,18 @@ const productos = require("../servicesControllers/productsServices");
 const db = require("../database/models");
 
 const { Op } = require("sequelize");
+const Product = require("../database/models/Product");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controllerProducts = {
 
 
     //listado de productos,  aún no se ve la imagen.
     productos: (req, res) => {
-        db.Product.findAll().then(function (allProducts) {
-            res.render("productos", {allProducts});
-        });
+        db.Product.findAll({ include: [{ association: "users" }] }).then(
+            function (allProducts) {
+                res.render("productos", { allProducts });
+            }
+        );
     },
 
     search: async (req, res) => {
@@ -84,20 +87,10 @@ const controllerProducts = {
     //Encuentra producto a editar producto
     //Modificar producto producto Get
 
-    /*modificarProducto: (req, res) => {
-        const productoFiltradoEdit = productos.findOnlyOneById(req.params.id);
-        res.render("modificarProducto", { productoFiltradoEdit });
-    },*/
     modificarProducto: async (req, res) => {
         const productoFiltradoEdit = await db.Product.findByPk(req.params.id);
         res.render("modificarProducto", { productoFiltradoEdit });
     },
-
-    /*updateNewProduct: (req, res) => {
-        productos.editOneProduct(req.params.id, req.body); //req.file
-        
-        res.redirect("/productos");
-    },*/
 
     updateNewProduct: async (req, res) => {
         await db.Product.update(
@@ -117,8 +110,7 @@ const controllerProducts = {
                 },
             }
         );
-        /*res.redirect(`/productos/${req.params.id}`);*/
-        res.redirect("/productos" + req.params.id);
+        res.redirect("/productos");
     },
 
     delete: (req, res) => {
