@@ -10,7 +10,7 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controllerProducts = {
 
 
-    //listado de productos,  aún no se ve la imagen.
+    //Se ve imagen. La association "users" no tiene sentido, abria que asociarlo con categories.
     productos: (req, res) => {
         db.Product.findAll({ include: [{ association: "users" }] }).then(
             function (allProducts) {
@@ -58,7 +58,7 @@ const controllerProducts = {
         await db.Product.create({
             title: req.body.title,
             productDescription: req.body.productDescription,
-            sku: req.body.sku,
+            // sku: req.body.sku, Aca va la logica de math.Random() para generar un SKU
             color: req.body.color,
             price: req.body.price,
             size: req.body.size,

@@ -28,7 +28,6 @@ const controladorUsers = {
                 oldData: req.body,
             });
         }
-
         //Mensaje de error de mail repetido
         let userInDB = await db.User.findAll({
             where:{email: req.body.email}
