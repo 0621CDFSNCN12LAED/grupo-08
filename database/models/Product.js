@@ -43,31 +43,30 @@ module.exports = function (sequelize, dataTypes) {
 
     /* Asociaciones*/
     Product.associate = function (models) {
-        Product.belongsToMany(models.User, {
-            as: "users",
-            through: "productUser",
-            foreignKey: "productId",
-            otherKey: "userId",
-            timestamps: false,
-        });
         Product.belongsToMany(models.Order,{
             as: 'orders',
             through: 'productOrder',
             foreignKey: 'idProduct',
             otherKey: 'idOrder',
             timestamps:false,
-        })
+        });
         Product.belongsToMany(models.Category, {
             as: "categories",
             through: "categoryProduct",
             foreignKey: "productId",
             otherKey: "categoryProductId",
             timestamps: false,
-        })
-
+        });
         Product.hasMany(models.ProductImage, {
             as: "productImage",
             foreignKey: "imageId",
+            timestamps: false,
+        });
+         Product.belongsToMany (models.User, {
+            as: "users",
+            through: "productUser",
+            foreignKey: "productId",
+            otherKey: "userId",
             timestamps: false,
         });
     }

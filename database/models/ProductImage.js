@@ -1,4 +1,4 @@
-const Product = require("./Product")
+const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize, dataTypes) => {
     let alias = "ProductImage";

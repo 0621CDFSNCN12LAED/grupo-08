@@ -51,7 +51,7 @@
         <main>
             <h1 class="title">Productos Más vendidos</h1>
             <section class="productContainer">
-                <% for (const producto of productosOfertas) { %>
+                <% for (const producto of productos) { %>
                     <article class="product">
                         <a href="productDetail/<%= producto.id %>"><img class="imageProduct" src="<%= producto.img %>"
                                 alt="imagenProducto"></a>
@@ -60,7 +60,7 @@
                                 <%= producto.title %>
                             </p>
                             <p class="descriptionProduct">
-                                <%= producto.description %>
+                                <%= producto.productDescription %>
                             </p>
                             <p class="sku_product">SKU <%= producto.sku %>
                             </p>
@@ -77,7 +77,7 @@
             </section>
             <h2 class="title">Últimos Productos visitados</h2>
             <section class="productContainer">
-                <% for (const producto of productosVisitados) { %>
+                <% for (const producto of productos) { %>
                     <article class="product">
                         <img class="imageProduct" src="<%= producto.img %>" alt="imagenProducto">
                         <div class="detailContainer">

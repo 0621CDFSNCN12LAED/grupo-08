@@ -4,6 +4,6 @@ const controladorMain = require("../controllers/main-controller");
 
 router.get("/", controladorMain.index);
 
-router.get("/ayuda", controladorMain.ayuda);
+// router.get("/ayuda", controladorMain.ayuda); comentado mientras arreglo bases de datos index
 
 module.exports = router;

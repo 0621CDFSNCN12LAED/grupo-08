@@ -1,11 +1,10 @@
 const fs = require("fs");
 const path = require("path");
 
-const productos = require("../servicesControllers/productsServices");
+// const productos = require("../servicesControllers/productsServices");   De momento no estamos usando serivicos
 const db = require("../database/models");
-
 const { Op } = require("sequelize");
-const Product = require("../database/models/Product");
+// const Product = require("../database/models/Product"); Lo comento, no se que funcion cumple, ya llamamos a la base de datos en db
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controllerProducts = {
 
