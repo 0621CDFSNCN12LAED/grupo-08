@@ -133,9 +133,19 @@ ul li a:hover {
     padding: 16px 0 8px 0;
     font-weight: bold;
 }
+
+.price-discountContainer{
+    display: flex;
+    align-items: center;
+}
 .priceProduct {
     font-size: 22px;
     color: rgb(27, 192, 27);
+}
+.discountProduct{
+    padding-left: 20px;
+    font-size: 14px;
+    color: crimson;
 }
 .btnContainer {
     display: flex;

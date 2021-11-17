@@ -49,12 +49,12 @@
         </section>
         <!-- Productos -->
         <main>
-            <h1 class="title">Productos Más vendidos</h1>
+            <h1 class="title">¡Ofertas imperdibles!</h1>
             <section class="productContainer">
                 <% for (const producto of productosOfertas) { %>
                     <article class="product">
-                        <a href="productDetail/<%= producto.id %>"><img class="imageProduct" src="<%= producto.img %>"
-                                alt="imagenProducto"></a>
+                        <a href="productDetail/<%= producto.id %>"><img class="imageProduct"
+                                src="/img/products/<%= producto.images %>" alt="imagenProducto"></a>
                         <div class="detailContainer">
                             <p class="titleProduct">
                                 <%= producto.title %>
@@ -64,8 +64,13 @@
                             </p>
                             <p class="sku_product">SKU <%= producto.sku %>
                             </p>
-                            <p class="priceProduct">$<%= producto.price %>
-                            </p>
+                            <div class="price-discountContainer">
+                                <p class="priceProduct">$<%= producto.price %>
+                                </p>
+                                <% if (producto.discount) { %>
+                                    <p class="discountProduct">%<%= producto.discount %> OFF</p>
+                                    <% } %>
+                            </div>
                             <div class="btnContainer">
                                 <a href="productDetail/<%= producto.id %>"><button class="btn-buy">Ver
                                         Producto</button></a>
@@ -75,21 +80,21 @@
                     </article>
                     <%} %>
             </section>
-            <h2 class="title">Últimos Productos visitados</h2>
+            <!-- <h2 class="title">Últimos Productos visitados</h2>
             <section class="productContainer">
-                <% for (const producto of productosVisitados) { %>
+                <% //for (const producto of productosVisitados) { %>
                     <article class="product">
-                        <img class="imageProduct" src="<%= producto.img %>" alt="imagenProducto">
+                        <img class="imageProduct" src="<%= //producto.img %>" alt="imagenProducto">
                         <div class="detailContainer">
                             <p class="titleProduct">
-                                <%= producto.title %>
+                                <%= //producto.title %>
                             </p>
                             <p class="descriptionProduct">
-                                <%= producto.description %>
+                                <%= //producto.description %>
                             </p>
-                            <p class="sku_product">SKU <%= producto.sku %>
+                            <p class="sku_product">SKU <%= //producto.sku %>
                             </p>
-                            <p class="priceProduct">$<%= producto.price %>
+                            <p class="priceProduct">$<%= //producto.price %>
                             </p>
                             <div class="btnContainer">
                                 <button class="btn-buy">Ver Producto</button>
@@ -97,8 +102,8 @@
                             </div>
                         </div>
                     </article>
-                    <%} %>
-            </section>
+                    <%//} %>
+            </section> -->
         </main>
         <!-- Seccion imagenes con Categorias -->
         <section class="containCategoriesGlobal">

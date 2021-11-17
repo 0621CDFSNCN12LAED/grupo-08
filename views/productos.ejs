@@ -99,8 +99,8 @@
                 </section>
                 <% for (const producto of allProducts) { %>
                     <article class="product">
-                        <a href="productDetail/<%= producto.id %>"><img class="imageProduct" src="/img/products/<%=producto.images%>"
-                                alt="imagenProducto"></a>
+                        <a href="productDetail/<%= producto.id %>"><img class="imageProduct"
+                                src="/img/products/<%=producto.images%>" alt="imagenProducto"></a>
                         <div class="detailContainer">
                             <p class="titleProduct">
                                 <%= producto.title %>
@@ -110,8 +110,13 @@
                             </p>
                             <p class="sku_product">SKU <%= producto.sku %>
                             </p>
-                            <p class="priceProduct">$<%= producto.price %>
-                            </p>
+                            <div class="price-discountContainer">
+                                <p class="priceProduct">$<%= producto.price %>
+                                </p>
+                                <% if (producto.discount) { %>
+                                    <p class="discountProduct">%<%= producto.discount %> OFF</p>
+                                    <% } %>
+                            </div>
                             <div class="btnContainer">
                                 <a href="productDetail/<%= producto.id %>"><button class="btn-buy">Ver
                                         Producto</button></a>
