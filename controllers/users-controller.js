@@ -7,6 +7,7 @@ let bcryptjs = require("bcryptjs");
 const db = require("../database/models");
 const { Op } = require("sequelize");
 const { validationResult } = require("express-validator");
+const { render } = require("ejs");
 
 //const user = require("../models/oneUser"); - reemplazada por db.user
 
@@ -32,7 +33,7 @@ const controladorUsers = {
         let userInDB = await db.User.findAll({
             where:{email: req.body.email}
         });
-         console.log(userInDB, '============================================')
+         
         if (userInDB.length > 0 ) {
             //Acá va el render con las validaciones hechas en el registe, pero para el login
             return res.render("register", {
@@ -47,12 +48,13 @@ const controladorUsers = {
 
         
         
-        let bcryptPass = bcryptjs.hashSync(req.body.password, 10);
+        //let bcryptPass = bcryptjs.hashSync(req.body.password, 10);
         const usuario = {
             ...req.body,
             firstName: req.body.name,
             lastName: req.body.apellido,
-            userPassword: bcryptPass,
+            //userPassword: bcryptPass,
+            userPassword: req.body.password,
             userImage: "/img/avatars/" + req.file.filename,
         };
         
@@ -72,15 +74,16 @@ const controladorUsers = {
     },
 
     loginProcess: async (req, res) => {
-        let userToLogin = await db.User.findAll({
+        let userToLoginQuery = await db.User.findAll({
             where: { email: req.body.email }
-        });
-        console.log(userToLogin, '============================================')
-        if (userToLogin.length > 0) {
-            let passwordIsOkey = bcryptjs.compareSync(
+        })
+        const userToLogin = userToLoginQuery[0].toJSON();
+        if (userToLogin) {
+            /*let passwordIsOkey = bcryptjs.compareSync(
                 req.body.password,
-                userToLogin.password
-            );
+                userToLogin.userPassword
+            );*/
+            let passwordIsOkey = userToLogin.userPassword === req.body.password;
             if (passwordIsOkey) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
@@ -108,12 +111,32 @@ const controladorUsers = {
     profile: (req, res) => {
         res.render("profile", { user: req.session.userLogged });
     },
+
+    editProfile: async (req, res) =>{
+        let userInDB = await db.User.findByPk(req.session.userLogged.id);
+         res.render('editProfile',{user: userInDB.toJSON()})
+    },
+
+    confirmEditProfile: async (req, res) =>{
+    let updatedUser = await db.User.findByPk(req.body.id);
+    await updatedUser.update({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        userPassword: req.body.userPassword,
+        //userImage: DataTypes.TEXT,
+    });
+    await updatedUser.save();
+    res.render('profile', {user: updatedUser.toJSON()});
+    },
+
     logout: (req, res) => {
         res.clearCookie("userEmail");
         req.session.destroy();
         return res.redirect("/");
     },
 
+ 
    
 
 };
