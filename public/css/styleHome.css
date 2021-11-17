@@ -133,7 +133,15 @@ ul li a:hover {
     padding: 16px 0 8px 0;
     font-weight: bold;
 }
-
+.descriptionProduct{
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px;     /* fallback */
+   max-height: 48px;      /* fallback */
+   -webkit-line-clamp: 3; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
 .price-discountContainer{
     display: flex;
     align-items: center;
