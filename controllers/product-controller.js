@@ -1,14 +1,13 @@
-const fs = require("fs");
-const path = require("path");
+//const fs = require("fs");
+//const path = require("path");
 
-const productos = require("../servicesControllers/productsServices");
+//const productos = require("../servicesControllers/productsServices");
 const db = require("../database/models");
 
 const { Op } = require("sequelize");
 const Product = require("../database/models/Product");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controllerProducts = {
-
 
     //Se ve imagen. La association "users" no tiene sentido, abria que asociarlo con categories.
     productos: (req, res) => {

@@ -1,22 +1,31 @@
 const fs = require("fs");
 const path = require("path");
-
 const productos = require("../servicesControllers/productsServices");
-
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+const db = require("../database/models");
+const Product = require("../database/models/Product");
+const { Op } = require("sequelize");
 
 const controladorMain = {
     index: (req, res) => {
-        //filterByCategory
-        const productosVisitados = productos.filtrarPorCategoria("visited");
-        //filterByCategory
-        const productosOfertas = productos.filtrarPorCategoria("in-sale");
+        db.Product.findAll({ 
+            where: {
+                discount: {
+                  [Op.not]: [0]
+                }
+              },
+              limit: 5,
+              order: [
+                  ['discount', 'DESC']
+              ]
+         })
+        .then(
+            function (productosOfertas) {
+                res.render("index", { productosOfertas });
+            }
+        );
 
-        res.render("index", {
-            productosVisitados,
-            productosOfertas,
-            toThousand,
-        });
     },
     ayuda: (req, res) => {
         res.render("ayuda");
