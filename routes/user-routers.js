@@ -29,6 +29,8 @@ router.post("/login", validacionMsg, controladorUsers.loginProcess);
 router.get("/terminos", controladorUsers.terminos);
 
 router.get("/profile", authUserMiddleware, controladorUsers.profile);
+router.get("/profile/edit", authUserMiddleware, controladorUsers.editProfile);
+router.post("/profile/edit", authUserMiddleware, controladorUsers.confirmEditProfile);
 
 router.get("/logout", controladorUsers.logout);
 
