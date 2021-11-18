@@ -1,58 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <%- include('./partials/head') %>
-        <script
-            src="https://kit.fontawesome.com/d3503ff7e5.js"
-            crossorigin="anonymous"
-        ></script>
+
+<head>
+    <%- include('./partials/head') %>
+        <script src="https://kit.fontawesome.com/d3503ff7e5.js" crossorigin="anonymous"></script>
         <!-- <link rel="stylesheet" href="/css/theme-lr.css" /> -->
         <!-- <link rel="stylesheet" href="/css/utils-lr.css" /> -->
         <link rel="stylesheet" href="/css/styles-lr.css" />
         <link rel="stylesheet" href="/css/normalize.css" />
         <link rel="stylesheet" href="/css/profile.css" />
-        <link
-            rel="stylesheet"
-            href="/css/styles-login-md.css"
-            media="(min-width:768px)"
-        />
-        <link
-            rel="stylesheet"
-            href="/css/styles-login-lg.css"
-            media="(min-width:992px)"
-        />
+        <link rel="stylesheet" href="/css/styles-login-md.css" media="(min-width:768px)" />
+        <link rel="stylesheet" href="/css/styles-login-lg.css" media="(min-width:992px)" />
         <link rel="stylesheet" href="../css/styleHome.css" />
         <link rel="stylesheet" href="../css/styleHome-sm.css" />
         <link rel="stylesheet" href="../css/styleHome-md.css" />
         <link rel="stylesheet" href="../css/styleHome-lg.css" />
-    </head>
+</head>
 
-    <body>
-        <%- include('./partials/header') %>
+<body>
+    <%- include('./partials/header') %>
 
         <main>
-            <div class="titleItem"><h3>Bienvenido <%= user.name %></h3></div>
+            <div class="titleItem">
+                <h3>Bienvenido <%= user.name %>
+                </h3>
+            </div>
             <section>
-            <div class="container">
-                <div class="containerProfile">
-                <img src='<%= user.img %>' style='width: 250px'></img>
-                <div class="userDetails">
-                    Tu perfil:
-                                <div id='detail' style="color: blue"> 
-                                    Puedes comprar y vender
-                               </div>
-                                <div id='detail' style="color: green">
-                                    <%=user.email %>
-                                </div> 
-                                 <div id='detail'>
-                                    <a href="/profile/edit" class="card-link"
-                                >Modificar mis datos </a>
-                                </div> 
+                <div class="container">
+                    <div class="containerProfile">
+                        <img src='<%= user.userImage %>' style='width: 250px'></img>
+                        <div class="userDetails">
+                            Tu perfil:
+                            <div id='detail' style="color: blue">
+                                Puedes comprar y vender
+                            </div>
+                            <div id='detail' style="color: green">
+                                <%=user.email %>
+                            </div>
+                            <div id='detail'>
+                                <a href="/profile/edit" class="card-link">Modificar mis datos </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                </div>  
-                </div>
-                </section>
-               <!-- <section>
+            </section>
+            <!-- <section>
                    
                 <div class="containerEnlaces">
                        <div class="enlace">
@@ -71,5 +63,6 @@
         </main>
 
         <%- include('./partials/footer') %>
-    </body>
+</body>
+
 </html>
