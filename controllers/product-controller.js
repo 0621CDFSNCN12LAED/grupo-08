@@ -1,7 +1,24 @@
 //const fs = require("fs");
 //const path = require("path");
 
-//const productos = require("../servicesControllers/productsServices");
+const multer = require("multer");
+const path = require("path");
+
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, path.join(__dirname, "../public/img/products"));
+    },
+    filename: function (req, file, cb) {
+        const newFilename =
+            "NuevoProducto-" + Date.now() + path.extname(file.originalname);
+        cb(null, newFilename);
+    },
+});
+const upload = multer({ storage: storage });
+
+module.exports = upload;
+
+// const productos = require("../servicesControllers/productsServices");
 const db = require("../database/models");
 
 const { Op } = require("sequelize");
@@ -55,9 +72,19 @@ const controllerProducts = {
 
     crearNuevoProducto: async (req, res) => {
         await db.Product.create({
+            images: "/img/products/" + req.file.filename,
             title: req.body.title,
             productDescription: req.body.productDescription,
-            // sku: req.body.sku, Aca va la logica de math.Random() para generar un SKU
+            sku: (Math.random()*10000000000), 
+
+            //VIENDO LA LOGICA PARA QUE NO SE REPITAN LOS SKU
+            // sku: function skuF()=>{
+            //    let productSkus = [];
+            //      Product.forEach(product =>{
+            //     productSkus.push[product.sku]
+            //      }
+            //      return (Math.random()*10000000000 != productSkus)
+            //     }
             color: req.body.color,
             price: req.body.price,
             size: req.body.size,
@@ -96,7 +123,7 @@ const controllerProducts = {
             {
                 title: req.body.title,
                 productDescription: req.body.productDescription,
-                sku: req.body.sku,
+                // sku: req.body.sku, creo que no deberiamos tocar esto
                 color: req.body.color,
                 price: req.body.price,
                 size: req.body.size,
