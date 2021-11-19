@@ -1,22 +1,7 @@
-//const fs = require("fs");
-//const path = require("path");
-
-const multer = require("multer");
+const fs = require("fs");
 const path = require("path");
 
-var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, path.join(__dirname, "../public/img/products"));
-    },
-    filename: function (req, file, cb) {
-        const newFilename =
-            "NuevoProducto-" + Date.now() + path.extname(file.originalname);
-        cb(null, newFilename);
-    },
-});
-const upload = multer({ storage: storage });
-
-module.exports = upload;
+const multer = require("multer");
 
 // const productos = require("../servicesControllers/productsServices");
 const db = require("../database/models");
@@ -75,16 +60,7 @@ const controllerProducts = {
             images: "/img/products/" + req.file.filename,
             title: req.body.title,
             productDescription: req.body.productDescription,
-            sku: (Math.random()*10000000000), 
-
-            //VIENDO LA LOGICA PARA QUE NO SE REPITAN LOS SKU
-            // sku: function skuF()=>{
-            //    let productSkus = [];
-            //      Product.forEach(product =>{
-            //     productSkus.push[product.sku]
-            //      }
-            //      return (Math.random()*10000000000 != productSkus)
-            //     }
+            sku: (Math.random()*10000000000),     
             color: req.body.color,
             price: req.body.price,
             size: req.body.size,
@@ -93,6 +69,22 @@ const controllerProducts = {
         });
         res.redirect("/productos");
     },
+
+
+
+    //VIENDO LA LOGICA PARA QUE NO SE REPITAN LOS SKU
+            // sku: function skuF()=>{
+            //    let productSkus = [];
+            //      Product.forEach(product =>{
+            //     productSkus.push[product.sku]
+            //      }
+            //      return (Math.random()*10000000000 != productSkus)
+            //     }
+
+
+
+
+
 
     // Ya esta funcionando em servicios pero comentado hasta poder probarlo un poquito mas.
     // crearNuevoProducto: (req, res) => {
@@ -121,9 +113,9 @@ const controllerProducts = {
     updateNewProduct: async (req, res) => {
         await db.Product.update(
             {
+                images: "/img/products/" + req.file.filename,
                 title: req.body.title,
                 productDescription: req.body.productDescription,
-                // sku: req.body.sku, creo que no deberiamos tocar esto
                 color: req.body.color,
                 price: req.body.price,
                 size: req.body.size,

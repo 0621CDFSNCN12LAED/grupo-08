@@ -18,12 +18,12 @@
         <main>
             <h2 class='centerText'> Modificar un producto</h2>
             <div class="container">
-                <form class='productForm' action="/<%= productoFiltradoEdit.id%>/?_method=PUT" method="POST">
+                <form class='productForm' action="/<%= productoFiltradoEdit.id%>/?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class='img'>
-                        <div class='inputProductForm uploadPicture centerText'>
+                        <div>
                             <label for='img' class='whiteText'>Modificar imagen</label>
                             <br><i class="fas fa-camera blue" style='font-size: 1.5em;'></i>
-                            <img src="/img/products/<%= productoFiltradoEdit.img %>" alt="" />
+                            <img src="<%= productoFiltradoEdit.img %>"  alt="" />
                             <input type='file' id='img' name='img' class='maxWidth100' style='display:none'
                                 accept='image/png, image/jpg, image/jpeg' />
                         </div>

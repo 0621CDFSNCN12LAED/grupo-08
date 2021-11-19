@@ -100,7 +100,7 @@
                 <% for (const producto of allProducts) { %>
                     <article class="product">
                         <a href="productDetail/<%= producto.id %>"><img class="imageProduct"
-                                src="/img/products/<%=producto.images%>" alt="imagenProducto"></a>
+                                src="<%=producto.images%>" alt="imagenProducto"></a>
                         <div class="detailContainer">
                             <p class="titleProduct">
                                 <%= producto.title %>
