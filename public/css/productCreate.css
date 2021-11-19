@@ -35,9 +35,24 @@ form, input, select, textarea{
     color:white;
 }
 
+
+.modifyImg{
+    flex-flow: wrap column;
+    text-align: center;
+    color:white;
+    width:100%;
+    border-bottom: 1px solid rgba(23, 105, 199, 0.6);
+}
+
+
+.modifyImg #imageMod{
+ 
+    border: 4px solid rgb(16, 78, 160);
+}
+
+
 .img{
 width:100%;
-text-align: center;
 }
 
 .container .inputStyle{ 
