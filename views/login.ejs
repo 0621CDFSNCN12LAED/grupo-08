@@ -5,35 +5,25 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <%- include('./partials/head') %>
-        <script
-            src="https://kit.fontawesome.com/d3503ff7e5.js"
-            crossorigin="anonymous"
-        ></script>
+
+<head>
+    <%- include('./partials/head') %>
+        <script src="https://kit.fontawesome.com/d3503ff7e5.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/css/theme-lr.css" />
         <link rel="stylesheet" href="/css/utils-lr.css" />
         <link rel="stylesheet" href="/css/styles-lr.css" />
         <link rel="stylesheet" href="/css/normalize.css" />
         <link rel="stylesheet" href="../css/styles-login.css" />
-        <link
-            rel="stylesheet"
-            href="/css/styles-login-md.css"
-            media="(min-width:768px)"
-        />
-        <link
-            rel="stylesheet"
-            href="/css/styles-login-lg.css"
-            media="(min-width:992px)"
-        />
+        <link rel="stylesheet" href="/css/styles-login-md.css" media="(min-width:768px)" />
+        <link rel="stylesheet" href="/css/styles-login-lg.css" media="(min-width:992px)" />
         <link rel="stylesheet" href="../css/styleHome.css" />
         <link rel="stylesheet" href="../css/styleHome-sm.css" />
         <link rel="stylesheet" href="../css/styleHome-md.css" />
         <link rel="stylesheet" href="../css/styleHome-lg.css" />
-    </head>
+</head>
 
-    <body class="no-margin flex-wrap background-img">
-        <%- include('./partials/header') %>
+<body class="no-margin flex-wrap background-img">
+    <%- include('./partials/header') %>
 
         <main class="backgroundImg">
             <div class="blueTransBg flexWrap justifyCenter containerForm">
@@ -43,86 +33,68 @@
                     <h1 class="textRegisterRegister fontSize5vw whiteText">
                         Ingresa a tu cuenta
                     </h1>
-                <form
-                    action="./login"
-                    method="POST"
-                    class="
+                    <div class="errorContainerLogin">
+                        <small class="msg-error-validation text-danger errMail"></small>
+                        <small class="msg-error-validation text-danger errPassword"></small>
+                    </div>
+                    <form action="./login" method="POST" class="
                         form
                         centerText
                         padTop10
                         flexWrap
                         flexColumn
                         centerText
-                    "
-                >
-                    <!-- begins form inputs -->
-                    <fieldset>
-                        <div class="paddingBot8 nombreLogin">
-                            <label for="email"> E-mail</label>
-                            <br />
-                            <input type="email" id="email" name="email" />
-                            <% if (locals.errors && errors.email) { %>
-                            <div class="errorMessage">
-                                <p><%= errors.email.msg %></p>
+                    ">
+                        <!-- begins form inputs -->
+                        <fieldset>
+                            <div class="paddingBot8 nombreLogin">
+                                <label for="email"> E-mail</label>
+                                <br />
+                                <input type="email" id="email" name="email" />
+                                <% if (locals.errors && errors.email) { %>
+                                    <div class="errorMessage">
+                                        <p>
+                                            <%= errors.email.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
                             </div>
-                            <% } %>
-                        </div>
-                        <div class="paddingBot8 contraseñaLogin">
-                            <label for="password"> Contraseña</label>
-                            <br />
-                            <input
-                                type="password"
-                                id="password"
-                                name="password"
-                            />
-                        </div>
-                        <div class="termsConditions" style='align-items: flex-start;'>
-                            <div>
-                            <label  for="rememberMe">
-                                Recuerdame</label
-                            >
+                            <div class="paddingBot8 contraseñaLogin">
+                                <label for="password"> Contraseña</label>
+                                <br />
+                                <input type="password" id="password" name="password" />
                             </div>
-                            <div>
-                            <input
-                                class="recuerdameCheckbox"
-                                type="checkbox"
-                                id="rememberMe"
-                                name="rememberMe"
-                            />
+                            <div class="termsConditions" style='align-items: flex-start;'>
+                                <div>
+                                    <label for="rememberMe">
+                                        Recuerdame</label>
+                                </div>
+                                <div>
+                                    <input class="recuerdameCheckbox" type="checkbox" id="rememberMe"
+                                        name="rememberMe" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="paddingBot20 botonIngresar">
-                            <button class="buttonRegister" type="submit">
-                                Ingresar
-                            </button>
-                        </div>
-                        <div class="olv0ideContraseñaText margnBot1">
-                            <label>Olvide mi contraseña</label>
-                        </div>
-                        <div
-                            class="
-                                paddingBot8
-                                centerText
-                                whiteText
-                                paddingTop4
-                                sinUsuarioLogin
-                            "
-                        >
-                            <label
-                                >¿Aún no tienes un usuario?<a
-                                    class="aLinks"
-                                    href="/register"
-                                >
-                                    Crea uno!
-                                </a></label
-                            >
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
+                            <div class="paddingBot20 botonIngresar">
+                                <button class="buttonRegister" type="submit" id="buttonSubmitLogin">
+                                    Ingresar
+                                </button>
+                            </div>
+                            <div class="olv0ideContraseñaText margnBot1">
+                                <label>Olvide mi contraseña</label>
+                            </div>
+                            <div class="paddingBot8 centerText whiteText paddingTop4 sinUsuarioLogin">
+                                <label>¿Aún no tienes un usuario?<a class="aLinks" href="/register">
+                                        Crea uno!
+                                    </a></label>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
         </main>
 
         <%- include('./partials/footer') %>
-    </body>
+            <script src="../javascript/loginValidation.js"></script>
+</body>
+
 </html>

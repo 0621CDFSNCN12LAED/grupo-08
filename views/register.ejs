@@ -32,102 +32,128 @@
             <div class='headerRegisterForm'>
                 <!-- form header -->
                 <h1 class='textRegisterRegister fontSize5vw whiteText'> Regístrate ahora</h1>
-            <form class=' form centerText padTop10 flexWrap flexColumn centerText' action="/register" method="post"
-                enctype="multipart/form-data">
-                <!-- begins form inputs -->
-                <fieldset>
-                    <div class='paddingBot8'>
-                        <label for='name'> Indícanos tu nombre</label>
-                        <br>
-                        <input style='color:black' type='text' id='name' name='name'
-                            value="<%= locals.oldData ? oldData.name : null  %>">
-                        <% if (locals.errors && errors.name) { %>
-                            <div class="errorMessage">
-                                <p>
-                                    <%= errors.name.msg %>
-                                </p>
+                <div class="errorContainerRegister">
+                    <!-- Errores validación JS
+                    En caso de querer que se muestren abajo de cada input, mover etiqueta small -->
+                    <small class="msg-error-validation text-danger erName"></small>
+                    <small class="msg-error-validation text-danger erLastName"></small>
+                    <small class="msg-error-validation text-danger erEmail"></small>
+                    <small class="msg-error-validation text-danger erPassword"></small>
+                    <small class="msg-error-validation text-danger erImageProfile"></small>
+                    <small class="msg-error-validation text-danger erTerminos"></small>
+                </div>
+                <form class=' form centerText padTop10 flexWrap flexColumn centerText' action="/register" method="post"
+                    enctype="multipart/form-data" id="formRegister">
+                    <!-- begins form inputs -->
+                    <fieldset>
+                        <div class='paddingBot8'>
+                            <label for='name'> Indícanos tu nombre</label>
+                            <br>
+                            <input style='color:black' type='text' id='name' name='name'
+                                value="<%= locals.oldData ? oldData.name : null  %>">
+                            <% if (locals.errors && errors.name) { %>
+                                <div class="errorMessage">
+                                    <p>
+                                        <%= errors.name.msg %>
+                                    </p>
+                                </div>
+                                <% } %>
+                                    <% if (typeof errores !="undefined" ){ %>
+                                        <% for( let i=0; i < errores.length; i++ ) { %>
+                                            <% if (errores[i].param=="name" ) { %>
+                                                <small class="text-danger">
+                                                    <%= errores[i].msg %>
+                                                </small>
+                                                <% } %>
+                                                    <% } %>
+                                                        <% } %>
+                        </div>
+                        <div class=' paddingBot8'>
+                            <label for='apellido'>Indícanos tu Apellido </label>
+                            <br>
+                            <input style='color:black' type='text' id='apellido' name='apellido'
+                                value="<%= locals.oldData ? oldData.apellido : null  %>">
+                            <% if (locals.errors && errors.apellido) { %>
+                                <div class="errorMessage">
+                                    <p>
+                                        <%= errors.apellido.msg %>
+                                    </p>
+                                </div>
+                                <% } %>
+                        </div>
+                        <div class='paddingBot8 marginBot10'>
+                            <label for='email'>E-mail</label>
+                            <br>
+                            <input style='color:black' class='whiteBg' type='email' id='email' name='email'
+                                value="<%= locals.oldData ? oldData.email : null  %>">
+                            <% if (locals.errors && errors.email) { %>
+                                <div class="errorMessage">
+                                    <p>
+                                        <%= errors.email.msg %>
+                                    </p>
+                                </div>
+                                <% } %>
+                        </div>
+                        <div class=' paddingBot8'>
+                            <label for='password'> Elige una contraseña</label>
+                            <br>
+                            <input style='color:black' type='password' id='password' name='password'>
+                            <% if (locals.errors && errors.password) { %>
+                                <div class="errorMessage">
+                                    <p>
+                                        <%= errors.password.msg %>
+                                    </p>
+                                </div>
+                                <% } %>
+                                    <div class="progress strongPassword-content">
+                                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                                            style="width: 0" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"
+                                            id="barPassword">
+                                        </div>
+                                    </div>
+                        </div>
+                        <div class='elegirImagen'>
+                            <label for='imagen'> Elige una imagen de perfil</label>
+                            <br>
+                            <input type='file' id='imagen' name='imagen'>
+                            <% if (locals.errors && errors.imagen) { %>
+                                <div class="errorMessage">
+                                    <p>
+                                        <%= errors.imagen.msg %>
+                                    </p>
+                                </div>
+                                <% } %>
+                        </div>
+                        <div class='termsConditions'>
+                            <label class for='terminos'>Acepto los <a class='a-links' href='/terminos'>
+                                    <span style="color:#E1E368">términos y
+                                        condiciones</span></a></label>
+                            <div class='paddingBot8'>
+                                <br>
+                                <input class='styleCheckbox' type='checkbox' id='terminos' name='terminos'>
                             </div>
-                            <% } %>
-                    </div>
-                    <div class=' paddingBot8'>
-                        <label for='apellido'>Indícanos tu Apellido </label>
-                        <br>
-                        <input style='color:black' type='text' id='apellido' name='apellido'
-                            value="<%= locals.oldData ? oldData.apellido : null  %>">
-                        <% if (locals.errors && errors.apellido) { %>
-                            <div class="errorMessage">
-                                <p>
-                                    <%= errors.apellido.msg %>
-                                </p>
-                            </div>
-                            <% } %>
-                    </div>
-                    <div class='paddingBot8 marginBot10'>
-                        <label for='email'>E-mail</label>
-                        <br>
-                        <input style='color:black' class='whiteBg' type='email' id='email' name='email'
-                            value="<%= locals.oldData ? oldData.email : null  %>">
-                        <% if (locals.errors && errors.email) { %>
-                            <div class="errorMessage">
-                                <p>
-                                    <%= errors.email.msg %>
-                                </p>
-                            </div>
-                            <% } %>
-                    </div>
-                    <div class=' paddingBot8'>
-                        <label for='password'> Elige una contraseña</label>
-                        <br>
-                        <input style='color:black' type='password' id='password' name='password'>
-                        <% if (locals.errors && errors.password) { %>
-                            <div class="errorMessage">
-                                <p>
-                                    <%= errors.password.msg %>
-                                </p>
-                            </div>
-                            <% } %>
-                    </div>
-                    <div class='elegirImagen'>
-                        <label for='imagen'> Elige una imagen de perfil</label>
-                        <br>
-                        <input type='file' id='imagen' name='imagen'>
-                        <% if (locals.errors && errors.imagen) { %>
-                            <div class="errorMessage">
-                                <p>
-                                    <%= errors.imagen.msg %>
-                                </p>
-                            </div>
-                            <% } %>
-                    </div>
-                    <div class='termsConditions'>
-                        <label class for='terminos'>Acepto los <a class='a-links' href='/terminos'> <span style="color:#E1E368">términos y
-                                condiciones</span></a></label>
-                    <div class='paddingBot8'>
-                        <br>
-                        <input class='styleCheckbox' type='checkbox' id='terminos' name='terminos'>
+                        </div>
                         <% if (locals.errors && errors.terminos) { %>
-                            <div class="errorMessage">
-                                <p>
-                                    <%= errors.terminos.msg %>
-                                </p>
-                            </div>
+                            <p class="errorMessage">
+                                <%= errors.terminos.msg %>
+                            </p>
                             <% } %>
+                                <div class='paddingBot12'>
+                                    <button class='buttonRegister' type='submit' id="buttonSend">Registrarme</button>
+                                </div>
+                    </fieldset>
+                    <div class='paddingBot8 centerText whiteText paddingTop4'><label class='loginLink'>¿Ya
+                            tienes un
+                            usuario con
+                            nosotros?<a class='aLinks' href='/login'> Ingresa aquí</a></label>
                     </div>
-                    </div>
-                    <div class='paddingBot12'>
-                        <button class='buttonRegister' type='submit'>Registrarme</button>
-                    </div>
-                </fieldset>
-                <div class='paddingBot8 centerText whiteText paddingTop4'><label class='loginLink'>¿Ya
-                        tienes un
-                        usuario con
-                        nosotros?<a class='aLinks' href='/login'> Ingresa aquí</a></label></div>
-            </form>
-        </div>
+                </form>
+            </div>
     </main>
 
 
     <%- include('./partials/footer') %>
+        <script src="../javascript/userValidation.js"></script>
         </body>
 
 </html>
