@@ -1,6 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-
 const multer = require("multer");
 
 // const productos = require("../servicesControllers/productsServices");
@@ -60,7 +59,7 @@ const controllerProducts = {
             images: "/img/products/" + req.file.filename,
             title: req.body.title,
             productDescription: req.body.productDescription,
-            sku: (Math.random()*10000000000),     
+            sku: (Math.random()*1000000000),     
             color: req.body.color,
             price: req.body.price,
             size: req.body.size,
@@ -80,9 +79,6 @@ const controllerProducts = {
             //      }
             //      return (Math.random()*10000000000 != productSkus)
             //     }
-
-
-
 
 
 
