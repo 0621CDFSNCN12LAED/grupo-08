@@ -17,10 +17,7 @@ let erTerminos = document.querySelector(".erTerminos");
 
 let errorContainer = document.querySelector("#errorContainer");
 
-let errores = {
-    name: "",
-    lastName: "",
-};
+let errores = {};
 
 password.addEventListener("keyup", () =>{
       checkPassword(password.value);
@@ -48,6 +45,9 @@ function checkPassword(pass){
     }
     
     switch(strengthPassword){
+            case 0:
+                strengthBar.style = "width: 0%";
+                break
             case 1:
                 strengthBar.style = "width: 20%";
                 break
@@ -66,22 +66,31 @@ function checkPassword(pass){
     }
 }
 
-btnSubmit.addEventListener("click", e =>{
+btnSubmit.addEventListener("click", (event) =>{
+    event.preventDefault();
     //La variable regex hace que corrobore que el mail que escribió el usuario sea válido
     let regex = /^[^\s@]+@[^\s@]+$/;
+    //Validaciones 
     let validationNumber = /[0-9]+/;
     let validationLowercase = /[a-z]+/;
     let validationUppercase = /[A-Z]+/;
     let validationSpecialCaracter = /[~<>?!@$%^&*()]+/;
+    //Validaciones imágenes
+    let validationImageJpg = /\.jpe?g$/i;
+    let validationImageJpeg = /\.jpeg?g$/i;
+    let validationImagePng = /\.png?g$/i;
+    let validationImageGif = /\.gif?g$/i;
     
-    e.preventDefault();
+    let checkedTerms = terminos.checked;
+
+    
     
     //Validación Nombre
     if(inputName.value.length < 1){
         errores.name = "Es obligatorio que ingrese un Nombre";
     }else if (inputName.value.length < 3){
         errores.name = "El nombre debe contener almenos 3 caracteres";
-    }
+    } 
     //Validación Apellido
     if(apellido.value.length < 1){
         errores.lastName = "Es obligatorio que ingrese un Apellido";
@@ -112,15 +121,13 @@ btnSubmit.addEventListener("click", e =>{
         errores.password = "La contraseña debe contener almenos un caracter raro"
     }
     //Validación Imagen
-    if(imagen.value != undefined || imagen.value != null){
-        errores.imagen = "Es obligatorio que adjunte una imagen";
-    }else if (imagen.value != "jpg" || imagen.value != "jpeg" || imagen.value != "png" || imagen.value != "Gif"){
-        errores.imagen = "El formato del archivo no es válido, solo se aceptan JPG, JPEG, PNG o GIF";
+    if(!validationImageJpg.test(imagen.value) && !validationImageJpeg.test(imagen.value) && !validationImagePng.test(imagen.value) && !validationImageGif.test(imagen.value)){
+        errores.imagen = "La imagen debe contener un archivo JPG, JPEG, PNG o GIF";
     }
     //Validación Terminos y condiciones
-    if(terminos.value.length < 1){
+    if(!checkedTerms){
         errores.terminos = "Es necesario que acepte los términos y condiciones";
-    }
+    } 
 
 
 
@@ -130,9 +137,9 @@ btnSubmit.addEventListener("click", e =>{
         erLastName.innerText = (errores.lastName) ? errores.lastName : "";
         erEmail.innerText = (errores.email) ? errores.email : "";
         erPassword.innerText = (errores.password) ? errores.password : "";
-        //erImageProfile.innerText = (errores.imagen) ? errores.imagen : "";
-        //erTerminos.innerText = (errores.terminos) ? errores.terminos : "";
+        erImageProfile.innerText = (errores.imagen) ? errores.imagen : "";
+        erTerminos.innerText = (errores.terminos) ? errores.terminos : "";
     } else{
-        form.submit();
+        btnSubmit.submit();
     }
 })
