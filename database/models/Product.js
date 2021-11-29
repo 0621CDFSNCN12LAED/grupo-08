@@ -43,13 +43,13 @@ module.exports = function (sequelize, dataTypes) {
 
     /* Asociaciones*/
     Product.associate = function (models) {
-        Product.belongsToMany(models.User, {
-            as: "users",
-            through: "productUser",
-            foreignKey: "productId",
-            otherKey: "userId",
-            timestamps: false,
-        });
+        // Product.belongsToMany(models.User, {
+        //     as: "users",
+        //     through: "productUser",
+        //     foreignKey: "productId",
+        //     otherKey: "userId",
+        //     timestamps: false,
+        // });
         Product.belongsToMany(models.Order,{
             as: 'orders',
             through: 'productOrder',

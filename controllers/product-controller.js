@@ -12,7 +12,7 @@ const controllerProducts = {
 
     //Se ve imagen. La association "users" no tiene sentido, abria que asociarlo con categories.
     productos: (req, res) => {
-        db.Product.findAll({ include: [{ association: "users" }] }).then(
+        db.Product.findAll().then(
             function (allProducts) {
                 res.render("productos", { allProducts });
             }

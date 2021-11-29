@@ -28,12 +28,22 @@ let formulario = document.querySelector(".CreateForm");
         let price = document.querySelector("#price");
         let stock = document.querySelector("#stock");
         let productDescription = document.querySelector("#productDescription");
+    let validationImageJpg = /\.jpe?g$/i;
+    let validationImageJpeg = /\.jpeg?g$/i;
+    let validationImagePng = /\.png?g$/i;
+    let validationImageGif = /\.gif?g$/i;
 
         let imageExt = image.filename.split('.').pop().toLowerCase();
 
 // imgExtensions != "png" ||
 
-        if ( imageExt != "jpg" || imageExt != "jpeg" || image.value==""){
+
+    let validationImageJpg = /\.jpe?g$/i;
+    let validationImageJpeg = /\.jpeg?g$/i;
+    let validationImagePng = /\.png?g$/i;
+    let validationImageGif = /\.gif?g$/i;
+
+        if (!validationImageJpg.test(image.value) || !validationImageJpeg.test(image.value) || !validationImagePng.test(image.value) || !validationImageGif.test(image.value)){
            errores.push("El producto debe tener una imagen en formato jpg, png, jpeg o gif");
         }
 
