@@ -1,23 +1,19 @@
-*{
+* {
     box-sizing: border-box;
-} 
+}
 
-
-.backgroundImg2{
-    background-image: url('/img/portadas/lineasAzules.png');
-    background-size:15px;
-    background-color:rgba(255,255,255,0.85);
+.backgroundImg2 {
+    background-image: url("/img/portadas/lineasAzules.png");
+    background-size: 15px;
+    background-color: rgba(255, 255, 255, 0.85);
     background-blend-mode: lighten;
 }
 
-
- 
- main h2 {
+main h2 {
     text-align: center;
 }
 
-
-.container{
+.container {
     border: solid blue 2px;
     box-shadow:4px 4px 3px 4px cornflowerblue;
     border-radius: 5px;
@@ -64,16 +60,33 @@ ul li{
     border-radius:5px;
     box-shadow:2px 3px cadetblue;
     margin-bottom: 5px;
+    background-color:rgb(116, 116, 206);
 }
 
+form, input, select, textarea {
+    width: 100%;
+    text-align: center;
+}
 
-.modifyImg{
+.container .img {
+    background-color: rgb(116, 116, 206);
+    flex-flow: wrap column;
+    text-align: center;
+    color: white;
+}
+
+.modifyImg {
     flex-flow: wrap column;
     text-align: center;
     color:white;
     width:100%;
     border-bottom: solid blue 2px;
+    color: white;
+    width: 100%;
+    border-bottom: 1px solid rgba(23, 105, 199, 0.6);
 }
+
+
 
 
 .modifyImg{
@@ -81,40 +94,43 @@ ul li{
     /* border: 2px solid rgb(16, 78, 160); */
 }
 
-
-.img{
-width:100%;
+.modifyImg #imageMod{ 
+    border: 3px solid rgb(16, 78, 160);
 }
 
-.container .inputStyle{ 
-    padding-bottom: 30px;  
+.modifyImg #imageMod {
+    border: 4px solid rgb(16, 78, 160);
 }
 
-
-.colorSize{
-    display: flex;   
+.img {
+    width: 100%;
 }
 
-.colorSize div{
-    flex:1;
+.container .inputStyle {
+    padding-bottom: 30px;
 }
 
-
-.colorSizeChild1{
-    padding-right:20px;
+.colorSize {
+    display: flex;
 }
 
-.colorSizeChild2{
-    padding-left:20px;
+.colorSize div {
+    flex: 1;
 }
 
-
-
-
-
-
-
-.inputButtons{
-background-color:rgb(116, 116, 206);
+.colorSizeChild1 {
+    padding-right: 20px;
 }
 
+.colorSizeChild2 {
+    padding-left: 20px;
+}
+
+.inputButtons {
+    background-color: rgb(116, 116, 206);
+}
+
+.errorMessage {
+    padding-top: 8px;
+    color: red;
+}
