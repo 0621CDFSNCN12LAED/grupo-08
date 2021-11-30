@@ -65,12 +65,16 @@ const controllerProducts = {
         await db.Product.create({
             title: req.body.title,
             productDescription: req.body.productDescription,
-            sku: (Math.random()*1000000000),     
+            sku: (Math.random()*1000000000),
+            category: req.body.category,     
             color: req.body.color,
+            categoryGender: req.body.categoryGender,
+            categorySport: req.body.categorySport,
+            brand: req.body.marca,
             price: req.body.price,
             size: req.body.size,
             stock: req.body.stock,
-            discount: req.body.discount,
+            discount: (req.body.discount) ? req.body.discount: 0,
             images: "/img/products/" + req.file.filename,
         });
         res.redirect("/productos");
@@ -117,11 +121,16 @@ const controllerProducts = {
                 images: "/img/products/" + req.file.filename,
                 title: req.body.title,
                 productDescription: req.body.productDescription,
+                category: req.body.category,     
                 color: req.body.color,
+                categoryGender: req.body.categoryGender,
+                categorySport: req.body.categorySport,
+                brand: req.body.marca,
                 price: req.body.price,
                 size: req.body.size,
                 stock: req.body.stock,
-                discount: req.body.discount,
+                discount: (req.body.discount) ? req.body.discount: 0,
+
             },
             {
                 where: {

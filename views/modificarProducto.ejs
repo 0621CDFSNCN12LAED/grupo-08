@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="../css/styleHome-md.css">
         <link rel="stylesheet" href="../css/styleHome-lg.css">
         <link rel="stylesheet" href="../css/productCreate.css" />
+        <script defer src="../javascript/ProdEditValidation.js"></script> 
 </head>
 
 <body class='backgroundImg2'>
@@ -20,9 +21,9 @@
             <div class="container">
                 <form class='productForm' action="/<%= productoFiltradoEdit.id%>/?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class='modifyImg' style="display:flex; justify-content: space-between">
-                        <div>Modificar la imagen</div>
+                      
                         <div>
-                            <label for='img' class='whiteText'><img id=imageMod style="width:300px;" src="<%= productoFiltradoEdit.images %>" alt="" /></label>
+                            <label for='img' class='whiteText'><img id="imagePreview" style="width:450px;" src="<%= productoFiltradoEdit.images %>" alt=""/></label>
                            </div>
                            <div>
                             
@@ -43,6 +44,7 @@
                                 value="<%= productoFiltradoEdit.sku%>" required>
 
                         </div> -->
+
                     <div class='allExceptImg'>
                         <div class='inputProductForm centerText pad10'>
                             <label for='nameChange'>Cambiar el nombre</label>
@@ -62,6 +64,26 @@
                                     >Hombres</option>
                             </select>
                         </div>
+
+
+<div class="errores" id='errores'>
+                    <small id="errorName"></small>
+                    <small id="errorCategory"></small>
+                    <small id="errorSize"></small>
+                    <small id="errorColor"></small>
+                    <small id="errorCategoryGender"></small>
+                    <small id="errorCategorySport"></small>
+                    <small id="errorPrice"></small>
+                    <small id="errorStock"></small>
+                    <small id="errorProductDescription"></small>
+                     <small id="errorImage"></small>
+                        </div>
+
+
+
+
+
+
                         <div class='inputProductForm centerText pad10'>
                             <label for='elegirCategoria'> Categoria Deportiva</label>
                             <br>
@@ -231,8 +253,8 @@
                                     cols='28'><%= productoFiltradoEdit.productDescription%></textarea>
                             </div>
                             <div class='centerText'>
-                                <button class='buttonRegister marginBot10' type='submit'>Guardar</button>
-                                <button class='buttonRegister' type='button'><a href="/">Volver</a></button>
+                                <button  id='CreateProductButton'  type='submit'>Guardar</button>
+                                <button  id='CreateProductButton'  type='button'><a href="/">Volver</a></button>
                             </div>
                         </div>
                 </form>

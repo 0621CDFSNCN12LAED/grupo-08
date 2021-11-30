@@ -6,31 +6,43 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true,
             autoIncrement: true,
         },
-        images: {
-            type: dataTypes.TEXT,
-        },
-        title: {
+          title: {
             type: dataTypes.STRING,
+        },
+         productDescription: {
+            type: dataTypes.TEXT,
         },
         sku: {
             type: dataTypes.INTEGER,
         },
-        color: {
+        category: {
+             type: dataTypes.STRING,
+         },
+          color: {
             type: dataTypes.STRING,
         },
-         size: {
+        categoryGender: {
+            type: dataTypes.STRING,
+        },
+        categorySport: {
+            type: dataTypes.STRING,
+        },
+         brand: {
             type: dataTypes.STRING,
         },
         price: {
             type: dataTypes.DECIMAL,
         },
-         discount: {
+          size: {
+            type: dataTypes.STRING,
+        },
+         stock: {
             type: dataTypes.INTEGER,
         },
-        stock: {
+        discount: {
             type: dataTypes.INTEGER,
         },
-          productDescription: {
+        images: {
             type: dataTypes.TEXT,
         },
     };
@@ -40,37 +52,6 @@ module.exports = function (sequelize, dataTypes) {
     };
 
     const Product = sequelize.define(alias, cols, config);
-
-    /* Asociaciones*/
-    Product.associate = function (models) {
-        // Product.belongsToMany(models.User, {
-        //     as: "users",
-        //     through: "productUser",
-        //     foreignKey: "productId",
-        //     otherKey: "userId",
-        //     timestamps: false,
-        // });
-        Product.belongsToMany(models.Order,{
-            as: 'orders',
-            through: 'productOrder',
-            foreignKey: 'idProduct',
-            otherKey: 'idOrder',
-            timestamps:false,
-        })
-        Product.belongsToMany(models.Category, {
-            as: "categories",
-            through: "categoryProduct",
-            foreignKey: "productId",
-            otherKey: "categoryProductId",
-            timestamps: false,
-        })
-
-        Product.hasMany(models.ProductImage, {
-            as: "productImage",
-            foreignKey: "imageId",
-            timestamps: false,
-        });
-    }
 
     return Product;
 };

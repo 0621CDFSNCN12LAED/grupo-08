@@ -15,22 +15,28 @@ main h2 {
 
 .container {
     border: solid blue 2px;
+    box-shadow:4px 4px 3px 4px cornflowerblue;
+    border-radius: 5px;
 }
 
 
 .errores{
+display:flex;
+flex-flow:column wrap;
  color: red;
  text-align: center;
+ padding:5px;
 }
+
+
+.errorField{
+border:solid red 2px !important;
+}
+
 
 form, input, select, textarea{
     width:100%;
     text-align:center;
-}
-
-.imagePreview{
-    border: 1px blue solid;
-    margin-bottom: 20px;
 }
 
 
@@ -39,6 +45,21 @@ ul li{
 }
 
 .container .img{
+    background-color:rgb(233, 220, 220);
+    flex-flow: wrap column;
+    text-align: center;
+    color:black;
+    border-radius: 5px;
+}
+
+
+#CreateProductButton{
+    width:150px;
+    color:white;
+    background-color:rgb(74, 74, 231);
+    border-radius:5px;
+    box-shadow:2px 3px cadetblue;
+    margin-bottom: 5px;
     background-color:rgb(116, 116, 206);
     flex-flow: wrap column;
     text-align: center;
@@ -48,14 +69,23 @@ ul li{
 .modifyImg {
     flex-flow: wrap column;
     text-align: center;
+    color:white;
+    width:100%;
+    border-bottom: solid blue 2px;
     color: white;
     width: 100%;
     border-bottom: 1px solid rgba(23, 105, 199, 0.6);
 }
 
 
-.modifyImg #imageMod{
- 
+
+
+.modifyImg{
+ background-color:rgba(23, 105, 199, 0.2)
+    /* border: 2px solid rgb(16, 78, 160); */
+}
+
+.modifyImg #imageMod{ 
     border: 3px solid rgb(16, 78, 160);
 }
 
