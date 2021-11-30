@@ -56,7 +56,7 @@
                 </div>
             </div>
             <section class="productContainer">
-                <section class="barraFiltro">
+                <!-- <section class="barraFiltro">
                     <div class="barraFiltro-container">
                         <div class="itemBarraFiltro">
                             <p>Marca</p>
@@ -96,11 +96,11 @@
                             </ul>
                         </div>
                     </div>
-                </section>
+                </section> -->
                 <% for (const producto of allProducts) { %>
                     <article class="product">
-                        <a href="productDetail/<%= producto.id %>"><img class="imageProduct"
-                                src="<%=producto.images%>" alt="imagenProducto"></a>
+                        <a href="productDetail/<%= producto.id %>"><img class="imageProduct" src="<%=producto.images%>"
+                                alt="imagenProducto"></a>
                         <div class="detailContainer">
                             <p class="titleProduct">
                                 <%= producto.title %>

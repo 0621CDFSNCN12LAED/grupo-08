@@ -67,7 +67,6 @@ function checkPassword(pass){
 }
 
 btnSubmit.addEventListener("click", (event) =>{
-    event.preventDefault();
     //La variable regex hace que corrobore que el mail que escribió el usuario sea válido
     let regex = /^[^\s@]+@[^\s@]+$/;
     //Validaciones 
@@ -139,6 +138,7 @@ btnSubmit.addEventListener("click", (event) =>{
         erPassword.innerText = (errores.password) ? errores.password : "";
         erImageProfile.innerText = (errores.imagen) ? errores.imagen : "";
         erTerminos.innerText = (errores.terminos) ? errores.terminos : "";
+        event.preventDefault();
     } else{
         btnSubmit.submit();
     }
