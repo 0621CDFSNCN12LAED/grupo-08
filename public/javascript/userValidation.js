@@ -132,6 +132,7 @@ btnSubmit.addEventListener("click", (event) =>{
 
 
     if(Object.keys(errores).length >= 1){
+        event.preventDefault();
         erName.innerText = (errores.name) ? errores.name : "";
         erLastName.innerText = (errores.lastName) ? errores.lastName : "";
         erEmail.innerText = (errores.email) ? errores.email : "";

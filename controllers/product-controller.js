@@ -1,6 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-
 const multer = require("multer");
 
 // const productos = require("../servicesControllers/productsServices");
@@ -13,7 +12,7 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controllerProducts = {
     //Se ve imagen. La association "users" no tiene sentido, abria que asociarlo con categories.
     productos: (req, res) => {
-        db.Product.findAll({ include: [{ association: "users" }] }).then(
+        db.Product.findAll().then(
             function (allProducts) {
                 res.render("productos", { allProducts });
             }
@@ -66,25 +65,31 @@ const controllerProducts = {
         await db.Product.create({
             title: req.body.title,
             productDescription: req.body.productDescription,
-            sku: Math.random() * 10000000000,
+            sku: (Math.random()*1000000000),
+            category: req.body.category,     
             color: req.body.color,
+            categoryGender: req.body.categoryGender,
+            categorySport: req.body.categorySport,
+            brand: req.body.marca,
             price: req.body.price,
             size: req.body.size,
             stock: req.body.stock,
-            discount: req.body.discount,
+            discount: (req.body.discount) ? req.body.discount: 0,
             images: "/img/products/" + req.file.filename,
         });
         res.redirect("/productos");
     },
 
     //VIENDO LA LOGICA PARA QUE NO SE REPITAN LOS SKU
-    // sku: function skuF()=>{
-    //    let productSkus = [];
-    //      Product.forEach(product =>{
-    //     productSkus.push[product.sku]
-    //      }
-    //      return (Math.random()*10000000000 != productSkus)
-    //     }
+            // sku: function skuF()=>{
+            //    let productSkus = [];
+            //      Product.forEach(product =>{
+            //     productSkus.push[product.sku]
+            //      }
+            //      return (Math.random()*10000000000 != productSkus)
+            //     }
+
+
 
     // Ya esta funcionando em servicios pero comentado hasta poder probarlo un poquito mas.
     // crearNuevoProducto: (req, res) => {
@@ -116,11 +121,16 @@ const controllerProducts = {
                 images: "/img/products/" + req.file.filename,
                 title: req.body.title,
                 productDescription: req.body.productDescription,
+                category: req.body.category,     
                 color: req.body.color,
+                categoryGender: req.body.categoryGender,
+                categorySport: req.body.categorySport,
+                brand: req.body.marca,
                 price: req.body.price,
                 size: req.body.size,
                 stock: req.body.stock,
-                discount: req.body.discount,
+                discount: (req.body.discount) ? req.body.discount: 0,
+
             },
             {
                 where: {
