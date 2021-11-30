@@ -30,8 +30,15 @@
                             <div class='img'>
                                 <label class='image' for='img'>Sube una imagen de tu producto</label>
                                 <i class="fas fa-camera blue" style='font-size: 1.5em;'></i>
-                                <input type='file' id='img' name='img' style='display:none'
+                                <input type='file' id='img' name='images' style='display:none'
                                     accept='image/png, image/jpg, image/jpeg'>
+                                    <% if (locals.errors && errors.images) { %>
+                                        <div class='errorMessage'>
+                                            <p>
+                                                <%= errors.images.msg %>
+                                            </p>
+                                        </div>
+                                        <% } %> 
                             </div>
                             <div class='inputStyle'>
                                 <label for='title'> Nombre del producto</label>

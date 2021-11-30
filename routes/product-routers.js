@@ -26,7 +26,7 @@ router.get("/productDetail/:id", controlladorProductos.productDetail);
 router.get("/crearProducto", controlladorProductos.nuevoProducto);
 router.post(
     "/views/productos",
-    upload.single("img"),
+    upload.single("images"),
     validacionMensaje,
     controlladorProductos.crearNuevoProducto
 );
@@ -35,7 +35,7 @@ router.post(
 router.get("/modificarProducto/:id", controlladorProductos.modificarProducto);
 router.put(
     "/:id",
-    upload.single("img"),
+    upload.single("images"),
     validacionMensaje,
     controlladorProductos.updateNewProduct
 );

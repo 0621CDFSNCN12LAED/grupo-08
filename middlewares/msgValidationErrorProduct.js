@@ -30,7 +30,8 @@ const productValidations = [
         .notEmpty()
         .withMessage("Debes asignarle la cantidad de stock de tu producto.")
         .bail(),
-    /*body("img").custom((value, { req }) => {
+
+    body("images").custom((value, { req }) => {
         let file = req.file;
         let extensionesValidas = [".jpg", ".jpeg", ".png", ".gif"];
 
@@ -49,7 +50,7 @@ const productValidations = [
             }
         }
         return true;
-    }),*/
+    }),
 ];
 
 module.exports = productValidations;

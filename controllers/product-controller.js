@@ -64,7 +64,6 @@ const controllerProducts = {
             });
         }
         await db.Product.create({
-            images: "/img/products/" + req.file.filename,
             title: req.body.title,
             productDescription: req.body.productDescription,
             sku: Math.random() * 10000000000,
@@ -73,7 +72,7 @@ const controllerProducts = {
             size: req.body.size,
             stock: req.body.stock,
             discount: req.body.discount,
-            //images: "/img/products/" + req.file.filename,
+            images: "/img/products/" + req.file.filename,
         });
         res.redirect("/productos");
     },
