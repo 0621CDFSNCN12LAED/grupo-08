@@ -21,15 +21,15 @@ module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define(alias, cols, config);
 
     /* Asociaciones*/
-    User.associate = function (models) {
-        User.belongsToMany(models.Product, {
-            as: "products",
-            through: "productUser",
-            foreignKey: "userId",
-            otherKey: "productId",
-            timestamps: false,
-        });
-    };
+    // User.associate = function (models) {
+    //     User.belongsToMany(models.Product, {
+    //         as: "products",
+    //         through: "productUser",
+    //         foreignKey: "userId",
+    //         otherKey: "productId",
+    //         timestamps: false,
+    //     });
+    // };
 
     return User;
 };

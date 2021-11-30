@@ -1,6 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-
 const multer = require("multer");
 
 // const productos = require("../servicesControllers/productsServices");
@@ -13,7 +12,7 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controllerProducts = {
     //Se ve imagen. La association "users" no tiene sentido, abria que asociarlo con categories.
     productos: (req, res) => {
-        db.Product.findAll({ include: [{ association: "users" }] }).then(
+        db.Product.findAll().then(
             function (allProducts) {
                 res.render("productos", { allProducts });
             }
@@ -66,7 +65,7 @@ const controllerProducts = {
         await db.Product.create({
             title: req.body.title,
             productDescription: req.body.productDescription,
-            sku: Math.random() * 10000000000,
+            sku: (Math.random()*1000000000),     
             color: req.body.color,
             price: req.body.price,
             size: req.body.size,
@@ -78,13 +77,15 @@ const controllerProducts = {
     },
 
     //VIENDO LA LOGICA PARA QUE NO SE REPITAN LOS SKU
-    // sku: function skuF()=>{
-    //    let productSkus = [];
-    //      Product.forEach(product =>{
-    //     productSkus.push[product.sku]
-    //      }
-    //      return (Math.random()*10000000000 != productSkus)
-    //     }
+            // sku: function skuF()=>{
+            //    let productSkus = [];
+            //      Product.forEach(product =>{
+            //     productSkus.push[product.sku]
+            //      }
+            //      return (Math.random()*10000000000 != productSkus)
+            //     }
+
+
 
     // Ya esta funcionando em servicios pero comentado hasta poder probarlo un poquito mas.
     // crearNuevoProducto: (req, res) => {

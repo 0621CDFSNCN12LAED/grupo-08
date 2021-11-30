@@ -12,26 +12,26 @@ module.exports = function (sequelize, dataTypes) {
         title: {
             type: dataTypes.STRING,
         },
-        productDescription: {
-            type: dataTypes.TEXT,
-        },
         sku: {
             type: dataTypes.INTEGER,
         },
         color: {
             type: dataTypes.STRING,
         },
+         size: {
+            type: dataTypes.STRING,
+        },
         price: {
             type: dataTypes.DECIMAL,
         },
-        size: {
-            type: dataTypes.STRING,
+         discount: {
+            type: dataTypes.INTEGER,
         },
         stock: {
             type: dataTypes.INTEGER,
         },
-        discount: {
-            type: dataTypes.INTEGER,
+          productDescription: {
+            type: dataTypes.TEXT,
         },
     };
     let config = {
@@ -43,13 +43,13 @@ module.exports = function (sequelize, dataTypes) {
 
     /* Asociaciones*/
     Product.associate = function (models) {
-        Product.belongsToMany(models.User, {
-            as: "users",
-            through: "productUser",
-            foreignKey: "productId",
-            otherKey: "userId",
-            timestamps: false,
-        });
+        // Product.belongsToMany(models.User, {
+        //     as: "users",
+        //     through: "productUser",
+        //     foreignKey: "productId",
+        //     otherKey: "userId",
+        //     timestamps: false,
+        // });
         Product.belongsToMany(models.Order,{
             as: 'orders',
             through: 'productOrder',

@@ -6,7 +6,7 @@
 
 <head>
     <%- include('./partials/head') %>
-        <script src="https://kit.fontawesome.com/d3503ff7e5.js" crossorigin="anonymous"></script>
+        <!-- <script src="https://kit.fontawesome.com/d3503ff7e5.js" crossorigin="anonymous"></script> -->
 
         <link rel="stylesheet" href="/css/styles-login-md.css" media="(min-width:768px)" />
         <link rel="stylesheet" href="/css/styles-login-lg.css" media="(min-width:992px)" />
@@ -15,6 +15,8 @@
         <link rel="stylesheet" href="../css/styleHome-md.css" />
         <link rel="stylesheet" href="../css/styleHome-lg.css" />
         <link rel="stylesheet" href="../css/productCreate.css" />
+        <script defer src="../Jsfront/validations.js"></script> 
+        
 </head>
 
 <body>
@@ -24,21 +26,21 @@
 
             <body class='backgroundImg2'>
                 <main>
-                                        <h2 class='centerText'> Añadir nuevo producto</h2>
+                    <h2 class='centerText'> Añadir nuevo producto</h2>
+                    
                     <div class='container'>
-                        <form action="/views/productos" method="post" enctype="multipart/form-data">
+                        <div class="errores">
+                            <ul id='errorList'></ul>
+                        </div>
+                        <form class="CreateForm" action="/views/productos" method="post" enctype="multipart/form-data">
                             <div class='img'>
                                 <label class='image' for='img'>Sube una imagen de tu producto</label>
                                 <i class="fas fa-camera blue" style='font-size: 1.5em;'></i>
-                                <input type='file' id='img' name='images' style='display:none'
-                                    accept='image/png, image/jpg, image/jpeg'>
-                                    <% if (locals.errors && errors.images) { %>
-                                        <div class='errorMessage'>
-                                            <p>
-                                                <%= errors.images.msg %>
-                                            </p>
-                                        </div>
-                                        <% } %> 
+                                <input type='file' id='img' name='img' style='display:none'
+                                    accept='image/png, image/jpg, image/jpeg, image/gif'>
+                            </div>
+                            <div class='imagePreview '>
+                                <img id="imagePreview" src= "#" height="200" alt="">
                             </div>
                             <div class='inputStyle'>
                                 <label for='title'> Nombre del producto</label>
@@ -73,7 +75,7 @@
                                     <option value='otros'>Otros</option>
                                 </select>
                             </div>
-                            <div class='colorSize'>
+                            <div class='colorSize inputStyle'>
                                 <div class='colorSizeChild1'>
                                     <label for='size'> Talle </label>
                                     <select id='size' name='size'>
@@ -200,6 +202,6 @@
                 </main>
                 <%- include('./partials/footer') %>
             </body>
-            <script scr='javascriptjs.js'></script>
+            <!-- <script scr='javascriptjs.js'></script> -->
 
 </html>

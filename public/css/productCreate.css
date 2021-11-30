@@ -17,6 +17,31 @@ main h2 {
     border: solid blue 2px;
 }
 
+<<<<<<< HEAD
+
+.errores{
+ color: red;
+ text-align: center;
+}
+
+form, input, select, textarea{
+    width:100%;
+    text-align:center;
+}
+
+.imagePreview{
+    border: 1px blue solid;
+    margin-bottom: 20px;
+}
+
+
+ul li{
+    list-style-type:none;
+}
+
+.container .img{
+    background-color:rgb(116, 116, 206);
+=======
 form,
 input,
 select,
@@ -27,6 +52,7 @@ textarea {
 
 .container .img {
     background-color: rgb(116, 116, 206);
+>>>>>>> af0a6d1386e7c6175ea733d510989cb7f43ecd3f
     flex-flow: wrap column;
     text-align: center;
     color: white;
@@ -40,8 +66,15 @@ textarea {
     border-bottom: 1px solid rgba(23, 105, 199, 0.6);
 }
 
+<<<<<<< HEAD
+
+.modifyImg #imageMod{
+ 
+    border: 3px solid rgb(16, 78, 160);
+=======
 .modifyImg #imageMod {
     border: 4px solid rgb(16, 78, 160);
+>>>>>>> af0a6d1386e7c6175ea733d510989cb7f43ecd3f
 }
 
 .img {
