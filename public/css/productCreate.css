@@ -1,26 +1,23 @@
-*{
+* {
     box-sizing: border-box;
-} 
+}
 
-
-.backgroundImg2{
-    background-image: url('/img/portadas/lineasAzules.png');
-    background-size:15px;
-    background-color:rgba(255,255,255,0.85);
+.backgroundImg2 {
+    background-image: url("/img/portadas/lineasAzules.png");
+    background-size: 15px;
+    background-color: rgba(255, 255, 255, 0.85);
     background-blend-mode: lighten;
 }
 
-
- 
- main h2 {
+main h2 {
     text-align: center;
 }
 
-
-.container{
+.container {
     border: solid blue 2px;
 }
 
+<<<<<<< HEAD
 
 .errores{
  color: red;
@@ -44,60 +41,71 @@ ul li{
 
 .container .img{
     background-color:rgb(116, 116, 206);
-    flex-flow: wrap column;
+=======
+form,
+input,
+select,
+textarea {
+    width: 100%;
     text-align: center;
-    color:white;
 }
 
-
-.modifyImg{
+.container .img {
+    background-color: rgb(116, 116, 206);
+>>>>>>> af0a6d1386e7c6175ea733d510989cb7f43ecd3f
     flex-flow: wrap column;
     text-align: center;
-    color:white;
-    width:100%;
+    color: white;
+}
+
+.modifyImg {
+    flex-flow: wrap column;
+    text-align: center;
+    color: white;
+    width: 100%;
     border-bottom: 1px solid rgba(23, 105, 199, 0.6);
 }
 
+<<<<<<< HEAD
 
 .modifyImg #imageMod{
  
     border: 3px solid rgb(16, 78, 160);
+=======
+.modifyImg #imageMod {
+    border: 4px solid rgb(16, 78, 160);
+>>>>>>> af0a6d1386e7c6175ea733d510989cb7f43ecd3f
 }
 
-
-.img{
-width:100%;
+.img {
+    width: 100%;
 }
 
-.container .inputStyle{ 
-    padding-bottom: 30px;  
+.container .inputStyle {
+    padding-bottom: 30px;
 }
 
-
-.colorSize{
-    display: flex;   
+.colorSize {
+    display: flex;
 }
 
-.colorSize div{
-    flex:1;
+.colorSize div {
+    flex: 1;
 }
 
-
-.colorSizeChild1{
-    padding-right:20px;
+.colorSizeChild1 {
+    padding-right: 20px;
 }
 
-.colorSizeChild2{
-    padding-left:20px;
+.colorSizeChild2 {
+    padding-left: 20px;
 }
 
-
-
-
-
-
-
-.inputButtons{
-background-color:rgb(116, 116, 206);
+.inputButtons {
+    background-color: rgb(116, 116, 206);
 }
 
+.errorMessage {
+    padding-top: 8px;
+    color: red;
+}

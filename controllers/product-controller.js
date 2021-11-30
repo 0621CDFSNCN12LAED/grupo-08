@@ -7,9 +7,9 @@ const db = require("../database/models");
 
 const { Op } = require("sequelize");
 const Product = require("../database/models/Product");
+const { validationResult } = require("express-validator");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controllerProducts = {
-
     //Se ve imagen. La association "users" no tiene sentido, abria que asociarlo con categories.
     productos: (req, res) => {
         db.Product.findAll().then(
@@ -55,8 +55,14 @@ const controllerProducts = {
     },
 
     crearNuevoProducto: async (req, res) => {
+        const productValidationResult = validationResult(req);
+        if (productValidationResult.errors.length > 0) {
+            return res.render("crearProducto", {
+                errors: productValidationResult.mapped(),
+                oldData: req.body,
+            });
+        }
         await db.Product.create({
-            images: "/img/products/" + req.file.filename,
             title: req.body.title,
             productDescription: req.body.productDescription,
             sku: (Math.random()*1000000000),     
@@ -65,11 +71,10 @@ const controllerProducts = {
             size: req.body.size,
             stock: req.body.stock,
             discount: req.body.discount,
+            images: "/img/products/" + req.file.filename,
         });
         res.redirect("/productos");
     },
-
-
 
     //VIENDO LA LOGICA PARA QUE NO SE REPITAN LOS SKU
             // sku: function skuF()=>{
