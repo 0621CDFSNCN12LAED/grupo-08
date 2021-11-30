@@ -1,74 +1,67 @@
-*{
+* {
     box-sizing: border-box;
-} 
+}
 
-
-.backgroundImg2{
-    background-image: url('/img/portadas/lineasAzules.png');
-    background-size:15px;
-    background-color:rgba(255,255,255,0.85);
+.backgroundImg2 {
+    background-image: url("/img/portadas/lineasAzules.png");
+    background-size: 15px;
+    background-color: rgba(255, 255, 255, 0.85);
     background-blend-mode: lighten;
 }
 
-
- 
- main h2 {
+main h2 {
     text-align: center;
 }
 
-
-.container{
+.container {
     border: solid blue 2px;
 }
 
-form, input, select, textarea{
-    width:100%;
-    text-align:center;
+form,
+input,
+select,
+textarea {
+    width: 100%;
+    text-align: center;
 }
 
-
-
-.container .img{
-    background-color:rgb(116, 116, 206);
+.container .img {
+    background-color: rgb(116, 116, 206);
     flex-flow: wrap column;
     text-align: center;
-    color:white;
+    color: white;
 }
 
-.img{
-width:100%;
-text-align: center;
+.img {
+    width: 100%;
+    text-align: center;
 }
 
-.container .inputStyle{ 
-    padding-bottom: 30px;  
+.container .inputStyle {
+    padding-bottom: 30px;
 }
 
-
-.colorSize{
-    display: flex;   
+.colorSize {
+    display: flex;
 }
 
-.colorSize div{
-    flex:1;
+.colorSize div {
+    flex: 1;
 }
 
-
-.colorSizeChild1{
-    padding-right:20px;
+.colorSizeChild1 {
+    padding-right: 20px;
 }
 
-.colorSizeChild2{
-    padding-left:20px;
+.colorSizeChild2 {
+    padding-left: 20px;
 }
 
-
-
-
-
-
-
-.inputButtons{
-background-color:rgb(116, 116, 206);
+.inputButtons {
+    background-color: rgb(116, 116, 206);
 }
 
+.errorMessage {
+    padding-top: 8px;
+    color: red;
+}

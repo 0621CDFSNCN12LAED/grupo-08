@@ -6,9 +6,9 @@ const db = require("../database/models");
 
 const { Op } = require("sequelize");
 const Product = require("../database/models/Product");
+const { validationResult } = require("express-validator");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controllerProducts = {
-
     //Se ve imagen. La association "users" no tiene sentido, abria que asociarlo con categories.
     productos: (req, res) => {
         db.Product.findAll({ include: [{ association: "users" }] }).then(
@@ -54,6 +54,28 @@ const controllerProducts = {
     },
 
     crearNuevoProducto: async (req, res) => {
+        const productValidationResult = validationResult(req);
+        if (productValidationResult.errors.length > 0) {
+            return res.render("crearProducto", {
+                errors: productValidationResult.mapped(),
+                oldData: req.body,
+            });
+        }
+        await db.Product.create({
+            title: req.body.title,
+            productDescription: req.body.productDescription,
+            // sku: req.body.sku, Aca va la logica de math.Random() para generar un SKU
+            color: req.body.color,
+            price: req.body.price,
+            size: req.body.size,
+            stock: req.body.stock,
+            discount: req.body.discount,
+            //images: "/img/products/" + req.file.filename,
+        });
+        res.redirect("/productos");
+    },
+
+    /*crearNuevoProducto: async (req, res) => {
         await db.Product.create({
             title: req.body.title,
             productDescription: req.body.productDescription,
@@ -65,7 +87,7 @@ const controllerProducts = {
             discount: req.body.discount,
         });
         res.redirect("/productos");
-    },
+    },*/
 
     // Ya esta funcionando em servicios pero comentado hasta poder probarlo un poquito mas.
     // crearNuevoProducto: (req, res) => {
