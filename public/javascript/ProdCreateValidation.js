@@ -1,8 +1,8 @@
 window.addEventListener("load", function (){
 
-console.log("front end validations turned on");
+console.log("Create product validations ON");
 
-        //req all necesary fields
+//req all necesary fields
         let image = document.querySelector("#img");  
         let title = document.querySelector("#title");
         let category = document.querySelector("#category");
@@ -13,8 +13,7 @@ console.log("front end validations turned on");
         let price = document.querySelector("#price");
         let stock = document.querySelector("#stock");
         let productDescription = document.querySelector("#productDescription");
-        let btnSubmit = document.querySelector("#btnSubmit");
-        //req all error fields
+//req all error fields
         let errorName = document.querySelector("#errorName");
         let errorCategory = document.querySelector("#errorCategory");
         let errorSize = document.querySelector("#errorSize");
@@ -25,7 +24,7 @@ console.log("front end validations turned on");
         let errorStock = document.querySelector("#errorStock");
         let errorProductDescription = document.querySelector("#errorProductDescription");
         let errorImage = document.querySelector("#errorImage");
-        //formatos de imagen aceptados
+//formatos de imagen aceptados
         let validationImageJpg = /\.jpe?g$/i;
         let validationImageJpeg = /\.jpeg?g$/i;
         let validationImagePng = /\.png?g$/i;
@@ -112,7 +111,6 @@ let formulario = document.querySelector(".CreateForm");
         }
 
         if(Object.keys(errores).length >= 1){
-                // window.location.href = "#errores"
                    event.preventDefault();
                    scrollToErrors();
                    errorName.innerText = (errores.name) ? errores.name: "";

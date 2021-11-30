@@ -124,7 +124,7 @@ const controllerProducts = {
                 price: req.body.price,
                 size: req.body.size,
                 stock: req.body.stock,
-                discount: req.body.discount,
+                discount: (req.body.discount) ? req.body.discount: 0,
 
             },
             {

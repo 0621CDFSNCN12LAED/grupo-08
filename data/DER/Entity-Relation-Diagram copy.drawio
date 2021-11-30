@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="XdB721KCZkeoLvI6tNuA" name="Page-1">
-        <mxGraphModel dx="884" dy="1540" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1199" dy="1741" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -267,7 +267,7 @@
                     <mxGeometry x="127" y="-105" width="163" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="262" value="Usamos solo 1 imagen, esta tabla no se usa" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="445" y="364" width="270" height="26" as="geometry"/>
+                    <mxGeometry x="445" y="360" width="270" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="269" value="&lt;span style=&quot;font-family: &amp;#34;helvetica&amp;#34;&quot;&gt;categorySport VARCHAR(100) NOT NULL&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="87" y="360" width="193" height="30" as="geometry"/>
@@ -296,8 +296,20 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="280" value="&lt;b&gt;De momento vamos a implementar el carrito desde el front end&lt;br&gt;&lt;br&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
-                    <mxGeometry x="180" y="-280" width="370" height="30" as="geometry"/>
+                <mxCell id="282" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#1ba1e2;sketch=1;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="420" width="240" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="283" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#1ba1e2;sketch=1;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="-190" width="210" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="284" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#1ba1e2;sketch=1;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="-210" width="300" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="285" value="&lt;span style=&quot;color: rgba(0 , 0 , 0 , 0) ; font-family: monospace ; font-size: 0px&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22%22%20style%3D%22rounded%3D1%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3BstrokeWidth%3D2%3BfillWeight%3D4%3BhachureGap%3D8%3BhachureAngle%3D45%3BfillColor%3D%231ba1e2%3Bsketch%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22380%22%20y%3D%22-210%22%20width%3D%22300%22%20height%3D%22160%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3EDE&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="-280" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="286" value="&lt;b&gt;De momento sin uso, vamos a implementar carrito desde el front-end&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="-270" width="410" height="20" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
