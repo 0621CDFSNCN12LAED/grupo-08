@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="../css/styleHome-md.css" />
         <link rel="stylesheet" href="../css/styleHome-lg.css" />
         <link rel="stylesheet" href="../css/productCreate.css" />
-        <script defer src="../Jsfront/validations.js"></script> 
+        <script defer src="../javascript/ProdCreateValidation.js"></script> 
         
 </head>
 
@@ -29,22 +29,27 @@
                     <h2 class='centerText'> Añadir nuevo producto</h2>
                     
                     <div class='container'>
-                        <div class="errores">
-                            <ul id='errorList'></ul>
+                        <div class="errores" id='errores'>
+                    <small id="errorName"></small>
+                    <small id="errorCategory"></small>
+                    <small id="errorSize"></small>
+                    <small id="errorColor"></small>
+                    <small id="errorCategoryGender"></small>
+                    <small id="errorCategorySport"></small>
+                    <small id="errorPrice"></small>
+                    <small id="errorStock"></small>
+                    <small id="errorProductDescription"></small>
+                     <small id="errorImage"></small>
                         </div>
                         <form class="CreateForm" action="/views/productos" method="post" enctype="multipart/form-data">
                             <div class='img'>
-                                <label class='image' for='img'>Sube una imagen de tu producto</label>
-                                <i class="fas fa-camera blue" style='font-size: 1.5em;'></i>
+                                <label class='image' for='img'>Sube una imagen de tu producto<i class="fas fa-camera blue" style='font-size: 1.5em;'></i><br><img style="border-radius: 5px;" id="imagePreview" src= "#" width="450px" alt=""></label>
                                 <input type='file' id='img' name='img' style='display:none'
                                     accept='image/png, image/jpg, image/jpeg, image/gif'>
                             </div>
-                            <div class='imagePreview '>
-                                <img id="imagePreview" src= "#" height="200" alt="">
-                            </div>
                             <div class='inputStyle'>
                                 <label for='title'> Nombre del producto</label>
-                                <input type='text' name='title'>
+                                <input id='title' type='text' name='title'>
                             </div>
                             <!-- <div class='inputStyle'>
                         <label for='sku' style='color:rgb(161, 148, 148)'> SKU</label>
@@ -54,7 +59,7 @@
                                 <label for='category'> ¿Que tipo de producto es? </label>
                                 <select id='category' name='category'>
                                     <option selected='true' disabled='disabled'>Elige una opción</option>
-                                    <option value='championes'>Championes</option>
+                                    <option value='calzado'>Calzado</option>
                                     <option value='camisetas'>Camisetas</option>
                                     <option value='buzos'>Buzos</option>
                                     <option value='leggins'>Leggins</option>
@@ -63,7 +68,8 @@
                                     <option value='gorras'>Gorras</option>
                                     <option value='medias'>Medias</option>
                                     <option value='ropaInterior'>Ropa interior</option>
-                                    <option value='deportesAcuaticos'>Deportes acuaticos</option>
+                                    <option value='camperas'>Camperas</option>
+                                    <option value='deportesAcuaticos'>Deportes acuáticos</option>
                                     <option value='otros'>Otros</option>
                                 </select>
                             </div>
@@ -132,7 +138,7 @@
                                 </select>
                             </div>
                             <div class='inputStyle'>
-                                <label for='categorySport'> categoriza tu producto </label>
+                                <label for='categorySport'> ¿Cómo categorizarias tu producto? </label>
                                 <select id='categorySport' name='categorySport'>
                                     <option selected='true' disabled='disabled'>Elige una opción</option>
                                     <option value='running'>Running</option>
@@ -176,11 +182,11 @@
                                 <label for='productDescription'>Descripción </label>
                                 <textarea class='centerText' id='productDescription' name='productDescription' rows='5'
                                     cols='28'
-                                    placeholder="Cuentanos un poco acerca de tu producto. Si no encontraste las opciónes adecuadas para tu producto, puedes indicarlas aquí!"></textarea>
+                                    placeholder="Cuentanos un poco acerca de tu producto. Puedes indicar cualquier cualidad que no estuviese disponible en las opciónes anteriores. "></textarea>
                             </div>
                             <div class=''>
-                                <button type='submit'>Guardar</button>
-                                <button type='reset'>Comenzar de nuevo</button>
+                                <button id='CreateProductButton' type='submit'>Guardar</button>
+                                <button id='CreateProductButton' type='reset'>Comenzar de nuevo</button>
                             </div>
                         </form>
                     </div>
