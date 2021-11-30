@@ -5,6 +5,10 @@
 DROP DATABASE IF EXISTS all4sports;
 CREATE DATABASE all4sports;
 USE all4sports;
+
+SET FOREIGN_KEY_CHECKS=1;
+DROP TABLE IF EXISTS products;
+
 CREATE TABLE products(
     id INT(10) UNSIGNED AUTO_INCREMENT NOT NULL,
     title VARCHAR(100) NOT NULL,
@@ -98,29 +102,31 @@ CREATE TABLE productUser(
 );
 /* Fin tabla product_user */
 
+
+
 /* Inicio valores de tabla product */
 INSERT INTO products(id, title, productDescription, sku, color, price, size, stock, discount, images)
 VALUES 
-(default,"Camiseta Barcelona Nike Tercer Recambio Stadium Verde","La camiseta de fútbol para hombre 3° Recambio Stadium del FC Barcelona 2019/20 está confeccionada con tela transpirable Dri-Fit que absorbe el sudor y te mantiene fresco, seco y cómodo tanto dentro como fuera de la cancha. El ajuste estándar hace que la prenda se adapte al cuerpo y ofrezca más espacio para mayor movilidad.", 559389192, "Cyan", 8199, "L", 100, 20, "barcelona-nike.jpg"),
-(default, "Buzo color negro de alta calidad para esos días fríos","Diseñado por especialistas para los que aman el deporte todo el año y quieren tener siempre un buzo traspirable, de alta calidad y con estilo.", 928371073, "Negro", 6788, "M", 100, 10,"buzo-negro.jpg"),
-(default,"Camiseta de Argentina Adidas Alternativa Messi 10 niño Petroleo","Su diseño es un emblema pintado en tonos azules que reflejan el esplendor de los glaciares del país. Está confeccionada con tecnologia Aeroready que mantiene tu cuerpo fresco y seco. El escudo aplicado de la Selección le demuestra a todos lo que sentís por el equipo.", 1774695020,"Azul",7999,"L",50,0, "camisa-argentina-messi.jpg"),
-(default,"Remera Puma Entrenamiento RTG Azul","Ya sea que salgas a la calle o vayas al gimnasio, esta remera clásica te mantendrá seco y cómodo con nuestra tecnología dryCELL que absorbe la humedad y mangas raglán cortas. El estampado del logo de PUMA Cat le da un toque característico a esta prenda ajustada.", 449217699, "Azul",3299,"L",19,5, "remera-puma-entrenamiento.jpg"),
-(default, "Zapatillas Running Topper Boro 2 Azul","Segunda generación de este calzado, un concepto cerrado y reforzado ideal para uso diario. Posee lengua textil que brinda mayor respirabilidad. Su capellada en cuero sintético con perforaciones tiene un refuerzo en talón para mayor estabilidad.",124401457,"Azul",5799,"46",30,0,"zapatillas-running-topper.jpg"),
-(default,"Short de San Lorenzo Nike Oficial","Presentamos el nuevo Short NIKE Titular San Lorenzo 2021/22, llevá tu amor por el Ciclón vayas donde vayas y lucite en la cancha con los colores más lindos. El tejido Dri Fit absorbe el sudor, reduciendo el roce y ayudando a mantenerte seco y cómodo. Cintura elastizada con cordón de ajuste interno. Logo NIKE bordado. Escudo CASLA aplicado.",44819363,"Blanco",4499,"M",100,5, "shortDeportivoSanLorenzo.png"),
-(default, "Gorra Nike Legacy91 Negra","Cuenta con cierre ajustable y una suave banda para la frente.",11451103,"Gris",2500,"L",100,0, "gorraNike.png"),
-(default, "Calcetines de Chelsea FC","Pensados para la mejor traspirabilidad y llevar siempre contigo unos calcetines de tu cuadro favorito.",87281561,"Amarillo",1999,"46",50,0, "mediasCFC.png"),
-(default,"Zapatillas deportivas Blue sky","Con cordones, detalles reflectantes, flexibles y traspirables. Acolchadas para su mayor comodidad al realizar deporte.",194783726,"Azul",5499,"44",50,10, "zapatillasBlue.png"),
-(default,"Campera impermeable deportiva","Cualidades impermeable y traspirable. De poliester y tejido reforzado.",73371960,"Negro",8999,"XL",50,15, "camperaDeportiva.png"),
-(default,"Pantalón Puma training mujer","Pantalón Puma para mujer. Con cintura alta, de color negro y hecho de poliester. Ideal para cualquier actividad en la que se busque comodidad y estilo. ",29304244,"Negro",6789,"M",100,10, "pantalonMujerPuma.jpg"),
-(default,"Remera Nike Run Dvn Miler","Los materiales livianos se combinan con detalles reflectantes que los vuelven muy funcionales para todo el día. Tecnología Dri-FIT.",95830429,"Negro",4999,"L",100,5, "remeraNikeMujer.png"),
-(default,"Rompevientos Nike Mujer","Rompevientos Essential Jacket, con un tejido Woven repelente al agua que te protege de la lluvia. Incluye capucha para protección total.",83163856,"Rosado",13999,"S",70,10, "rompevientosNikeMujer.jpg"),
-(default,"Top Reebok High Neck","El top Reebok Workout Ready High Neck tiene tecnología Speedwick que absorbe el sudor para que entrenes sin dificultades. Tejido entrelazado 91% poliéster reciclado / 9% elastano.",576302248,"Negro",4679,"M",50,15, "topReebokMujer.jpg"),
-(default,"Zapatilla Skechers Dynamight 2.0","Zapatilla deportiva de entrenamiento y de confort con cordones y elástico. Tiene entresuela elástica, plantilla Memory Foam insole y parte superior malla knit con acabado jaspeado.",24584019,"Gris",8899,"38",40,10, "zapatillasSkechersMujer.jpg"),
-(default,"Pantalón Nike Niño NSW PANT","Pantalón para niños Nike NSW Jersey Jogger. Confeccionado en algodón rustico.",78965444,"Azul",5299,"S",100,0, "pantalonNikeNino.jpg"),
-(default,"Remera Vans Niño","Remera Vans manga corta con escote redondo y estampa en el frente. Un básico para la comodidad y la moda de un niño.",55792481,"Rojo",2799,"M",60,0, "remeraVansNino.jpg"),
-(default,"Zapatilla New Balance Niño 247","Zapatillas New Balance 247 classic para niños, pensadas para todo tipo de actividad infantil. Empeine de mesh completamente transpirable y un ajuste elástico muy cómodo.",57498523,"Salmón",6749,"26",80,20, "zapatillaNewBalanceNino.jpg"),
-(default,"Sandalias Crocs Niño","Hechas con material Croslite, moldeable y resistente al agua que permite tener un calzado confortable. Los puertos de ventilación drenan el agua y la suciedad.",03033454,"Verde",2999,"24",100,0, "sandaliasCrocsNino.jpg"),
-(default,"Buzo Vans Niño","Buzo cuello redondo Cassic Crew Vans Boys. De algodon con frisa y terminaciones con puño, da como resultado un clásico de la indumentaria usable para todo tipo de actividades.",85358355,"Azul",5299,"S",50,10, "buzoVansNino.jpg");
+(default,"Camiseta Barcelona Nike Tercer Recambio Stadium Verde","La camiseta de fútbol para hombre 3° Recambio Stadium del FC Barcelona 2019/20 está confeccionada con tela transpirable Dri-Fit que absorbe el sudor y te mantiene fresco, seco y cómodo tanto dentro como fuera de la cancha. El ajuste estándar hace que la prenda se adapte al cuerpo y ofrezca más espacio para mayor movilidad.", 559389192, "Cyan", 8199, "L", 100, 20, "/img/products/barcelona-nike.jpg"),
+(default, "Buzo color negro de alta calidad para esos días fríos","Diseñado por especialistas para los que aman el deporte todo el año y quieren tener siempre un buzo traspirable, de alta calidad y con estilo.", 928371073, "Negro", 6788, "M", 100, 10,"/img/products/buzo-negro.jpg"),
+(default,"Camiseta de Argentina Adidas Alternativa Messi 10 niño Petroleo","Su diseño es un emblema pintado en tonos azules que reflejan el esplendor de los glaciares del país. Está confeccionada con tecnologia Aeroready que mantiene tu cuerpo fresco y seco. El escudo aplicado de la Selección le demuestra a todos lo que sentís por el equipo.", 1774695020,"Azul",7999,"L",50,0, "/img/products/camisa-argentina-messi.jpg"),
+(default,"Remera Puma Entrenamiento RTG Azul","Ya sea que salgas a la calle o vayas al gimnasio, esta remera clásica te mantendrá seco y cómodo con nuestra tecnología dryCELL que absorbe la humedad y mangas raglán cortas. El estampado del logo de PUMA Cat le da un toque característico a esta prenda ajustada.", 449217699, "Azul",3299,"L",19,5, "/img/products/remera-puma-entrenamiento.jpg"),
+(default, "Zapatillas Running Topper Boro 2 Azul","Segunda generación de este calzado, un concepto cerrado y reforzado ideal para uso diario. Posee lengua textil que brinda mayor respirabilidad. Su capellada en cuero sintético con perforaciones tiene un refuerzo en talón para mayor estabilidad.",124401457,"Azul",5799,"46",30,0,"/img/products/zapatillas-running-topper.jpg"),
+(default,"Short de San Lorenzo Nike Oficial","Presentamos el nuevo Short NIKE Titular San Lorenzo 2021/22, llevá tu amor por el Ciclón vayas donde vayas y lucite en la cancha con los colores más lindos. El tejido Dri Fit absorbe el sudor, reduciendo el roce y ayudando a mantenerte seco y cómodo. Cintura elastizada con cordón de ajuste interno. Logo NIKE bordado. Escudo CASLA aplicado.",44819363,"Blanco",4499,"M",100,5, "/img/products/shortDeportivoSanLorenzo.png"),
+(default, "Gorra Nike Legacy91 Negra","Cuenta con cierre ajustable y una suave banda para la frente.",11451103,"Gris",2500,"L",100,0, "/img/products/gorraNike.png"),
+(default, "Calcetines de Chelsea FC","Pensados para la mejor traspirabilidad y llevar siempre contigo unos calcetines de tu cuadro favorito.",87281561,"Amarillo",1999,"46",50,0, "/img/products/mediasCFC.png"),
+(default,"Zapatillas deportivas Blue sky","Con cordones, detalles reflectantes, flexibles y traspirables. Acolchadas para su mayor comodidad al realizar deporte.",194783726,"Azul",5499,"44",50,10, "/img/products/zapatillasBlue.png"),
+(default,"Campera impermeable deportiva","Cualidades impermeable y traspirable. De poliester y tejido reforzado.",73371960,"Negro",8999,"XL",50,15, "/img/products/camperaDeportiva.png"),
+(default,"Pantalón Puma training mujer","Pantalón Puma para mujer. Con cintura alta, de color negro y hecho de poliester. Ideal para cualquier actividad en la que se busque comodidad y estilo. ",29304244,"Negro",6789,"M",100,10, "/img/products/pantalonMujerPuma.jpg"),
+(default,"Remera Nike Run Dvn Miler","Los materiales livianos se combinan con detalles reflectantes que los vuelven muy funcionales para todo el día. Tecnología Dri-FIT.",95830429,"Negro",4999,"L",100,5, "/img/products/remeraNikeMujer.png"),
+(default,"Rompevientos Nike Mujer","Rompevientos Essential Jacket, con un tejido Woven repelente al agua que te protege de la lluvia. Incluye capucha para protección total.",83163856,"Rosado",13999,"S",70,10, "/img/products/rompevientosNikeMujer.jpg"),
+(default,"Top Reebok High Neck","El top Reebok Workout Ready High Neck tiene tecnología Speedwick que absorbe el sudor para que entrenes sin dificultades. Tejido entrelazado 91% poliéster reciclado / 9% elastano.",576302248,"Negro",4679,"M",50,15, "/img/products/topReebokMujer.jpg"),
+(default,"Zapatilla Skechers Dynamight 2.0","Zapatilla deportiva de entrenamiento y de confort con cordones y elástico. Tiene entresuela elástica, plantilla Memory Foam insole y parte superior malla knit con acabado jaspeado.",24584019,"Gris",8899,"38",40,10, "/img/products/zapatillasSkechersMujer.jpg"),
+(default,"Pantalón Nike Niño NSW PANT","Pantalón para niños Nike NSW Jersey Jogger. Confeccionado en algodón rustico.",78965444,"Azul",5299,"S",100,0, "/img/products/pantalonNikeNino.jpg"),
+(default,"Remera Vans Niño","Remera Vans manga corta con escote redondo y estampa en el frente. Un básico para la comodidad y la moda de un niño.",55792481,"Rojo",2799,"M",60,0, "/img/products/remeraVansNino.jpg"),
+(default,"Zapatilla New Balance Niño 247","Zapatillas New Balance 247 classic para niños, pensadas para todo tipo de actividad infantil. Empeine de mesh completamente transpirable y un ajuste elástico muy cómodo.",57498523,"Salmón",6749,"26",80,20, "/img/products/zapatillaNewBalanceNino.jpg"),
+(default,"Sandalias Crocs Niño","Hechas con material Croslite, moldeable y resistente al agua que permite tener un calzado confortable. Los puertos de ventilación drenan el agua y la suciedad.",03033454,"Verde",2999,"24",100,0, "/img/products/sandaliasCrocsNino.jpg"),
+(default,"Buzo Vans Niño","Buzo cuello redondo Cassic Crew Vans Boys. De algodon con frisa y terminaciones con puño, da como resultado un clásico de la indumentaria usable para todo tipo de actividades.",85358355,"Azul",5299,"S",50,10, "/img/products/buzoVansNino.jpg");
 /* Fin valores de tabla product */
 
 

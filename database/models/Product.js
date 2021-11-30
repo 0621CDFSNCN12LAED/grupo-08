@@ -6,6 +6,9 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true,
             autoIncrement: true,
         },
+        images: {
+            type: dataTypes.TEXT,
+        },
         title: {
             type: dataTypes.STRING,
         },
@@ -30,9 +33,6 @@ module.exports = function (sequelize, dataTypes) {
         discount: {
             type: dataTypes.INTEGER,
         },
-        images: {
-            type:dataTypes.STRING,
-        }
     };
     let config = {
         tableName: "products",

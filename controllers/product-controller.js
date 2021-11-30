@@ -1,7 +1,9 @@
-//const fs = require("fs");
-//const path = require("path");
+const fs = require("fs");
+const path = require("path");
 
-//const productos = require("../servicesControllers/productsServices");
+const multer = require("multer");
+
+// const productos = require("../servicesControllers/productsServices");
 const db = require("../database/models");
 
 const { Op } = require("sequelize");
@@ -62,9 +64,10 @@ const controllerProducts = {
             });
         }
         await db.Product.create({
+            images: "/img/products/" + req.file.filename,
             title: req.body.title,
             productDescription: req.body.productDescription,
-            // sku: req.body.sku, Aca va la logica de math.Random() para generar un SKU
+            sku: Math.random() * 10000000000,
             color: req.body.color,
             price: req.body.price,
             size: req.body.size,
@@ -75,19 +78,14 @@ const controllerProducts = {
         res.redirect("/productos");
     },
 
-    /*crearNuevoProducto: async (req, res) => {
-        await db.Product.create({
-            title: req.body.title,
-            productDescription: req.body.productDescription,
-            // sku: req.body.sku, Aca va la logica de math.Random() para generar un SKU
-            color: req.body.color,
-            price: req.body.price,
-            size: req.body.size,
-            stock: req.body.stock,
-            discount: req.body.discount,
-        });
-        res.redirect("/productos");
-    },*/
+    //VIENDO LA LOGICA PARA QUE NO SE REPITAN LOS SKU
+    // sku: function skuF()=>{
+    //    let productSkus = [];
+    //      Product.forEach(product =>{
+    //     productSkus.push[product.sku]
+    //      }
+    //      return (Math.random()*10000000000 != productSkus)
+    //     }
 
     // Ya esta funcionando em servicios pero comentado hasta poder probarlo un poquito mas.
     // crearNuevoProducto: (req, res) => {
@@ -116,9 +114,9 @@ const controllerProducts = {
     updateNewProduct: async (req, res) => {
         await db.Product.update(
             {
+                images: "/img/products/" + req.file.filename,
                 title: req.body.title,
                 productDescription: req.body.productDescription,
-                sku: req.body.sku,
                 color: req.body.color,
                 price: req.body.price,
                 size: req.body.size,
