@@ -4,7 +4,7 @@
 <!-- Cambios no pusheados: hice que el logo en mis areas se expanda y achique mas sútilmente, como lo hizo Ezequiel-->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <%- include('./partials/head') %>
@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="/css/normalize.css" />
         <link rel="stylesheet" href="../css/styles-login.css" />
         <link rel="stylesheet" href="/css/styles-login-md.css" media="(min-width:768px)" />
-        <link rel="stylesheet" href="/css/styles-login-lg.css" media="(min-width:992px)" />
+        <link rel="stylesheet" href="/css/styles-login-lg.css" media="(min-width:1500px)" />
         <link rel="stylesheet" href="../css/styleHome.css" />
         <link rel="stylesheet" href="../css/styleHome-sm.css" />
         <link rel="stylesheet" href="../css/styleHome-md.css" />
@@ -37,14 +37,8 @@
                         <small class="msg-error-validation text-danger errMail"></small>
                         <small class="msg-error-validation text-danger errPassword"></small>
                     </div>
-                    <form action="./login" method="POST" class="
-                        form
-                        centerText
-                        padTop10
-                        flexWrap
-                        flexColumn
-                        centerText
-                    ">
+                    <form action="./login" method="POST"
+                        class="form centerText padTop10 flexWrap flexColumn centerText">
                         <!-- begins form inputs -->
                         <fieldset>
                             <div class="paddingBot8 nombreLogin">
@@ -74,13 +68,10 @@
                                         name="rememberMe" />
                                 </div>
                             </div>
-                            <div class="paddingBot20 botonIngresar">
+                            <div class="botonIngresar">
                                 <button class="buttonRegister" type="submit" id="buttonSubmitLogin">
                                     Ingresar
                                 </button>
-                            </div>
-                            <div class="olv0ideContraseñaText margnBot1">
-                                <label>Olvide mi contraseña</label>
                             </div>
                             <div class="paddingBot8 centerText whiteText paddingTop4 sinUsuarioLogin">
                                 <label>¿Aún no tienes un usuario?<a class="aLinks" href="/register">

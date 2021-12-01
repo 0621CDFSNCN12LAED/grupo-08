@@ -1,15 +1,6 @@
-const fs = require("fs");
-const path = require("path");
-let bcryptjs = require("bcryptjs");
-
-//const usuariosFilePath = path.join(__dirname, "../data/usuariosDataBase.json");
-//const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
 const db = require("../database/models");
-const { Op } = require("sequelize");
 const { validationResult } = require("express-validator");
 const { render } = require("ejs");
-
-//const user = require("../models/oneUser"); - reemplazada por db.user
 
 const controladorUsers = {
     //ver formulario de registro
