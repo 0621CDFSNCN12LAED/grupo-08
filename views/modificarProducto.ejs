@@ -28,16 +28,28 @@
                                     src="<%= productoFiltradoEdit.images %>" alt="" /></label>
                         </div>
                         <div>
-
                             <input type='file' id='img' name='images' class='maxWidth100' style='display:none'
                                 accept='image/png, image/jpg, image/jpeg' />
+                                <% if (locals.errors && errors.images) { %>
+                                    <div class='errorMessage'>
+                                        <p>
+                                            <%= errors.images.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %> 
                         </div>
                     </div>
                     <div class='inputProductForm centerText pad10'>
                         <label class='' for='modificarProducto'> Stock de Producto a modificar </label>
                         <input type="number" class='maxWidth100' id='stock' name='stock'
-                            value="<%= productoFiltradoEdit.stock%>" required>
-
+                            value="<%= productoFiltradoEdit.stock%>" required>                           
+                        <% if (locals.errors && errors.stock) { %>
+                            <div class="errorMessage">
+                                <p>
+                                    <%= errors.stock.msg %>
+                                </p>
+                            </div>
+                            <% } %>
                     </div>
                     <!-- <div class='inputProductForm centerText pad10'>
                             <label class= '' for='modificarProducto'> SKU </label>
@@ -53,19 +65,46 @@
                             <br>
                             <input class='w100' type='text' id='title' name='title'
                                 value="<%= productoFiltradoEdit.title%>" required>
+                                <% if (locals.errors && errors.title) { %>
+                                    <div class="errorMessage">
+                                        <p>
+                                            <%= errors.title.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
                         </div>
                         <div class='inputProductForm centerText pad10'>
-                            <label for='elegirCategoria'> Categoria </label>
+                            <label for='elegirCategoria'> Categoría según público destinatario </label>
                             <br>
-                            <select class='maxWidth100' id='category' name='category' required>
-                                <option value='niños' <%=productoFiltradoEdit.category=="niños" ? "selected" : "" %>
+                            <select class='maxWidth100' id='categoryGender' name='categoryGender' required>
+                                <option value='niños' <%=productoFiltradoEdit.categoryGender=="niños" ? "selected" : "" %>
                                     >Niños</option>
-                                <option value='mujeres' <%=productoFiltradoEdit.category=="mujeres" ? "selected" : "" %>
+                                <option value='mujeres' <%=productoFiltradoEdit.categoryGender=="mujeres" ? "selected" : "" %>
                                     >Mujeres</option>
-                                <option value='hombres' <%=productoFiltradoEdit.category=="hombres" ? "selected" : "" %>
+                                <option value='hombres' <%=productoFiltradoEdit.categoryGender=="hombres" ? "selected" : "" %>
                                     >Hombres</option>
                             </select>
                         </div>
+                        <div class='inputStyle'>
+                                <label for='category'> ¿Que tipo de producto es? </label>
+                                <select id='category' name='category'>
+                                    <option selected='true' disabled='disabled'>Elige una opción</option>
+                                    <% let categories=['calzado', 'camisetas' , 'buzos' , 'leggins' , 'pantalones' , 'shorts'
+                                , 'gorras' , 'medias' , 'ropaInterior' , 'camperas' , 'deportesAcuaticos' , 'otros' ]; %>
+                                <% for (const oneCategory of categories) { %>
+                                    <option value='<%= oneCategory %>' <%=locals.oldData &&
+                                        (oneCategory===oldData.category) ? 'selected' : null %> ><%= oneCategory %>
+                                    </option>
+                                    <% } %>                                    
+                                </select>
+                                <% if (locals.errors && errors.category) { %>
+                                    <div class='errorMessage'>
+                                        <p>
+                                            <%= errors.category.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                            </div>
 
 
                         <div class="errores" id='errores'>
@@ -99,8 +138,8 @@
                                 <option value='trekking' <%=productoFiltradoEdit.categorySport=="trekking" ? "selected"
                                     : "" %>
                                     >Trekking</option>
-                                <option value='waterSports' <%=productoFiltradoEdit.categorySport=="waterSports"
-                                    ? "selected" : "" %>
+                                <option value='waterSports' <%=productoFiltradoEdit.categorySport=="waterSports" ? "selected"
+                                 : "" %>
                                     >Deportes aquáticos</option>
                                 <option value='tennis' <%=productoFiltradoEdit.categorySport=="tennis" ? "selected" : ""
                                     %>
@@ -241,6 +280,13 @@
                                 <input class='maxWidth100 centerText' type='number' id='price' name='price'
                                     value="<%= productoFiltradoEdit.price%>" min='0' max='10000' placeholder='(en $)'
                                     required> <i>$</i>
+                                    <% if (locals.errors && errors.price) { %>
+                                        <div class='errorMessage'>
+                                            <p>
+                                                <%= errors.price.msg %>
+                                            </p>
+                                        </div>
+                                        <% } %>
                             </div>
                             <div class='inputProductForm centerText pad10'>
                                 <label for='precioChange'>Modificar Descuento</label>
@@ -253,6 +299,13 @@
                                 <textarea class='centerText' id='productDescription' name='productDescription'
                                     value="<%= productoFiltradoEdit.productDescription%>" rows='5'
                                     cols='28'><%= productoFiltradoEdit.productDescription%></textarea>
+                                    <% if (locals.errors && errors.productDescription) { %>
+                                        <div class="errorMessage">
+                                            <p>
+                                                <%= errors.productDescription.msg %>
+                                            </p>
+                                        </div>
+                                        <% } %>   
                             </div>
                             <div class='centerText'>
                                 <button id='CreateProductButton' type='submit'>Guardar</button>
