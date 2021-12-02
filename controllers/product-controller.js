@@ -5,11 +5,9 @@ const { validationResult } = require("express-validator");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controllerProducts = {
     productos: (req, res) => {
-        db.Product.findAll().then(
-            function (allProducts) {
-                res.render("productos", { allProducts });
-            }
-        );
+        db.Product.findAll().then(function (allProducts) {
+            res.render("productos", { allProducts });
+        });
     },
     
     search: async (req, res) => {
@@ -58,8 +56,8 @@ const controllerProducts = {
         await db.Product.create({
             title: req.body.title,
             productDescription: req.body.productDescription,
-            sku: (Math.random()*1000000000),
-            category: req.body.category,     
+            sku: Math.random() * 1000000000,
+            category: req.body.category,
             color: req.body.color,
             categoryGender: req.body.categoryGender,
             categorySport: req.body.categorySport,
@@ -67,22 +65,20 @@ const controllerProducts = {
             price: req.body.price,
             size: req.body.size,
             stock: req.body.stock,
-            discount: (req.body.discount) ? req.body.discount: 0,
+            discount: req.body.discount ? req.body.discount : 0,
             images: "/img/products/" + req.file.filename,
         });
         res.redirect("/productos");
     },
 
     //VIENDO LA LOGICA PARA QUE NO SE REPITAN LOS SKU
-            // sku: function skuF()=>{
-            //    let productSkus = [];
-            //      Product.forEach(product =>{
-            //     productSkus.push[product.sku]
-            //      }
-            //      return (Math.random()*10000000000 != productSkus)
-            //     }
-
-
+    // sku: function skuF()=>{
+    //    let productSkus = [];
+    //      Product.forEach(product =>{
+    //     productSkus.push[product.sku]
+    //      }
+    //      return (Math.random()*10000000000 != productSkus)
+    //     }
 
     // Ya esta funcionando em servicios pero comentado hasta poder probarlo un poquito mas.
     // crearNuevoProducto: (req, res) => {
@@ -109,12 +105,18 @@ const controllerProducts = {
     },
 
     updateNewProduct: async (req, res) => {
+        /*const productValidationResult = validationResult(req);
+        if (productValidationResult.errors.length > 0) {
+            return res.render("modificarProducto", {
+                errors: productValidationResult.mapped(),
+            });
+        }*/
         await db.Product.update(
             {
-                images: "/img/products/" + req.file.filename,
+                //images: "/img/products/" + req.file.filename,
                 title: req.body.title,
                 productDescription: req.body.productDescription,
-                category: req.body.category,     
+                category: req.body.category,
                 color: req.body.color,
                 categoryGender: req.body.categoryGender,
                 categorySport: req.body.categorySport,
@@ -122,8 +124,7 @@ const controllerProducts = {
                 price: req.body.price,
                 size: req.body.size,
                 stock: req.body.stock,
-                discount: (req.body.discount) ? req.body.discount: 0,
-
+                discount: req.body.discount ? req.body.discount : 0,
             },
             {
                 where: {
@@ -131,9 +132,9 @@ const controllerProducts = {
                 },
             }
         );
+
         res.redirect("/productos");
     },
-
     delete: (req, res) => {
         db.Product.destroy({
             where: {
