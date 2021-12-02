@@ -4,7 +4,6 @@ const multer = require("multer");
 
 // const productos = require("../servicesControllers/productsServices");
 const db = require("../database/models");
-
 const { Op } = require("sequelize");
 const Product = require("../database/models/Product");
 const { validationResult } = require("express-validator");
@@ -18,7 +17,7 @@ const controllerProducts = {
             }
         );
     },
-
+    
     search: async (req, res) => {
         const titulo = req.query.titulo; //.replace(new RegExp(`/[áéíóú]/g`), "_");
         const productos = await db.Product.findAll({
