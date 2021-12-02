@@ -139,6 +139,7 @@ btnSubmit.addEventListener("click", (event) =>{
         erPassword.innerText = (errores.password) ? errores.password : "";
         erImageProfile.innerText = (errores.imagen) ? errores.imagen : "";
         erTerminos.innerText = (errores.terminos) ? errores.terminos : "";
+        event.preventDefault();
     } else{
         btnSubmit.submit();
     }

@@ -8,7 +8,6 @@ let errPassword = document.querySelector(".errPassword");
 let errores = {}
 
 btnSubmit.addEventListener("click", (e) =>{
-    e.preventDefault();
 
     let regex = /^[^\s@]+@[^\s@]+$/;
     
@@ -26,6 +25,7 @@ btnSubmit.addEventListener("click", (e) =>{
     if(Object.keys(errores).length >= 1){
         errMail.innerText = (errores.email) ? errores.email : "asd";
         errPassword.innerText = (errores.password) ? errores.password : "";
+        e.preventDefault();
     } else{
         btnSubmit.submit();
     }
