@@ -11,10 +11,7 @@ const controllerProducts = {
             }
         );
     },
-<<<<<<< HEAD
     
-=======
->>>>>>> c68757331e7d6ca52e0ec3b9a20beb6ebe6b26a7
     search: async (req, res) => {
         const titulo = req.query.titulo; //.replace(new RegExp(`/[áéíóú]/g`), "_");
         const productos = await db.Product.findAll({

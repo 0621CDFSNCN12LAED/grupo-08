@@ -55,7 +55,7 @@ let formulario = document.querySelector(".CreateForm");
             errores.name = "El campo nombre no puede estar vacio";
         }
 
-        if (image.value == "" && !validationImageJpg.test(image.value) && !validationImageJpeg.test(image.value) && !validationImagePng.test(image.value) && !validationImageGif.test(image.value) ){
+        if (image.value =="" && !validationImageJpg.test(image.value) && !validationImageJpeg.test(image.value) && !validationImagePng.test(image.value) && !validationImageGif.test(image.value) ){
            errores.image = "El producto debe tener una imagen en formato jpg, png, jpeg o gif";
            image.classList.add('errorField')
         }else{
