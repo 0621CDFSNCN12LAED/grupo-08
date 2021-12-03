@@ -2,9 +2,9 @@ window.addEventListener("load", function (){
 console.log("Edit product validations ON");
 
 //req all necesary fields
-        let image = document.querySelector("#img");  
+        let image = document.querySelector("#images");  
         let title = document.querySelector("#title");
-        let category = document.querySelector("#category");
+        // let category = document.querySelector("#category");
         let size = document.querySelector("#size");
         let color = document.querySelector("#color");
         let categoryGender = document.querySelector("#categoryGender");
@@ -14,7 +14,7 @@ console.log("Edit product validations ON");
         let productDescription = document.querySelector("#productDescription");
 //req all error fields 
         let errorName = document.querySelector("#errorName");
-        let errorCategory = document.querySelector("#errorCategory");
+        // let errorCategory = document.querySelector("#errorCategory");
         let errorSize = document.querySelector("#errorSize");
         let errorColor = document.querySelector("#errorColor");
         let errorCategoryGender = document.querySelector("#errorCategoryGender");
@@ -36,8 +36,8 @@ document.getElementById('errores').scrollIntoView({behavior: 'smooth'});
 
 
 //image preview
-img.onchange = evt => {
-  const [file] = img.files
+images.onchange = evt => {
+  const [file] = images.files
   if (file) {
     imagePreview.src = URL.createObjectURL(file)
   }
@@ -45,26 +45,27 @@ img.onchange = evt => {
 
 let formulario = document.querySelector(".productForm");
 
-    formulario.addEventListener("submit", async function(event){
+
+    formulario.addEventListener("click",  async function(event){
                
     let errores = {};
 
-        if(isEmpty(title.value)){
+        if(title.value.length < 1){
             errores.name = "El campo nombre no puede estar vacio";
         }
 
-        if (image.value == "" && !validationImageJpg.test(image.value) && !validationImageJpeg.test(image.value) && !validationImagePng.test(image.value) && !validationImageGif.test(image.value) ){
+        if (image.value == null && !validationImageJpg.test(image.value) && !validationImageJpeg.test(image.value) && !validationImagePng.test(image.value) && !validationImageGif.test(image.value) ){
            errores.image = "El producto debe tener una imagen en formato jpg, png, jpeg o gif";
            image.classList.add('errorField')
         }else{
             image.classList.remove('errorField')
         }
-        if(category.value == "Elige una opción"){
-            errores.category = "Debes indicar el tipo de producto";
-            category.classList.add('errorField')
-        }else{
-            category.classList.remove('errorField')
-        }
+        // if(category.value == "Elige una opción"){
+        //     errores.category = "Debes indicar el tipo de producto";
+        //     category.classList.add('errorField')
+        // }else{
+        //     category.classList.remove('errorField')
+        // }
          if(size.value == "Elige una opción"){
              errores.size = "Debes indicar un talle para tu producto";
              size.classList.add('errorField')
@@ -109,11 +110,10 @@ let formulario = document.querySelector(".productForm");
         }
 
         if(Object.keys(errores).length >= 1){
-
                    event.preventDefault();
                    scrollToErrors();
                    errorName.innerText = (errores.name) ? errores.name: "";
-                   errorCategory.innerText = (errores.category) ? errores.category: "";
+                //    errorCategory.innerText = (errores.category) ? errores.category: "";
                    errorSize.innerText = (errores.size) ? errores.size: "";
                    errorColor.innerText = (errores.color) ? errores.color: "";
                    errorCategoryGender.innerText = (errores.categoryGender) ? errores.categoryGender: "";

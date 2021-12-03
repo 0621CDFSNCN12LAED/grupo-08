@@ -7,7 +7,7 @@ const controlladorProductos = require("../controllers/product-controller");
 
 /* Middlewares */
 
-const validacionMensaje = require("../middlewares/msgValidationErrorProduct"); /*Crear archivo para errores o usar el mismo de users? */
+const validacionMensaje = require("../middlewares/msgValidationErrorProduct");
 const upload = require("../middlewares/productMulter");
 
 // Ver todos los productos

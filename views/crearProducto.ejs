@@ -2,7 +2,7 @@
 
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <%- include('./partials/head') %>
@@ -15,142 +15,169 @@
         <link rel="stylesheet" href="../css/styleHome-md.css" />
         <link rel="stylesheet" href="../css/styleHome-lg.css" />
         <link rel="stylesheet" href="../css/productCreate.css" />
-        <script defer src="../javascript/ProdCreateValidation.js"></script>
-
+        <script defer src="../javascript/ProdCreateValidation.js"></script> 
+        
 </head>
 
 <body>
     <%- include('./partials/header') %>
         <main class='mainContainer'>
+            </head>
 
             <body class='backgroundImg2'>
                 <main>
                     <h2 class='centerText'> Añadir nuevo producto</h2>
+                    
                     <div class='container'>
                         <div class="errores" id='errores'>
-                            <small id="errorName"></small>
-                            <small id="errorCategory"></small>
-                            <small id="errorSize"></small>
-                            <small id="errorColor"></small>
-                            <small id="errorCategoryGender"></small>
-                            <small id="errorCategorySport"></small>
-                            <small id="errorPrice"></small>
-                            <small id="errorStock"></small>
-                            <small id="errorProductDescription"></small>
-                            <small id="errorImage"></small>
+                    <small id="errorName"></small>
+                    <small id="errorCategory"></small>
+                    <small id="errorSize"></small>
+                    <small id="errorColor"></small>
+                    <small id="errorCategoryGender"></small>
+                    <small id="errorCategorySport"></small>
+                    <small id="errorPrice"></small>
+                    <small id="errorStock"></small>
+                    <small id="errorProductDescription"></small>
+                     <small id="errorImage"></small>
                         </div>
                         <form class="CreateForm" action="/views/productos" method="post" enctype="multipart/form-data">
+
                             <div class='img'>
+<<<<<<< HEAD
+                                <label class='image' for='img'>Sube una imagen de tu producto<i class="fas fa-camera blue" style='font-size: 1.5em;'></i><br><img style="border-radius: 5px;" id="imagePreview" src= "#" width="450px" alt=""></label>
+                                <input type='file' id='img' name='images' style='display:none'
+                                    accept='image/png, image/jpg, image/jpeg, image/gif'>
+=======
                                 <label class='image' for='img'>Sube una imagen de tu producto<i
                                         class="fas fa-camera blue" style='font-size: 1.5em;'></i><br><img
                                         style="border-radius: 5px;" id="imagePreview" src="#" width="450px"
                                         alt=""></label>
-                                <input type='file' id='img' name='img' style='display:none'
-                                    accept='image/png, image/jpg, image/jpeg, image/gif'>
+                                <input type='file' id='img' name='images' style='display:none'
+                                    accept='image/png, image/jpg, image/jpeg, image/gif'
+                                    value="<%= locals.oldData ? oldData.images : null  %>">                                                      
+                                    <% if (locals.errors && errors.images) { %>
+                                        <div class='errorMessage'>
+                                            <p>
+                                                <%= errors.images.msg %>
+                                            </p>
+                                        </div>
+                                        <% } %> 
+>>>>>>> 19c78540cccf709f4de9c2be5d7517300ef214a8
                             </div>
+
+
                             <div class='inputStyle'>
                                 <label for='title'> Nombre del producto</label>
                                 <input type='text' id='title' name='title'
-                                    value="<%= locals.oldData ? oldData.title : null  %>">
+                                value="<%= locals.oldData ? oldData.title : null  %>">
                                 <% if (locals.errors && errors.title) { %>
                                     <div class="errorMessage">
                                         <p>
                                             <%= errors.title.msg %>
                                         </p>
                                     </div>
-                                    <% } %>
+                                    <% } %>                                   
                             </div>
                             <!-- <div class='inputStyle'>
                         <label for='sku' style='color:rgb(161, 148, 148)'> SKU</label>
                         <input type='text' id='sku' name='sku'  disabled='true' placeholder='este campo esta desabilitado'>
                     </div> -->
-                            <div class='inputStyle'>
+                   <div class='inputStyle'>
                                 <label for='category'> ¿Que tipo de producto es? </label>
                                 <select id='category' name='category'>
                                     <option selected='true' disabled='disabled'>Elige una opción</option>
-                                    <option value='calzado'>Calzado</option>
-                                    <option value='camisetas'>Camisetas</option>
-                                    <option value='buzos'>Buzos</option>
-                                    <option value='leggins'>Leggins</option>
-                                    <option value='pantalones'>Pantalones</option>
-                                    <option value='shorts'>Pantalon corto</option>
-                                    <option value='gorras'>Gorras</option>
-                                    <option value='medias'>Medias</option>
-                                    <option value='ropaInterior'>Ropa interior</option>
-                                    <option value='camperas'>Camperas</option>
-                                    <option value='deportesAcuaticos'>Deportes acuáticos</option>
-                                    <option value='otros'>Otros</option>
+                                    <% let categories=['calzado', 'camisetas' , 'buzos' , 'leggins' , 'pantalones' , 'shorts'
+                                , 'gorras' , 'medias' , 'ropaInterior' , 'camperas' , 'deportesAcuaticos' , 'otros' ]; %>
+                                <% for (const oneCategory of categories) { %>
+                                    <option value='<%= oneCategory %>' <%=locals.oldData &&
+                                        (oneCategory===oldData.category) ? 'selected' : null %> ><%= oneCategory %>
+                                    </option>
+                                    <% } %>                                    
                                 </select>
+                                <% if (locals.errors && errors.category) { %>
+                                    <div class='errorMessage'>
+                                        <p>
+                                            <%= errors.category.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
                             </div>
                             <div class='colorSize inputStyle'>
                                 <div class='colorSizeChild1'>
                                     <label for='size'> Talle </label>
                                     <select id='size' name='size'>
                                         <option selected='true' disabled='disabled'>Elige una opción</option>
-                                        <% let sizes=['36', '36.5' , '37' , '37.5' , '38' , '38.5' , '39' , '39.5'
-                                            , '40' , '40.5' , '41' , '41.5' , '42' , '42.5' , '43' , '43.5' , '44'
-                                            , '44.5' , '45' , '45.5' , '46' , 'XS' , 'S' , 'M' , 'L' , 'XL' , 'XXL'
-                                            , 'talleUnico' ]; %>
-                                            <% for (const oneSize of sizes) { %>
-                                                <option value='<%= oneSize %>' <%=locals.oldData &&
-                                                    (oneSize===oldData.size) ? 'selected' : null %> ><%= oneSize %>
-                                                </option>
-                                                <% } %>
-                                    </select>
-                                    <% if (locals.errors && errors.size) { %>
-                                        <div class='errorMessage'>
-                                            <p>
-                                                <%= errors.size.msg %>
-                                            </p>
-                                        </div>
-                                        <% } %>
+                                        <% let sizes = ['36', '36.5', '37', '37.5', '38', '38.5', '39', '39.5', '40', '40.5', '41', '41.5', '42', '42.5', '43', 
+                                        '43.5', '44', '44.5', '45', '45.5', '46', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'talleUnico']; %>
+                                        <% for (const oneSize of sizes) { %>
+                                            <option value='<%= oneSize %>' <%= locals.oldData && (oneSize === oldData.size) ? 'selected' : null %> ><%= oneSize %> </option>
+                                            <% } %>
+                                    </select>                                           
+                                <% if (locals.errors && errors.size) { %>
+                                    <div class='errorMessage'>
+                                        <p>
+                                            <%= errors.size.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>                                           
                                 </div>
                                 <div class='colorSizeChild2'>
                                     <label for='color'> Color </label>
                                     <select id='color' name='color'>
                                         <option selected='true' disabled='disabled'>Elige una opción</option>
-                                        <% let colors=['blanco', 'negro' , 'rojo' , 'azul' , 'amarillo' , 'verde'
-                                            , 'naranja' , 'violeta' , 'rosado' , 'marrón' , 'gris' , 'otros' ]; %>
-                                            <% for (const oneColor of colors) { %>
-                                                <option value='<%= oneColor %>' <%=locals.oldData &&
-                                                    (oneColor===oldData.color) ? 'selected' : null %> ><%= oneColor %>
-                                                </option>
-                                                <% } %>
-                                    </select>
-                                    <% if (locals.errors && errors.color) { %>
-                                        <div class='errorMessage'>
-                                            <p>
-                                                <%= errors.color.msg %>
-                                            </p>
-                                        </div>
-                                        <% } %>
+                                        <% let colors = ['blanco', 'negro', 'rojo', 'azul', 'amarillo', 'verde', 'naranja', 'violeta', 'rosado', 'marrón', 'gris', 'otros']; %>
+                                        <% for (const oneColor of colors) { %>
+                                            <option value='<%= oneColor %>' <%= locals.oldData && (oneColor === oldData.color) ? 'selected' : null %> ><%= oneColor %> </option>
+                                            <% } %>
+                                    </select>                                           
+                                <% if (locals.errors && errors.color) { %>
+                                    <div class='errorMessage'>
+                                        <p>
+                                            <%= errors.color.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>                                     
                                 </div>
-                            </div>
+                            </div>                            
                             <div class='inputStyle'>
                                 <label for='categoryGender'> ¿Para quién esta pensado tu producto? </label>
                                 <select id='categoryGender' name='categoryGender'>
                                     <option selected='true' disabled='disabled'>Elige una opción</option>
-                                    <option value='niño'>Niños</option>
-                                    <option value='hombre'>Hombres</option>
-                                    <option value='mujer'>Mujeres</option>
-                                    <option value='unisex'>Unisex/otros</option>
+                                    <% let genders=['niño', 'hombre' , 'mujer' , 'unisex']; %>
+                                        <% for (const oneGender of genders) { %>
+                                            <option value='<%= oneGender %>' <%=locals.oldData &&
+                                                (oneGender===oldData.categoryGender) ? 'selected' : null %> ><%= oneGender %>
+                                            </option>
+                                            <% } %>                                    
                                 </select>
-                            </div>
+                                <% if (locals.errors && errors.categoryGender) { %>
+                                    <div class='errorMessage'>
+                                        <p>
+                                            <%= errors.categoryGender.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                            </div>                            
                             <div class='inputStyle'>
                                 <label for='categorySport'> ¿Cómo categorizarias tu producto? </label>
                                 <select id='categorySport' name='categorySport'>
                                     <option selected='true' disabled='disabled'>Elige una opción</option>
-                                    <option value='running'>Running</option>
-                                    <option value='ciclismo'>Ciclismo</option>
-                                    <option value='trekking'>Trekking</option>
-                                    <option value='waterSports'>Deportes aquáticos</option>
-                                    <option value='tennis'>Tennis</option>
-                                    <option value='basketball'>Basketball</option>
-                                    <option value='boxing'>Boxeo</option>
-                                    <option value='casual'>Casual</option>
-                                    <option value='futbol'>Fútbol</option>
-                                    <option value='otros'>Otro</option>
+                                    <% let sports=['running', 'ciclismo' , 'trekking' , 'waterSports' , 'tennis' , 'basketball'
+                                        , 'boxing' , 'casual' , 'futbol' , 'otros' ]; %>
+                                        <% for (const oneSport of sports) { %>
+                                            <option value='<%= oneSport %>' <%=locals.oldData &&
+                                                (oneSport===oldData.categorySport) ? 'selected' : null %> ><%= oneSport %>
+                                            </option>
+                                            <% } %>                                    
                                 </select>
+                                <% if (locals.errors && errors.categorySport) { %>
+                                    <div class='errorMessage'>
+                                        <p>
+                                            <%= errors.categorySport.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
                             </div>
 
                             <div class='inputStyle'>
@@ -162,14 +189,15 @@
                             <div class='inputStyle'>
                                 <label for='price'>Precio</label>
                                 <input type='number' id='price' name='price' min='0' max='1,000,000'
-                                    placeholder='(en pesos $)' value='<%= locals.oldData ? oldData.price : null  %>'>
+                                    placeholder='(en pesos $)' 
+                                value='<%= locals.oldData ? oldData.price : null  %>'>
                                 <% if (locals.errors && errors.price) { %>
                                     <div class='errorMessage'>
                                         <p>
                                             <%= errors.price.msg %>
                                         </p>
                                     </div>
-                                    <% } %>
+                                    <% } %>  
                             </div>
 
                             <div class='inputStyle'>
@@ -177,10 +205,12 @@
                                 <input type='number' id='discount' name='discount' min='0' max='100'
                                     placeholder='% OFF'>
                             </div>
+
+
                             <div class='inputStyle'>
                                 <label for='stock'>Stock</label>
                                 <input type='number' id='stock' name='stock' min='0' max='10,000'
-                                    value="<%= locals.oldData ? oldData.stock : null  %>">
+                                value="<%= locals.oldData ? oldData.stock : null  %>">
                                 <% if (locals.errors && errors.stock) { %>
                                     <div class="errorMessage">
                                         <p>
@@ -189,23 +219,30 @@
                                     </div>
                                     <% } %>
                             </div>
+
                             <div class='inputStyle'>
                                 <label for='productDescription'>Descripción </label>
                                 <textarea class='centerText' id='productDescription' name='productDescription' rows='5'
-                                    cols='28' <<<<<<< HEAD
-                                    placeholder="Cuentanos un poco acerca de tu producto. Puedes indicar cualquier cualidad que no estuviese disponible en las opciónes anteriores. "></textarea>
-                                =======
-                                placeholder="Cuentanos un poco acerca de tu producto. Si no encontraste las opciónes
-                                adecuadas para tu producto, puedes indicarlas aquí!"
-                                value="<%= locals.oldData ? oldData.productDescription : null %>"></textarea>
+                                    cols='28'
+<<<<<<< HEAD
+                                    placeholder="Cuentanos un poco acerca de tu producto. Si no encontraste las opciónes adecuadas para tu producto, puedes indicarlas aquí!"
+                                    value="<%= locals.oldData ? oldData.productDescription : null  %>"></textarea>
+                                                                        <% if (locals.errors && errors.productDescription) { %>
+=======
+                                    placeholder="Cuentanos un poco acerca de tu producto. Puedes indicar cualquier cualidad que no estuviese disponible en las opciónes anteriores. "
+                                    value="<%= locals.oldData ? oldData.productDescription : null %>"></textarea>
                                     <% if (locals.errors && errors.productDescription) { %>
+>>>>>>> 19c78540cccf709f4de9c2be5d7517300ef214a8
                                         <div class="errorMessage">
                                             <p>
                                                 <%= errors.productDescription.msg %>
                                             </p>
                                         </div>
+<<<<<<< HEAD
                                         <% } %>
-                                            >>>>>>> main
+=======
+                                        <% } %>                                           
+>>>>>>> 19c78540cccf709f4de9c2be5d7517300ef214a8
                             </div>
                             <div class=''>
                                 <button id='CreateProductButton' type='submit'>Guardar</button>
