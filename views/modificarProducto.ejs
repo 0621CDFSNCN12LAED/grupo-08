@@ -35,12 +35,6 @@
                     enctype="multipart/form-data">
                     <div class='modifyImg' style="display:flex; justify-content: space-between">
 
-<<<<<<< HEAD
-                        <div class="img">
-                            <label for='images'><img id="imagePreview" style="width:450px;"
-                                    src="<%= productoFiltradoEdit.images %>" alt="" /></label> 
-                                     <input type='file' id='images' name="images" class='maxWidth100' style='display:none' />      
-=======
                         <div>
                             <label for='img' class='whiteText'><img id="imagePreview" style="width:450px;"
                                     src="<%= productoFiltradoEdit.images %>" alt="" /></label>
@@ -55,7 +49,6 @@
                                         </p>
                                     </div>
                                     <% } %> 
->>>>>>> 19c78540cccf709f4de9c2be5d7517300ef214a8
                         </div>
                     </div>
                     <div class='inputProductForm centerText pad10'>
@@ -93,11 +86,7 @@
                                     <% } %>
                         </div>
                         <div class='inputProductForm centerText pad10'>
-<<<<<<< HEAD
                             <label for='categoryGender'> ¿Para quien esta pensado tu producto? </label>
-=======
-                            <label for='elegirCategoria'> Categoría según público destinatario </label>
->>>>>>> 19c78540cccf709f4de9c2be5d7517300ef214a8
                             <br>
                             <select class='maxWidth100' id='categoryGender' name='categoryGender' required>
                                 <option value='niños' <%=productoFiltradoEdit.categoryGender=="niños" ? "selected" : "" %>
