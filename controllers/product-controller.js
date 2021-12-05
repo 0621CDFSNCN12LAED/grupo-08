@@ -113,7 +113,7 @@ const controllerProducts = {
         }*/
         await db.Product.update(
             {
-                //images: "/img/products/" + req.file.filename,
+                images: "/img/products/" + req.file.filename,
                 title: req.body.title,
                 productDescription: req.body.productDescription,
                 category: req.body.category,

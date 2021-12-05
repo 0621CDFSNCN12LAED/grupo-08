@@ -44,11 +44,6 @@
                         <form class="CreateForm" action="/views/productos" method="post" enctype="multipart/form-data">
 
                             <div class='img'>
-<<<<<<< HEAD
-                                <label class='image' for='img'>Sube una imagen de tu producto<i class="fas fa-camera blue" style='font-size: 1.5em;'></i><br><img style="border-radius: 5px;" id="imagePreview" src= "#" width="450px" alt=""></label>
-                                <input type='file' id='img' name='images' style='display:none'
-                                    accept='image/png, image/jpg, image/jpeg, image/gif'>
-=======
                                 <label class='image' for='img'>Sube una imagen de tu producto<i
                                         class="fas fa-camera blue" style='font-size: 1.5em;'></i><br><img
                                         style="border-radius: 5px;" id="imagePreview" src="#" width="450px"
@@ -63,7 +58,6 @@
                                             </p>
                                         </div>
                                         <% } %> 
->>>>>>> 19c78540cccf709f4de9c2be5d7517300ef214a8
                             </div>
 
 
@@ -224,25 +218,15 @@
                                 <label for='productDescription'>Descripción </label>
                                 <textarea class='centerText' id='productDescription' name='productDescription' rows='5'
                                     cols='28'
-<<<<<<< HEAD
-                                    placeholder="Cuentanos un poco acerca de tu producto. Si no encontraste las opciónes adecuadas para tu producto, puedes indicarlas aquí!"
-                                    value="<%= locals.oldData ? oldData.productDescription : null  %>"></textarea>
-                                                                        <% if (locals.errors && errors.productDescription) { %>
-=======
                                     placeholder="Cuentanos un poco acerca de tu producto. Puedes indicar cualquier cualidad que no estuviese disponible en las opciónes anteriores. "
                                     value="<%= locals.oldData ? oldData.productDescription : null %>"></textarea>
                                     <% if (locals.errors && errors.productDescription) { %>
->>>>>>> 19c78540cccf709f4de9c2be5d7517300ef214a8
                                         <div class="errorMessage">
                                             <p>
                                                 <%= errors.productDescription.msg %>
                                             </p>
                                         </div>
-<<<<<<< HEAD
-                                        <% } %>
-=======
                                         <% } %>                                           
->>>>>>> 19c78540cccf709f4de9c2be5d7517300ef214a8
                             </div>
                             <div class=''>
                                 <button id='CreateProductButton' type='submit'>Guardar</button>
