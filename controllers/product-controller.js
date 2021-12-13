@@ -9,7 +9,7 @@ const controllerProducts = {
             res.render("productos", { allProducts });
         });
     },
-    
+
     search: async (req, res) => {
         const titulo = req.query.titulo; //.replace(new RegExp(`/[áéíóú]/g`), "_");
         const productos = await db.Product.findAll({
@@ -104,16 +104,17 @@ const controllerProducts = {
         res.render("modificarProducto", { productoFiltradoEdit });
     },
 
-    updateNewProduct: async (req, res) => {
+    updateNewProduct: async (req, res, next) => {
         /*const productValidationResult = validationResult(req);
         if (productValidationResult.errors.length > 0) {
             return res.render("modificarProducto", {
                 errors: productValidationResult.mapped(),
-            });
-        }*/
+            })}*/ const productoFiltradoEdit = await db.Product.findByPk(
+            req.params.id
+        );
         await db.Product.update(
             {
-                images: "/img/products/" + req.file.filename,
+                images: req.file ? "/img/products/" + req.file.filename : productoFiltradoEdit.images,
                 title: req.body.title,
                 productDescription: req.body.productDescription,
                 category: req.body.category,
