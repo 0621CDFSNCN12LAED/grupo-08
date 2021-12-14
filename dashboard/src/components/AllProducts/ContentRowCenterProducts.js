@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+/*import React, { Component } from "react";
 import "./AllProducts.css";
 import ProductInDb from "./ProductInDb";
 
@@ -35,4 +35,4 @@ class ContentRowCenterProducts extends Component {
   }
 }
 
-export default ContentRowCenterProducts;
+export default ContentRowCenterProducts;*/

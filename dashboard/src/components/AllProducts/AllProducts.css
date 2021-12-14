@@ -1,0 +1,18 @@
+.boxContainer-productOfert {
+  max-width: 95%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.allProducts-price-discountContainer {
+  display: flex;
+  align-items: center;
+}
+.allProducts-priceProduct {
+  font-size: 22px;
+  color: #1bc01b;
+}
+.allProducts-discountProduct {
+  font-size: 22px;
+  color: #dc143ce3;
+}

@@ -233,11 +233,3 @@ No hay usuarios poblados, va a arrojar error
 -- (default, 2, 17, 1),
 -- (default, 3, 20, 0);
 /* Fin valores de tabla product_user */
-
-
-
-
-
-
-
-

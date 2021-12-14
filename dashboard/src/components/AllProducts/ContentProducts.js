@@ -1,5 +1,5 @@
 import React from "react";
-import ContentRowCenterProducts from "./ContentRowCenterProducts";
+import ProductInDb from "./ProductInDb";
 import "./AllProducts.css";
 
 function ContentProducts() {
@@ -9,7 +9,7 @@ function ContentProducts() {
         <h1 className="h3 mb-0 text-gray-800">App Dashboard</h1>
       </div>
 
-      <ContentRowCenterProducts />
+      <ProductInDb />
     </div>
   );
 }
