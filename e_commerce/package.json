@@ -1,0 +1,42 @@
+{
+  "name": "ezequiel-marchegiani",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-generator": "^4.16.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.13.0",
+    "method-override": "^3.0.0",
+    "minimatch": "^3.0.4",
+    "multer": "^1.4.3",
+    "mysql2": "^2.3.2",
+    "node-fetch": "^2.6.5",
+    "nodemon": "^2.0.12",
+    "path": "^0.12.7",
+    "sequelize-cli": "^6.3.0"
+  },
+  "devDependencies": {
+    "sequelize": "^6.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0621CDFSNCN12LAED/grupo-08.git"
+  },
+  "author": "ezequiel-marchegiani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0621CDFSNCN12LAED/grupo-08/issues"
+  },
+  "homepage": "https://github.com/0621CDFSNCN12LAED/grupo-08#readme"
+}
