@@ -18,7 +18,7 @@ function ContentOfertProduct() {
   
   return (
     <main className='d-sm-flex aligns-items-center justify-content-between mb-4 boxContainer-productOfert'>
-       
+        
        { productos.map((producto, i) =>{
         return(
           <div className=''key={i}>

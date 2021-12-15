@@ -25,9 +25,9 @@ function SideBar() {
 
         {/*<!-- Nav Item - Dashboard -->*/}
         <li className="nav-item active">
-          <Link to="/ContentWrapper" className="nav-link">
-            <i className="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard - DH movies</span>
+          <Link to="/" className="nav-link">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
           </Link>
         </li>
 
@@ -39,24 +39,24 @@ function SideBar() {
 
         {/*<!-- Nav Item - Pages -->*/}
         <li className="nav-item">
-          <Link to="/OfertProduct" className="nav-link collapsed">
+          <Link to="/fdksjnksdjnfsk" className="nav-link collapsed">
             <i className="fas fa-fw fa-folder"></i>
-            <span>Productos en Oferta</span>
+            <span>Error404</span>
           </Link>
         </li>
 
         {/*<!-- Nav Item - Charts -->*/}
         <li className="nav-item">
           <Link to="/OfertProduct" className="nav-link">
-            <i className="fas fa-fw fa-chart-area"></i>
+            <i class="fas fa-tag"></i>
             <span>Últimas ofertas</span>
           </Link>
         </li>
 
         {/*<!-- Nav Item - Tables -->*/}
         <li className="nav-item">
-          <Link to="/ContentRowMovies" className="nav-link">
-            <i className="fas fa-fw fa-table"></i>
+          <Link to="/Users" className="nav-link">
+            <i class="fas fa-users"></i>
             <span>Comunidad</span>
           </Link>
         </li>
