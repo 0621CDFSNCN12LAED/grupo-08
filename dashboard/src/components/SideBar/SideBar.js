@@ -12,7 +12,6 @@ function SideBar() {
         className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion"
         id="accordionSidebar"
       >
-
         {/*<!-- Sidebar - Brand -->*/}
         <Link
           to="/"
@@ -27,7 +26,7 @@ function SideBar() {
         <li className="nav-item active">
           <Link to="/" className="nav-link">
           <i class="fas fa-home"></i>
-            <span>All4Sports</span>
+            <span>All4Sports ~ Home</span>
           </Link>
         </li>
 
@@ -45,17 +44,29 @@ function SideBar() {
           </Link>
         </li>
 
+          <li>
+            <Link to="/fdksjnksdjnfsk" className="nav-link collapsed">
+              <i className="fas fa-fw fa-folder"></i>
+              <span>Error404</span>
+            </Link>
+          </li>
         {/*<!-- Nav Item - Tables -->*/}
         <li className="nav-item">
-          <Link to="/ContentRowMovies" className="nav-link">
-            <i className="fas fa-fw fa-table"></i>
+          <Link to="/Users" className="nav-link">
+            <i class="fas fa-users"></i>
             <span>Comunidad</span>
           </Link>
         </li>
         <li className="nav-item">
           <Link to="/AllProducts" className="nav-link">
             <i className="fas fa-tshirt"></i>
-            <span>Ver todos los productos + Buscar Producto</span>
+            <span>Ver todos los productos</span>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/SearchProducts" className="nav-link">
+            <i className="fas fa-search"></i>
+            <span>Buscar Producto</span>
           </Link>
         </li>
 
