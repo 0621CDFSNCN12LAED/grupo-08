@@ -1,3 +1,58 @@
+import React, { useState, useEffect } from "react";
+import "./AllProducts.css";
+import { Card, Button } from "react-bootstrap";
+
+function ProductInDb() {
+  const inicioUrl = "http://localhost:3001/";
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/list")
+      .then((response) => response.json())
+      .then((results) => {
+        setProductos(results.data);
+        console.log(results);
+      })
+      .catch((error) => console.log("error"));
+  }, []);
+
+  return (
+    <main className="d-sm-flex aligns-items-center justify-content-between mb-4 boxContainer-productOfert row">
+      {productos.map((producto, i) => {
+        return (
+          <div className="col-lg-6 mb-4 card card-body" key={i}>
+            <Card style={{ width: "" }} key={i}>
+              <Card.Img variant="top" src={inicioUrl + producto.images} />
+              <Card.Body>
+                <Card.Title>{producto.title}</Card.Title>
+                <Card.Text>{producto.productDescription}</Card.Text>
+                <ul className="list-group list-group-flush">
+                  <li
+                    className="list-group-item"
+                    className="allProducts-price-discountContainer allProducts-priceProduct"
+                  >
+                    ${producto.price}
+                  </li>
+                  <li
+                    className="list-group-item"
+                    className="allProducts-price-discountContainer allProducts-discountProduct"
+                  >
+                    {producto.discount}%
+                  </li>
+                </ul>
+
+                <Button variant="primary">Ver más detalles</Button>
+              </Card.Body>
+            </Card>
+          </div>
+        );
+      })}
+    </main>
+  );
+}
+
+export default ProductInDb;
+
 /*import React from "react";
 import "./AllProducts.css";
 import image from "../../assets/images/logo192.png";
@@ -42,65 +97,3 @@ ProductInDb.defaultProps = {
 };
 
 export default ProductInDb;*/
-
-/*id INT(10) UNSIGNED AUTO_INCREMENT NOT NULL,
-    title VARCHAR(100) NOT NULL,
-    productDescription TEXT NULL,
-    price DECIMAL NOT NULL,
-    discount INT(10) NULL,
-    images VARCHAR(100) NOT NULL,
-    */
-import React, { useState, useEffect } from "react";
-import "./AllProducts.css";
-import { Card, Button } from "react-bootstrap";
-
-function ProductInDb() {
-  const inicioUrl = "http://localhost:3001/";
-  const [productos, setProductos] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:3001/list")
-      .then((response) => response.json())
-      .then((results) => {
-        setProductos(results.data);
-        console.log(results);
-      })
-      .catch((error) => console.log("error"));
-  }, []);
-
-  return (
-    <main className="d-sm-flex aligns-items-center justify-content-between mb-4 boxContainer-productOfert">
-      {productos.map((producto, i) => {
-        return (
-          <div className="" key={i}>
-            <Card style={{ width: "18rem" }} key={i}>
-              <Card.Img variant="top" src={inicioUrl + producto.images} />
-              <Card.Body>
-                <Card.Title>{producto.title}</Card.Title>
-                <Card.Text>{producto.productDescription}</Card.Text>
-                <ul className="list-group list-group-flush">
-                  <li
-                    className="list-group-item"
-                    className="allProducts-price-discountContainer allProducts-priceProduct"
-                  >
-                    ${producto.price}
-                  </li>
-                  <li
-                    className="list-group-item"
-                    className="allProducts-price-discountContainer allProducts-discountProduct"
-                  >
-                    {producto.discount}%
-                  </li>
-                </ul>
-
-                <Button variant="primary">Ver más detalles</Button>
-              </Card.Body>
-            </Card>
-          </div>
-        );
-      })}
-    </main>
-  );
-}
-
-export default ProductInDb;
