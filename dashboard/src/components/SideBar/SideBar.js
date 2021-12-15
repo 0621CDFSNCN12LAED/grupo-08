@@ -12,7 +12,6 @@ function SideBar() {
         className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion"
         id="accordionSidebar"
       >
-
         {/*<!-- Sidebar - Brand -->*/}
         <Link
           to="/"
@@ -63,7 +62,13 @@ function SideBar() {
         <li className="nav-item">
           <Link to="/AllProducts" className="nav-link">
             <i className="fas fa-tshirt"></i>
-            <span>Ver todos los productos + Buscar Producto</span>
+            <span>Ver todos los productos</span>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/SearchProducts" className="nav-link">
+            <i className="fas fa-search"></i>
+            <span>Buscar Producto</span>
           </Link>
         </li>
 

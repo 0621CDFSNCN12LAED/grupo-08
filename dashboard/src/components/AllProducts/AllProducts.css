@@ -9,10 +9,13 @@
   align-items: center;
 }
 .allProducts-priceProduct {
-  font-size: 22px;
+  font-size: 20px;
   color: #1bc01b;
+  font-weight: bolder;
+  text-align: center;
 }
 .allProducts-discountProduct {
-  font-size: 22px;
+  font-size: 20px;
   color: #dc143ce3;
+  text-align: center;
 }

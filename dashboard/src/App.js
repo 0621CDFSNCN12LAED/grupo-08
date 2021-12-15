@@ -4,6 +4,7 @@ import "./App.css";
 import Error404 from "./components/Error404/Error404";
 import OfertProduct from "./components/OfertProduct/OfertProduct";
 import AllProducts from "./components/AllProducts/AllProducts";
+import SearchProducts from "./components/SearchProducts/SearchProducts";
 import SideBar from "./components/SideBar/SideBar";
 import Home from "./components/Home/Home";
 import Users from "./components/Users/Users.js";
@@ -17,7 +18,11 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/OfertProduct" element={<OfertProduct />} />
           <Route path="/AllProducts" element={<AllProducts />} />
+<<<<<<< HEAD
           <Route path="/Users" element={<Users />} />
+=======
+          <Route path="/SearchProducts" element={<SearchProducts />} />
+>>>>>>> f2924b6e1cf38982871aa66ee21f0a59afbefa53
           {/* Si colocás un * es igual a cualquier ruta */}
           <Route path="*" element={<Error404 />} />
         </Routes>
