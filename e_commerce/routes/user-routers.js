@@ -4,6 +4,7 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path");
 const controladorUsers = require("../controllers/users-controller");
+const userControllerApi = require("../controllers/userController-api")
 
 /* Middlewares */
 const guestMiddleware = require("../middlewares/guestMiddleware");
@@ -33,5 +34,16 @@ router.get("/profile/edit", authUserMiddleware, controladorUsers.editProfile);
 router.post("/profile/edit", authUserMiddleware, controladorUsers.confirmEditProfile);
 
 router.get("/logout", controladorUsers.logout);
+
+
+
+//Rutas API
+//All users
+router.get('/userList', userControllerApi.listUsers);
+
+// router.get('/list/search', productControllerAPI.search);
+//Product by id
+// router.get('/list/:id', userControllerApi.detailProduct);
+
 
 module.exports = router;
