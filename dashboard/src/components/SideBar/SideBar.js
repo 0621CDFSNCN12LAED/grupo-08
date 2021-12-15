@@ -19,15 +19,15 @@ function SideBar() {
           className="sidebar-brand d-flex align-items-center justify-content-center"
         >
           <div className="sidebar-brand-icon">
-            <img className="w-100" src={Logo} alt="Digital House" />
+            <img className="w-100" src={Logo} alt="all4Sports" />
           </div>
         </Link>
 
         {/*<!-- Nav Item - Dashboard -->*/}
         <li className="nav-item active">
-          <Link to="/ContentWrapper" className="nav-link">
-            <i className="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard - DH movies</span>
+          <Link to="/" className="nav-link">
+          <i class="fas fa-home"></i>
+            <span>All4Sports</span>
           </Link>
         </li>
 
@@ -40,16 +40,8 @@ function SideBar() {
         {/*<!-- Nav Item - Pages -->*/}
         <li className="nav-item">
           <Link to="/OfertProduct" className="nav-link collapsed">
-            <i className="fas fa-fw fa-folder"></i>
+            <i className="fas fa-tag"></i>
             <span>Productos en Oferta</span>
-          </Link>
-        </li>
-
-        {/*<!-- Nav Item - Charts -->*/}
-        <li className="nav-item">
-          <Link to="/OfertProduct" className="nav-link">
-            <i className="fas fa-fw fa-chart-area"></i>
-            <span>Últimas ofertas</span>
           </Link>
         </li>
 

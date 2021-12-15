@@ -1,8 +1,8 @@
 import React from 'react';
 import './Home.css';
-import image from '../../assets/images/logo192.png'
+import ImagenProducto from "../../assets/images/barcelona-nike.jpg"
 
-function LastProductInDb() {
+function ProductSale(props) {
   return (
     <div className="col-lg-6 mb-4">
             <div className="card shadow mb-4">
@@ -11,9 +11,9 @@ function LastProductInDb() {
                 </div>
                 <div className="card-body">
                     <div className="text-center">
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src={image} alt=" Star Wars - Mandalorian "/>
+                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4 imageProductHome" src={ImagenProducto} alt=" Imagen Producto "/>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa citationem ratione aperiam voluptatum non corporis ratione aperiam voluptatum quae dolorem culpa ratione aperiam voluptatum?</p>
+                    <p>{props.description}</p>
                     <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">Ver detalle producto</a>
                 </div>
             </div>
@@ -21,4 +21,4 @@ function LastProductInDb() {
   );
 }
 
-export default LastProductInDb;
+export default ProductSale;
