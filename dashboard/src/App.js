@@ -18,11 +18,8 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/OfertProduct" element={<OfertProduct />} />
           <Route path="/AllProducts" element={<AllProducts />} />
-<<<<<<< HEAD
           <Route path="/Users" element={<Users />} />
-=======
           <Route path="/SearchProducts" element={<SearchProducts />} />
->>>>>>> f2924b6e1cf38982871aa66ee21f0a59afbefa53
           {/* Si colocás un * es igual a cualquier ruta */}
           <Route path="*" element={<Error404 />} />
         </Routes>
