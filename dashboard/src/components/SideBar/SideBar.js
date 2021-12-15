@@ -25,7 +25,7 @@ function SideBar() {
         {/*<!-- Nav Item - Dashboard -->*/}
         <li className="nav-item active">
           <Link to="/" className="nav-link">
-          <i class="fas fa-home"></i>
+            <i class="fas fa-home"></i>
             <span>All4Sports ~ Home</span>
           </Link>
         </li>
@@ -44,12 +44,12 @@ function SideBar() {
           </Link>
         </li>
 
-          <li>
-            <Link to="/fdksjnksdjnfsk" className="nav-link collapsed">
-              <i className="fas fa-fw fa-folder"></i>
-              <span>Error404</span>
-            </Link>
-          </li>
+        <li className="nav-item">
+          <Link to="/fdksjnksdjnfsk" className="nav-link collapsed">
+            <i className="fas fa-fw fa-folder"></i>
+            <span>Error404</span>
+          </Link>
+        </li>
         {/*<!-- Nav Item - Tables -->*/}
         <li className="nav-item">
           <Link to="/Users" className="nav-link">
