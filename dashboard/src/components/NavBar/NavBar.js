@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './NavBar.css';
 
 function NavBar() {
@@ -38,8 +39,9 @@ function NavBar() {
 						{/*<!-- Nav Item - User Information -->*/}
 						<li className="nav-item dropdown no-arrow">
 							<a className="nav-link dropdown-toggle" href="/" id="userDropdown">
-								<span className="mr-2 d-none d-lg-inline text-gray-600 small">Registrarse/Log in</span>
-								<img className="img-profile rounded-circle" src="" alt="" width="60"/>
+								<Link to="/Login"><span className="mr-2 d-none d-lg-inline text-gray-600 small">Login</span></Link>
+								<span className="mr-2 d-none d-lg-inline text-gray-600 small">|</span>
+								<Link to="/Register"><span className="mr-2 d-none d-lg-inline text-gray-600 small">Registrarse</span></Link>
 							</a>
 						</li>
 

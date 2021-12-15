@@ -2,5 +2,23 @@
     color: white;
 }
 .error_container{
+    width: 100%;
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.info_container{
+    max-width: 30%;
+    padding-right: 40px;
+}
+.titleError{
+    font-size: 80px;
+    color: black;
+}
+.subtitleError{
+    color: black;
+}
+.image_error{
+    height: 100vh;
+    width: 45vw;
 }
