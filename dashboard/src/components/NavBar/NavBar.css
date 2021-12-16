@@ -1,0 +1,7 @@
+.navBarBg{
+   background-color:#06274b !important;
+}
+
+.whiteBorder{
+    filter: invert(1);
+}

@@ -6,7 +6,7 @@ function NavBar() {
   return (
     <React.Fragment>
       {/*<!-- Topbar -->*/}
-      <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+      <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top navBarBg">
         {/*<!-- Sidebar Toggle (Topbar) -->*/}
         <button
           id="sidebarToggleTop"
@@ -52,7 +52,7 @@ function NavBar() {
                 Registrarse/Log in
               </span>
               <img
-                className="img-profile rounded-circle"
+                className="img-profile rounded-circle whiteBorder"
                 src={ImagenUsuarios}
                 alt=""
                 width="50"
