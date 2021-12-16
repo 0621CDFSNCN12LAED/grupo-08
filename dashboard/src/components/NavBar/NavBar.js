@@ -8,7 +8,7 @@ function NavBar() {
   return (
     <React.Fragment>
       {/*<!-- Topbar -->*/}
-      <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+      <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top navBarBg">
         {/*<!-- Sidebar Toggle (Topbar) -->*/}
         <button
           id="sidebarToggleTop"
@@ -49,10 +49,10 @@ function NavBar() {
           {/*<!-- Nav Item - User Information -->*/}
           <li className="nav-item dropdown no-arrow">
             <a className="nav-link dropdown-toggle" href="/" id="userDropdown">
-			<Link to="/Login"><span className="mr-2 d-none d-lg-inline text-gray-600 small">Login</span>
-			</Link><span className="mr-2 d-none d-lg-inline text-gray-600 small">|</span>
-			<Link to="/Register"><span className="mr-2 d-none d-lg-inline text-gray-600 small">Registrarse</span></Link>
-              <img className="img-profile rounded-circle" src={ImagenUsuarios} alt="" width="50"/>
+              <Link to="/Login"><span className="mr-2 d-none d-lg-inline text-gray-600 small">Login</span>
+              </Link><span className="mr-2 d-none d-lg-inline text-gray-600 small">|</span>
+              <Link to="/Register"><span className="mr-2 d-none d-lg-inline text-gray-600 small">Registrarse</span></Link>
+              <img className="img-profile rounded-circle whiteBorder" src={ImagenUsuarios} alt="" width="50"/>
             </a>
           </li>
         </ul>

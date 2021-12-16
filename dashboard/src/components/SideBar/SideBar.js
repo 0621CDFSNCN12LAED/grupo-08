@@ -1,7 +1,7 @@
 import React from "react";
 import "./SideBar.css";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/images/logo.png";
+import Logo from "../../assets/images/logo-removebg-preview.png";
 // import image from '../../assets/images/logo192.png'
 
 function SideBar() {
@@ -9,7 +9,7 @@ function SideBar() {
     <React.Fragment>
       {/*<!-- Sidebar -->*/}
       <ul
-        className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion"
+        className="navbar-nav navBarBg sidebar sidebar-dark accordion"
         id="accordionSidebar"
       >
         {/*<!-- Sidebar - Brand -->*/}
@@ -17,13 +17,13 @@ function SideBar() {
           to="/"
           className="sidebar-brand d-flex align-items-center justify-content-center"
         >
-          <div className="sidebar-brand-icon">
-            <img className="w-100" src={Logo} alt="all4Sports" />
+          <div className="sidebar-brand-iconm whiteShadow noBg">
+            <img className="w-100 sidebar-brand-iconm whiteShadow noBg" src={Logo} alt="all4Sports" />
           </div>
         </Link>
 
         {/*<!-- Nav Item - Dashboard -->*/}
-        <li className="nav-item active">
+        <li className="nav-item active ">
           <Link to="/" className="nav-link">
             <i class="fas fa-home"></i>
             <span>All4Sports ~ Home</span>

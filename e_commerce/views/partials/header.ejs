@@ -13,13 +13,14 @@
             <link rel="stylesheet" href="../css/styleHome-sm.css">
             <link rel="stylesheet" href="../css/styleHome-md.css">
             <link rel="stylesheet" href="../css/styleHome-lg.css">
+            <script defer src="../../javascript/header.js"></script>
 
     </head>
     <div class="logoContainer">
         <a href="/"><img src="../img/icons/logo_light.png" alt="Logo"></a>
     </div>
-    <div>
-        <nav class="navBar">
+    <div class="allLinks">
+        <nav id="navBar" class="navBar">
             <ul class="linksCategories">
                 <li><a href="/productos">Productos</a></li>
                 <li class="nav-item dropdown">
@@ -59,6 +60,7 @@
             </ul>
         </nav>
         <div class="iconBurger">
+            <a href="javascript:void(0);" class="icon" onclick="functionHamburguer()"></a>
             <i class="fas fa-bars"></i>
         </div>
     </div>

@@ -99,4 +99,17 @@
     .secction_politicaPrivacidad p {
         font-size: 18px;
     }
+
+    .allLinks{
+        display:block;
+    }
+
+    .navBar{
+        display:none;
+    }
+
+    .iconBurger{
+        display:block;
+    }
+
 }
