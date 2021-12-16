@@ -7,7 +7,7 @@ function ProductInDb() {
   const inicioUrl = "http://localhost:3001/";
   const [productos, setProductos] = useState([]);
 
-  let rutaParametrizadas = "ProductDetail/"
+  let rutaParametrizadas = "ProductDetail/";
 
   useEffect(() => {
     fetch("http://localhost:3001/list")
@@ -20,7 +20,7 @@ function ProductInDb() {
   }, []);
 
   return (
-    <main className="d-sm-flex aligns-items-center justify-content-between mb-4 boxContainer-productOfert row">
+    <main className="d-sm-flex aligns-items-center justify-content-between mb-4 boxContainer-allProducts row">
       {productos.map((producto, i) => {
         return (
           <div className="col-lg-6 mb-4 card card-body" key={i}>
@@ -38,7 +38,9 @@ function ProductInDb() {
                   </li>
                 </ul>
 
-                <Link exact to={rutaParametrizadas + producto.id}><Button variant="primary">Ver más detalles</Button></Link>
+                <Link exact to={rutaParametrizadas + producto.id}>
+                  <Button variant="primary">Ver más detalles</Button>
+                </Link>
               </Card.Body>
             </Card>
           </div>
