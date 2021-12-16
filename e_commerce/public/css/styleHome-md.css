@@ -58,9 +58,12 @@
     .logoFooter {
         width: 30%;
     }
-    /* .containerSection3{
-        padding-top: 16px;
-        flex-direction: row;
-        justify-content: space-evenly;
-    } */
+
+.navBarHambu{
+display:flex;
+flex-flow: wrap row;
+justify-content: space-around;
+text-align: center;
+}
+
 }

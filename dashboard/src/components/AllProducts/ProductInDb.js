@@ -27,16 +27,10 @@ function ProductInDb() {
                 <Card.Title>{producto.title}</Card.Title>
                 <Card.Text>{producto.productDescription}</Card.Text>
                 <ul className="list-group list-group-flush">
-                  <li
-                    className="list-group-item"
-                    className="allProducts-price-discountContainer allProducts-priceProduct"
-                  >
+                  <li className="list-group-item allProducts-price-discountContainer allProducts-priceProduct">
                     ${producto.price}
                   </li>
-                  <li
-                    className="list-group-item"
-                    className="allProducts-price-discountContainer allProducts-discountProduct"
-                  >
+                  <li className="list-group-item allProducts-price-discountContainer allProducts-discountProduct">
                     {producto.discount}%
                   </li>
                 </ul>

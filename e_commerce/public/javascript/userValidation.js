@@ -16,6 +16,8 @@ let erImageProfile = document.querySelector(".erImageProfile");
 let erTerminos = document.querySelector(".erTerminos");
 
 let errorContainer = document.querySelector("#errorContainer");
+let errorContainerRegister = document.querySelector(".errorContainerRegister")
+
 
 let errores = {};
 
@@ -133,6 +135,7 @@ btnSubmit.addEventListener("click", (event) =>{
 
     if(Object.keys(errores).length >= 1){
         event.preventDefault();
+        errorContainerRegister.style.display = "flex";
         erName.innerText = (errores.name) ? errores.name : "";
         erLastName.innerText = (errores.lastName) ? errores.lastName : "";
         erEmail.innerText = (errores.email) ? errores.email : "";
