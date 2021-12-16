@@ -4,6 +4,8 @@ let btnSubmit = document.querySelector("#buttonSubmitLogin");
 
 let errMail = document.querySelector(".errMail");
 let errPassword = document.querySelector(".errPassword");
+let errorContainerLogin = document.querySelector(".errorContainerLogin")
+
 
 let errores = {}
 
@@ -23,6 +25,7 @@ btnSubmit.addEventListener("click", (e) =>{
     }
 
     if(Object.keys(errores).length >= 1){
+        errorContainerLogin.style.display = "flex"
         errMail.innerText = (errores.email) ? errores.email : "asd";
         errPassword.innerText = (errores.password) ? errores.password : "";
         e.preventDefault();

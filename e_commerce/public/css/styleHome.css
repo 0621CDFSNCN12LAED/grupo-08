@@ -79,6 +79,21 @@ header {
     display: none;
 }
 
+/* .iconBurger:hover{
+ color:white;
+ background-color: red !important;
+} */
+
+
+.navBarHambu{
+display:flex;
+flex-flow: wrap column;
+justify-content: center;
+text-align: center;
+align-items: center;
+}
+
+
 ul li a {
     color: #fff;
     font-size: 18px;
@@ -90,12 +105,21 @@ ul li a:hover {
 .iconBurger {
     text-align: center;
     margin-top: 20px;
+    padding-bottom: 5px;
+}
+
+.iconBurger:hover{
+   color:white;
 }
 .iconBurger i {
-    background-color: rgb(27, 147, 245);
+    background-color: rgba(155, 161, 167, 0.3);
     padding: 16px;
     border-radius: 8px;
 }
+
+
+
+
 /* Section Products */
 .title {
     padding: 40px 0 20px;
