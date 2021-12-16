@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./AllProducts.css";
 import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function ProductInDb() {
   const inicioUrl = "http://localhost:3001/";
   const [productos, setProductos] = useState([]);
+
+  let rutaParametrizadas = "ProductDetail/"
 
   useEffect(() => {
     fetch("http://localhost:3001/list")
@@ -35,7 +38,7 @@ function ProductInDb() {
                   </li>
                 </ul>
 
-                <Button variant="primary">Ver más detalles</Button>
+                <Link exact to={rutaParametrizadas + producto.id}><Button variant="primary">Ver más detalles</Button></Link>
               </Card.Body>
             </Card>
           </div>

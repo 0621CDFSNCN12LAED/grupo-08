@@ -8,6 +8,7 @@ import SearchProducts from "./components/SearchProducts/SearchProducts";
 import SideBar from "./components/SideBar/SideBar";
 import Home from "./components/Home/Home";
 import Users from "./components/Users/Users.js";
+import ProductDetail from "./components/ProductDetail/ProductDetail";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/AllProducts" element={<AllProducts />} />
           <Route path="/Users" element={<Users />} />
           <Route path="/SearchProducts" element={<SearchProducts />} />
+          <Route path="/ProductDetail/:id" element={<ProductDetail />} />
           {/* Si colocás un * es igual a cualquier ruta */}
           <Route path="*" element={<Error404 />} />
         </Routes>

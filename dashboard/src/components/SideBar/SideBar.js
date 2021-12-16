@@ -25,7 +25,7 @@ function SideBar() {
         {/*<!-- Nav Item - Dashboard -->*/}
         <li className="nav-item active ">
           <Link to="/" className="nav-link">
-            <i class="fas fa-home"></i>
+            <i className="fas fa-home"></i>
             <span>All4Sports ~ Home</span>
           </Link>
         </li>
@@ -53,7 +53,7 @@ function SideBar() {
         {/*<!-- Nav Item - Tables -->*/}
         <li className="nav-item">
           <Link to="/Users" className="nav-link">
-            <i class="fas fa-users"></i>
+            <i className="fas fa-users"></i>
             <span>Comunidad</span>
           </Link>
         </li>
