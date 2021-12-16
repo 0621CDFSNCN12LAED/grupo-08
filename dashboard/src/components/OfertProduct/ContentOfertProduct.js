@@ -6,13 +6,12 @@ import { Card, Button } from 'react-bootstrap';
 function ContentOfertProduct() {
   const inicioUrl = "http://localhost:3001/"
   const [productos, setProductos] = useState([])
-
+  
   useEffect(() =>{
     fetch("http://localhost:3001/list")
     .then(response => response.json())
     .then(results =>{
       setProductos(results.data)
-      console.log(results);
     })
     .catch(error => console.log("error"))
   }, [])
