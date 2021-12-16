@@ -81,10 +81,10 @@
                                 </div>
                                 <% } %>
                         </div>
-                        <div class='paddingBot8 marginBot10'>
+                        <div class='paddingBot8'>
                             <label for='email'>E-mail</label>
                             <br>
-                            <input style='color:black' class='whiteBg' type='email' id='email' name='email'
+                            <input style='color:black' type='email' id='email' name='email'
                                 value="<%= locals.oldData ? oldData.email : null  %>">
                             <% if (locals.errors && errors.email) { %>
                                 <div class="errorMessage">
