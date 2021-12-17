@@ -1,5 +1,5 @@
-.boxContainer-productOfert {
-  max-width: 95%;
+.boxContainer-user {
+  max-width: 100%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -19,4 +19,12 @@
 
 .align-center{
     text-align:center;
+}
+
+.totalUsers{
+  color:red
+}
+
+.imageUser{
+  min-width:200px;
 }

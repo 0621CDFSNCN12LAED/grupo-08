@@ -152,7 +152,15 @@
     }
 
     .formForm{
-      display:block;
+    display:block;
     width:auto;
     margin: 0 3px 0 3px;
+  }
+
+  .registerBtn{
+    padding:10px;
+  }
+
+  .registerNotice{
+    padding:10px;
   }

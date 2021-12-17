@@ -36,8 +36,8 @@ document.getElementById('errores').scrollIntoView({behavior: 'smooth'});
 
 
 //image preview
-images.onchange = evt => {
-  const [file] = images.files
+img.onchange = evt => {
+  const [file] = img.files
   if (file) {
     imagePreview.src = URL.createObjectURL(file)
   }
