@@ -42,7 +42,7 @@
                     <small class="msg-error-validation text-danger erImageProfile"></small>
                     <small class="msg-error-validation text-danger erTerminos"></small>
                 </div>
-                <form class=' form centerText padTop10 flexWrap flexColumn centerText' action="/register" method="post"
+                <form class=' form centerText padTop10 centerText' action="/register" method="post"
                     enctype="multipart/form-data" id="formRegister">
                     <!-- begins form inputs -->
                     <fieldset>
@@ -138,11 +138,12 @@
                                 <%= errors.terminos.msg %>
                             </p>
                             <% } %>
-                                <div class='paddingBot12'>
+                                <div class='registerBtn'>
                                     <button class='buttonRegister' type='submit' id="buttonSend">Registrarme</button>
                                 </div>
                     </fieldset>
-                    <div class='paddingBot8 centerText whiteText paddingTop4'><label class='loginLink'>¿Ya
+                    <br>
+                    <div class='registerNotice'><label class='loginLink'>¿Ya
                             tienes un
                             usuario con
                             nosotros?<a class='aLinks' href='/login'> Ingresa aquí</a></label>
