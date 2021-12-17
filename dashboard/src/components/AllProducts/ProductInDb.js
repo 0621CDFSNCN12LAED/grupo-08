@@ -6,6 +6,11 @@ function ProductInDb() {
   const inicioUrl = "http://localhost:3001/";
   const [productos, setProductos] = useState([]);
 
+<<<<<<< HEAD
+=======
+  let rutaParametrizadas = "ProductDetail/";
+
+>>>>>>> 48d8a62b21e42e9b594e0b18cbf8aaaf7a5afc82
   useEffect(() => {
     fetch("http://localhost:3001/list")
       .then((response) => response.json())
@@ -17,7 +22,7 @@ function ProductInDb() {
   }, []);
 
   return (
-    <main className="d-sm-flex aligns-items-center justify-content-between mb-4 boxContainer-productOfert row">
+    <main className="d-sm-flex aligns-items-center justify-content-between mb-4 boxContainer-allProducts row">
       {productos.map((producto, i) => {
         return (
           <div className="col-lg-6 mb-4 card card-body" key={i}>
@@ -35,7 +40,13 @@ function ProductInDb() {
                   </li>
                 </ul>
 
+<<<<<<< HEAD
                 <Button variant="primary">Ver más detalles</Button>
+=======
+                <Link exact to={rutaParametrizadas + producto.id}>
+                  <Button variant="primary">Ver más detalles</Button>
+                </Link>
+>>>>>>> 48d8a62b21e42e9b594e0b18cbf8aaaf7a5afc82
               </Card.Body>
             </Card>
           </div>

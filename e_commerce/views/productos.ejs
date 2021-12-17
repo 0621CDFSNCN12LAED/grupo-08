@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
+    <head>
+        <%- include('./partials/head') %>
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+            integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="../css/styleHome.css" />
+        <link rel="stylesheet" href="../css/styleHome-sm.css" />
+        <link rel="stylesheet" href="../css/styleHome-md.css" />
+        <link rel="stylesheet" href="../css/styleHome-lg.css" />
+        <link rel="stylesheet" href="../css/products-sm.css" />
+        <link rel="stylesheet" href="../css/products-md.css" />
+        <link rel="stylesheet" href="../css/products-lg.css" />
+    </head>
 
-<head>
-
-    <%- include('./partials/head') %>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-            integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-        <link rel="stylesheet" href="../css/styleHome.css">
-        <link rel="stylesheet" href="../css/styleHome-sm.css">
-        <link rel="stylesheet" href="../css/styleHome-md.css">
-        <link rel="stylesheet" href="../css/styleHome-lg.css">
-        <link rel="stylesheet" href="../css/products-sm.css">
-        <link rel="stylesheet" href="../css/products-md.css">
-        <link rel="stylesheet" href="../css/products-lg.css">
-</head>
-
-<body>
-    <%- include('./partials/header') %>
+    <body>
+        <%- include('./partials/header') %>
         <!-- Barra búsqueda mobile -->
         <nav class="navBar-orderBy-filter">
             <div class="dropdown dropdown-filter-search">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button
+                    class="btn btn-primary dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
                     <i class="fas fa-arrows-alt-v"></i>Ordenar por
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -33,8 +45,14 @@
                 </div>
             </div>
             <div class="dropdown dropdown-filter-search">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button
+                    class="btn btn-primary dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
                     <i class="fab fa-searchengin"></i> Filtrar
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -51,8 +69,14 @@
                 <h2>Escriba el producto que desea encontrar</h2>
                 <div class="inputSearch_container">
                     <form action="/productos/search" method="GET">
-                        <input type="text" name="titulo" id="barraBusquedaProducto"><i class="fas fa-search"></i>
-                        <button class="btn btn-primary" type="submit">Buscar</button>
+                        <input
+                            type="text"
+                            name="titulo"
+                            id="barraBusquedaProducto"
+                        /><i class="fas fa-search"></i>
+                        <button class="btn btn-primary" type="submit">
+                            Buscar
+                        </button>
                     </form>
                 </div>
             </div>
@@ -100,35 +124,40 @@
                     </div>
                 </section> -->
                 <% for (const producto of allProducts) { %>
-                    <article class="product">
-                        <a href="productDetail/<%= producto.id %>"><img class="imageProduct" src="<%=producto.images%>"
-                                alt="imagenProducto"></a>
-                        <div class="detailContainer">
-                            <p class="titleProduct">
-                                <%= producto.title %>
+                <article class="product">
+                    <a href="/productDetail/<%= producto.id %>"
+                        ><img
+                            class="imageProduct"
+                            src="<%=producto.images%>"
+                            alt="imagenProducto"
+                    /></a>
+                    <div class="detailContainer">
+                        <p class="titleProduct"><%= producto.title %></p>
+                        <p class="descriptionProduct">
+                            <%= producto.productDescription %>
+                        </p>
+                        <div class="price-discountContainer">
+                            <p class="priceProduct">$<%= producto.price %></p>
+                            <% if (producto.discount) { %>
+                            <p class="discountProduct">
+                                %<%= producto.discount %> OFF
                             </p>
-                            <p class="descriptionProduct">
-                                <%= producto.productDescription %>
-                            </p>
-                            <div class="price-discountContainer">
-                                <p class="priceProduct">$<%= producto.price %>
-                                </p>
-                                <% if (producto.discount) { %>
-                                    <p class="discountProduct">%<%= producto.discount %> OFF</p>
-                                    <% } %>
-                            </div>
-                            <div class="btnContainer">
-                                <a href="productDetail/<%= producto.id %>"><button class="btn-buy">Ver
-                                        Producto</button></a>
-                                <button class="btn-cart">Añadir a Carrito</button>
-                            </div>
+                            <% } %>
                         </div>
-                    </article>
-                    <%} %>
+                        <div class="btnContainer">
+                            <a href="/productDetail/<%= producto.id %>"
+                                ><button class="btn-buy">
+                                    Ver Producto
+                                </button></a
+                            >
+                            <button class="btn-cart">Añadir a Carrito</button>
+                        </div>
+                    </div>
+                </article>
+                <%} %>
             </section>
         </main>
         <!-- Footer -->
         <%- include('./partials/footer') %>
-</body>
-
+    </body>
 </html>
