@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./AllProducts.css";
 import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function ProductInDb() {
   const inicioUrl = "http://localhost:3001/";
