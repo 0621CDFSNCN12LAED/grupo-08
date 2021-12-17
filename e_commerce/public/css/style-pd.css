@@ -497,33 +497,37 @@ footer {
     padding: 8px 0 20px;
 }
 
-.editProduct{
+.editProduct {
     text-decoration: none;
     color: darkcyan;
     padding-top: 15px;
     padding-bottom: 15px;
     display: block;
-   
 }
 
 .editProduct:hover {
-
     cursor: pointer;
     text-decoration: underline;
-   
-
 }
 
 .deleteProduct {
-  padding: 05px;
-  cursor: pointer;
- 
-
+    padding: 05px;
+    cursor: pointer;
 }
-    
 
-.flexLogCarri{
-    display:flex;
-    flex-flow:row wrap;
+.flexLogCarri {
+    display: flex;
+    flex-flow: row wrap;
     justify-content: space-between;
+}
+
+.linksUser-pd {
+    display: flex;
+    list-style: none;
+}
+
+.linksUser-pd li a {
+    text-decoration: none;
+    padding: 0 8px;
+    color: #fff;
 }

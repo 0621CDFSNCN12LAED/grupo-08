@@ -24,14 +24,26 @@
                             alt="logo"
                     /></a>
                 </h4>
-                <div class="flexLogCarri">
-                    <div class="log">
-                        Ingresá <i class="fas fa-user" class="user"></i>
+                <ul class="linksUser-pd">
+                    <div class="flexLogCarri">
+                        <% if (locals.isLogged) { %>
+                        <li>
+                            <a href="/profile"
+                                ><i class="fas fa-user"></i>Ver Perfil</a
+                            >
+                        </li>
+                        <li><a href="/logout">Logout</a></li>
+                        <% } else { %>
+                        <li><a href="/login">Iniciar sesión</a></li>
+                        <li><a href="/register">Registrarse</a></li>
+                        <% } %>
+                        <li>
+                            <a href="/productCart"
+                                ><i class="fas fa-shopping-cart"></i
+                            ></a>
+                        </li>
                     </div>
-                    <div class="carri">
-                        Carrito <i class="fas fa-shopping-cart"></i>
-                    </div>
-                </div>
+                </ul>
             </div>
             <div class="burger-menu bars-bg">
                 <i class="fas fa-bars bars-text"></i>
