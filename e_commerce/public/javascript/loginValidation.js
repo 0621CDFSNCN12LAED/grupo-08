@@ -1,15 +1,17 @@
 let email = document.querySelector("#email");
 let password = document.querySelector("#password");
 let btnSubmit = document.querySelector("#buttonSubmitLogin");
+let formulario = document.querySelector("#formLogin")
 
 let errMail = document.querySelector(".errMail");
 let errPassword = document.querySelector(".errPassword");
 let errorContainerLogin = document.querySelector(".errorContainerLogin")
 
 
-let errores = {}
 
-btnSubmit.addEventListener("click", (e) =>{
+
+formulario.addEventListener("submit", (e) =>{
+    let errores = {}
 
     let regex = /^[^\s@]+@[^\s@]+$/;
     
@@ -25,11 +27,10 @@ btnSubmit.addEventListener("click", (e) =>{
     }
 
     if(Object.keys(errores).length >= 1){
-        errorContainerLogin.style.display = "flex"
-        errMail.innerText = (errores.email) ? errores.email : "asd";
-        errPassword.innerText = (errores.password) ? errores.password : "";
         e.preventDefault();
-    } else{
-        btnSubmit.submit();
-    }
+        errorContainerLogin.style.display = "flex"
+        errMail.innerText = (errores.email) ? errores.email : "";
+        errPassword.innerText = (errores.password) ? errores.password : "";
+        
+    } 
 })

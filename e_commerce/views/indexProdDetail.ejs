@@ -1,80 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <%- include('./partials/head') %>
+
+<head>
+    <%- include('./partials/head') %>
         <link rel="stylesheet" href="/css/style-pd.css" />
         <link rel="stylesheet" href="/css/responsive-pd.css" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-            rel="stylesheet"
-        />
-    </head>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+</head>
 
-    <body>
-        <div class="container">
-            <div class="header">
-                <h4>
-                    <a href="/"
-                        ><img
-                            src="../img/productDetail/rsz_logo_white_nb.png"
-                            alt="logo"
-                    /></a>
-                </h4>
-                <ul class="linksUser-pd">
-                    <div class="flexLogCarri">
-                        <% if (locals.isLogged) { %>
+<body>
+    <div class="container">
+        <div class="header">
+            <h4>
+                <a href="/"><img src="../img/productDetail/rsz_logo_white_nb.png" alt="logo" /></a>
+            </h4>
+            <ul class="linksUser-pd">
+                <div class="flexLogCarri">
+                    <% if (locals.isLogged) { %>
                         <li>
-                            <a href="/profile"
-                                ><i class="fas fa-user"></i>Ver Perfil</a
-                            >
+                            <a href="/profile"><i class="fas fa-user"></i>Ver Perfil</a>
                         </li>
                         <li><a href="/logout">Logout</a></li>
                         <% } else { %>
-                        <li><a href="/login">Iniciar sesión</a></li>
-                        <li><a href="/register">Registrarse</a></li>
-                        <% } %>
-                        <li>
-                            <a href="/productCart"
-                                ><i class="fas fa-shopping-cart"></i
-                            ></a>
-                        </li>
-                    </div>
-                </ul>
-            </div>
-            <div class="burger-menu bars-bg">
-                <i class="fas fa-bars bars-text"></i>
-            </div>
-        </div>
-
-        <div class="nav">
-            <ul>
-                <li><a href="#"></a>Deportes</li>
-                <li><a href="#"></a>Marcas</li>
-                <li><a href="#"></a>Mujer</li>
-                <li><a href="#"></a>Hombre</li>
-                <li><a href="#"></a>Niño</li>
-                <li><a href="#"></a>Ofertas</li>
+                            <li><a href="/login">Iniciar sesión</a></li>
+                            <li><a href="/register">Registrarse</a></li>
+                            <% } %>
+                                <li>
+                                    <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
+                                </li>
+                </div>
             </ul>
         </div>
+        <div class="burger-menu bars-bg">
+            <i class="fas fa-bars bars-text"></i>
+        </div>
+    </div>
 
-        <div class="product">
-            <div class="images">
-                <div class="slider">
-                    <img
-                        style="
+    <div class="nav">
+        <ul>
+            <li><a href="#"></a>Deportes</li>
+            <li><a href="#"></a>Marcas</li>
+            <li><a href="#"></a>Mujer</li>
+            <li><a href="#"></a>Hombre</li>
+            <li><a href="#"></a>Niño</li>
+            <li><a href="#"></a>Ofertas</li>
+        </ul>
+    </div>
+
+    <div class="product">
+        <div class="images">
+            <div class="slider">
+                <img style="
                             min-height: 0;
                             min-width: 0;
                             max-width: fit-content;
-                        "
-                        src="<%=productoFiltrado.images%>"
-                        alt=""
-                    />
-                </div>
-                <!-- Comentado momentaneamente hasta que solucionemos cómo poner varias imágenes - Eze
+                        " src="<%=productoFiltrado.images%>" alt="" />
+            </div>
+            <!-- Comentado momentaneamente hasta que solucionemos cómo poner varias imágenes - Eze
                  <div class='sportProd'>
                 <div class='itemSport active'>
                     <img src='img/productDetail/rsz_1front_right.jp' alt=''>
@@ -86,59 +69,55 @@
                     <img src='img/productDetail/rsz_top_pair.jpg' alt=''>
                 </div>
             </div> -->
-                <h2 class="det">DETALLES</h2>
-                <section class="decription">
-                    <%= productoFiltrado.productDescription %>
-                </section>
+            <h2 class="det">DETALLES</h2>
+            <section class="decription">
+                <%= productoFiltrado.productDescription %>
+            </section>
+        </div>
+
+        <div class="info">
+            <h3>
+                <%= productoFiltrado.categorySport %>
+            </h3>
+            <h1>
+                <%= productoFiltrado.title %>
+            </h1>
+            <div class="starShare">
+                <a href="" class="fav"><i class="fas fa-star"></i></a>
+                <a href=""><i class="fas fa-share-alt"></i></a>
             </div>
+            <h1 class="price">$<%= productoFiltrado.price %>
+            </h1>
+            <h4 class="title">Color</h4>
+            <div class="colors">
+                <!-- <span class="color <%= productoFiltrado.color %>"></span> -->
+                <%= productoFiltrado.color %>
+            </div>
+            <h4 class="title">Talle</h4>
+            <div class="sizes">
+                <span class="size">
+                    <%= productoFiltrado.size %>
+                </span>
+            </div>
+            <h4 class="title">Cantidad</h4>
+            <input type="number" value="1" class="qty" />
+            <h4 class="title">Disponibles en Stock</h4>
+            <input type="number" value="<%= productoFiltrado.stock%>" class="qty" />
+            <a href="#" class="cart">Añadir al carrito <i class="fas fa-shopping-cart"></i></a>
+            <div>
+                <a href="/modificarProducto/<%=productoFiltrado.id%>" class="editProduct">Editar Producto</a>
 
-            <div class="info">
-                <h3><%= productoFiltrado.categorySport %></h3>
-                <h1><%= productoFiltrado.title %></h1>
-                <div class="starShare">
-                    <a href="" class="fav"><i class="fas fa-star"></i></a>
-                    <a href=""><i class="fas fa-share-alt"></i></a>
-                </div>
-                <h1 class="price">$<%= productoFiltrado.price %></h1>
-                <h4 class="title">Color</h4>
-                <div class="colors">
-                    <!-- <span class="color <%= productoFiltrado.color %>"></span> -->
-                    <%= productoFiltrado.color %>
-                </div>
-                <h4 class="title">Talle</h4>
-                <div class="sizes">
-                    <span class="size"> <%= productoFiltrado.size %> </span>
-                </div>
-                <h4 class="title">Cantidad</h4>
-                <input type="number" value="1" class="qty" />
-                <h4 class="title">Disponibles en Stock</h4>
-                <input
-                    type="number"
-                    value="<%= productoFiltrado.stock%>"
-                    class="qty"
-                />
-                <a href="#" class="cart"
-                    >Añadir al carrito <i class="fas fa-shopping-cart"></i
-                ></a>
-                <div>
-                    <a
-                        href="/modificarProducto/<%=productoFiltrado.id%>"
-                        class="editProduct"
-                        >Editar Producto</a
-                    >
-
-                    <form
-                        action="/<%= productoFiltrado.id%>/?_method=DELETE"
-                        method="POST"
-                        style="display: inline-flex"
-                    >
-                        <button type="submit" class="deleteProduct">
-                            Eliminar
-                        </button>
-                    </form>
-                </div>
+                <form action="/<%= productoFiltrado.id%>/?_method=DELETE" method="POST" style="display: inline-flex">
+                    <button type="submit" class="deleteProduct">
+                        Eliminar
+                    </button>
+                </form>
             </div>
         </div>
-        <div class="footer"><%- include('./partials/footer') %></div>
-    </body>
+    </div>
+    <div class="footer">
+        <%- include('./partials/footer') %>
+    </div>
+</body>
+
 </html>

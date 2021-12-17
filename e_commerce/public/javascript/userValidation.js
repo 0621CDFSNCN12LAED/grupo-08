@@ -18,9 +18,6 @@ let erTerminos = document.querySelector(".erTerminos");
 let errorContainer = document.querySelector("#errorContainer");
 let errorContainerRegister = document.querySelector(".errorContainerRegister")
 
-
-let errores = {};
-
 password.addEventListener("keyup", () =>{
       checkPassword(password.value);
 })
@@ -69,6 +66,7 @@ function checkPassword(pass){
 }
 
 btnSubmit.addEventListener("click", (event) =>{
+    let errores = {};
     //La variable regex hace que corrobore que el mail que escribió el usuario sea válido
     let regex = /^[^\s@]+@[^\s@]+$/;
     //Validaciones 
@@ -142,7 +140,6 @@ btnSubmit.addEventListener("click", (event) =>{
         erPassword.innerText = (errores.password) ? errores.password : "";
         erImageProfile.innerText = (errores.imagen) ? errores.imagen : "";
         erTerminos.innerText = (errores.terminos) ? errores.terminos : "";
-        event.preventDefault();
     } else{
         btnSubmit.submit();
     }

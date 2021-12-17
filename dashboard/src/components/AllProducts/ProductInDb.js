@@ -7,7 +7,7 @@ function ProductInDb() {
   const inicioUrl = "http://localhost:3001/";
   const [productos, setProductos] = useState([]);
 
-  let rutaParametrizadas = "ProductDetail/";
+  let rutaParametrizadas = "/ProductDetail/";
 
   useEffect(() => {
     fetch("http://localhost:3001/list")
