@@ -28,3 +28,8 @@
 .imageUser{
   min-width:200px;
 }
+
+.containerFix{
+flex:1 0 auto;
+flex-flow: column wrap;
+}

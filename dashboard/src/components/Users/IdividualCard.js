@@ -4,7 +4,7 @@ import "./Users.css";
 
 function IndividualCard() {
   return (
-    <div className="container-fluid">
+    <div className="w50">
       <UsersInDb />
     </div>
   );
