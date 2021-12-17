@@ -2,9 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import './ofertProduct.css';
 import { Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 
 function ContentOfertProduct() {
   const inicioUrl = "http://localhost:3001/"
+  const rutaParametrizadas = "/ProductDetail/"
   const [productos, setProductos] = useState([])
   
   useEffect(() =>{
@@ -15,11 +17,12 @@ function ContentOfertProduct() {
     })
     .catch(error => console.log("error"))
   }, [])
-  
+  const totalProductosOferta = productos.filter(producto => producto.discount !== 0)
+  console.log(totalProductosOferta.length);
   return (
     <div className="container-fluid">
       <div className="d-sm-flex aligns-items-center justify-content-between mb-4">
-        <h1 className="h3 mb-0 text-gray-800">Productos en oferta!</h1>
+        <h1 className="h3 mb-0 text-gray-800">Productos en oferta! ({totalProductosOferta.length})</h1>
       </div>
         <main className='d-sm-flex aligns-items-center mb-4 boxContainer-productOfert'>
           
@@ -46,7 +49,7 @@ function ContentOfertProduct() {
                                 {producto.discount}%
                               </li>
                             </ul>
-                              <Button className="btn-product" variant="primary">Ver producto</Button>
+                            <Link to={rutaParametrizadas + producto.id}><Button className="btn-product" variant="primary">Ver producto</Button></Link>
                               <Button className="btn-cart" variant="success">Añadir al carrito</Button>
                           </div>
                       </Card.Body>

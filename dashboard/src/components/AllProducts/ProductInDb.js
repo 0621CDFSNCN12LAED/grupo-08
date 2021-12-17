@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./AllProducts.css";
 import { Card, Button } from "react-bootstrap";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function ProductInDb() {
   const inicioUrl = "http://localhost:3001/";
   const [productos, setProductos] = useState([]);
 
-  let rutaParametrizadas = "ProductDetail/";
+  let rutaParametrizadas = "/ProductDetail/";
 
   useEffect(() => {
     fetch("http://localhost:3001/list")

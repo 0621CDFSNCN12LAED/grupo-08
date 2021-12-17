@@ -1,4 +1,61 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
+import data from "./data";
+
+const SearchProducts = () => {
+  const [filter, setFilter] = useState("");
+
+  const searchText = (event) => {
+    setFilter(event.target.value);
+  };
+  let dataSearch = data.productData.filter((item) => {
+    return Object.keys(item).some((key) =>
+      item[key]
+        .toString()
+        .toLowerCase()
+        .includes(filter.toString().toLowerCase())
+    );
+  });
+  return (
+    <section className="py-4 container">
+      <div className="row justify-content-center">
+        <div className="col-12 mb-5">
+          <div className="mb-3 col-4 mx-auto text-center">
+            <label className="form-lable h4 font-weight-bold">
+              Busca un producto
+            </label>
+            <input
+              type="text"
+              className="from-control"
+              value={filter}
+              onChange={searchText.bind(this)}
+            />
+          </div>
+        </div>
+
+        {dataSearch.map((item, index) => {
+          return (
+            <div className="col-11 col-md-6 col-lg-3 mx-0 mb-4">
+              <div className="card p-0 overflow-hidden h-100 shadow">
+                <img src={item.images} className="card-img-top" />
+                <div className="card-body">
+                  <h5 className="card-title font-weight-bold">{item.title}</h5>
+                  <p className="card-text">{item.productDescription}</p>
+                  <p className="card-subtitle text-success font-weight-bold">
+                    ${item.price}
+                  </p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+};
+
+export default SearchProducts;
+
+/*import React, { useEffect, useRef, useState } from "react";
 
 const apiURL = "http://localhost:3001/list";
 
@@ -33,7 +90,7 @@ function SearchProducts() {
     <div className="container-fluid">
       <div className="row my-4">
         <div className="col-12 col-md-6">
-          {/* Buscador */}
+          // Buscador //
           <form method="GET" onSubmit={onSubmit}>
             <div className="form-group">
               <label htmlFor="">Buscar por producto:</label>
@@ -47,7 +104,7 @@ function SearchProducts() {
         <div className="col-12">
           <h2>Productos para la palabra: {keyword}</h2>
         </div>
-        {/* Listado de productos */}
+         //Listado de productos //        
         {productos.length > 0 &&
           productos.map((producto, i) => {
             return (
@@ -71,7 +128,13 @@ function SearchProducts() {
                         }}
                       />
                     </div>
-                    <p> $ {producto.price}</p>
+                    <p>{producto.productDescription}</p>
+                    <p className="searchProducts-priceProduct">
+                      ${producto.price}
+                    </p>
+                    <p className="searchProducts-discountProduct">
+                      {producto.discount}%
+                    </p>
                   </div>
                 </div>
               </div>
@@ -87,4 +150,4 @@ function SearchProducts() {
   );
 }
 
-export default SearchProducts;
+export default SearchProducts;*/
