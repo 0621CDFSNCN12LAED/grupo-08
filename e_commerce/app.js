@@ -10,9 +10,8 @@ const userRouter = require("./routes/user-routers");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const cors = require("cors")
-
 app.use(cors())
-app.listen(3001, () => {
+app.listen(process.env.PORT || 8080, () => {
     console.log("Todo en orden puerto 3001");
 });
 const userLoggedNavBarMiddleware = require("./middlewares/userLoggedNavBarMiddleware");
@@ -36,7 +35,6 @@ app.use(express.json());
 app.use(mainRouter);
 app.use(productRouters);
 app.use(userRouter);
-
 
 //app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "ejs");
