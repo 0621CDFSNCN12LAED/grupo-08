@@ -47,6 +47,8 @@ img.onchange = evt => {
 
 let formulario = document.querySelector(".CreateForm");
 
+
+
     formulario.addEventListener("submit", async function(event){
                
     let errores = {};

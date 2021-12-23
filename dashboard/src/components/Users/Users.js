@@ -8,13 +8,13 @@ function Users() {
   return (
     <React.Fragment>
       {/*<!-- Content Wrapper -->*/}
-      <div id="content-wrapper" className="d-flex flex-column">
+      <div >
         {/*<!-- Main Content -->*/}
-        <div id="content">
           <NavBar />
+          <div id="">
           <Cards />
+          </div>
           <Footer />
-        </div>
       </div>
     </React.Fragment>
   );

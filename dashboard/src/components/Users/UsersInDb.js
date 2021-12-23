@@ -22,17 +22,17 @@ function UsersInDb() {
 
   
   return (
-    <main className="d-sm-flex aligns-items-center justify-content-between mb-4 boxContainer-productOfert">
+    <main className="">
       {users.map((users, i) => {
         return (
-          <div className="col-lg-6 mb-4 card card-body" key={i}>
+          <div className="" key={i}>
             <Card style={{ width: "18rem" }} key={i}>
               <Card.Img variant="top" src={inicioUrl + users.userImage} />
               <Card.Body>
                 {users.firstName}
                 <br></br>
                 {users.lastName}
-                <ul className="list-group list-group-flush">
+                <ul className="">
                   <li
                     className="list-group-item"
                     className="allProducts-price-discountContainer allProducts-priceProduct"
