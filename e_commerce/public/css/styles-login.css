@@ -1,0 +1,16 @@
+.errorMessage {
+    padding-top: 8px;
+    color: red;
+}
+.errorContainerLogin{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.msg-error-validation{
+    background-color: rgb(172, 172, 172);
+    border-radius: 8px;
+    margin: 4px;
+    font-size: 16px;
+}

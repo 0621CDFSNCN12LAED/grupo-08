@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('./partials/head') %>
+        <script src="https://kit.fontawesome.com/d3503ff7e5.js" crossorigin="anonymous"></script>
+        <link rel='stylesheet' href='/css/styles-login-md.css' media='(min-width:768px)' />
+        <link rel='stylesheet' href='/css/styles-login-lg.css' media='(min-width:992px)' />
+        <link rel="stylesheet" href="../css/styleHome.css">
+        <link rel="stylesheet" href="../css/styleHome-sm.css">
+        <link rel="stylesheet" href="../css/styleHome-md.css">
+        <link rel="stylesheet" href="../css/styleHome-lg.css">
+        <link rel="stylesheet" href="../css/productCreate.css" />
+        <script defer src="../javascript/ProdEditValidation.js"></script>
+</head>
+
+<body class='backgroundImg2'>
+    <%- include('./partials/header') %>
+        <main>
+            <h2 class='centerText'> Modificar un producto</h2>
+            <div class="container">
+                <div class="errores" id='errores'>
+                    <small id="errorName"></small>
+                    <small id="errorCategory"></small>
+                    <small id="errorSize"></small>
+                    <small id="errorColor"></small>
+                    <small id="errorCategoryGender"></small>
+                    <small id="errorCategorySport"></small>
+                    <small id="errorPrice"></small>
+                    <small id="errorStock"></small>
+                    <small id="errorProductDescription"></small>
+                    <small id="errorImage"></small>
+                </div>
+                <form class='productForm' action="/<%= productoFiltradoEdit.id%>/?_method=PUT" method="POST"
+                    enctype="multipart/form-data">
+                    <div class='modifyImg' style="display:flex; justify-content: space-between">
+
+                        <div>
+                            <label for='img' class='whiteText'><img id="imagePreview" style="width:450px;"
+                                    src="<%= productoFiltradoEdit.images%>" alt="" /></label>
+                        </div>
+                        <div>
+                            <input type='file' id='img' name='images' class='maxWidth100' style='display:none'
+                                accept='image/png, image/jpg, image/jpeg' />
+                            <% if (locals.errors && errors.images) { %>
+                                <div class='errorMessage'>
+                                    <p>
+                                        <%= errors.images.msg %>
+                                    </p>
+                                </div>
+                                <% } %>
+                        </div>
+                    </div>
+                    <div class='inputProductForm centerText pad10'>
+                        <label class='' for='stock'> Stock de Producto a modificar </label>
+                        <input type="number" class='maxWidth100' id='stock' name='stock'
+                            value="<%= productoFiltradoEdit.stock%>" required>
+                        <% if (locals.errors && errors.stock) { %>
+                            <div class="errorMessage">
+                                <p>
+                                    <%= errors.stock.msg %>
+                                </p>
+                            </div>
+                            <% } %>
+                    </div>
+                    <!-- <div class='inputProductForm centerText pad10'>
+                            <label class= '' for='modificarProducto'> SKU </label>
+                            <br>
+                            <input type="text" class='maxWidth100' id='sku' name='sku'
+                                value="<%= productoFiltradoEdit.sku%>" required>
+
+                        </div> -->
+
+                    <div class='allExceptImg'>
+                        <div class='inputProductForm centerText pad10'>
+                            <label for='title'>Cambiar el nombre</label>
+                            <br>
+                            <input class='w100' type='text' id='title' name='title'
+                                value="<%= productoFiltradoEdit.title%>" required>
+                            <% if (locals.errors && errors.title) { %>
+                                <div class="errorMessage">
+                                    <p>
+                                        <%= errors.title.msg %>
+                                    </p>
+                                </div>
+                                <% } %>
+                        </div>
+                        <div class='inputProductForm centerText pad10'>
+                            <label for='categoryGender'> ¿Para quien esta pensado tu producto? </label>
+                            <br>
+                            <select class='maxWidth100' id='categoryGender' name='categoryGender' required>
+                                <option value='niños' <%=productoFiltradoEdit.categoryGender=="niños" ? "selected" : ""
+                                    %>
+                                    >Niños</option>
+                                <option value='mujeres' <%=productoFiltradoEdit.categoryGender=="mujeres" ? "selected"
+                                    : "" %>
+                                    >Mujeres</option>
+                                <option value='hombres' <%=productoFiltradoEdit.categoryGender=="hombres" ? "selected"
+                                    : "" %>
+                                    >Hombres</option>
+                                <option value='unisex' <%=productoFiltradoEdit.categoryGender=="unisex" ? "selected"
+                                    : "" %>
+                                    >Unisex/otros</option>
+                            </select>
+                        </div>
+                        <div class='inputStyle'>
+                            <label for='category'> ¿Que tipo de producto es? </label>
+                            <select id='category' name='category'>
+                                <option selected='true' disabled='disabled'>Elige una opción</option>
+                                <% let categories=['calzado', 'camisetas' , 'buzos' , 'leggins' , 'pantalones'
+                                    , 'shorts' , 'gorras' , 'medias' , 'ropaInterior' , 'camperas' , 'deportesAcuaticos'
+                                    , 'otros' ]; %>
+                                    <% for (const oneCategory of categories) { %>
+                                        <option value='<%= oneCategory %>' <%=locals.oldData &&
+                                            (oneCategory===oldData.category) ? 'selected' : null %> ><%= oneCategory %>
+                                        </option>
+                                        <% } %>
+                            </select>
+                            <% if (locals.errors && errors.category) { %>
+                                <div class='errorMessage'>
+                                    <p>
+                                        <%= errors.category.msg %>
+                                    </p>
+                                </div>
+                                <% } %>
+                        </div>
+
+                        <div class='inputProductForm centerText pad10'>
+                            <label for='categorySport'> Categoria Deportiva</label>
+                            <br>
+                            <select class='maxWidth100' id='categorySport' name='categorySport' required>
+                                <option value='Running' <%=productoFiltradoEdit.categorySport=="Running" ? "selected"
+                                    : "" %>
+                                    >Running</option>
+                                <option value='ciclismo' <%=productoFiltradoEdit.categorySport=="ciclismo" ? "selected"
+                                    : "" %>
+                                    >Ciclismo</option>
+                                <option value='trekking' <%=productoFiltradoEdit.categorySport=="trekking" ? "selected"
+                                    : "" %>
+                                    >Trekking</option>
+                                <option value='waterSports' <%=productoFiltradoEdit.categorySport=="waterSports"
+                                    ? "selected" : "" %>
+                                    >Deportes aquáticos</option>
+                                <option value='tennis' <%=productoFiltradoEdit.categorySport=="tennis" ? "selected" : ""
+                                    %>
+                                    >Tenis</option>
+                                <option value='basketball' <%=productoFiltradoEdit.categorySport=="basketball"
+                                    ? "selected" : "" %>
+                                    >Basketball</option>
+                                <option value='boxing' <%=productoFiltradoEdit.categorySport=="boxing" ? "selected" : ""
+                                    %>
+                                    >Boxeo</option>
+                                <option value='casual' <%=productoFiltradoEdit.categorySport=="casual" ? "selected" : ""
+                                    %>
+                                    >Casual</option>
+                                <option value='futbol' <%=productoFiltradoEdit.categorySport=="futbol" ? "selected" : ""
+                                    %>
+                                    >Fútbol</option>
+                                <option value='otros' <%=productoFiltradoEdit.categorySport=="otros" ? "selected" : ""
+                                    %>
+                                    >Otros</option>
+                            </select>
+
+                            <div class='colorSize'>
+                                <div class='colorSizeChild1'>
+                                    <label for='talle'> Talle </label>
+                                    <select id='size' name='size' required>
+                                        <option value='XS' <%=productoFiltradoEdit.size=="XS" ? "selected" : "" %> > XS
+                                        </option>
+                                        <option value='S' <%=productoFiltradoEdit.size=="S" ? "selected" : "" %> > S
+                                        </option>
+                                        <option value='M' <%=productoFiltradoEdit.size=="M" ? "selected" : "" %> >M
+                                        </option>
+                                        <option value='L' <%=productoFiltradoEdit.size=="L" ? "selected" : "" %> >L
+                                        </option>
+                                        <option value='XL' <%=productoFiltradoEdit.size=="XL" ? "selected" : "" %> >XL
+                                        </option>
+                                        <option value='XXL' <%=productoFiltradoEdit.size=="XXL" ? "selected" : "" %> >
+                                            XXL
+                                        </option>
+                                        <option value='36' <%=productoFiltradoEdit.size=="36" ? "selected" : "" %> > 36
+                                        </option>
+                                        <option value='36.5' <%=productoFiltradoEdit.size=="36.5" ? "selected" : "" %> >
+                                            36.5
+                                        </option>
+                                        <option value='37' <%=productoFiltradoEdit.size=="37" ? "selected" : "" %> > 37
+                                        </option>
+                                        <option value='37.5' <%=productoFiltradoEdit.size=="37.5" ? "selected" : "" %> >
+                                            37.5
+                                        </option>
+                                        <option value='38' <%=productoFiltradoEdit.size=="38" ? "selected" : "" %> > 38
+                                        </option>
+                                        <option value='38.5' <%=productoFiltradoEdit.size=="38.5" ? "selected" : "" %> >
+                                            38.5
+                                        </option>
+                                        <option value='39' <%=productoFiltradoEdit.size=="39" ? "selected" : "" %> > 39
+                                        </option>
+                                        <option value='39.5' <%=productoFiltradoEdit.size=="39.5" ? "selected" : "" %> >
+                                            39.5
+                                        </option>
+                                        <option value='40' <%=productoFiltradoEdit.size=="40" ? "selected" : "" %> > 40
+                                        </option>
+                                        <option value='40.5' <%=productoFiltradoEdit.size=="40.5" ? "selected" : "" %> >
+                                            40.5
+                                        </option>
+                                        <option value='41' <%=productoFiltradoEdit.size=="41" ? "selected" : "" %> > 41
+                                        </option>
+                                        <option value='41.5' <%=productoFiltradoEdit.size=="41.5" ? "selected" : "" %> >
+                                            41.5
+                                        </option>
+                                        <option value='42' <%=productoFiltradoEdit.size=="42" ? "selected" : "" %> > 42
+                                        </option>
+                                        <option value='42.5' <%=productoFiltradoEdit.size=="42.5" ? "selected" : "" %> >
+                                            42.5
+                                        </option>
+                                        <option value='43' <%=productoFiltradoEdit.size=="43" ? "selected" : "" %> > 43
+                                        </option>
+                                        <option value='43.5' <%=productoFiltradoEdit.size=="43.5" ? "selected" : "" %> >
+                                            43.5
+                                        </option>
+                                        <option value='44' <%=productoFiltradoEdit.size=="44" ? "selected" : "" %> > 44
+                                        </option>
+                                        <option value='44.5' <%=productoFiltradoEdit.size=="44.5" ? "selected" : "" %> >
+                                            44.5
+                                        </option>
+                                        <option value='45' <%=productoFiltradoEdit.size=="45" ? "selected" : "" %> > 45
+                                        </option>
+                                        <option value='45.5' <%=productoFiltradoEdit.size=="45.5" ? "selected" : "" %> >
+                                            45.5
+                                        </option>
+                                        <option value='46' <%=productoFiltradoEdit.size=="46" ? "selected" : "" %> > 46
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class='colorSizeChild2'>
+                                    <label for='color'> Color </label>
+                                    <select id='color' name='color' required>
+                                        <option value='blanco' <%=productoFiltradoEdit.color=="blanco" ? "selected" : ""
+                                            %> > blanco
+                                        </option>
+                                        <option value='negro' <%=productoFiltradoEdit.color=="negro" ? "selected" : ""
+                                            %> > negro
+                                        </option>
+                                        <option value='rojo' <%=productoFiltradoEdit.color=="rojo" ? "selected" : "" %>
+                                            > rojo
+                                        </option>
+                                        <option value='azul' <%=productoFiltradoEdit.color=="azul" ? "selected" : "" %>
+                                            > azul
+                                        </option>
+                                        <option value='amarillo' <%=productoFiltradoEdit.color=="amarillo" ? "selected"
+                                            : "" %> > amarillo
+                                        </option>
+                                        <option value='verde' <%=productoFiltradoEdit.color=="verde" ? "selected" : ""
+                                            %> > verde
+                                        </option>
+                                        <option value='naranja' <%=productoFiltradoEdit.color=="naranja" ? "selected"
+                                            : "" %> > naranja
+                                        </option>
+                                        <option value='violeta' <%=productoFiltradoEdit.color=="violeta" ? "selected"
+                                            : "" %> > violeta
+                                        </option>
+                                        <option value='rosado' <%=productoFiltradoEdit.color=="rosado" ? "selected" : ""
+                                            %> > rosado
+                                        </option>
+                                        <option value='marrón' <%=productoFiltradoEdit.color=="marrón" ? "selected" : ""
+                                            %> > marrón
+                                        </option>
+                                        <option value='gris' <%=productoFiltradoEdit.color=="gris" ? "selected" : "" %>
+                                            > gris
+                                        </option>
+                                        <option value='otros' <%=productoFiltradoEdit.color=="otros" ? "selected" : ""
+                                            %> > Otro - especificar
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class='inputProductForm centerText pad10'>
+                                <label for='precioChange'>Modificar precio</label>
+                                <br>
+                                <input class='maxWidth100 centerText' type='number' id='price' name='price'
+                                    value="<%= productoFiltradoEdit.price%>" min='0' max='10000' placeholder='(en $)'
+                                    required> <i>$</i>
+                                <% if (locals.errors && errors.price) { %>
+                                    <div class='errorMessage'>
+                                        <p>
+                                            <%= errors.price.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                            </div>
+                            <div class='inputProductForm centerText pad10'>
+                                <label for='precioChange'>Modificar Descuento</label>
+                                <br>
+                                <input class='maxWidth100 centerText' type='number' id='discount' name='discount'
+                                    value="<%= productoFiltradoEdit.discount%>" min='0' max='10000'
+                                    placeholder='(% OFF)' required> <i>$</i>
+                            </div>
+                            <div class='centerText maxWidth100'>
+                                <textarea class='centerText' id='productDescription' name='productDescription'
+                                    value="<%= productoFiltradoEdit.productDescription%>" rows='5'
+                                    cols='28'><%= productoFiltradoEdit.productDescription%></textarea>
+                                <% if (locals.errors && errors.productDescription) { %>
+                                    <div class="errorMessage">
+                                        <p>
+                                            <%= errors.productDescription.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+å                            </div>
+                            <div class='centerText'>
+                                <button id='CreateProductButton' type='submit'>Guardar</button>
+                                <button id='CreateProductButton' type='button'><a href="/">Volver</a></button>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </main>
+        <%- include('./partials/footer') %>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+.boxContainer-user {
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.allProducts-price-discountContainer {
+  display: flex;
+  align-items: center;
+}
+.allProducts-priceProduct {
+  font-size: 22px;
+  color: #1bc01b;
+}
+.allProducts-discountProduct {
+  font-size: 22px;
+  color: #dc143ce3;
+}
+
+.align-center{
+    text-align:center;
+}
+
+.totalUsers{
+  color:red
+}
+
+.imageUser{
+  min-width:200px;
+}
+
+.containerFix{
+flex:1 0 auto;
+flex-flow: column wrap;
+}

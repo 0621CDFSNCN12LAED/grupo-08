@@ -1,0 +1,160 @@
+<!-- Notes:  -->
+<!-- Notes:  Esteticamente, hay que arreglar muchas cosas-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('./partials/head') %>
+        <script src="https://kit.fontawesome.com/d3503ff7e5.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/styles-lr.css" />
+        <link rel="stylesheet" href="/css/theme-lr.css" />
+        <link rel="stylesheet" href="/css/utils-lr.css" />
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel="stylesheet" href="../css/styles-register.css">
+        <link rel='stylesheet' href='/css/styles-sm-register.css' media='(min-width:480px)' />
+        <link rel='stylesheet' href='/css/styles-md-register.css' media='(min-width:768px)' />
+        <link rel='stylesheet' href='/css/styles-lg-register.css' media='(min-width:992px)' />
+        <link rel="stylesheet" href="../css/styleHome.css">
+        <link rel="stylesheet" href="../css/styleHome-sm.css">
+        <link rel="stylesheet" href="../css/styleHome-md.css">
+        <link rel="stylesheet" href="../css/styleHome-lg.css">
+
+</head>
+
+
+<%- include('./partials/header') %>
+
+    <main class='backgroundImg'>
+        <div class='blueTransBg flexWrap justifyCenter containerForm'>
+            <!-- begins form -->
+            <div class='headerRegisterForm'>
+                <!-- form header -->
+                <h1 class='textRegisterRegister fontSize5vw whiteText'> Regístrate ahora</h1>
+                <div class="errorContainerRegister">
+                    <!-- Errores validación JS
+                    En caso de querer que se muestren abajo de cada input, mover etiqueta small -->
+                    <small class="msg-error-validation text-danger erName"></small>
+                    <small class="msg-error-validation text-danger erLastName"></small>
+                    <small class="msg-error-validation text-danger erEmail"></small>
+                    <small class="msg-error-validation text-danger erPassword"></small>
+                    <small class="msg-error-validation text-danger erImageProfile"></small>
+                    <small class="msg-error-validation text-danger erTerminos"></small>
+                </div>
+                <form class=' form centerText padTop10 centerText' action="/register" method="post"
+                    enctype="multipart/form-data" id="formRegister">
+                    <!-- begins form inputs -->
+                    <fieldset>
+                        <div class='paddingBot8'>
+                            <label for='name'> Indícanos tu nombre</label>
+                            <br>
+                            <input style='color:black' type='text' id='name' name='name'
+                                value="<%= locals.oldData ? oldData.name : null  %>">
+                            <% if (locals.errors && errors.name) { %>
+                                <div class="errorMessage">
+                                    <p>
+                                        <%= errors.name.msg %>
+                                    </p>
+                                </div>
+                                <% } %>
+                                    <% if (typeof errores !="undefined" ){ %>
+                                        <% for( let i=0; i < errores.length; i++ ) { %>
+                                            <% if (errores[i].param=="name" ) { %>
+                                                <small class="text-danger">
+                                                    <%= errores[i].msg %>
+                                                </small>
+                                                <% } %>
+                                                    <% } %>
+                                                        <% } %>
+                        </div>
+                        <div class=' paddingBot8'>
+                            <label for='apellido'>Indícanos tu Apellido </label>
+                            <br>
+                            <input style='color:black' type='text' id='apellido' name='apellido'
+                                value="<%= locals.oldData ? oldData.apellido : null  %>">
+                            <% if (locals.errors && errors.apellido) { %>
+                                <div class="errorMessage">
+                                    <p>
+                                        <%= errors.apellido.msg %>
+                                    </p>
+                                </div>
+                                <% } %>
+                        </div>
+                        <div class='paddingBot8'>
+                            <label for='email'>E-mail</label>
+                            <br>
+                            <input style='color:black' type='email' id='email' name='email'
+                                value="<%= locals.oldData ? oldData.email : null  %>">
+                            <% if (locals.errors && errors.email) { %>
+                                <div class="errorMessage">
+                                    <p>
+                                        <%= errors.email.msg %>
+                                    </p>
+                                </div>
+                                <% } %>
+                        </div>
+                        <div class=' paddingBot8'>
+                            <label for='password'> Elige una contraseña</label>
+                            <br>
+                            <input style='color:black' type='password' id='password' name='password'>
+                            <% if (locals.errors && errors.password) { %>
+                                <div class="errorMessage">
+                                    <p>
+                                        <%= errors.password.msg %>
+                                    </p>
+                                </div>
+                                <% } %>
+                                    <div class="progress strongPassword-content">
+                                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                                            style="width: 0" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"
+                                            id="barPassword">
+                                        </div>
+                                    </div>
+                        </div>
+                        <div class='elegirImagen'>
+                            <label for='imagen'> Elige una imagen de perfil</label>
+                            <br>
+                            <input type='file' id='imagen' name='imagen'>
+                            <% if (locals.errors && errors.imagen) { %>
+                                <div class="errorMessage">
+                                    <p>
+                                        <%= errors.imagen.msg %>
+                                    </p>
+                                </div>
+                                <% } %>
+                        </div>
+                        <div class='termsConditions'>
+                            <label class for='terminos'>Acepto los <a class='a-links' href='/terminos'>
+                                    <span style="color:#E1E368">términos y
+                                        condiciones</span></a></label>
+                            <div class='paddingBot8'>
+                                <br>
+                                <input class='styleCheckbox' type='checkbox' id='terminos' name='terminos'>
+                            </div>
+                        </div>
+                        <% if (locals.errors && errors.terminos) { %>
+                            <p class="errorMessage">
+                                <%= errors.terminos.msg %>
+                            </p>
+                            <% } %>
+                                <div class='registerBtn'>
+                                    <button class='buttonRegister' type='submit' id="buttonSend">Registrarme</button>
+                                </div>
+                    </fieldset>
+                    <br>
+                    <div class='registerNotice'><label class='loginLink'>¿Ya
+                            tienes un
+                            usuario con
+                            nosotros?<a class='aLinks' href='/login'> Ingresa aquí</a></label>
+                    </div>
+                </form>
+            </div>
+    </main>
+
+
+    <%- include('./partials/footer') %>
+        <script src="../javascript/userValidation.js"></script>
+        </body>
+
+</html>

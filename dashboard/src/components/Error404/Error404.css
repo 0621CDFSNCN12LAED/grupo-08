@@ -1,0 +1,56 @@
+.btn-error404{
+    color: white;
+}
+.error_container{
+    width: 100%;
+}
+.info_container{
+    height: 40%;
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.titleError{
+    text-align: center;
+    font-size: 30px;
+    color: black;
+}
+.subtitleError{
+    text-align: center;
+    font-size: 20px;
+    color: black;
+}
+.image_error{
+    width: 100%;
+    height: 60%;
+}
+@media only screen and (min-width: 600px){
+    .titleError{
+        font-size: 40px;
+    }
+    .subtitleError{
+        font-size: 30px;
+    }
+}
+@media only screen and (min-width: 1200px){
+    
+    .error_container{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .info_container{
+        max-width: 30%;
+        padding-right: 40px;
+    }
+    .titleError{
+        font-size: 80px;
+    }
+    .image_error{
+        height: 100vh;
+        width: 45vw;
+    }
+}
